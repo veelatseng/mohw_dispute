@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="left_nav"></div>
+        <!-- load menu.htm-->
+        <div class="content">
+            <div class="breadcrumb">
+                <a onclick="location.href='index.htm'">首頁</a><span>模組</span><span>images</span>
+            </div>
+            <h1>Images</h1>
+            <div class="path">檔案名稱：<span>sass/_image.scss</span></div>
+            <p>圖片影片外框為16:9 或是 4:3，圖片皆能呈現object-fit</p>
+            <!-- demo Start -->
+            <h2>【多圖】相簿列表排列與圖片比例</h2>
+            <p>大部分情況下，相簿列表封面套用object-fit的設定以符合圖檔滿版的視覺效果，因此提供此相簿封面快速的SASS以及Jquery設定，html結構沒有固定結構，只須注意<span class="hy">imgOuter</span>與<span class="hy">img</span>的相對結構即可。</p>
+            <p><span class="hy">imgOuter</span>為目前設定之classname，如需更動，請注意JS的selector也要相對應。</p>
+            <div class="demo pic_list">
+                <div class="imgOuter"><img src="https://assets.imgix.net/unsplash/mountains.jpg?w=800&auto=compress" alt=""></div>
+                <div class="imgOuter"><img src="https://assets.imgix.net/unsplash/transport.jpg?w=800&auto=compress" alt=""></div>
+                <div class="imgOuter"> <img src="https://assets.imgix.net/unsplash/coyote.jpg?w=800&auto=compress" alt=""></div>
+                <div class="imgOuter"><img src="https://assets.imgix.net/unsplash/motorbike.jpg?w=800&fit=crop&auto=format%2Cenhance&usm=20" alt=""></div>
+                <div class="imgOuter"><img src="https://assets.imgix.net/examples/lorie.png?w=800&fit=crop&auto=format%2Cenhance&usm=20" alt=""></div>
+                <div class="imgOuter"> <img src="https://assets.imgix.net/unsplash/citystreet.jpg?w=800&auto=compress" alt=""></div>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                        <code class="language-html">
+&lt;div class="yourClassName"&gt;
+    &lt;div class="imgOuterDiv"&gt;&lt;img src="..." alt="..."&gt;&lt;/div&gt;
+    &lt;div class="imgOuterDiv"&gt;&lt;img src="..." alt="..."&gt;&lt;/div&gt;
+    &lt;div class="imgOuterDiv"&gt;&lt;img src="..." alt="..."&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-scss">
+                            <code class="language-scss">
+.yourClassName{
+    @include make_img_outer();//設定overflow-hidden，非必要
+    .imgOuterDiv{
+        //@include make_img_col(電腦版欄數,手機版欄數); 
+        @include make_img_col(3,2);    //pc 4欄，mobile 2欄
+        //@include aspect-ratio(長, 寬);
+        @include aspect-ratio(1, 1);   //設定比例ex:4:3 or 16:9
+    }
+}</code></pre>
+            </div>
+            <!-- demo End -->
+            <h2>【單圖】單張圖片比例</h2>
+            <p>在單圖的部分也可在SASS設定比例，任何比例都可以，1:1、4:3、16:9 為常見比例。</p>
+            <!-- demo Start -->
+            <div class="demo single_setting">
+                <div class="thumbnail">
+                    <div class="imgOuter"><img src="images/doraemon.png" alt="">
+                    </div>
+                    <h3>1:1</h3>
+                </div>
+                <div class="thumbnail">
+                    <div class="imgOuter"><img src="images/doraemon.png" alt="">
+                    </div>
+                    <h3>4:3</h3>
+                </div>
+                <div class="thumbnail">
+                    <div class="imgOuter"><img src="images/doraemon.png" alt="">
+                    </div>
+                    <h3>16:9</h3>
+                </div>
+                <p style="clear: both;font-size: .75em;">原圖版權：<a href="https://www.google.com.tw/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiGqcbozqHWAhUBk5QKHZ-EDegQjRwIBw&url=http%3A%2F%2Fdoraemon-byphing.blogspot.com%2F&psig=AFQjCNHoqFe3q1P7F3wWj_q6SHUJ6fdx1g&ust=1505373327229453" target="_blank"> 連結</a></p>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+<code class="language-html">
+&lt;div class="imgOuterDiv"&gt;&lt;img  src="..." alt="..."&gt;&lt;/div&gt;
+&lt;div class="imgOuterDiv"&gt;&lt;img  src="..." alt="..."&gt;&lt;/div&gt;
+&lt;div class="imgOuterDiv"&gt;&lt;img  src="..." alt="..."&gt;&lt;/div&gt;
+</code></pre>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-scss">
+                                <code class="language-scss">
+.imgOuter{ 
+    @include aspect-ratio(1,1);      //設定比例 1:1
+}
+.imgOuter{ 
+    @include aspect-ratio(4,3);      //設定比例 4:3
+}
+.imgOuter{ 
+    @include aspect-ratio(16,9);     //設定比例 16:9
+}</code></pre>
+            </div>
+            <!-- demo End -->
+            <!-- JS設定 -->
+            <h2>JQuery設定</h2>
+            <p>全網站的<span class="hy">imgOuter</span>底下的<span class="hy">img</span>皆可以使用object-fit Jquery設定</p>
+            <div class="sourcecode">
+                <pre class="language-javascript">
+                            <code class="language-javascript">
+jQuery(document).ready(function() {
+    $(window).on('resize load', function(e) {
+        $('.imgOuter').each(function(index, el) {
+            var _imgContainer = $(this),
+            cWidth = _imgContainer.width(),
+            cHeight = _imgContainer.height(),
+            ratioC = cWidth / cHeight,
+            _img = _imgContainer.find('img');
+
+            var iWidth = $(this).find('img').width(),
+            iHeight = $(this).find('img').height(),
+            ratioImg = iWidth / iHeight,
+            scaleRatio;
+            if (ratioC > ratioImg) {
+                scaleRatio = cWidth / iWidth;
+                _img.width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
+            } else {
+                scaleRatio = cHeight / iHeight;
+                _img.height(cHeight).width(iWidth * scaleRatio).css('left', -.5 * (iWidth * scaleRatio - cWidth));
+            }
+             $(this).find('img').removeClass('img-responsive');
+        });
+    });
+});</code></pre>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/hyui.js"></script>
+<script>
+jQuery(document).ready(function() {
+    $(window).on('resize load', function(e) {
+        $('.imgOuter').each(function(index, el) {
+            var _imgContainer = $(this),
+                cWidth = _imgContainer.width(),
+                cHeight = _imgContainer.height(),
+                ratioC = cWidth / cHeight,
+                _img = _imgContainer.find('img');
+
+            var iWidth = $(this).find('img').width(),
+                iHeight = $(this).find('img').height(),
+                ratioImg = iWidth / iHeight,
+                scaleRatio;
+            if (ratioC > ratioImg) {
+                scaleRatio = cWidth / iWidth;
+                _img.width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
+            } else {
+                scaleRatio = cHeight / iHeight;
+                _img.height(cHeight).width(iWidth * scaleRatio).css('left', -.5 * (iWidth * scaleRatio - cWidth));
+            }
+            $(this).find('img').removeClass('img-responsive');
+        });
+    });
+});
+</script>
+<!-- <script>
+jQuery(document).ready(function() {
+    $(window).on('resize load', function(e) {
+        var _imgContainer = $('.pic'),
+            cWidth = _imgContainer.width(),
+            cHeight = _imgContainer.height(),
+            ratioC = cWidth / cHeight,
+            _img = _imgContainer.find('img');
+
+        _img.each(function() {
+            var iWidth = $(this).width(),
+                iHeight = $(this).height(),
+                ratioImg = iWidth / iHeight,
+                scaleRatio;
+            if (ratioC > ratioImg) {
+                scaleRatio = cWidth / iWidth;
+                $(this).width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
+            } else {
+                scaleRatio = cHeight / iHeight;
+                $(this).height(cHeight).width(iWidth * scaleRatio).css('left', -.5 * (iWidth * scaleRatio - cWidth));
+            }
+        });
+    });
+});
+</script> -->

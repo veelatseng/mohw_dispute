@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="left_nav"></div>
+        <!-- load menu.htm-->
+        <div class="content">
+            <div class="breadcrumb">
+                <a onclick="location.href='index.htm;'">首頁</a><span>模組</span><span>Accordion</span>
+            </div>
+            <h1>Accordion</h1>
+            <div class="path">檔案名稱：<span>sass/_accordion.scss</span></div>
+            <p>每一個Accordion皆用<span class="hy">accordion</span>當作外層，以下由<span class="hy">ul</span>><span class="hy">li</span>><span class="hy">a</span>當作按鈕，當點選的時候緊接著<span class="hy">a</span>的<span class="hy">accordion-content</span>即會展開。此效果不限數量，可自行調整。</p>
+            <p>此效果無提供預設之SASS，可自由新增調整</p>
+            <!-- demo Start -->
+            <div class="demo">
+           <div class="accordion">
+               <ul>
+                   <li><a href="#" title="">第一項說明</a>
+                        <div class="accordion-content">
+                            <p>直麼後大得股的要會使成事公人策公！我古車未書！上工題向案校立詩為色能狀計氣卻力沒時臺地是了養、後天連意市風怕著數往發民文手好，費的而西成曾給理必事後生包，就雄一過電流人住完是成；識愛作流：數關與不個性，還行案！住像印以排傷顧向樓事不音受差，重飯就孩他政的給滿綠不受東心斷來前現模微。</p>
+                        </div>
+                   </li>
+                   <li><a href="#" title="">第二項說明</a>
+                        <div class="accordion-content">
+                             <p>國影自談王不美一文實別合屋？府性元這子一知於料的親到。一用技年不得就資公，也星樣團怎英班水灣個種決以因世書發定很功行何，下飯通反代命假到一不離護麼錯絕懷旅元人。弟新過，道給仍覺裡水國、醫灣了可實界一上德字什心成但創大品隨品。難但所雜笑事禮年專阿戲經愛眾背起，間自個；獎小業美有義交安辦一則龍足，年開多！景唱而賽用出說建樣以經，哥中每去已識著門家故破人而老動工我簡的利管人早什。葉禮名交，都說為一失到就招投高畫。月錢產，機力燈自體日關工車之土庭，件年真經書？</p>
+                        </div>
+                   </li>
+                   <li><a href="#" title="">第三項說明</a>
+                        <div class="accordion-content">
+                            <p>員無的出從身岸前命想總來到爾八片品每單起關開因打實的爭己正新軍者常創的他現都對位家走許曾東們前草信車我……但機這等意故灣態一員見訴活老見以的無又，一定市不公，也列為吃媽像天對是修送教這原人地樹多相為的物立子進，館企！</p>
+                        </div>
+                   </li>
+               </ul>
+           </div>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                <code class="language-html">
+&lt;div class="accordion"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#" title=""&gt;第一項說明&lt;/a&gt;
+            &lt;div class="accordion-content"&gt;
+                &lt;p&gt;...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href="#" title=""&gt;第二項說明&lt;/a&gt;
+            &lt;div class="accordion-content"&gt;
+                &lt;p&gt;...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href="#" title=""&gt;第三項說明&lt;/a&gt;
+            &lt;div class="accordion-content"&gt;
+                &lt;p&gt;...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code>
+</pre>
+            </div>
+            <p>可在<span class="hy">a</span>加上<span class="hy">class="btn"</span>，做成按鈕格式選單下拉</p>
+            <div class="demo">
+           <div class="accordion">
+               <ul style="padding-left:0px;">
+                   <li style="list-style:none;"><a href="#" title="" class="btn">第一項說明</a>
+                        <div class="accordion-content">
+                            <p>直麼後大得股的要會使成事公人策公！我古車未書！上工題向案校立詩為色能狀計氣卻力沒時臺地是了養、後天連意市風怕著數往發民文手好，費的而西成曾給理必事後生包，就雄一過電流人住完是成；識愛作流：數關與不個性，還行案！住像印以排傷顧向樓事不音受差，重飯就孩他政的給滿綠不受東心斷來前現模微。</p>
+                        </div>
+                   </li>
+                   <li style="list-style:none;"><a href="#" title="" class="btn">第二項說明</a>
+                        <div class="accordion-content">
+                             <p>國影自談王不美一文實別合屋？府性元這子一知於料的親到。一用技年不得就資公，也星樣團怎英班水灣個種決以因世書發定很功行何，下飯通反代命假到一不離護麼錯絕懷旅元人。弟新過，道給仍覺裡水國、醫灣了可實界一上德字什心成但創大品隨品。難但所雜笑事禮年專阿戲經愛眾背起，間自個；獎小業美有義交安辦一則龍足，年開多！景唱而賽用出說建樣以經，哥中每去已識著門家故破人而老動工我簡的利管人早什。葉禮名交，都說為一失到就招投高畫。月錢產，機力燈自體日關工車之土庭，件年真經書？</p>
+                        </div>
+                   </li>
+                   <li style="list-style:none;"><a href="#" title="" class="btn">第三項說明</a>
+                        <div class="accordion-content">
+                            <p>員無的出從身岸前命想總來到爾八片品每單起關開因打實的爭己正新軍者常創的他現都對位家走許曾東們前草信車我……但機這等意故灣態一員見訴活老見以的無又，一定市不公，也列為吃媽像天對是修送教這原人地樹多相為的物立子進，館企！</p>
+                        </div>
+                   </li>
+               </ul>
+           </div>
+            </div>
+             <!-- demo End -->
+             <h2>JQuery設定</h2>
+             <div class="sourcecode">
+                <pre class="language-javascript">
+                <code class="language-javascript">
+jQuery(document).ready(function($) {
+        $('.accordion').each(function() {
+            $(this).find('.accordion-content').hide();
+            var _accordionItem = $(this).children('ul').children('li').children('a');
+            _accordionItem.each(function() {
+            $(this).click(function(e) {
+                $(this).parent('li').siblings().children('.accordion-content').slideUp();
+                $(this).next('.accordion-content').slideToggle();
+                e.preventDefault();
+            });
+        });
+    });
+});
+</code>
+</pre>
+            </div>
+
+             
+        </div>
+        </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/hyui.js"></script>
+<script>
+    jQuery(document).ready(function($) {
+        $('.accordion').each(function() {
+            $(this).find('.accordion-content').hide();
+            var _accordionItem = $(this).children('ul').children('li').children('a');
+            _accordionItem.each(function() {
+                $(this).click(function(e) {
+                    $(this).parent('li').siblings().children('.accordion-content').slideUp();
+                    $(this).next('.accordion-content').slideToggle();
+                    e.preventDefault();
+                });
+            });
+        });
+    });
+</script>

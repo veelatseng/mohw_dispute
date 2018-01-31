@@ -1,0 +1,89 @@
+//http://w3bits.com/sass-mixins/
+@mixin screen($size) {
+  $desktop:     "(min-width: #{$screen-lg})";
+  $notebook:    "(min-width: #{$screen-md})";
+  $tablet:      "(min-width: #{$screen-sm})";
+  $mobile:      "(min-width: #{$screen-xs})";
+  $xs_mobile:   "(max-width: #{$screen-xs-mobile-max})";
+  @if $size == desktop {
+    @media screen and #{$desktop} {
+      @content;
+    }
+  }
+  @else if $size == notebook {
+    @media screen and #{$notebook} {
+      @content;
+    }
+  }
+  @else if $size == tablet {
+    @media screen and #{$tablet} {
+      @content;
+    }
+  }
+  @else if $size == mobile {
+    @media screen and #{$mobile} {
+      @content;
+    }
+  }
+   @else if $size == xs_mobile {
+    @media screen and #{$xs-mobile} {
+      @content;
+    }
+  }
+  @else {
+    @media screen and #{$size} {
+      @content;
+    }
+  }
+}
+// 範例：
+// .wrapper {
+//   margin: 0 auto;
+//   width: 100%;
+//   @include screen('desktop') {
+//     width: 90%;
+//      /* 大螢幕 >=1200px */
+//   }
+//   @include screen('notebook') {
+//     width: 85%;
+//     /* 筆電 >=992px */
+//   }
+//   @include screen('tablet') {
+//     width: 55%;
+//     /* 平板 >=768px */
+//   }
+//   @include screen('mobile') {
+//     width: 85%;
+//     /* 大尺寸手機 >=576px */
+//   }
+//   @include screen('xs_mobile') {
+//     width: 85%;
+//     /* 自訂模式 */
+//   }
+// // }
+
+
+//output
+// .wrapper {
+//   margin: 0 auto;
+//   width: 100%; }
+//   @media screen and (min-width: 1200px) {
+//     .wrapper {
+//       width: 90%;
+//       /* 大螢幕 >=1200px */ } }
+//   @media screen and (min-width: 992px) {
+//     .wrapper {
+//       width: 85%;
+//       /* 筆電 >=992px */ } }
+//   @media screen and (min-width: 768px) {
+//     .wrapper {
+//       width: 55%;
+//       /* 平板 >=768px */ } }
+//   @media screen and (min-width: 576px) {
+//     .wrapper {
+//       width: 85%;
+//       /* 大尺寸手機 >=576px */ } }
+//   @media screen and (max-width: 575px) {
+//     .wrapper {
+//       width: 85%;
+//       /* 自訂模式 */ } }

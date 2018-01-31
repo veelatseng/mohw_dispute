@@ -1,0 +1,149 @@
+@import "compass";
+// img
+img.img-responsive{
+    @include img-responsive();
+}
+.tooltip {
+    text-align: center;
+    padding: 40px 0;
+    span {
+        display: inline-block;
+        background: #DEDEDE;
+        text-align: center;
+        padding: 10px;
+        width: 100px;
+        height: 20px;
+        line-height: 20px;
+        vertical-align: baseline;
+    }
+    p>em {
+        color: red;
+    }
+}
+
+.hr_block {
+    text-align: left;
+    span {
+        font-size: .75em;
+    }
+    hr {
+        margin: 10px 0!important;
+        ;
+    }
+}
+
+
+/*檔案下載*/
+
+.file_download {
+   @include clearfix();
+    h3 {
+        color: #333;
+        padding: 12px 0px 15px 0px;
+        margin: 0.5em 0px 0.2em;
+        border-bottom: 1px solid #ccc;
+    }
+    ul {
+        padding-left: 1em;
+        margin-left: 1em;
+        @media screen and (max-width: 767px){
+            margin-left: 0;
+        }
+    }
+    li {
+        list-style: decimal;
+        list-style-position: outside;
+     	margin:0 0 10px 10px;
+        // display: block;
+        position: relative;
+        border-bottom: 1px dotted #CCC;
+        .update,
+        .file_view {
+            font-size: .938em;
+            color: #AAA;
+            width: 100px;
+            float: right;
+            margin-top: 5px;
+            @media screen and (max-width: 767px) {
+                display:inline-block;
+                float: none;
+                width:auto;
+                margin-top: 0;
+            }
+            @include screen('xs_mobile') {
+                display:none;
+            }
+        }
+        .update {
+            width: 150px;
+            @media screen and (max-width: 767px){
+             margin-left: 45px;   
+            }
+        }
+        a {
+            position: relative;
+            padding: .2em 0px .2em 45px;
+            position: relative;
+            height: auto;
+            line-height: 1.45em;
+            display: inline-block;
+            @media screen and (max-width: 767px) {
+                margin-right: 0px;
+                display:block;
+            } 
+            .kb{
+                font-size:.75em;
+                color:#666;
+                display:inline-block;
+                margin:0px .5em;
+            }
+            &:before {
+                content: "";
+                background: url(../images/basic/icon_other.jpg);
+                width: 21px;
+                height: 24px;
+                position: absolute;
+                top: 2px;
+                left: 10px;
+            }
+            &[href$="doc"]:before {
+                background: url(../images/basic/icon_doc.jpg);
+            }
+            &[href$="odf"]:before {
+                background: url(../images/basic/icon_odf.jpg);
+            }
+            &[href$="pdf"]:before {
+                background: url(../images/basic/icon_pdf.jpg);
+            }
+            &[href$="xls"]:before {
+                background: url(../images/basic/icon_xls.jpg);
+            }
+            &[href$="ppt"]:before {
+                background: url(../images/basic/icon_ppt.jpg);
+            }
+            &[href$="jpg"]:before {
+                background: url(../images/basic/icon_jpg.jpg);
+            }
+            &[href$="mp3"]:before {
+                background: url(../images/basic/icon_mp3.jpg);
+            }
+            &[href$="mov"]:before {
+                background: url(../images/basic/icon_mov.jpg);
+            }
+            &[href$="txt"]:before {
+                background: url(../images/basic/icon_txt.jpg);
+            }
+            &[href$="dot"]:before {
+                background: url(../images/basic/icon_doc.jpg);
+            }
+            &[href$="zip"]:before {
+                background: url(../images/basic/icon_zip.jpg);
+            }
+            &:hover,
+            &:focus {
+                color: $aHover !important;
+            }
+        }
+    }
+}
+

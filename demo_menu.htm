@@ -1,0 +1,132 @@
+<a href="#" class="open">全部展開</a>
+<ul>
+    <li class="active"><a href="#">hyUI簡介</a></li>
+    <li><a href="#">排版系統</a>
+        <ul>
+            <li><a onclick="location.href='bootstrap.htm'">grid system</a></li>
+            <li><a href="#">mediaquery</a></li>
+        </ul>
+    </li>
+    <li><a href="#">範例頁面</a>
+        <ul>
+            <li><a href="#">mp首頁 </a></li>
+            <li><a href="#">lp_li列表頁(標準) </a></li>
+            <li><a href="#">lp_table列表頁(表格) </a></li>
+            <li><a href="#">lp_ablum列表頁(相簿) </a></li>
+            <li><a href="#">cp內容頁(標準) </a></li>
+            <li><a href="#">np節點頁 </a></li>
+            <li><a href="#">fp轉寄友人 </a></li>
+            <li><a href="#">qp意見信箱 </a></li>
+            <li><a href="#">sitemap網站地圖 </a></li>
+        </ul>
+    </li>
+    <li><a href="#">模組</a>
+        <ul>
+            <li><a onclick="location.href='accordion.htm'">accordion</a></li>
+            <li><a onclick="location.href='album.htm'">Album+Lightbox</a></li>
+            <li><a href="#">Header</a>
+                <ul>
+                    <li><a href="#">H_menu</a></li>
+                    <li><a href="#">V_menu</a></li>
+                    <li><a href="#">Navigation</a></li>
+                    <li><a href="#">Search</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Slide</a></li>
+            <li><a onclick="location.href='breadcrumb.htm'">Breadcrumb</a></li>
+            <li><a onclick="location.href='fatfooter.htm'">Fat-footer</a></li>
+            <li><a onclick="location.href='download.htm'">File-download</a></li>
+            <li><a onclick="location.href='footer.htm'">Footer</a></li>
+            <li><a onclick="location.href='modal.htm'">Modal</a></li>
+            <li><a onclick="location.href='paginations.htm'">Paginations</a></li>
+            <li><a onclick="location.href='tabs.htm'">Tabs</a></li>
+            <li><a onclick="location.href='thumbnail.htm'">Thumbnail</a></li>
+            <li><a href="#">Tag</a></li> 
+        </ul>
+    </li>
+    <li><a href="#">網頁元素</a>
+        <ul>
+            <li><a onclick="location.href='buttons.htm'">Buttons</a></li>
+            <li><a onclick="location.href='typography.htm'">Typography</a></li>
+            <li><a onclick="location.href='form.htm'">Forms</a></li>
+            <li><a onclick="location.href='notice.htm'">Notice</a></li> 
+            <li><a onclick="location.href='table.htm'">Tables</a></li>
+            <li><a onclick="location.href='tooltip.htm'">Tooltip</a></li>
+            <li><a onclick="location.href='image.htm'">Images</a></li>
+            <li><a onclick="location.href='icon-font.htm'">Icon Font</a></li>
+            <li><a onclick="location.href='hr.htm'">hr</a></li>
+            <li><a onclick="location.href='divider.htm'">Divider</a></li>
+        </ul>
+    </li>
+    <li><a href="#">選用外掛</a>
+        <ul>
+            <li><a href="#">動態效果 animate.css</a></li>
+            <li><a href="#">動態效果 hover.css</a></li>
+            <li><a href="#">動態效果 wow.js</a></li>
+            <li><a href="#">動態效果 easing.js</a></li>
+            <li><a href="#">延遲載入 lazyload.js</a></li>
+            <li><a href="#">字型 fontello</a></li>
+            <li><a href="#">輪播 slickslide</a></li>
+            <li><a href="#">輪播 owl-carousel</a></li>
+            <li><a href="#">捲軸iscroll</a></li>
+        </ul>
+    </li>
+    <li><a href="#">無障礙</a></li>
+</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script>
+$(function() {
+    //選單效果 
+    $('.left_nav ul ul').hide();
+    $('.left_nav ul li.active').children('ul').show();
+    var showStr = "全部展開";
+    nav_H = $('.left_nav').height();
+    $('.left_nav .open').html(showStr);
+    $('.left_nav .open').click(function(e) {
+        if ($(this).is(":contains('全部展開')")) {
+            showStr = "全部收合";
+            $('.left_nav .open').html(showStr);
+            $('.left_nav ul ul').slideDown({
+                duration: 700,
+                easing: "easeOutExpo"
+            });
+            nav_H = $('.left_nav').height();
+            e.preventDefault();
+        } else {
+            showStr = "全部展開";
+            $('.left_nav .open').html(showStr);
+            $('.left_nav ul ul').hide();
+            nav_H = $('.left_nav').height();
+            e.preventDefault();
+        }
+    });
+    $('.left_nav ul li a').each(function(e) {
+        $(this).click(function(e) {
+            $('.left_nav ul li').removeClass('active');
+            $(this).parents('li').addClass('active');
+            $(this).parents().siblings().children('ul').hide();
+            $(this).parent().children('ul').slideToggle({
+                duration: 700,
+                easing: "easeOutExpo"
+            });
+            e.preventDefault();
+            return false;
+        });
+    });
+    // $(".left_nav>ul>li>a[onclick]:contains('htm')").css("color", "red");
+    // $('.left_nav>ul>li>a').css('background', 'red');
+    $('.left_nav>ul>li>a').each(function(index, el) {
+
+        var ulLength = $(this).has('ul').length;
+        if (ulLength < 1) {
+            $(this).addClass('nochild');
+        }
+        // console.log("ulLength" + ulLength);
+
+    });
+    // $('.left_nav>ul>li>a[onclick]').hide();
+    // console.log($('#test').attr($('.left_nav>ul>li>a[onclick]')));
+
+});
+</script>

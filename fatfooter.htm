@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="left_nav"></div>
+        <!-- load menu.htm-->
+        <div class="content">
+            <div class="breadcrumb">
+                <a onclick="location.href='index.htm;'">首頁</a><span>模組</span><span>Fat-footer</span>
+            </div>
+            <h1>Fat-footer</h1>
+            <div class="path">檔案名稱：<span>sass/_fatfooter.scss</span></div>
+            <h2>可自訂Fat-footer的欄位，以及控制手機版是否顯示</h2>
+                <!-- demo Start -->
+            <div class="demo">
+                <section class="fatfooter">
+                    <button type="button" name="收合" class="btn btn-fatfooter">收合</button>
+                    <nav>
+                        <ul>
+                            <li><a href="#" title="">關於本局</a>
+                                <ul>
+                                    <li><a href="#" title="">本局沿革</a></li>
+                                    <li><a href="#" title="">本局願景</a></li>
+                                    <li><a href="#" title="">組織介紹</a></li>
+                                    <li><a href="#" title="">本局願景</a></li>
+                                    <li><a href="#" title="">局處執掌</a></li>
+                                    <li><a href="#" title="">重大政策</a></li>
+                                    <li><a href="#" title="">施政重點</a></li>
+                                    <li><a href="#" title="">本局位置</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" title="">訊息公告</a>
+                                <ul>
+                                    <li><a href="#" title="">本局公告</a></li>
+                                    <li><a href="#" title="">環保署公告</a></li>
+                                    <li><a href="#" title="">環境用藥公告</a></li>
+                                    <li><a href="#" title="">環保專案成果報告</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" title="">業務專區</a>
+                                <ul>
+                                    <li><a href="#" title="">化學物質</a></li>
+                                    <li><a href="#" title="">毒性化學物質</a></li>
+                                    <li><a href="#" title="">危害性化學物質災害防救</a></li>
+                                    <li><a href="#" title="">環境用藥</a></li>
+                                    <li><a href="#" title="">石綿危害資訊</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" title="">便民服務</a>
+                                <ul>
+                                    <li><a href="#" title="">線上服務</a></li>
+                                    <li><a href="#" title="">教育宣導</a></li>
+                                    <li><a href="#" title="">影音專區</a></li>
+                                    <li><a href="#" title="">下載專區</a></li>
+                                    <li><a href="#" title="">常見問答</a></li>
+                                    <li><a href="#" title="">相關連結</a></li>
+                                    <li><a href="#" title="">訂閱電子報</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" title="">政府資訊公開</a>
+                                <ul>
+                                    <li><a href="#" title="">行政院環境保護署資訊公開要點</a></li>
+                                    <li><a href="#" title="">預算及會計月報</a></li>
+                                    <li><a href="#" title="">性別平等專區</a></li>
+                                    <li><a href="#" title="">人權專區</a></li>
+                                    <li><a href="#" title="">環境統計資料庫</a></li>
+                                    <li><a href="#" title="">業務標準作業流程</a></li>
+                                    <li><a href="#" title="">行政院環保署Open Data資料集</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" title="">法規專區</a>
+                                <ul>
+                                    <li><a href="#" title="">主管法規查詢系統</a></li>
+                                    <li><a href="#" title="">全國法規資料庫</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
+            </div>
+            <!-- demo End -->
+
+
+            <div class="sourcecode">
+                <pre class="language-html">
+                <code class="language-html">
+&lt;section class="fatfooter"&gt;
+    &lt;button type="button" name="收合" class="btn btn-fatfooter"&gt;收合&lt;/button&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#" title=""&gt;1-1選單
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="#" title=""&gt;1-1選單&lt;/a&gt;
+                            &lt;li&gt;&lt;a href="#" title=""&gt;1-2選單&lt;/a&gt;
+                            &lt;li&gt;&lt;a href="#" title=""&gt;1-3選單&lt;/a&gt;
+                            ...
+                        &lt;/ul&gt;
+                    &lt;/a&gt;
+                &lt;li&gt;&lt;a href="#" title=""&gt;2-1選單
+                       &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="#" title=""&gt;2-1選單&lt;/a&gt;
+                            &lt;li&gt;&lt;a href="#" title=""&gt;2-2選單&lt;/a&gt;
+                            &lt;li&gt;&lt;a href="#" title=""&gt;2-3選單&lt;/a&gt;
+                            ...
+                        &lt;/ul&gt; 
+                    &lt;/a&gt;
+                &lt;li&gt;&lt;a href="#" title=""&gt;3-1選單&lt;/a&gt;
+             &lt;/ul&gt;
+                ...
+       &lt;/nav&gt;
+&lt;/section&gt;
+</code>
+</pre>
+            </div>
+                        <div class="sourcecode">
+                <pre class="language-scss">
+                                <code class="language-scss">
+$fatBgColor: #FFF;                        //fatFooter 底色
+$fatTextColor: #333;                      //fatFooter 連結顏色
+.FatFooter {
+//  @include make-fatfooter(欄位數,nav最大的寬度)
+    @include make-fatfooter(6,1000px);    //設定fatfooter欄，手機版預設隱藏
+}</code></pre>
+            </div>
+          
+            <h2>Fat-footer的Jquery設定</h2>
+            <div class="sourcecode">
+                <pre class="language-javascript">
+                                <code class="language-javascript">
+/*-----------------------------------*/
+/////////////fatfooter開關/////////////
+/*-----------------------------------*/
+$(document).ready(function() {
+    $(".btn-fatfooter").click(function() {
+        $('.fatfooter>nav>ul>li>ul').stop(true,true).slideToggle(function() {
+            if ($(this).is(':visible')) {
+                $(".btn-fatfooter").html("收合");
+                $(".btn-fatfooter").attr('name', '收合選單');
+            } else {
+                $(".btn-fatfooter").html("展開");
+                $(".btn-fatfooter").attr('name', '展開選單');
+            }
+        });
+        $(this).stop(true,true).toggleClass('close');
+    });
+});</code></pre>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/hyui.js"></script>
+<script>
+$(document).ready(function() {
+    $(".btn-fatfooter").click(function() {
+        $('.fatfooter>nav>ul>li>ul').stop(true, true).slideToggle(function() {
+            if ($(this).is(':visible')) {
+                $(".btn-fatfooter").html("收合");
+                $(".btn-fatfooter").attr('name', '收合選單');
+            } else {
+                $(".btn-fatfooter").html("展開");
+                $(".btn-fatfooter").attr('name', '展開選單');
+            }
+        });
+        $(this).stop(true, true).toggleClass('close');
+    });
+});
+</script>

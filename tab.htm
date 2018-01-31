@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="row">
+            <div class="left_nav"></div>
+            <!-- load menu.htm-->
+            <div class="content">
+                <div class="breadcrumb">
+                <a onclick="location.href='index.htm'">首頁</a><span>模組</span><span>tabs</span>
+            </div>
+                <h1>Tabs</h1>
+                <div class="path">檔案名稱：<span>sass/_tab.scss</span></div>
+                <p>tab模組可同時在同一頁面上設定多組且符合RWD，預設breakpoint為768px以下，tab模組會成垂直排列。使用方式如下方html所示，每一個tab外面設定<span class="hy">tabset</span>的div當作一組tab的獨立區塊。裡面設定之<span class="hy">class</span>皆為固定，請勿更動。如有多組視覺效果不同的tab，請在<span class="hy">tabs</span>後面自訂<span class="hy">class</span>，利用自訂的<span class="hy">class</span>來個別設定。</p>
+                <!-- demo Start -->
+                <div class="demo">
+                    <h2>第一組頁籤</h2>
+                    <div class="tabSet">
+                        <!--第一個頁籤組-->
+                        <section class="tabs">
+                            <h2><a title="" href="#">新聞稿</a></h2>
+                            <!--選到的頁籤項目-->
+                            <div class="tabContent">
+                                <ul>
+                                    <li><a href="#">新聞稿新聞稿新聞稿新聞稿新聞稿新聞稿新聞稿新聞稿新聞稿新聞稿新聞稿</a><span>105-03-25</span></li>
+                                    <li><a href="#">勞動部今(18)日召開基本工資工作小組第5次會議。</a><span>105-03-18</span></li>
+                                    <li><a href="#">雇主因業務緊縮實施優惠退休方案，勞工仍得請領失業給付。</a><span>105-03-18</span></li>
+                                    <li><a href="#">【澄清稿】勞動部回應勞工團體訴求，積極保障勞工退休金權益。</a><span>105-03-16</span></li>
+                                </ul>
+                                <div class="more"><a href="#">更多</a></div>
+                            </div>
+                            <h2 class="active"><a title="第一個頁籤組" href="#">第一個頁籤組</a></h2>
+                            <!--非選到的頁籤項目-->
+                            <div class="tabContent">
+                                <ul>
+                                    <li><a href="#">本部官網將於3月25日11時至13時暫停服務</a><span>105-03-24</span></li>
+                                    <li><a href="#">勞保局公布欠繳保費之職業工會名單，提醒勞工注意自身權益。</a><span>105-03-23</span></li>
+                                    <li><a href="#">104年12月身障定額進用不足額義務單位名單</a><span>105-03-21</span></li>
+                                    <li><a href="#">勞動部勞工保險局105年1月相關統計。</a><span>105-03-15</span></li>
+                                </ul>
+                                <div class="more"><a href="#">更多</a></div>
+                            </div>
+                            <h2><a title="活動訊息" href="#">活動訊息</a></h2>
+                            <div class="tabContent">
+                                <ul>
+                                    <li><a href="#">22「台灣就業通」2千多個45K以上高薪職缺，等你來投履歷。</a><span>105-03-25</span></li>
+                                    <li><a href="#">勞動部今(18)日召開基本工資工作小組第5次會議。</a><span>105-03-18</span></li>
+                                    <li><a href="#">雇主因業務緊縮實施優惠退休方案。</a><span>105-03-18</span></li>
+                                </ul>
+                                <div class="more"><a href="#">更多</a></div>
+                            </div>
+                            <h2><a title="字數特別特別長的頁籤項目" href="#">字數特別特別長的頁籤項目</a></h2>
+                            <div class="tabContent">
+                                <ul>
+                                    <li><a href="#">頁籤內容頁籤內容頁籤內容頁籤內容</a><span>105-03-25</span></li>
+                                    <li><a href="#">頁籤內容頁籤內容頁籤內容頁籤內容頁籤內容頁籤內容頁籤內容頁籤內容頁籤內容</a><span>105-03-25</span></li>
+                                    <li><a href="#">頁籤內容頁籤內容頁籤內容頁籤內容頁籤內容頁籤內容</a><span>105-03-25</span></li>
+                                    <li><a href="#">頁籤內容頁籤內容頁籤內容頁籤內容</a><span>105-03-25</span></li>
+                                    <li><a href="#">頁籤內容頁籤內容頁籤內容頁籤內容頁籤內容頁籤內容</a><span>105-03-25</span></li>
+                                </ul>
+                                <div class="more"><a href="#">更多</a></div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="tabSet">
+                        <!--第二個頁籤組-->
+                        <section class="tabs tabs2">
+                            <h2 class="active"><a title=第二個頁籤組"" href="#">第二個頁籤組</a></h2>
+                            <div class="tabContent">
+                                <ul>
+                                    <li><a href="#">新聞稿新聞稿新聞稿新聞稿新聞稿新聞稿新聞稿新聞稿新聞稿新聞稿新聞稿</a><span>105-03-25</span></li>
+                                    <li><a href="#">勞動部今(18)日召開基本工資工作小組第5次會議。</a><span>105-03-18</span></li>
+                                    <li><a href="#">雇主因業務緊縮實施優惠退休方案，勞工仍得請領失業給付。</a><span>105-03-18</span></li>
+                                </ul>
+                                <div class="more"><a href="#">更多</a></div>
+                            </div>
+                            <h2><a title="公佈欄" href="#">公佈欄</a></h2>
+                            <div class="tabContent">
+                                <ul>
+                                    <li><a href="#">本部官網將於3月25日11時至13時暫停服務</a><span>105-03-24</span></li>
+                                    <li><a href="#">勞保局公布欠繳保費之職業工會名單，提醒勞工注意自身權益。</a><span>105-03-23</span></li>
+                                    <li><a href="#">104年12月身障定額進用不足額義務單位名單</a><span>105-03-21</span></li>
+                                    <li><a href="#">勞動部勞工保險局105年1月相關統計。</a><span>105-03-15</span></li>
+                                    <li><a href="#">104年12月身障定額進用不足額義務單位名單</a><span>105-03-21</span></li>
+                                </ul>
+                                <div class="more"><a href="#">更多</a></div>
+                            </div>
+                            <h2><a title="活動訊息" href="#">活動訊息</a></h2>
+                            <div class="tabContent">
+                                <ul>
+                                    <li><a href="#">22「台灣就業通」2千多個45K以上高薪職缺，等你來投履歷。</a><span>105-03-25</span></li>
+                                    <li><a href="#">勞動部今(18)日召開基本工資工作小組第5次會議。</a><span>105-03-18</span></li>
+                                    <li><a href="#">雇主因業務緊縮實施優惠退休方案。</a><span>105-03-18</span></li>
+                                    <li><a href="#">【澄清稿】勞動部回應勞工團體訴求，積極保障勞工退休金權益。</a><span>105-03-16</span></li>
+                                </ul>
+                                <div class="more"><a href="#">更多</a></div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="sourcecode">
+                    <pre class="language-html">
+                <code class="language-html">
+&lt;div class="tabSet"&gt;
+    &lt;section class="tabs"&gt; &lt;!--可在此設定不同className --&gt;
+        &lt;h2&gt;&lt;a title="" href="#"&gt;第一個頁籤&lt;/a&gt;&lt;/h2&gt;
+        &lt;div class="tabContent"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-25&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-18&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-25&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-18&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-25&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class="more"&gt;&lt;a href="#"&gt;更多&lt;/a&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;h2 class="active"&gt;&lt;a title="選到的頁籤組" href="#"&gt;選到的頁籤組&lt;/a&gt;&lt;/h2&gt;
+        &lt;div class="tabContent"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-25&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-18&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-25&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-18&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-25&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class="more"&gt;&lt;a href="#"&gt;更多&lt;/a&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;h2 class="active"&gt;&lt;a title="第三個頁籤" href="#"&gt;第三個頁籤&lt;/a&gt;&lt;/h2&gt;
+        &lt;div class="tabContent"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-25&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-18&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-25&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-18&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-25&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class="more"&gt;&lt;a href="#"&gt;更多&lt;/a&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;h2 class="active"&gt;&lt;a title="第四個頁籤" href="#"&gt;第四個頁籤&lt;/a&gt;&lt;/h2&gt;
+        &lt;div class="tabContent"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-25&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-18&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-25&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-18&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;.....&lt;/a&gt;&lt;span&gt;105-03-25&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class="more"&gt;&lt;a href="#"&gt;更多&lt;/a&gt;&lt;/div&gt;
+        &lt;/div&gt;                   
+    &lt;/section&gt;
+&lt;/div&gt;
+</code>
+</pre>
+                </div>
+                <!-- demo End -->
+
+                <h2>Jquery設定</h2>
+                <div class="sourcecode">
+                    <pre class="language-javascript">
+                <code class="language-javascript">
+jQuery(document).ready(function() {
+    $(window).on('resize load', function(e) {
+        $('.tabs').find('.active').next('.tabContent').show();
+        var tw = $('.tabSet').width();
+        var tabItemHeight = $('.tabs>h2>a').innerHeight();
+        $('.tabs').find('.tabContent').css('top', tabItemHeight);
+        $('.tabSet').each(function() {
+            var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
+            var tabItemLength = $(this).find('h2').length; 
+            $(this).height(tabContentHeight + tabItemHeight); 
+            var tabWidth = Math.floor(tw / tabItemLength);
+            $(this).find('h2>a').width(tabWidth); 
+            console.log("tab寬度:"+tw);
+            console.log("h2:"+tabWidth);
+        });
+        $('.tabs>h2>a').focus(tabs);
+        $('.tabs>h2>a').click(tabs);
+        function tabs() {
+            $(this).parent('h2').siblings().removeClass('active'); 
+            $(this).parent('h2').addClass('active');
+            tabContentHeight = $(this).parent('h2').next('.tabContent').innerHeight();
+            $(this).parents('.tabSet').height(tabContentHeight + tabItemHeight);
+            return false;
+        }
+    });
+});
+</code>
+</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/hyui.js"></script>
+<script>
+jQuery(document).ready(function() {
+    $(window).on('resize load', function(e) {
+        $('.tabs').find('.active').next('.tabContent').show();
+        var tw = $('.tabSet').width();
+        var tabItemHeight = $('.tabs>h2>a').innerHeight();
+        $('.tabs').find('.tabContent').css('top', tabItemHeight);
+        $('.tabSet').each(function() {
+            var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
+            var tabItemLength = $(this).find('h2').length; 
+            $(this).height(tabContentHeight + tabItemHeight); 
+            var tabWidth = tw / tabItemLength*0.999;
+            //解決tab按鈕在resize會折行問題
+            $(this).find('h2>a').width(tabWidth); 
+            console.log("tab寬度:"+tw);
+            console.log("h2:"+tabWidth);
+        });
+        $('.tabs>h2>a').focus(tabs);
+        $('.tabs>h2>a').click(tabs);
+        function tabs() {
+            $(this).parent('h2').siblings().removeClass('active'); 
+            $(this).parent('h2').addClass('active');
+            tabContentHeight = $(this).parent('h2').next('.tabContent').innerHeight();
+            $(this).parents('.tabSet').height(tabContentHeight + tabItemHeight);
+            return false;
+        }
+    });
+});
+</script>

@@ -1,0 +1,33 @@
+<div class="container">
+<div class="logo">
+    <a href="index.htm"><img src="images/logo.png"></a>
+    </div>
+    <div class="update"></div>
+
+</div>
+<!-- <a href="#" class="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a> -->
+<script>
+$(function() {
+    // $('.update').html('UPDATE : 2017.05.03');// 每次更新都要更換日期
+    $('header').prepend('<a href="#" class="menu"><span></span><span></span><span></span></a>');
+    $('a.menu').on('click', function(e) {
+        $('.float_menu').fadeIn();
+        $('.overlay').fadeIn();
+        $('body').addClass('noscroll');
+        $(".left_nav>ul>li").hide();
+            $(".left_nav>ul>li").each(function(index) {
+             
+            $(this).delay(100 * index).fadeIn({
+                duration: 900,
+                easing: "easeOutQuart"
+            });
+            });
+        e.preventDefault();
+    });
+
+});
+</script>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="left_nav"></div>
+        <!-- load menu.htm-->
+        <div class="content">
+           <div class="breadcrumb">
+                <a onclick="location.href='index.htm'">首頁</a><span>網頁元素</span><span>tooltip</span>
+            </div>
+            <h1>Tooltip</h1>
+            <div class="path">檔案名稱：<span>sass/_tooltip.scss</span></div>
+            <p>表示小矩形快顯視窗 (Pop-Up Window)，它會在使用者將指標停留在控制項上時，顯示控制項用途的簡短說明。此用法不限用<span class="hy">div</span>、<span class="hy">span</span>、<span class="hy">em</span>、<span class="hy">a</span>...等tag，任何tag都可以使用<span class="hy">tooltip="xxxx"</span>，顯示方向指定下方<span class="hy">flow="down"</span>、左側<span class="hy">flow="left"</span>、右側<span class="hy">flow="right"</span>，如沒有指定就預設為上方顯示。</p>
+            <!-- demo Start -->
+            <div class="demo">
+                <div class="tooltip">
+                    <span tooltip="上方的tooltop說明文字上方的tooltop說明文字上方的tooltop說明文字上方的tooltop說明文字上方的tooltop說明文字上方的tooltop說明文字上方的tooltop說明文字上方的tooltop說明文字上方的tooltop說明文字上方的tooltop說明文字">上</span>
+                    <span tooltip="左方的tooltop說明文字" flow="down">下</span>
+                    <span tooltip="下方的tooltop說明文字" flow="left">左</span>
+                    <span tooltip="右方的tooltop說明文字" flow="right">右</span>
+                </div>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                <code class="language-html">
+&lt;span tooltip="上方的tooltop說明文字"&gt;上&lt;/span&gt;
+&lt;span tooltip="左方的tooltop說明文字" flow="down"&gt;下&lt;/span&gt;
+&lt;span tooltip="下方的tooltop說明文字" flow="left"&gt;左&lt;/span&gt;
+&lt;span tooltip="右方的tooltop說明文字" flow="right"&gt;右&lt;/span&gt;
+</code>
+</pre>
+            </div>
+            <!-- demo End -->
+            <!-- demo Start -->
+            <div class="demo">
+                <div class="tooltip">
+                    <p>遠一國是三演到邊合於同媽之係信政車時海深來里到氣……之一有拿計輕們年去區讀斷直論就找表落合方準……結天其始專動本大音節一別現分引，好經分；然理到我神界減竟，員資苦不再府當斯士由。的朋然。</p>
+                    <p>最病行狀什記。聲華呢代標實：能由重們之就己說且親之；<em tooltip="上方的tooltop說明文字">音易口風的事門於學有</em>，修灣時下的基我明著史房麼可實你感主其地飛歡小？極客就常全腦天面許其模大……一調他滿在，轉到願；氣開候多言印雖可買力行片愛子養？現對日！個落出星慢不下預平北家？用中不新過不石到各風講都給報：歡使平仍走得升兒使帶年媽出管李決道，故在些，這須子了物鄉發能做候，速你可市看是……提記他著就密馬，寫這正世工臺規而許做死外題頭，速大形第地行電，達日海，科狀同。出內活時聞地手期出像花國眼為經制，明往備作的市想了無花多持經性城有文現，種車起臺子模起價要空的腳子以灣議自接了里始名！一英麼的就滿春資上上地是為庭：見加院中應用而站數？變完政條任子靈他和我高而，平因題令下！下市學資熱食色體古別作自滿。</p>
+                </div>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                <code class="language-html">
+....xxxx&lt;em tooltip="上方的tooltop說明文字"&gt;音易口風的事門於學有&lt;/em&gt;xxxx....
+</code>
+</pre>
+            </div>
+            <!-- demo End -->
+        </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/hyui.js"></script>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="left_nav"></div>
+        <!-- load menu.htm-->
+        <div class="content">
+            <div class="breadcrumb">
+                <a onclick="location.href='index.htm'">首頁</a><span>模組</span><span>tabs</span>
+            </div>
+            <h1>Tabs</h1>
+            <div class="path">檔案名稱：<span>sass/_tabs.scss</span></div>
+            <!-- demo Start -->
+            <div class="demo">
+                <div class="tabSet">
+                    <section class="tabs example-1">
+                        <h2 class="active"><a href="#">第一個頁籤</a></h2>
+                        <!--選到的頁籤項目-->
+                        <div class="tabContent">
+                            <ul>
+                                <li><a href="#">1第一則消息消息消息消息消息消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第二則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第三則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第四則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第五則消息</a><span>107-01-01</span></li>
+                            </ul>
+                            <div class="more"><a href="#">更多</a></div>
+                        </div>
+                        <h2><a href="#">第二個頁籤</a></h2>
+                        <div class="tabContent">
+                            <ul>
+                                <li><a href="#">2第一則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第二則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第三則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第四則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第五則消息</a><span>107-01-01</span></li>
+                            </ul>
+                            <div class="more"><a href="#">更多</a></div>
+                        </div>
+                        <h2><a href="#">第三個頁籤</a></h2>
+                        <div class="tabContent">
+                            <ul>
+                                <li><a href="#">3第一則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第二則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第三則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第四則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第五則消息</a><span>107-01-01</span></li>
+                            </ul>
+                            <div class="more"><a href="#">更多</a></div>
+                        </div>
+                        <h2><a href="#">第四個頁籤</a></h2>
+                        <div class="tabContent">
+                            <ul>
+                                <li><a href="#">4第一則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第二則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第三則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第四則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第五則消息</a><span>107-01-01</span></li>
+                            </ul>
+                            <div class="more"><a href="#">更多</a></div>
+                        </div>
+                    </section>
+                </div>
+                <div class="tabSet">
+                    <section class="tabs example-2">
+                        <h2 class="active"><a href="#">第一個頁籤</a></h2>
+                        <!--選到的頁籤項目-->
+                        <div class="tabContent">
+                            <ul>
+                                <li><a href="#">1第一則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第二則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第三則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第四則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第五則消息</a><span>107-01-01</span></li>
+                            </ul>
+                            <div class="more"><a href="#">更多</a></div>
+                        </div>
+                        <h2><a href="#">第二個頁籤</a></h2>
+                        <div class="tabContent">
+                            <ul>
+                                <li><a href="#">2第一則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第二則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第三則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第四則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第五則消息</a><span>107-01-01</span></li>
+                            </ul>
+                            <div class="more"><a href="#">更多</a></div>
+                        </div>
+                        <h2><a href="#">第三個頁籤</a></h2>
+                        <div class="tabContent">
+                            <ul>
+                                <li><a href="#">3第一則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第二則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第三則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第四則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第五則消息</a><span>107-01-01</span></li>
+                            </ul>
+                            <div class="more"><a href="#">更多</a></div>
+                        </div>
+                        <h2><a href="#">第四個頁籤</a></h2>
+                        <div class="tabContent">
+                            <ul>
+                                <li><a href="#">4第一則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第二則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第三則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第四則消息</a><span>107-01-01</span></li>
+                                <li><a href="#">第五則消息</a><span>107-01-01</span></li>
+                            </ul>
+                            <div class="more"><a href="#">更多</a></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                <code class="language-html">
+&lt;div class=&quot;tabSet&quot;&gt;
+    &lt;section class=&quot;tabs example-1&quot;&gt;
+    &lt;!--可以在此設定第二組className ，以設定不同風格--&gt;
+        &lt;h2 class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;第一個頁籤&lt;/a&gt;&lt;/h2&gt;
+        &lt;!--選到的頁籤項目--&gt;
+        &lt;div class=&quot;tabContent&quot;&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class=&quot;more&quot;&gt;&lt;a href=&quot;#&quot;&gt;更多&lt;/a&gt;&lt;/div&gt;
+        &lt;/div&gt;
+         &lt;h2 &gt;&lt;a href=&quot;#&quot;&gt;第二個頁籤&lt;/a&gt;&lt;/h2&gt;
+        &lt;div class=&quot;tabContent&quot;&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class=&quot;more&quot;&gt;&lt;a href=&quot;#&quot;&gt;更多&lt;/a&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;h2 &gt;&lt;a href=&quot;#&quot;&gt;第三個頁籤&lt;/a&gt;&lt;/h2&gt;
+        &lt;div class=&quot;tabContent&quot;&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class=&quot;more&quot;&gt;&lt;a href=&quot;#&quot;&gt;更多&lt;/a&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;h2 &gt;&lt;a href=&quot;#&quot;&gt;第四個頁籤&lt;/a&gt;&lt;/h2&gt;
+        &lt;div class=&quot;tabContent&quot;&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class=&quot;more&quot;&gt;&lt;a href=&quot;#&quot;&gt;更多&lt;/a&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/div&gt;
+</code>
+</pre>
+            </div>
+            <!-- demo End -->
+            <div class="sourcecode">
+                <pre class="language-scss">
+                                <code class="language-scss">
+.tabSet {
+    max-width: 90%;
+    margin: 20px auto;
+    background: #f3f3f3;
+    overflow: hidden;
+    @include clearfix();
+    @include box-shadow(rgba(0, 0, 0, .3) 0 2px 12px);
+    @include screen('(max-width:767px)') {
+        max-width: 100%;
+        width: auto;
+        height: auto !important;
+    }
+}
+.tabs {
+    position: relative;
+    @include screen('(max-width:767px)') {
+        position: relative;
+    }
+    &>h2 {
+        @include box-sizing();
+        &.active>a {
+            background-color: $primaryColor;
+            color: #FFF;
+        }
+        float: left;
+        font-size: 1em;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        font-weight: normal;
+        @include screen('(max-width:767px)') {
+            float: none;
+            &>a {
+                width: 100% !important;
+                border-bottom: 1px solid #888;
+            }
+            &.active>a {
+                border-color: #bbb;
+            }
+        }
+        &>a {
+            display: block;
+            padding: 16px 0 14px;
+            text-align: center;
+            background-color: #aaa;
+            color: #fff;
+            text-decoration: none;
+            @include text-overflow();
+            @include box-sizing();
+            &:hover {
+                background: $primaryColor;
+            }
+        }
+    }
+}
+//多組 可設定差異
+.example-2 {
+    h2>a:hover {
+        background: $secondaryColor;
+    }
+    h2.active>a {
+        background: $secondaryColor;
+    }
+}
+// 顯示content
+.active+.tabContent {
+    display: block;
+}
+
+.tabContent {
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    clear: both;
+    padding: 30px 20px;
+    display: none;
+    @include screen('(max-width:767px)') {
+        position: static;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin: 0 0 1.3em 0;
+        padding: 0;
+        border-bottom: 1px #999 dashed;
+        @include screen('(max-width:767px)') {
+            @include text-overflow();
+        }
+
+        span {
+            display: inline-block;
+            margin: 0 0 0 1em;
+            font-size: .813em;
+            color: #666;
+        }
+    }
+    .more {
+        text-align: right;
+        @include screen('(max-width:767px)') {
+            text-align: center;
+        }
+        a {
+            display: inline-block;
+            background: $color-gray;
+            color: #FFF;
+            width: auto;
+            font-size: .813em;
+            padding: .5em 2em;
+            @include border-radius(4px);
+            @include transition(all, .3s, ease-out);
+            &:hover,
+            &:focus {
+                background: darken($color-gray, 10);
+            }
+        }
+    }
+}</code></pre>
+            </div>
+            <!-- JS設定 -->
+            <h2>JQuery設定</h2>
+            <div class="sourcecode">
+                <pre class="language-javascript">
+                            <code class="language-javascript">
+$(function() {
+    $('.tabs').find('.active').next('.tabContent').show();
+    var tw = $('.tabSet').width();
+    var tabItemHeight = $('.tabs>h2>a').innerHeight();
+    $('.tabs').find('.tabContent').css('top', tabItemHeight);
+
+    $('.tabSet').each(function() {
+        var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
+        var tabItemLength = $(this).find('h2').length;
+        $(this).height(tabContentHeight + tabItemHeight);
+        $(this).find('h2>a').width(tw / tabItemLength);
+    });
+    function tabs() {
+        $('.tabs').find('.active').next('.tabContent').show();
+        var tabItemHeight = $('.tabs>h2>a').innerHeight();
+        $('.tabs').find('.tabContent').css('top', tabItemHeight);
+        $('.tabSet').each(function() {
+            tw = $(this).width();
+            var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
+            var tabItemLength = $(this).find('h2').length;
+            $(this).height(tabContentHeight + tabItemHeight);
+            var tabWidth = tw / tabItemLength;
+            $(this).find('h2>a').width(tabWidth);
+        });
+        $(this).parent('h2').siblings().removeClass('active');
+        $(this).parent('h2').addClass('active');
+        tabContentHeight = $(this).parent('h2').next('.tabContent').innerHeight();
+        $(this).parents('.tabSet').height(tabContentHeight + tabItemHeight);
+        return false;
+    }
+    $('.tabs>h2>a').focus(tabs);
+    $('.tabs>h2>a').click(tabs);
+    $(window).on("load resize", function(e) {
+        tabs();
+    });
+});</code></pre>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/hyui.js"></script>
+<script>
+$(function() {
+    $('.tabs').find('.active').next('.tabContent').show();
+    var tw = $('.tabSet').width();
+    var tabItemHeight = $('.tabs>h2>a').innerHeight();
+    $('.tabs').find('.tabContent').css('top', tabItemHeight);
+
+    $('.tabSet').each(function() {
+        var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
+        var tabItemLength = $(this).find('h2').length;
+        $(this).height(tabContentHeight + tabItemHeight);
+        $(this).find('h2>a').width(tw / tabItemLength);
+    });
+    function tabs() {
+        $('.tabs').find('.active').next('.tabContent').show();
+        var tabItemHeight = $('.tabs>h2>a').innerHeight();
+        $('.tabs').find('.tabContent').css('top', tabItemHeight);
+        $('.tabSet').each(function() {
+            tw = $(this).width();
+            var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
+            var tabItemLength = $(this).find('h2').length;
+            $(this).height(tabContentHeight + tabItemHeight);
+            var tabWidth = Math.floor(tw / tabItemLength);
+            $(this).find('h2>a').width(tabWidth);
+        });
+        $(this).parent('h2').siblings().removeClass('active');
+        $(this).parent('h2').addClass('active');
+        tabContentHeight = $(this).parent('h2').next('.tabContent').innerHeight();
+        $(this).parents('.tabSet').height(tabContentHeight + tabItemHeight);
+        return false;
+    }
+    $('.tabs>h2>a').focus(tabs);
+    $('.tabs>h2>a').click(tabs);
+    $(window).on("load resize", function(e) {
+        tabs();
+    });
+});
+</script>

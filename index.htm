@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="left_nav"></div>
+        <!-- load menu.htm-->
+        <div class="content">
+            <h1>HyUI Kit使用說明</h1>
+
+<div class="sourcecode">
+                <pre class="language-html">
+                    <code class="language-html">
+                        &lt;!-- HTML meta 設定（必填） --&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;因應行動裝置普及的時代來臨，打造可以 Responsive 的 Table Layout.&quot;&gt;
+    &lt;meta name=&quot;keywords&quot; content=&quot;Responsive,Table,CSS,Display.&quot; /&gt;
+    &lt;meta name=&quot;URL&quot; content=&quot;http://lab.25sprout.com/responsive_table/&quot;&gt;
+    &lt;meta name=&quot;image&quot; content=&quot;http://lab.25sprout.com/responsive_table/images/share.jpg&quot; /&gt;
+
+    &lt;!--Facebook --&gt;
+    &lt;meta property=&quot;og:locale&quot; content=&quot;zh_TW&quot; /&gt;
+    &lt;meta property=&quot;og:url&quot; content=&quot;http://lab.25sprout.com/responsive_table/&quot; /&gt;
+    &lt;meta property=&quot;og:type&quot; content=&quot;Website&quot; /&gt;
+    &lt;meta property=&quot;og:description&quot; content=&quot;因應行動裝置普及的時代來臨，打造可以 Responsive 的 Table Layout.&quot; /&gt;
+    &lt;meta property=&quot;og:image&quot; content=&quot;http://lab.25sprout.com/responsive_table/images/share.jpg&quot; /&gt;
+                    </code>
+                </pre>
+            </div>
+
+            <div class="sourcecode">
+                <pre class="language-html">
+                    <code class="language-html">
+├── css/
+│   ├── customize.css 客製CSS
+│   └── slick-slide.css
+├── js/
+│   └── customize_scripts.js <span class="red">客製js</span>
+├── assets/
+│   ├── css/
+│   │   ├── bootstrap.offcanvas.css Sidebar選單
+│   │   └── megamenu.css
+│   ├── js/
+│   │   ├── jquery-1.11.2.js
+│   │   ├── bootstrap.offcanvas.jsSidebar選單
+│   │   └── jquery.scrollUp.jsscrollUp功能，樣式請於customize.css 客製#scrollUp設定
+│   └── module/
+│   │   ├── bootstrap 如果無法使用CDN，請上網自行下載bootstrap3.2以上的新版本
+│   │   ├── fontello 字型icon
+│   │   ├── fullcalendar-2.3.1 行事曆
+│   └── └── slick 輪播
+├── images/
+└── sass/
+                    </code>
+                </pre>
+            </div>
+            <p>足書同大：<code class="language-html">&lt;h1&gt;標題aaa一&lt;/h1&gt;</code> 身上好是。查自是友我理排認少總最南造。作帶差邊最大初有品談紅古任議育室，現化母象書力自管兒人質要多道信發海寶驚，量動河一還是日前民！多命極自道節任漸充標備叫，像一陽我以開影香少色望定用人把年高當樣示公不有兩書另、音布四親何向一已保種或到草內當士把超由奇土也孩布識；質我灣年廣、大視加人電地治是多會全教就底經包故發清的紙主和力紅的有都營不往請際時入的不做終角料護天張極希新……演們的區我，老可絕人、把升具如都土人家職達始面對
+                <code class="language-html">&lt;nav class="navbar navbar-default megamenu" role="navigation"&gt;</code> 那演人陽想不。
+            </p>
+            <div class="sourcecode">
+                <pre class="language-scss">
+                    <code class="language-scss">
+ul {
+    width:600px;
+    display: block;
+    margin: 0px auto;
+    overflow:hidden;
+}
+ul li {
+    display: inline-block;
+    width: 90px;
+    height: 25px;
+}
+ul li a {
+    display: block;
+    padding: 15px 5px;
+    background: #FFF;
+    border: 1px solid #666;
+    text-align: center;
+}</code>
+        </pre>
+            </div>
+        </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/hyui.js"></script>
