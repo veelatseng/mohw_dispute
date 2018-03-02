@@ -17,7 +17,6 @@ $color-yellow: 				#ffbe00;
 $color-purple: 				#aa5ac5;
 $hrColor:					#666;		  			 //hr顏色
 $color-word:				#333;
-
 // 連結顏色
 $aColor:					darken($primaryColor,10);
 $aHover:					darken($primaryColor,20);
@@ -36,10 +35,19 @@ $grid-columns:              12 !default;			   //格線欄位數
 $grid-gutter-width:         30px !default;			   //左右padding
 
 //mediaquery
-$screen-xs:                 576px !default;			   //極小尺寸
+$screen-xs:                 480px !default;			   //極小尺寸
 $screen-sm:                 768px !default;            //手機 
 $screen-md:                 992px !default;            //平板
 $screen-lg:                 1200px !default;           //pc
+
+//-------------------------------------------------------------客製化------//
+
+// 圖片
+$rounded-angle:             16px;					   //圖片導角
+
+
+
+
 
 
 

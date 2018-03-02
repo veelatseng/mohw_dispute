@@ -6,12 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HyUI kit</title>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <![endif]-->
     <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
     <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
     <link rel="stylesheet" href="css/guide.css">
@@ -34,6 +32,26 @@
             <h2>【多圖】相簿列表排列與圖片比例</h2>
             <p>大部分情況下，相簿列表封面套用object-fit的設定以符合圖檔滿版的視覺效果，因此提供此相簿封面快速的SASS以及Jquery設定，html結構沒有固定結構，只須注意<span class="hy">imgOuter</span>與<span class="hy">img</span>的相對結構即可。</p>
             <p><span class="hy">imgOuter</span>為目前設定之classname，如需更動，請注意JS的selector也要相對應。</p>
+            <div class="demo pic_list">
+                <div class="hy-3">
+                <img src="https://assets.imgix.net/unsplash/bear.jpg?fit=min&h=240&w=240&usm=10&fm=pjpg&q=80" alt="">
+                </div>
+                <div class="hy-3">
+                <img src="https://assets.imgix.net/unsplash/bear.jpg?fit=min&h=240&w=240&usm=10&fm=pjpg&q=80" alt="" class="img_circle">
+                <span>class="img_circle"</span>
+            </div>
+            <div class="hy-3">
+                <img src="https://assets.imgix.net/unsplash/bear.jpg?fit=min&h=240&w=240&usm=10&fm=pjpg&q=80" alt="" class="img_rounded">
+                <span>class="img_rounded"</span>
+                </div>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                        <code class="language-html">
+&lt;img src=&quot;...&quot; alt=&quot;&quot;&gt;
+&lt;img src=&quot;...&quot; alt=&quot;&quot; class=&quot;img_circle&quot;&gt;
+&lt;img src=&quot;...&quot; alt=&quot;&quot; class=&quot;img_rounded&quot;&gt;//可用變數控制導角數值</code></pre>
+            </div>
             <div class="demo pic_list">
                 <div class="imgOuter"><img src="https://assets.imgix.net/unsplash/mountains.jpg?w=800&auto=compress" alt=""></div>
                 <div class="imgOuter"><img src="https://assets.imgix.net/unsplash/transport.jpg?w=800&auto=compress" alt=""></div>

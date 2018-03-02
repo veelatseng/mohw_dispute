@@ -1,0 +1,11 @@
+.lp{
+	table{
+		td{
+			text-align: left;
+			&.date{
+				text-align:center;
+				color:#666;
+			}
+		}
+	}
+}

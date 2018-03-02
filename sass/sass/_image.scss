@@ -1,7 +1,9 @@
 img {
-
-    &.border-radius {
-        @include border-radius(4px);
+    &.img_rounded {                            //導角，可自訂
+        @include border-radius($rounded-angle);
+    }
+    &.img_circle{                              //圓形
+        @include border-radius(50%);
     }
 }
 

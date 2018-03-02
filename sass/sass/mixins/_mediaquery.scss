@@ -1,9 +1,9 @@
 //http://w3bits.com/sass-mixins/
 @mixin screen($size) {
-  $desktop:     "(min-width: #{$screen-lg})";
-  $notebook:    "(min-width: #{$screen-md})";
-  $tablet:      "(min-width: #{$screen-sm})";
-  $mobile:      "(min-width: #{$screen-xs})";
+  $desktop:     "(max-width: #{$screen-lg})";
+  $notebook:    "(max-width: #{$screen-md})";
+  $tablet:      "(max-width: #{$screen-sm})";
+  $mobile:      "(max-width: #{$screen-xs})";
   $xs_mobile:   "(max-width: #{$screen-xs-mobile-max})";
   @if $size == desktop {
     @media screen and #{$desktop} {

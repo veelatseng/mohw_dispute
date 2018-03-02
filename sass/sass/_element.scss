@@ -1,8 +1,9 @@
 @import "compass";
 // img
-img.img-responsive{
+img.img-responsive {
     @include img-responsive();
 }
+
 .tooltip {
     text-align: center;
     padding: 40px 0;
@@ -33,33 +34,35 @@ img.img-responsive{
 }
 
 
+
 /*檔案下載*/
 
 .file_download {
-   @include clearfix();
+    width: 100%;
+    margin: 0 auto;
+    @include clearfix();
     h3 {
-        color: #333;
+        font-size:1.5em;
         padding: 12px 0px 15px 0px;
         margin: 0.5em 0px 0.2em;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid $primaryColor;
     }
     ul {
         padding-left: 1em;
         margin-left: 1em;
-        @media screen and (max-width: 767px){
+        @media screen and (max-width: 767px) {
             margin-left: 0;
         }
     }
     li {
         list-style: decimal;
         list-style-position: outside;
-     	margin:0 0 10px 10px;
-        // display: block;
+        margin: 0 0 10px 10px; // display: block;
         position: relative;
-        border-bottom: 1px dotted #CCC;
+        border-bottom: 1px solid #EEE;
         .update,
         .file_view {
-            font-size: .938em;
+            font-size: .813em;
             color: #AAA;
             width: 100px;
             float: right;
@@ -67,17 +70,17 @@ img.img-responsive{
             @media screen and (max-width: 767px) {
                 display:inline-block;
                 float: none;
-                width:auto;
+                width: auto;
                 margin-top: 0;
             }
             @include screen('xs_mobile') {
-                display:none;
+                display: none;
             }
         }
         .update {
             width: 150px;
-            @media screen and (max-width: 767px){
-             margin-left: 45px;   
+            @media screen and (max-width: 767px) {
+                margin-left: 5px;
             }
         }
         a {
@@ -87,15 +90,18 @@ img.img-responsive{
             height: auto;
             line-height: 1.45em;
             display: inline-block;
+            width:45%;
+            @include text-overflow;
             @media screen and (max-width: 767px) {
                 margin-right: 0px;
-                display:block;
-            } 
-            .kb{
-                font-size:.75em;
-                color:#666;
-                display:inline-block;
-                margin:0px .5em;
+                // display: block;
+                width:85%;
+            }
+            .kb {
+                font-size: .75em;
+                color: #666;
+                display: inline-block;
+                margin: 0px .5em;
             }
             &:before {
                 content: "";
@@ -145,5 +151,34 @@ img.img-responsive{
             }
         }
     }
+} // 外部連結
+.web_link {
+    width: 100%;
+    margin: 0 auto;
+    @include clearfix();
+    h3 {
+        font-size:1.5em;
+        padding: 12px 0px 15px 0px;
+        margin: 0.5em 0px 0.2em;
+        border-bottom: 1px solid $primaryColor;
+    }
+    ol,
+    ul {
+        padding-left: 1em;
+        margin-left: 1em;
+        @media screen and (max-width: 767px) {
+            margin-left: 0;
+        }
+    }
+    li {
+        list-style: decimal;
+        list-style-position: outside;
+        margin: 0 0 10px 10px;
+        line-height: 1.6em;
+        position: relative;
+        border-bottom: 1px solid #EEE;
+        a {
+            display: block;
+        }
+    }
 }
-

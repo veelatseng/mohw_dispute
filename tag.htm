@@ -25,59 +25,36 @@
         <!-- load menu.htm-->
         <div class="content">
             <div class="breadcrumb">
-                <a onclick="location.href='index.htm'">首頁</a><span>模組</span><span>modal</span>
+                <a onclick="location.href='index.htm'">首頁</a><span>模組</span><span>tag</span>
             </div>
-            <h1>Modal</h1>
-            <div class="path">檔案名稱：<span>sass/_modal.scss</span></div>
+            <h1>Tag</h1>
+            <div class="path">檔案名稱：<span>sass/_tag.scss</span></div>
             <!-- demo Start -->
             <div class="demo">
-                <div class="btn_grp">
-                    <button type="button" id="openModal" class="btn">開啟視窗</button>
-                </div>
+                    <div class="tag">
+                        <a href="javascipt:;">標籤1</a>
+                        <a href="javascipt:;">標籤2</a>
+                        <a href="javascipt:;">標籤3</a>
+                        <a href="javascipt:;">標籤4</a>
+                        <a href="javascipt:;">標籤5</a>
+                        <a href="javascipt:;">標籤6</a>
+                        <a href="javascipt:;">標籤7</a>
+                        <a href="javascipt:;">標籤8</a>
+                    </div>
             </div>
             <div class="sourcecode">
                 <pre class="language-html">
                 <code class="language-html">
-//按鈕
-&lt;button type="button" id="openModal" class="btn"&gt;開啟視窗&lt;/button&gt;
-//視窗
-&lt;div id="modal1" class="modal"&gt;
-    // div內的內容可以自行設定
-    &lt;h2&gt;標題&lt;/h2&gt;
-    &lt;p&gt;內文&lt;/p&gt;
+&lt;div class="tag"&gt;
+    &lt;a href="javascipt:;"&gt;標籤1&lt;/a&gt;
+    &lt;a href="javascipt:;"&gt;標籤2&lt;/a&gt;
+    &lt;a href="javascipt:;"&gt;標籤3&lt;/a&gt;
+    &lt;a href="javascipt:;"&gt;標籤4&lt;/a&gt;
+    &lt;a href="javascipt:;"&gt;標籤5&lt;/a&gt;
+    &lt;a href="javascipt:;"&gt;標籤6&lt;/a&gt;
+    &lt;a href="javascipt:;"&gt;標籤7&lt;/a&gt;
+    &lt;a href="javascipt:;"&gt;標籤8&lt;/a&gt;
 &lt;/div&gt;
-</code>
-</pre>
-            </div>
-            <h3>JQUERY設定</h3>
-            <div class="sourcecode">
-                <pre class="language-javascript">
-                <code class="language-javascript">
-/*-----------------------------------*/
-/////////////modal設定/////////////
-/*-----------------------------------*/
-$(function() {
-    $('#modal1').hide();                                                                //先隱藏視窗
-    $('.modal').after('&lt;div class="modal_overlay"&gt;&lt;/div&gt;');                             //新增透明底
-    $('.modal').prepend('&lt;button type="button" class="close"&gt;關閉&lt;/button&gt;');           //新增關閉按鈕
-    $('.modal_overlay').hide();                                                         //隱藏透明底
-    //按鈕動作
-    $('#openModal').click(function(e) {
-        $('#modal1').show();
-        $('.modal_overlay').show();
-        $('body').addClass('noscroll');
-        e.preventDefault();
-    });
-    //關閉function
-    function closeModal(){
-        $('#modal1').hide();
-       $('.modal_overlay').hide();
-    }
-    //點選關閉按鈕及透明底都可關閉
-    $('.modal_overlay').click(closeModal);
-    $('.modal .close').click(closeModal);
-
-});
 </code>
 </pre>
             </div>
@@ -92,6 +69,7 @@ $(function() {
     <h2>標題</h2>
     <p>內文</p>
 </div>
+
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
@@ -109,12 +87,14 @@ $(function() {
         $('body').addClass('noscroll');
         e.preventDefault();
     });
-    function closeModal(){
+
+    function closeModal() {
         $('#modal1').hide();
-       $('.modal_overlay').hide();
+        $('.modal_overlay').hide();
     }
     $('.modal_overlay').click(closeModal);
     $('.modal .close').click(closeModal);
 
 });
+
 </script>
