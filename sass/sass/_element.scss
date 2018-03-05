@@ -3,7 +3,10 @@
 img.img-responsive {
     @include img-responsive();
 }
-
+.necessary{
+    color:red;
+    margin:0px .2em;
+}
 .tooltip {
     text-align: center;
     padding: 40px 0;
@@ -35,6 +38,7 @@ img.img-responsive {
 
 
 
+
 /*檔案下載*/
 
 .file_download {
@@ -42,23 +46,23 @@ img.img-responsive {
     margin: 0 auto;
     @include clearfix();
     h3 {
-        font-size:1.5em;
+        font-size: 1.5em;
         padding: 12px 0px 15px 0px;
         margin: 0.5em 0px 0.2em;
         border-bottom: 1px solid $primaryColor;
     }
     ul {
-        padding-left: 1em;
+        counter-reset: counter;
+        list-style-type: none;
+        padding: 0;
         margin-left: 1em;
         @media screen and (max-width: 767px) {
             margin-left: 0;
         }
     }
     li {
-        list-style: decimal;
-        list-style-position: outside;
-        margin: 0 0 10px 10px; // display: block;
         position: relative;
+        margin-bottom: 10px;
         border-bottom: 1px solid #EEE;
         .update,
         .file_view {
@@ -84,18 +88,25 @@ img.img-responsive {
             }
         }
         a {
-            position: relative;
-            padding: .2em 0px .2em 45px;
+            padding: .2em 0px .2em 65px;
             position: relative;
             height: auto;
             line-height: 1.45em;
             display: inline-block;
-            width:45%;
+            width: 45%;
             @include text-overflow;
+            &:before {
+                position: absolute; // outline: 1px solid red;
+                top: 5px;
+                left: 0px;
+                text-align: right;
+                width: 30px;
+                counter-increment: counter;
+                content: counters(counter, ".") " . ";
+            }
             @media screen and (max-width: 767px) {
-                margin-right: 0px;
-                // display: block;
-                width:85%;
+                margin-right: 0px; // display: block;
+                width: 85%;
             }
             .kb {
                 font-size: .75em;
@@ -103,46 +114,47 @@ img.img-responsive {
                 display: inline-block;
                 margin: 0px .5em;
             }
-            &:before {
+            &:after {
                 content: "";
                 background: url(../images/basic/icon_other.jpg);
                 width: 21px;
                 height: 24px;
                 position: absolute;
                 top: 2px;
-                left: 10px;
+                left: 35px;
+                text-align: right;
             }
-            &[href$="doc"]:before {
+            &[href$="doc"]:after {
                 background: url(../images/basic/icon_doc.jpg);
             }
-            &[href$="odf"]:before {
+            &[href$="odf"]:after {
                 background: url(../images/basic/icon_odf.jpg);
             }
-            &[href$="pdf"]:before {
+            &[href$="pdf"]:after {
                 background: url(../images/basic/icon_pdf.jpg);
             }
-            &[href$="xls"]:before {
+            &[href$="xls"]:after {
                 background: url(../images/basic/icon_xls.jpg);
             }
-            &[href$="ppt"]:before {
+            &[href$="ppt"]:after {
                 background: url(../images/basic/icon_ppt.jpg);
             }
-            &[href$="jpg"]:before {
+            &[href$="jpg"]:after {
                 background: url(../images/basic/icon_jpg.jpg);
             }
-            &[href$="mp3"]:before {
+            &[href$="mp3"]:after {
                 background: url(../images/basic/icon_mp3.jpg);
             }
-            &[href$="mov"]:before {
+            &[href$="mov"]:after {
                 background: url(../images/basic/icon_mov.jpg);
             }
-            &[href$="txt"]:before {
+            &[href$="txt"]:after {
                 background: url(../images/basic/icon_txt.jpg);
             }
-            &[href$="dot"]:before {
+            &[href$="dot"]:after {
                 background: url(../images/basic/icon_doc.jpg);
             }
-            &[href$="zip"]:before {
+            &[href$="zip"]:after {
                 background: url(../images/basic/icon_zip.jpg);
             }
             &:hover,
@@ -157,28 +169,40 @@ img.img-responsive {
     margin: 0 auto;
     @include clearfix();
     h3 {
-        font-size:1.5em;
+        font-size: 1.5em;
         padding: 12px 0px 15px 0px;
         margin: 0.5em 0px 0.2em;
         border-bottom: 1px solid $primaryColor;
     }
     ol,
     ul {
-        padding-left: 1em;
+        counter-reset: counter;
+        list-style-type: none;
+        padding: 0;
         margin-left: 1em;
         @media screen and (max-width: 767px) {
             margin-left: 0;
         }
     }
     li {
-        list-style: decimal;
-        list-style-position: outside;
-        margin: 0 0 10px 10px;
-        line-height: 1.6em;
         position: relative;
+        margin-bottom: 10px;
         border-bottom: 1px solid #EEE;
         a {
+            padding: .2em 0px .2em 35px;
+            position: relative;
+            height: auto;
+            line-height: 1.45em;
             display: block;
+            &:before {
+                position: absolute; // outline: 1px solid red;
+                top: 5px;
+                left: 0px;
+                text-align: right;
+                width: 30px;
+                counter-increment: counter;
+                content: counters(counter, ".") " . ";
+            }
         }
     }
 }

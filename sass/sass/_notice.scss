@@ -1,6 +1,6 @@
 //https://isabelcastillo.com/error-info-messages-css
 *[class^="notice"] {
-    padding: .75em 2em .75em 2em;
+    padding: .4em 2em .4em 2em;
     display: block;
     font-size: .938em;
     margin: .2em 0;
@@ -14,7 +14,7 @@
     @include border-radius(4px);
     &:before{
     	position:absolute;
-    	top:1em;
+    	top:.7em;
     	left:.5em;
     	display:block;
     	vertical-align: middle;
@@ -29,7 +29,7 @@
     	position:absolute;
     	width:12px;
     	height: 12px;
-    	top:.8em;
+    	top:.4em;
     	right:1em;
     	@include opacity(.5);
     	&:hover,&:focus{

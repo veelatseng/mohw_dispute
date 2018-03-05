@@ -1,0 +1,8 @@
+.qp{
+	max-width:800px;
+	margin: 1em auto;
+	background:#F2F2F2;
+	@include border-radius(8px);
+	@include box-sizing;
+	padding:1em;
+}

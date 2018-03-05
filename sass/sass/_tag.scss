@@ -1,6 +1,8 @@
 .tag{
 	text-align: left;
 	overflow:hidden;
+	@include box-sizing;
+	margin:1em auto;
 	a{
 		background:$primaryColor;
 		padding:.4em 1em;

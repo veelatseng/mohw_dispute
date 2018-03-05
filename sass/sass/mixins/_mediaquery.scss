@@ -1,10 +1,12 @@
 //http://w3bits.com/sass-mixins/
+//mediaquery
+$screen-lg-minWidth:$screen-lg -1;
 @mixin screen($size) {
-  $desktop:     "(max-width: #{$screen-lg})";
-  $notebook:    "(max-width: #{$screen-md})";
-  $tablet:      "(max-width: #{$screen-sm})";
-  $mobile:      "(max-width: #{$screen-xs})";
-  $xs_mobile:   "(max-width: #{$screen-xs-mobile-max})";
+  $desktop:     "(min-width: #{$screen-lg})";               // max-width大於1400px
+  $notebook:    "(max-width: #{$screen-lg-minWidth})";      // max-width小於1399px
+  $tablet:      "(max-width: #{$screen-md})";               // max-width小於992px
+  $mobile:      "(max-width: #{$screen-sm})";               // max-width小於768px
+  $xs_mobile:   "(max-width: #{$screen-xs})";               // max-width小於576px
   @if $size == desktop {
     @media screen and #{$desktop} {
       @content;

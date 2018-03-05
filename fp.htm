@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="left_nav"></div>
+        <!-- load menu.htm-->
+        <div class="content">
+            <div class="breadcrumb">
+                <a onclick="location.href='index.htm'">首頁</a><span>範例頁面</span><span>fp</span>
+            </div>
+            <h1>Forward Page / 轉寄友人</h1>
+            <!-- <div class="path">檔案名稱：<span>sass/_element.scss</span></div> -->
+            <!-- demo Start -->
+            <div class="demo">
+                <div class="breadcrumb">
+                    <a href="javascipt:;">首頁</a><a href="javascript:;">節點</a><span>節點</span>
+                </div>
+                <h2>節點標題</h2>
+                <div class="function">
+                    <button type="button" class="back icon_back">回上一頁</button>
+                    <button type="button" class="print icon_print">友善列印</button>
+                    <button type="button" class="forward icon_forward">轉寄友人</button>
+                </div>
+                <section class="fp">
+                    <p>註:<span class="necessary">*</span>為必填(選)欄位, 不能為空白。</p>
+                    <form action="" class="form_grid">
+                            <div class="form_grp">
+                                <label for="username" class="form_title"><span class="necessary">*</span>您的電子信箱：</label>
+                                <div class="form_content">
+                                    <input type="text" id="username" value="">
+                                    <div class="notice_warning">這似乎不是一個正常的Email格式
+    <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
+</div>
+                                </div>
+                            </div>
+                            <div class="form_grp">
+                                <label for="password" class="form_title"><span class="necessary">*</span>收件者電子信箱：</label>
+                                <div class="form_content">
+                                    <input name="password" type="password">
+                                    <div class="notice_info">請輸入Email，多個帳號請用 ; 隔開。
+    <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
+</div>
+                                </div>
+                            </div>
+                            <div class="form_grp">
+                                <label for="address" class="form_title"><span class="necessary">*</span>內容：</label>
+                                <div class="form_content">
+                                    <textarea name="" id="address" cols="30" rows="70"></textarea>
+                                </div>
+                            </div>
+                            <div class="form_grp">
+                              
+                                    <label class="form_title"><span class="necessary">*</span>驗證碼：</label>
+                                    <div class="form_content">
+                                        <img src="images/basic/captcha.gif" alt="" class="captcha">
+                                        <input type="text" id="username" value="">
+                                        <div class="notice_error">您輸入的驗證碼錯誤
+    <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
+</div>
+                                    </div>
+                              
+                            </div>
+                            <div class="btn_grp">
+                                <input name="" type="reset" value="清除">
+                                <input name="Search" type="submit" value="送出">
+                            </div>
+                        </form>
+                </section>
+            </div>
+            <!-- demo End -->
+        </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/hyui.js"></script>

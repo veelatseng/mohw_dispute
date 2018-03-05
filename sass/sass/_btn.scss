@@ -51,9 +51,15 @@ $btn-radius:6px;
     @include box-sizing(border-box);
     @include btn_setting();
     @include text-shadow(RGBA(0, 0, 0, .3) 0px 0px 0px);
+    background-color: rgb(247, 247, 247); // Old browsers
+    @include filter-gradient(#f7f7f7, #eaeaea, vertical); // IE6-9
+    @include background-image(linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(234, 234, 234, 1) 100%));
     &:hover,
     &:focus {
         color: $btn-font-color;
+        background-color: rgb(247, 247, 247); // Old browsers
+        @include filter-gradient(#f7f7f7, #eaeaea, vertical); // IE6-9
+        @include background-image(linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(234, 234, 234, 1) 100%));
     }
 }
 
