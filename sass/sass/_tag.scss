@@ -11,7 +11,7 @@
 		color:#FFF;
 		display:block;
 		@include box-sizing();
-		@include border-radius(4px);
+		@include border-radius(6px);
 		&:hover,&:focus{
 			background:darken($primaryColor,10);
 		}

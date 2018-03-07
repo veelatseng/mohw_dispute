@@ -13,7 +13,6 @@ body {
         overflow: hidden !important;
     }
 }
-
 .re_layout {
     position: absolute;
     left: 235px;
@@ -48,58 +47,6 @@ body {
         }
     }
 }
-
-
-
-
-
-/* .main{*/
-
-
-/*     .left_nav {*/
-
-
-/*     @include make-xs-column(12);*/
-
-
-/*     @include make-sm-column(12);*/
-
-
-/*     @include make-md-column(12);*/
-
-
-/*     @include make-lg-column(12);*/
-
-
-/*     @include gutter();*/
-
-
-/* }*/
-
-
-/* .content {*/
-
-
-/*     @include make-xs-column(12);*/
-
-
-/*     @include make-sm-column(6);*/
-
-
-/*     @include make-md-column(4);*/
-
-
-/*     @include make-lg-column(4);*/
-
-
-/*     @include gutter();*/
-
-
-/* }*/
-
-
-/* }*/
-
 .main {
     max-width: 1600px;
     width: auto;
@@ -107,8 +54,6 @@ body {
     margin: 0px auto;
     position: relative;
     overflow: hidden;
-
-
     &>h2 {
         margin-top: 1em;
         font-size: 2em;
@@ -765,5 +710,28 @@ header {
                 }
             }
         }
+    }
+}
+.breakpoint{
+    overflow:hidden;
+    >div{
+        border:1px solid #FFF;
+        background:$primaryColor;
+        text-align: center;
+        color:#FFF;
+        line-height:50px;
+        display:block;
+        float: left;
+        margin:0px;
+        padding: 0;
+        height:50px;
+        width:20%;
+        @include box-sizing;
+        @include screen('mobile') {
+            width:100%;
+        }
+    }
+    .block_desktop{
+
     }
 }

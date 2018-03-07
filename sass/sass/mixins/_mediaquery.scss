@@ -44,23 +44,23 @@ $screen-lg-minWidth:$screen-lg -1;
 //   width: 100%;
 //   @include screen('desktop') {
 //     width: 90%;
-//      /* 大螢幕 >=1200px */
+//      // max-width大於1400px
 //   }
 //   @include screen('notebook') {
 //     width: 85%;
-//     /* 筆電 >=992px */
+//     // max-width小於1399px
 //   }
 //   @include screen('tablet') {
 //     width: 55%;
-//     /* 平板 >=768px */
+//     // max-width小於992px
 //   }
 //   @include screen('mobile') {
 //     width: 85%;
-//     /* 大尺寸手機 >=576px */
+//     // max-width小於768px
 //   }
 //   @include screen('xs_mobile') {
 //     width: 85%;
-//     /* 自訂模式 */
+//     // max-width小於576px
 //   }
 // // }
 
