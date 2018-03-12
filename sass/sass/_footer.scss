@@ -1,95 +1,80 @@
 footer {
-    border-top: 1px solid #CCC;
-    min-height: 20px;
-    @include clearfix();
-    @include box-sizing();
-    display: block;
-    padding: 20px 15px;
-    text-align: center;
-    font-size: 0.8125em;
-    color: #333;
-    @media (max-width: 767px) {
-        padding: 5px 15px;
+    @include box-sizing(border-box);
+    text-align: left;
+    font-size: 0.813em;
+    .row>div {
+        padding: 1em;
     }
-}
-.demo {
-    footer {
-        a {
-            text-decoration: none;
-            color: $primaryColor;
-            &:hover,
-            &:focus {
-                color: darken($primaryColor, 10);
-            }
+    a {
+        text-decoration: none;
+        color: $primaryColor;
+        &:hover,
+        &:focus {
+            color: darken($primaryColor, 10);
         }
-        @include box-sizing(border-box);
-        text-align:left;
-        .row>div {
-            padding: 1em;
-        }
-        .footer_logo {
-            @include make-xs-column(8);
-            @include make-sm-column(3);
-            @include make-md-column(3);
-            @include make-lg-column(3);
-            @include gutter();
-        }
-        .footer_info {
-            @include make-xs-column(12);
-            @include make-sm-column(6);
-            @include make-md-column(6);
-            @include make-lg-column(6);
-            @include gutter();
-        }
-        .footer_icon {
-            @include make-xs-column(12);
-            @include make-sm-column(3);
-            @include make-md-column(3);
-            @include make-lg-column(3);
-            @include gutter();
-        } // 版權連結
-        .footer_link {
-            @include li-reset();
-            @include clearfix();
-            li {
-                float: left;
+    }
+    .footer_logo {
+        @include make-xs-column(8);
+        @include make-sm-column(3);
+        @include make-md-column(3);
+        @include make-lg-column(3);
+        @include gutter();
+    }
+    .footer_info {
+        @include make-xs-column(12);
+        @include make-sm-column(6);
+        @include make-md-column(6);
+        @include make-lg-column(6);
+        @include gutter();
+    }
+    .footer_icon {
+        @include make-xs-column(12);
+        @include make-sm-column(3);
+        @include make-md-column(3);
+        @include make-lg-column(3);
+        @include gutter();
+    } // 版權連結
+    .footer_link {
+        @include li-reset();
+        @include clearfix();
+        li {
+            float: left;
+            display: block;
+            margin: 0px 5px 5px 0px;
+            a {
                 display: block;
-                margin: 0px 5px 5px 0px;
-                a {
-                    display: block;
-                    padding: .5em 1em;
-                    background: $primaryColor;
-                    color: #FFF;
-                    @include border-radius(3px);
-                    @include transition(all, .3s, ease-out);
-                    &:hover,
-                    &:focus {
-                        background: darken($primaryColor, 10);
-                    }
+                padding: .5em 1em;
+                background: $primaryColor;
+                color: #FFF;
+                @include border-radius(3px);
+                @include transition(all, .3s, ease-out);
+                &:hover,
+                &:focus {
+                    background: darken($primaryColor, 10);
                 }
             }
         }
-        p {
-            line-height: 1.65em;
+    }
+    p {
+        line-height: 1.65em;
+    }
+    .update,
+    .counter {
+        display: inline-block;
+        margin-right: 5px;
+        em {
+            font-style: normal;
+            color: $primaryColor;
+            padding: 0 .5em;
         }
-        .update,
-        .counter {
+    }
+    .footer_icon {
+        a {
             display: inline-block;
-            margin-right: 5px;
-            em {
-                font-style: normal;
-                color: $primaryColor;
-                padding: 0 .5em;
-            }
+            vertical-align: top;
         }
-        .footer_icon {
-            a {
-                display: inline-block;
-                vertical-align: top;
-            }
-            img{
-                max-width:120px;
-            }
+        img {
+            max-width: 120px;
         }
     }
 }

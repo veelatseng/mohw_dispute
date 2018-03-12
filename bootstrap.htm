@@ -61,33 +61,32 @@
             <div class="sourcecode">
                 <pre class="language-scss">
                     <code class="language-scss">
-//因為使用漸進增強，因此順序為：xs -> sm ->md ->lg
 .header_div{
   @include make-xs-column(12);  //576px  width:100%
   @include make-sm-column(12);  //768px  width:100%
   @include make-md-column(12);  //992px  width:100%
-  @include make-lg-column(12);  //1200px width:100%
+  @include make-lg-column(12);  //1400px width:100%
   @include gutter();
 }
 .left_div{
   @include make-xs-column(12);  //576px  width:100%
   @include make-sm-column(6);   //768px  width:50%
   @include make-md-column(4);   //992px  width:33.3%
-  @include make-lg-column(4);   //1200px width:33.3%
+  @include make-lg-column(4);   //1400px width:33.3%
   @include gutter();
 }
 .center_div{
   @include make-xs-column(12);  //576px  width:100%
   @include make-sm-column(6);   //768px  width:50%
   @include make-md-column(8);   //992px  width:66.6%
-  @include make-lg-column(8);   //1200px width:66.6%
+  @include make-lg-column(8);   //1400px width:66.6%
   @include gutter();
 }
 .footer_div{
   @include make-xs-column(12);  //576px  width:100%
   @include make-sm-column(12);  //768px  width:100%
   @include make-md-column(12);  //992px  width:100%
-  @include make-lg-column(12);  //1200px width:100%
+  @include make-lg-column(12);  //1400px width:100%
   @include gutter();
 }</code>
                 </pre>
@@ -194,4 +193,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="js/prism_dark.js"></script>
-<script src="js/hyui.js"></script>
+<script src="js/demo.js"></script>

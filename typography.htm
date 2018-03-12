@@ -29,8 +29,90 @@
             </div>
             <h1>Typography</h1>
             <div class="path">檔案名稱：<span>sass/_typography.scss</span></div>
+               <h2>字型基本設定</h2>
+            <div class="sourcecode">
+                <pre class="language-scss">
+                <code class="language-scss">
+// 字型設定
+$font-family:               'Lato,"PingFang TC","Helvetica Neue",Helvetica,微軟正黑體,新細明體,Arial,sans-serif';
+$font-size:                 16px;
+                    </code></pre></div>
+                    <h2>Verticla Rhythm設定</h2>
+                    <div class="sourcecode">
+                <pre class="language-scss">
+                <code class="language-scss">
+$base-font-size: 16px;              //字級16px
+$base-line-height: 16px;            //行高16px
+$rhythm-unit: 'em';                 //輸出單位：em
+$base-font-stack:$font-family;      //於變數設定font family
+
+//以下只有在CP區塊文章才會設定
+.cp {
+    h1 {
+        @include adjust-font-size-to($base-font-size*2, 3);
+        @include leader(.5);
+        @include trailer(.5);
+    }
+    h2 {
+        @include adjust-font-size-to($base-font-size*1.5, 3);
+        @include leader(.5);
+        @include trailer(.6666);
+    }
+    h3 {
+        @include adjust-font-size-to($base-font-size*1.5, 3);
+        @include leader(.5);
+        @include trailer(.6666);
+    }
+    h4 {
+        @include adjust-font-size-to($base-font-size*1.25, 2);
+        @include leader(.5);
+        @include trailer(1.6);
+    }
+    h5 {
+        @include adjust-font-size-to($base-font-size*1.125, 2.5);
+        @include leader(.5);
+        @include trailer(1.5);
+    }
+    h6 {
+        @include adjust-font-size-to($base-font-size, 2);
+        @include leader(0);
+        @include trailer(0);
+    }
+    blockquote {
+        background: #f2f2f2;
+        font-style: normal;
+        display: block;
+        @include adjust-font-size-to($base-font-size);
+        border-left: 5px solid $primaryColor;
+        padding: $base-font-size*2;
+        box-sizing: border-box;
+        margin-left:.5em;
+        margin-right: .5em;
+    }
+    ul,
+    ol {}
+    p,
+    ul,
+    ol,
+    dd,
+    figure {
+        @include adjust-font-size-to($base-font-size, 2); // @include trailer(1);
+        @include leader(0);
+        @include trailer(2);
+    }
+    img {
+        max-width: 100%;
+        @media (max-width: 767px) {
+            width: 100%;
+            clear: both;
+        }
+    }
+}
+                    </code></pre></div>
+                    <h2>CP頁專屬的文字排版</h2>
+                    <p>在cp的div內的文章，會以以下格式做文字排版</p>
             <!-- demo Start -->
-            <div class="demo">
+
                 <div class="cp vertical_rhythm">
                     <h1>標題一：價到山大師明展價到山大師明山</h1>
                     <img src="https://assets.imgix.net/examples/balloons.jpg?w=400&auto=format%2Cenhance" alt="balloons">
@@ -74,7 +156,6 @@
                     </ul>
                     <blockquote>大更沒於正時節直只們來壓算有先，求化化看雨的了元得前意要，性說用。以是一分，首字地旅紀親朋經有，在沒許、兒讓靈身不；候案司通資鄉下一支情西也哥際發你也是濟言通海後的健童頭各便。</blockquote>
                 </div>
-            </div>
             <!-- demo End -->
         </div>
     </div>
@@ -87,4 +168,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="js/prism_dark.js"></script>
-<script src="js/hyui.js"></script>
+<script src="js/demo.js"></script>

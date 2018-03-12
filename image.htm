@@ -69,6 +69,7 @@
     &lt;div class="imgOuterDiv"&gt;&lt;img src="..." alt="..."&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
+            <h2>縮圖排版 Mixin</h2>
             <div class="sourcecode">
                 <pre class="language-scss">
                             <code class="language-scss">
@@ -129,9 +130,10 @@
             <!-- JS設定 -->
             <h2>JQuery設定</h2>
             <p>全網站的<span class="hy">imgOuter</span>底下的<span class="hy">img</span>皆可以使用object-fit Jquery設定</p>
-            <div class="sourcecode">
-                <pre class="language-javascript">
-                            <code class="language-javascript">
+            <div class="sourcecode"><pre class="language-javascript"><code class="language-javascript">
+/*-----------------------------------*/
+////////img objectfix cover////////////
+/*-----------------------------------*/
 jQuery(document).ready(function() {
     $(window).on('resize load', function(e) {
         $('.imgOuter').each(function(index, el) {
@@ -169,8 +171,11 @@ jQuery(document).ready(function() {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="js/prism_dark.js"></script>
-<script src="js/hyui.js"></script>
+<script src="js/demo.js"></script>
 <script>
+/*-----------------------------------*/
+////////img objectfix cover////////////
+/*-----------------------------------*/
 jQuery(document).ready(function() {
     $(window).on('resize load', function(e) {
         $('.imgOuter').each(function(index, el) {

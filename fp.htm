@@ -31,60 +31,124 @@
             <!-- <div class="path">檔案名稱：<span>sass/_element.scss</span></div> -->
             <!-- demo Start -->
             <div class="demo">
+                <!-- breadcrumb路徑 -->
                 <div class="breadcrumb">
                     <a href="javascipt:;">首頁</a><a href="javascript:;">節點</a><span>節點</span>
                 </div>
+                <!-- h2節點 -->
                 <h2>節點標題</h2>
+                <!-- function功能區塊 -->
                 <div class="function">
                     <button type="button" class="back icon_back">回上一頁</button>
                     <button type="button" class="print icon_print">友善列印</button>
                     <button type="button" class="forward icon_forward">轉寄友人</button>
                 </div>
+                <!-- FP Start -->
                 <section class="fp">
                     <p>註:<span class="necessary">*</span>為必填(選)欄位, 不能為空白。</p>
                     <form action="" class="form_grid">
-                            <div class="form_grp">
-                                <label for="username" class="form_title"><span class="necessary">*</span>您的電子信箱：</label>
-                                <div class="form_content">
-                                    <input type="text" id="username" value="">
-                                    <div class="notice_warning">這似乎不是一個正常的Email格式
-    <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
-</div>
+                        <div class="form_grp">
+                            <label for="" class="form_title"><span class="necessary">*</span>您的電子信箱：</label>
+                            <div class="form_content">
+                                <input type="text" id="" value="">
+                                <div class="notice_warning">這似乎不是一個正常的Email格式
+                                    <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
                                 </div>
                             </div>
-                            <div class="form_grp">
-                                <label for="password" class="form_title"><span class="necessary">*</span>收件者電子信箱：</label>
-                                <div class="form_content">
-                                    <input name="password" type="password">
-                                    <div class="notice_info">請輸入Email，多個帳號請用 ; 隔開。
-    <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
-</div>
+                        </div>
+                        <div class="form_grp">
+                            <label for="" class="form_title"><span class="necessary">*</span>收件者電子信箱：</label>
+                            <div class="form_content">
+                                <input name="" id="" type="text">
+                                <div class="notice_info">請輸入，多個帳號請用 ; 隔開。
+                                    <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
                                 </div>
                             </div>
-                            <div class="form_grp">
-                                <label for="address" class="form_title"><span class="necessary">*</span>內容：</label>
-                                <div class="form_content">
-                                    <textarea name="" id="address" cols="30" rows="70"></textarea>
+                        </div>
+                        <div class="form_grp">
+                            <label for="address" class="form_title"><span class="necessary">*</span>內容：</label>
+                            <div class="form_content">
+                                <textarea name="" id="address" cols="30" rows="70"></textarea>
+                            </div>
+                        </div>
+                        <div class="form_grp">
+                            <label class="form_title"><span class="necessary">*</span>驗證碼：</label>
+                            <div class="form_content">
+                                <img src="images/basic/captcha.gif" alt="" class="captcha">
+                                <input type="text" id="" value="">
+                                <div class="notice_error">您輸入的驗證碼錯誤
+                                    <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
                                 </div>
                             </div>
-                            <div class="form_grp">
-                              
-                                    <label class="form_title"><span class="necessary">*</span>驗證碼：</label>
-                                    <div class="form_content">
-                                        <img src="images/basic/captcha.gif" alt="" class="captcha">
-                                        <input type="text" id="username" value="">
-                                        <div class="notice_error">您輸入的驗證碼錯誤
-    <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
-</div>
-                                    </div>
-                              
-                            </div>
-                            <div class="btn_grp">
-                                <input name="" type="reset" value="清除">
-                                <input name="Search" type="submit" value="送出">
-                            </div>
-                        </form>
+                        </div>
+                        <div class="btn_grp">
+                            <input name="" type="reset" value="清除">
+                            <input name="Search" type="submit" value="送出">
+                        </div>
+                    </form>
                 </section>
+                <!-- FP End -->
+            <h2>HTML範本</h2>
+  <div class="sourcecode">
+                <pre class="language-html">
+                <code class="language-html">
+&lt;!-- breadcrumb路徑 --&gt;
+&lt;div class="breadcrumb"&gt;
+    &lt;a href="javascipt:;"&gt;首頁&lt;/a&gt;&lt;a href="javascript:;"&gt;節點&lt;/a&gt;&lt;span&gt;節點&lt;/span&gt;
+&lt;/div&gt;
+&lt;!-- h2節點 --&gt;
+&lt;h2&gt;節點標題&lt;/h2&gt;
+&lt;!-- function功能區塊 --&gt;
+    &lt;div class="function"&gt;
+        &lt;button type="button" class="back icon_back"&gt;回上一頁&lt;/button&gt;
+        &lt;button type="button" class="print icon_print"&gt;友善列印&lt;/button&gt;
+        &lt;button type="button" class="forward icon_forward"&gt;轉寄友人&lt;/button&gt;
+    &lt;/div&gt;
+&lt;!-- FP Start --&gt;
+&lt;section class="fp"&gt;
+    &lt;p&gt;註:&lt;span class="necessary"&gt;*&lt;/span&gt;為必填(選)欄位, 不能為空白。&lt;/p&gt;
+    &lt;form action="" class="form_grid"&gt;
+        &lt;div class="form_grp"&gt;
+            &lt;label for="" class="form_title"&gt;&lt;span class="necessary"&gt;*&lt;/span&gt;您的電子信箱：&lt;/label&gt;
+            &lt;div class="form_content"&gt;
+                &lt;input type="text" id="" value=""&gt;
+                &lt;div class="notice_warning"&gt;這似乎不是一個正常的格式
+                    &lt;a href="javascript:;" class="close"&gt;&lt;img src="images/basic/icon_close.svg" alt=""&gt;&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="form_grp"&gt;
+            &lt;label for="" class="form_title"&gt;&lt;span class="necessary"&gt;*&lt;/span&gt;收件者電子信箱：&lt;/label&gt;
+            &lt;div class="form_content"&gt;
+                &lt;input name="" id="" type="text"&gt;
+                &lt;div class="notice_info"&gt;請輸入Email，多個帳號請用 ; 隔開。
+                    &lt;a href="javascript:;" class="close"&gt;&lt;img src="images/basic/icon_close.svg" alt=""&gt;&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="form_grp"&gt;
+            &lt;label for="" class="form_title"&gt;&lt;span class="necessary"&gt;*&lt;/span&gt;內容：&lt;/label&gt;
+            &lt;div class="form_content"&gt;
+                &lt;textarea name="" id="" cols="30" rows="70"&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="form_grp"&gt;
+            &lt;label class="form_title"&gt;&lt;span class="necessary"&gt;*&lt;/span&gt;驗證碼：&lt;/label&gt;
+            &lt;div class="form_content"&gt;
+                &lt;img src="images/basic/captcha.gif" alt="" class="captcha"&gt;
+                &lt;input type="text" id="" value=""&gt;
+                &lt;div class="notice_error"&gt;您輸入的驗證碼錯誤
+                    &lt;a href="javascript:;" class="close"&gt;&lt;img src="images/basic/icon_close.svg" alt=""&gt;&lt;/a&gt;
+                &lt;/div&gt;
+             &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="btn_grp"&gt;
+            &lt;input name="" type="reset" value="清除"&gt;
+            &lt;input name="" type="submit" value="送出"&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/section&gt;
+&lt;!-- FP End --&gt;</code></pre></div>
             </div>
             <!-- demo End -->
         </div>
@@ -98,4 +162,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="js/prism_dark.js"></script>
-<script src="js/hyui.js"></script>
+<script src="js/demo.js"></script>

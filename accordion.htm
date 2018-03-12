@@ -27,8 +27,6 @@
             </div>
             <h1>Accordion</h1>
             <div class="path">檔案名稱：<span>sass/_accordion.scss</span></div>
-            <p>每一個Accordion皆用<span class="hy">accordion</span>當作外層，以下由<span class="hy">ul</span>><span class="hy">li</span>><span class="hy">a</span>當作按鈕，當點選的時候緊接著<span class="hy">a</span>的<span class="hy">accordion-content</span>即會展開。此效果不限數量，可自行調整。</p>
-            <p>此效果無提供預設之SASS，可自由新增調整</p>
             <!-- demo Start -->
             <div class="demo">
            <div class="accordion">
@@ -72,11 +70,7 @@
             &lt;/div&gt;
         &lt;/li&gt;
     &lt;/ul&gt;
-&lt;/div&gt;
-</code>
-</pre>
-            </div>
-            <p>可在<span class="hy">a</span>加上<span class="hy">class="btn"</span>，做成按鈕格式選單下拉</p>
+&lt;/div&gt;</code></pre></div>
             <div class="demo">
            <div class="accordion">
                <ul style="padding-left:0px;">
@@ -103,6 +97,9 @@
              <div class="sourcecode">
                 <pre class="language-javascript">
                 <code class="language-javascript">
+/*-----------------------------------*/
+//////////// Accordion設定 ////////////
+/*-----------------------------------*/
 jQuery(document).ready(function($) {
         $('.accordion').each(function() {
             $(this).find('.accordion-content').hide();
@@ -115,10 +112,7 @@ jQuery(document).ready(function($) {
             });
         });
     });
-});
-</code>
-</pre>
-            </div>
+});</code></pre></div>
 
              
         </div>
@@ -133,8 +127,8 @@ jQuery(document).ready(function($) {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="js/prism_dark.js"></script>
-<script src="js/hyui.js"></script>
-<script>
+<script src="js/demo.js"></script>
+<!-- <script>
     jQuery(document).ready(function($) {
         $('.accordion').each(function() {
             $(this).find('.accordion-content').hide();
@@ -148,4 +142,4 @@ jQuery(document).ready(function($) {
             });
         });
     });
-</script>
+</script> -->

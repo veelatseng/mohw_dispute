@@ -1,17 +1,16 @@
-@charset "utf-8";
 @import "compass";
 @mixin fontSetting($FONT-SIZE:$font-size, $WEIGHT:normal) {
     font-size: $FONT-SIZE;
     font-weight: $WEIGHT;
-    color: #333;
+    color: $color-word;
 }
 
-@mixin aSetting($COLOR:#333, $NOLINE:none) {
+@mixin aSetting($COLOR:$aColor, $NOLINE:none) {
     color: $COLOR;
     text-decoration: $NOLINE;
     &:hover,
     &:focus {
-        color: $primaryColor;
+        color: $aHover;
         cursor: pointer;
     }
 }

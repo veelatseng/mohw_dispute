@@ -1,0 +1,25 @@
+/*header*/
+.header{position:relative;margin:0 auto;padding:2em 0 0;z-index:5000;background-size: 1000px auto;background-repeat: no-repeat;background-position: left bottom;}
+.header>h1{clear:both;height:64px;width:60%;}
+.header>h1 a{display:inline-block;}
+.header>h1 img{display:block;width:210px;margin:5px 20px;/*max-width:90%;max-height:90%;*/}
+.header.fixed .menu{position:fixed;left:50%;width:1000px;margin-left:-500px;right:0;top:0;box-shadow:rgba(0,0,0,.5) 0 0 25px;}
+
+.header .navigation{position:absolute;right:0;top:0;}
+.header .navigation ul{float:right;font-size:.87em;margin-right:12px;}
+.header .navigation li{float:left;margin:0 .8em;}
+.header .navigation li a{display:inline-block;height:2.15em;line-height:2.15em;padding:0 2px;text-decoration:none;}
+
+.header .search{position:absolute;right:0;top:30px;width:31%;}
+.header .search label{font-size:0;}
+.header .search form{display:inline-block;vertical-align:top;}
+.header .search form input{vertical-align:top;margin:0;padding:0 .5em;border:none;height:2.4em;line-height:2.4em;float:left;}
+.header .search input[type="submit"]{padding:0;}
+.header .search input[type="text"]{width:10em;border:1px solid #bbb;box-sizing:border-box;}
+.header .search form a{display:inline-block;height:2.4em;line-height:2.4em;margin:0;padding:0 2px;text-decoration:none;}
+.search .keywordHot{display:inline-block;}
+.keywordHot{vertical-align:middle;}
+.keywordHot ul{display:inline-block;line-height:2em;height:2em;font-size:.87em}
+.keywordHot li{margin:0 .6em 0 0;padding:0;display:inline-block;}
+.keywordHot li a:hover,
+.keywordHot li a:focus{text-decoration:underline;color: #000;}

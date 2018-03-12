@@ -1,69 +1,53 @@
-@import "compass/utilities/general/hacks";
+@charset "utf-8";
 @import "compass";
 
+// 共通
+@import "_variable";					//變數
+@import "sass/_normalize";				//reset
+@import "sass/_mixin";					//客製MIXIN
+@import "sass/_typography";				//CP文字排版
+@import "sass/_font";					//文字設定
 
+// 元素
+@import "sass/_breadcrumb";				//麵包屑
+@import "sass/_divider";				//分隔線
+@import "sass/_btn";					//按鈕設定
+@import "sass/_hr";						//分隔線
+@import "sass/_image";					//圖片
+@import "sass/_tooltip";				//tooltip
+@import "sass/_tabs";					//頁籤
+@import "sass/_table";					//表格
+@import "sass/_form";					//表單
+@import "sass/_notice";					//提示
+@import "sass/_element";				//小元素
 
-/* 共通*/
+// 模組
+// @import "sass/_header";					//header
+@import "sass/_demo_menu";					//menu
+@import "sass/_footer";					//footer
+@import "sass/_fatfooter";				//fatfooter
+@import "sass/_function";				//function功能區塊
+@import "sass/_modal";					//pop視窗
+@import "sass/_paginations";			//分頁
+@import "sass/_thumbnail";				//縮圖
+@import "sass/_tag";					//標籤
+@import "sass/_lightbox";				//燈箱
+@import "sass/_share";					//社群分享
 
-@import "_variable";
-@import "sass/_normalize";
-@import "sass/_mixin";
-@import "sass/_typography";
-@import "sass/_font";
+// 頁面
+@import "page/_lp";						//LP
+@import "page/_np";						//NP
+@import "page/_cp";						//CP
+@import "page/_fp";						//Forward
+@import "page/_sitemap";				//Sitemap
+@import "page/_qp";						//QP
 
+// 無障礙
+@import "sass/_nojs";					//無障礙關閉js設定
 
-
-/* 元素*/
-
-@import "sass/_breadcrumb";
-@import "sass/_divider";
-@import "sass/_btn";
-@import "sass/_hr";
-@import "sass/_image";
-@import "sass/_tooltip";
-@import "sass/_tabs";
-@import "sass/_table";
-@import "sass/_form";
-@import "sass/_notice";
-
-
-/* 模組*/
-
-@import "sass/_header";
-@import "sass/_menu";
-@import "sass/_footer";
-@import "sass/_fatfooter";
-@import "sass/_function";
-@import "sass/_modal";
-@import "sass/_paginations";
-@import "sass/_thumbnail";
-@import "sass/_tag";
-@import "sass/_lightbox";
-@import "sass/_share";
-
-/* 頁面*/
-@import "sass/_lp";
-@import "sass/_np";
-@import "sass/_cp";
-@import "sass/_fp";
-@import "sass/_sitemap";
-@import "sass/_qp";
-
-
-/**/
-
-@import "sass/_element";
-
-
-/* 外掛*/
-
-@import "sass/_grid";
+// 列印
+@import "sass/_print";					//列印樣式
 
 // demosite
-@import "_hyuiportal"
+@import "_demo"
 
-
-
-
-
-/* @import "plugin/_animate";*/

@@ -130,6 +130,7 @@
                     </section>
                 </div>
             </div>
+            <h2>HTML範本</h2>
             <div class="sourcecode">
                 <pre class="language-html">
                 <code class="language-html">
@@ -187,6 +188,7 @@
 </pre>
             </div>
             <!-- demo End -->
+            <h2>SCSS設定</h2>
             <div class="sourcecode">
                 <pre class="language-scss">
                                 <code class="language-scss">
@@ -318,19 +320,16 @@
             <div class="sourcecode">
                 <pre class="language-javascript">
                             <code class="language-javascript">
+/*-----------------------------------*/
+////////////////多組Tab////////////////
+/*-----------------------------------*/
 $(function() {
     $('.tabs').find('.active').next('.tabContent').show();
     var tw = $('.tabSet').width();
     var tabItemHeight = $('.tabs>h2>a').innerHeight();
     $('.tabs').find('.tabContent').css('top', tabItemHeight);
-
-    $('.tabSet').each(function() {
-        var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
-        var tabItemLength = $(this).find('h2').length;
-        $(this).height(tabContentHeight + tabItemHeight);
-        $(this).find('h2>a').width(tw / tabItemLength);
-    });
     function tabs() {
+        var WindowW = $(window).width();
         $('.tabs').find('.active').next('.tabContent').show();
         var tabItemHeight = $('.tabs>h2>a').innerHeight();
         $('.tabs').find('.tabContent').css('top', tabItemHeight);
@@ -339,8 +338,19 @@ $(function() {
             var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
             var tabItemLength = $(this).find('h2').length;
             $(this).height(tabContentHeight + tabItemHeight);
-            var tabWidth = tw / tabItemLength;
+            var tabWidth = Math.ceil(tw / tabItemLength);
             $(this).find('h2>a').width(tabWidth);
+            if (WindowW >= 768) {
+                $(this).find('h2:last').css({
+                    position: 'absolute',
+                    right: '0',
+                });
+            } else {
+                $(this).find('h2:last').css({
+                    position: 'relative',
+                    right: '0',
+                });
+            }
         });
         $(this).parent('h2').siblings().removeClass('active');
         $(this).parent('h2').addClass('active');
@@ -367,21 +377,19 @@ $(function() {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="js/prism_dark.js"></script>
-<script src="js/hyui.js"></script>
+<script src="js/demo.js"></script>
 <script>
+/*-----------------------------------*/
+////////////////多組Tab////////////////
+/*-----------------------------------*/
 $(function() {
     $('.tabs').find('.active').next('.tabContent').show();
     var tw = $('.tabSet').width();
     var tabItemHeight = $('.tabs>h2>a').innerHeight();
     $('.tabs').find('.tabContent').css('top', tabItemHeight);
 
-    $('.tabSet').each(function() {
-        var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
-        var tabItemLength = $(this).find('h2').length;
-        $(this).height(tabContentHeight + tabItemHeight);
-        $(this).find('h2>a').width(tw / tabItemLength);
-    });
     function tabs() {
+        var WindowW = $(window).width();
         $('.tabs').find('.active').next('.tabContent').show();
         var tabItemHeight = $('.tabs>h2>a').innerHeight();
         $('.tabs').find('.tabContent').css('top', tabItemHeight);
@@ -390,8 +398,19 @@ $(function() {
             var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
             var tabItemLength = $(this).find('h2').length;
             $(this).height(tabContentHeight + tabItemHeight);
-            var tabWidth = Math.floor(tw / tabItemLength);
+            var tabWidth = Math.ceil(tw / tabItemLength);
             $(this).find('h2>a').width(tabWidth);
+            if (WindowW >= 768) {
+                $(this).find('h2:last').css({
+                    position: 'absolute',
+                    right: '0',
+                });
+            } else {
+                $(this).find('h2:last').css({
+                    position: 'relative',
+                    right: '0',
+                });
+            }
         });
         $(this).parent('h2').siblings().removeClass('active');
         $(this).parent('h2').addClass('active');
@@ -405,4 +424,5 @@ $(function() {
         tabs();
     });
 });
+
 </script>
