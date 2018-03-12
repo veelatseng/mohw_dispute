@@ -1,0 +1,68 @@
+.container {
+    margin: 0;
+    padding: 0;
+    margin: 0px auto;
+    max-width: $container-max;
+    @include gutter();
+}
+.main{
+    position: relative;
+}
+// 首頁區塊設定
+.section {
+    padding: 1em 0 3em;
+    text-align:center;
+    [class^="col"] {
+        border:2px solid #FFF;
+        background: #F2F2F2;
+        min-height: 250px;
+        color: $primaryColor;
+        text-align: center;
+        line-height: 250px;
+        font-size:1.5em;
+        font-weight: bold;   
+        @include box-sizing();
+    }
+}
+// 單欄
+.col-12 {
+    .col {
+        @include make-xs-column(12); //576px  width:100%
+        @include make-sm-column(12); //768px  width:100%
+        @include make-md-column(12); //992px  width:100%
+        @include make-lg-column(12); //1400px width:100%
+    }
+}
+// 雙欄 6-6
+.col-6 {
+    .col {
+        @include make-xs-column(12); //576px  width:100%
+        @include make-sm-column(6);  //768px  width:50%
+        @include make-md-column(6);  //992px  width:50%
+        @include make-lg-column(6);  //1400px width:50%
+    }
+}
+// 雙欄 8-4
+.col-8-4{
+    .col-8 {
+        @include make-xs-column(12); //576px  width:100%
+        @include make-sm-column(8);  //768px  width:66.6%
+        @include make-md-column(8);  //992px  width:66.6%
+        @include make-lg-column(8);  //1400px width:66.6%
+    }
+    .col-4 {
+        @include make-xs-column(12); //576px  width:100%
+        @include make-sm-column(4);  //768px  width:33.3%
+        @include make-md-column(4);  //992px  width:33.3%
+        @include make-lg-column(4);  //1400px width:33.3%
+    }
+}
+// 三欄 3-3
+.col-3-3-3{
+    .col{
+        @include make-xs-column(12); //576px  width:100%
+        @include make-sm-column(4);  //768px  width:33.3%
+        @include make-md-column(4);  //992px  width:33.3%
+        @include make-lg-column(4);  //1400px width:33.3%
+    }
+}

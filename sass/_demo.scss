@@ -1,4 +1,3 @@
-
 body {
     background: #f4f4f4;
     font-family: Lato, "PingFang TC", "Helvetica Neue", Helvetica, 微軟正黑體, 新細明體, Arial, sans-serif;
@@ -13,6 +12,7 @@ body {
         overflow: hidden !important;
     }
 }
+
 .re_layout {
     position: absolute;
     left: 235px;
@@ -47,6 +47,7 @@ body {
         }
     }
 }
+
 .main {
     max-width: 1600px;
     width: auto;
@@ -54,6 +55,20 @@ body {
     margin: 0px auto;
     position: relative;
     overflow: hidden;
+    &+footer {
+        border-top: 1px solid #CCC;
+        min-height: 20px;
+        @include clearfix();
+        @include box-sizing();
+        display: block;
+        padding: 20px 15px;
+        text-align: center;
+        font-size: 0.8125em;
+        color: #333;
+        @media (max-width: 767px) {
+            padding: 5px 15px;
+        }
+    }
     &>h2 {
         margin-top: 1em;
         font-size: 2em;
@@ -65,6 +80,9 @@ body {
         font-size: 1.5em;
     }
     .content {
+        h1 {
+            line-height: 1.45em;
+        }
         min-height: 800px;
         float: none;
         width: auto;
@@ -122,12 +140,10 @@ pre {
     font-size: 13px;
     border-top: none;
     position: relative;
-    margin-top: 0px;
-    margin-top: 40px;
+    margin-top: 0px; // margin-top: 40px;
     margin-bottom: 0px;
-    @include box-sizing(border-box);
-    // @include box-shadow(0 0 15px rgba(0, 0, 0, .1));
-    opacity:1;
+    @include box-sizing(border-box); // @include box-shadow(0 0 15px rgba(0, 0, 0, .1));
+    opacity: 1;
     /* &:before {*/
     .viewcode {
         position: absolute;
@@ -231,8 +247,8 @@ pre {
     overflow: hidden;
     min-height: 300px;
     text-align: center;
-    img{
-        margin:0px auto;
+    img {
+        margin: 0px auto;
     }
     .demo {
         padding: 30px 2em 15px;
@@ -353,6 +369,8 @@ p>code[class*="language-"] {
         td {
             vertical-align: top;
             padding: .8em .5em .5em; // min-height:62px;
+            border-left: none;
+            border-right: none;
         }
         th {
             text-align: left;
@@ -712,26 +730,149 @@ header {
         }
     }
 }
-.breakpoint{
-    overflow:hidden;
-    >div{
-        border:1px solid #FFF;
-        background:$primaryColor;
+
+.breakpoint {
+    overflow: hidden;
+    >div {
+        border: 1px solid #FFF;
+        background: $primaryColor;
         text-align: center;
-        color:#FFF;
-        line-height:50px;
-        display:block;
+        color: #FFF;
+        display: block;
         float: left;
-        margin:0px;
-        padding: 0;
-        height:50px;
-        width:20%;
+        margin: 0px;
+        padding: .5em .5em 1em;
+        height: auto;
+        width: 20%;
         @include box-sizing;
         @include screen('mobile') {
-            width:100%;
+            width: 80%;
+            float: none;
+            margin: 0px auto;
+        }
+        h3 {}
+        img {
+            margin: 0px auto;
+        }
+        span {
+            font-size: 1.25em;
+            line-height: 1.2;
+            display: block;
+            margin-bottom: 10px;
+            background: RGBA(0, 0, 0, .3);
+            @include border-radius(6px);
+            padding: .3em;
+            width: 80%;
+            margin: 0px auto 10px;
         }
     }
-    .block_desktop{
+}
 
+.bootstrap_grid1 {
+    .header_div {
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(12);
+        @include make-lg-column(12);
+        @include gutter();
+    }
+
+    .left_div {
+        @include make-xs-column(12);
+        @include make-sm-column(6);
+        @include make-md-column(4);
+        @include make-lg-column(4);
+        @include gutter();
+    }
+
+    .center_div {
+        @include make-xs-column(12);
+        @include make-sm-column(6);
+        @include make-md-column(8);
+        @include make-lg-column(8);
+        @include gutter();
+    }
+
+    .footer_div {
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(12);
+        @include make-lg-column(12);
+        @include gutter();
+    }
+}
+
+.bootstrap_grid2 {
+    // 3欄
+    .col-left {
+        @include make-xs-column(12);
+        @include make-sm-column(4);
+        @include make-md-column(4);
+        @include make-lg-column(4);
+        @include gutter();
+    }
+    .col-center {
+        @include make-xs-column(12);
+        @include make-sm-column(4);
+        @include make-md-column(4);
+        @include make-lg-column(4);
+        @include gutter();
+    }
+    .col-right {
+        @include make-xs-column(12);
+        @include make-sm-column(4);
+        @include make-md-column(4);
+        @include make-lg-column(4);
+        @include gutter();
+    }
+}
+
+.bootstrap_grid3 {
+    .col-left {
+        @include make-md-column(4);
+        @include make-md-column-offset(2);
+        @include gutter();
+    }
+    .col-right {
+        @include make-md-column(6);
+        @include gutter();
+    }
+}
+
+
+.vendor {
+    @include make-xs-column(12);
+    @include make-sm-column(4);
+    @include make-md-column(3);
+    @include make-lg-column(3);
+    @include gutter();
+    margin-bottom: 15px;
+    a {
+        border: none;
+        &:hover {
+            border: none;
+            .imgOuter {
+                outline: 1px solid $primaryColor;
+            }
+            h3 {
+                color: $primaryColor;
+            }
+        }
+    }
+    .imgOuter {
+        display: block;
+        margin: 0px auto 2em;
+        max-width: 90%;
+        border: 1px solid #DDD;
+        @include aspect-ratio(4, 3); //設定比例ex:4:3 or 16:9
+    }
+    .caption {
+        max-width: 90%;
+        margin: 0px auto;
+        text-align: center;
+        h3 {
+            font-size: 1.5em;
+            color: #333;
+        }
     }
 }
