@@ -3,28 +3,23 @@
     border-bottom: 1px solid #EEE;
     padding: .3em 0em;
     font-size: .813em;
-    margin:0px auto 15px;
-    // @include border-radius(4px);
-    &:before {
-        content: "現在位置：";
-        display: inline-block;
-    }
-    a {
-        @include aSetting();
-        display: inline-block;
-        &:before {
-            @extend %slash;
-        }
-        &:first-child {
+    margin: 0px auto 15px; // @include border-radius(4px);
+    ul {
+        padding: 0;
+        li {
+            display: inline-block;
+            margin-right: 0px;
             &:before {
-                display: none;
+                @extend %slash;
+            }
+            &:first-child:before {
+                content: "現在位置：";
+                display: inline-block;
+                color:#666;
             }
         }
     }
-    span {
-        display: inline-block;
-        &:before {
-            @extend %slash;
-        }
+    a {
+        @include aSetting();
     }
 }
