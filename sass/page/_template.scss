@@ -17,7 +17,7 @@
     [class^="col"] {
         border: 2px solid #FFF;
         background:#DEDEDE;
-        // min-height: 250px;
+        min-height: 250px;
         color: $primaryColor;
         text-align: center;
         line-height: 250px;
@@ -51,20 +51,16 @@
 .col-8-4 {
     .news {
         @include make-xs-column(12); //576px  width:100%
-        @include make-sm-column(6); //768px  width:66.6%
-        @include make-md-column(6); //992px  width:66.6%
-        @include make-lg-column(6); //1400px width:66.6%
+        @include make-sm-column(8); //768px  width:66.6%
+        @include make-md-column(8); //992px  width:66.6%
+        @include make-lg-column(8); //1400px width:66.6%
         @include gutter();
     }
     .video {
         @include make-xs-column(12); //576px  width:100%
-        @include make-sm-column(5); //768px  width:33.3%
-        @include make-md-column(5); //992px  width:33.3%
-        @include make-lg-column(5); //1400px width:33.3%
-        @include make-xs-column-offset(0);
-            @include make-sm-column-offset(1);
-            @include make-md-column-offset(1);
-            @include make-lg-column-offset(1);
+        @include make-sm-column(4); //768px  width:33.3%
+        @include make-md-column(4); //992px  width:33.3%
+        @include make-lg-column(4); //1400px width:33.3%
     }
 }
 
@@ -87,7 +83,6 @@
         @include make-sm-column(2); //768px  width:33.3%
         @include make-md-column(2); //992px  width:33.3%
         @include make-lg-column(2); //1400px width:33.3%
-
         &:first-child {
             @include make-xs-column-offset(0);
             @include make-sm-column-offset(1);

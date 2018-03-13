@@ -2,8 +2,11 @@ footer {
     @include box-sizing(border-box);
     text-align: left;
     font-size: 0.813em;
-    .row>div {
-        padding: 1em;
+    .container{
+        @include gutter();
+        >div{
+            padding-bottom: 1em;
+        }
     }
     a {
         text-decoration: none;

@@ -25,24 +25,32 @@
         <!-- load menu.htm-->
         <div class="content">
             <div class="breadcrumb">
-                <a onclick="location.href='index.htm'">首頁</a><span>模組</span><span>Breadcrumb</span>
+                <ul>
+                    <li><a href="index.htm">首頁</a></li>
+                    <li>模組</li>
+                    <li>Breadcrumb</li>
+                </ul>
             </div>
             <h1>Breadcrumb</h1>
             <div class="path">檔案名稱：<span>sass/_breadcrumb.scss</span></div>
             <!-- demo Start -->
             <div class="demo">
                 <div class="breadcrumb">
-                    <a href="#">首頁</a><a href="#">父節點名稱</a><span>子節點名稱</span>...
+                   <ul>
+                        <li><a href="#">首頁</a></li>
+                        <li><a href="#">節點</a></li>
+                        <li>節點</li>
+                    </ul>
                 </div>
             </div>
             <div class="sourcecode">
                 <pre class="language-html">
                     <code class="language-html">
-&lt;div class="breadcrumb"&gt;
-    &lt;a href="#"&gt;首頁&lt;/a&gt;&lt;a href="#"&gt;父節點名稱&lt;/a&gt;&lt;span&gt;子節點名稱&lt;/span&gt;...
-&lt;/div&gt;
-</code>
-</pre>
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;首頁&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;節點&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;節點&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
             </div>
             <!-- demo End -->
         </div>

@@ -25,7 +25,11 @@
         <!-- load menu.htm-->
         <div class="content">
             <div class="breadcrumb">
-                <a onclick="location.href='index.htm'">首頁</a><span>範例頁面</span><span>fp</span>
+                <ul>
+                    <li><a href="index.htm">首頁</a></li>
+                    <li>範例頁面</li>
+                    <li>Forward Page / 轉寄友人</li>
+                </ul>
             </div>
             <h1>Forward Page / 轉寄友人</h1>
             <!-- <div class="path">檔案名稱：<span>sass/_element.scss</span></div> -->
@@ -33,15 +37,21 @@
             <div class="demo">
                 <!-- breadcrumb路徑 -->
                 <div class="breadcrumb">
-                    <a href="javascipt:;">首頁</a><a href="javascript:;">節點</a><span>節點</span>
+                    <ul>
+                        <li><a href="#">首頁</a></li>
+                        <li><a href="#">節點</a></li>
+                        <li>節點</li>
+                    </ul>
                 </div>
                 <!-- h2節點 -->
                 <h2>節點標題</h2>
-                <!-- function功能區塊 -->
+                 <!-- function功能區塊 -->
                 <div class="function">
-                    <button type="button" class="back icon_back">回上一頁</button>
-                    <button type="button" class="print icon_print">友善列印</button>
-                    <button type="button" class="forward icon_forward">轉寄友人</button>
+                    <ul>
+                        <li class="back"><a href="#">回上一頁</a></li>
+                        <li class="print"><a href="#">友善列印</a></li>
+                        <li class="forward"><a href="#">轉寄友人</a></li>
+                    </ul>
                 </div>
                 <!-- FP Start -->
                 <section class="fp">
@@ -94,16 +104,22 @@
                 <code class="language-html">
 &lt;!-- breadcrumb路徑 --&gt;
 &lt;div class="breadcrumb"&gt;
-    &lt;a href="javascipt:;"&gt;首頁&lt;/a&gt;&lt;a href="javascript:;"&gt;節點&lt;/a&gt;&lt;span&gt;節點&lt;/span&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;首頁&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;節點&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;節點&lt;/li&gt;
+    &lt;/ul&gt;
 &lt;/div&gt;
 &lt;!-- h2節點 --&gt;
 &lt;h2&gt;節點標題&lt;/h2&gt;
 &lt;!-- function功能區塊 --&gt;
-    &lt;div class="function"&gt;
-        &lt;button type="button" class="back icon_back"&gt;回上一頁&lt;/button&gt;
-        &lt;button type="button" class="print icon_print"&gt;友善列印&lt;/button&gt;
-        &lt;button type="button" class="forward icon_forward"&gt;轉寄友人&lt;/button&gt;
-    &lt;/div&gt;
+&lt;div class="function"&gt;
+    &lt;ul&gt;
+        &lt;li class="back"&gt;&lt;a href="#"&gt;回上一頁&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="print"&gt;&lt;a href="#"&gt;友善列印&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="forward"&gt;&lt;a href="#"&gt;轉寄友人&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
 &lt;!-- FP Start --&gt;
 &lt;section class="fp"&gt;
     &lt;p&gt;註:&lt;span class="necessary"&gt;*&lt;/span&gt;為必填(選)欄位, 不能為空白。&lt;/p&gt;

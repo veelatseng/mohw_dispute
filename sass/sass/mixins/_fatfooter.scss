@@ -6,11 +6,11 @@ $fatFooterliMargin: 1%; // 欄左右的留白，盡量少，fatfooter字過多
             $fatFooterliMargin: 1%;
             $fatFooterWidth: 100%;
             width: floor((($fatFooterWidth / $fatFooterliLength))*.98-($fatFooterliMargin/2));
-            @media (max-width: 992px) {
+            @include screen("tablet") {
                 $fatFooterliMargin: 0%;
                 width: floor(($fatFooterWidth / $fatFooterliLength)*0.9);
             }
-            @media (max-width: 767px) {
+            @include screen("mobile") {
                 width: 95%;
                 margin: 0px auto 3px;
             }

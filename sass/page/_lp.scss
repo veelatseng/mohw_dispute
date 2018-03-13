@@ -12,41 +12,70 @@
             }
         }
     }
-    ol{
-        counter-reset: counter;
-        list-style-type:none;
-        padding:0;
-        border-top: 2px solid $primaryColor;
-        li {
-            padding: 1em .5em;
-            border-bottom: 1px solid #DDD;
-            padding-left: 35px;
-            position:relative;
-            // outline: 1px solid blue;
-            &:before {
-           			position: absolute;
-           			// outline: 1px solid red;
-           			top:16px;
-           			left:0px;
-           			text-align:right;
-           			width:30px;
-                    counter-increment: counter;
-                    content: counters(counter, ".") " . ";
+    .list {
+        ul,
+        ol {
+            list-style-type: none;
+            padding: 0;
+            border-top: 2px solid $primaryColor;
+            li {
+                padding: 1em 0;
+                border-bottom: 1px solid #DDD;
+                position: relative; // outline: 1px solid blue;
+                a {
+                    display: block;
+                    padding-left: 1.5em;
+                    position: relative;
+                    .num {
+                        width: 1em;
+                        text-align: right;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        &:after {
+                            content: ".";
+                            display: inline-block;
+                        }
+                    }
                 }
-            a {
-                display: block;
-            }
-            span {
-                color: #999;
-                margin-right: 1em;
-                font-size: .938em;
-                @include screen("mobile") {
-                	display:block;
-        }
+                span.dept {
+                    display: inline-block;
+                    font-size: .938em;
+                    @include screen("mobile") {
+                        display: block;
+                    }
+                }
+                time {
+                    display: block;
+                    color: #AAA;
+                    font-size: .938em;
+                }
             }
         }
     }
+
     .album {
         margin: 1em auto;
+        overflow: hidden;
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style:none;
+            li {
+                @include make-xs-column(12); //576px  width:100%
+                @include make-sm-column(4); //768px  width:50%
+                @include make-md-column(4); //992px  width:33.3%
+                @include make-lg-column(4); //1400px width:33.3%
+                @include gutter();
+                a{
+                    display:block;
+                    text-align: center;
+                }
+                .imgOuter{
+                    width:100%;
+                    @include aspect-ratio(4,3);
+                }
+            }
+        }
     }
 }
