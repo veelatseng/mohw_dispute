@@ -105,7 +105,7 @@
 .main {
     .container {
         margin: 0px auto;
-        width: $container-max;
+        max-width: $container-max;
         @include gutter();
         padding:2em 0;
     }
@@ -115,7 +115,13 @@
         @include make-md-column(3); //992px  width:33.3%
         @include make-lg-column(3); //1400px width:33.3%
         @include gutter();
+        @include screen("mobile") {
+            display:none;
+        }
         min-height: 400px;
+        line-height:400px;
+        font-size:2em;
+        text-align: center;
         display: block;
         border: 1px solid #DEDEDE;
         border-right: none;
