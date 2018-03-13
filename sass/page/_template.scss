@@ -1,8 +1,7 @@
 .container {
     padding: 0;
     margin: 0 auto;
-    max-width: $container-max;
-    // @include gutter();
+    max-width: $container-max; // @include gutter();
     outline: 1px solid red;
 }
 
@@ -16,7 +15,7 @@
     text-align: center;
     [class^="col"] {
         border: 2px solid #FFF;
-        background:#DEDEDE;
+        background: #DEDEDE;
         min-height: 250px;
         color: $primaryColor;
         text-align: center;
@@ -34,9 +33,9 @@
         @include make-sm-column(12); //768px  width:100%
         @include make-md-column(12); //992px  width:100%
         @include make-lg-column(12); //1400px widows: 100%;
-        
     }
 }
+
 // 雙欄 6-6
 .col-6 {
     .col {
@@ -72,10 +71,11 @@
         @include make-md-column(4); //992px  width:33.3%
         @include make-lg-column(4); //1400px width:33.3%
     }
-    .imgOuter{
-            @include aspect-ratio(4,3);
-        }
+    .imgOuter {
+        @include aspect-ratio(4, 3);
+    }
 }
+
 // 五欄
 .col-5 {
     .col {
@@ -89,5 +89,46 @@
             @include make-md-column-offset(1);
             @include make-lg-column-offset(1);
         }
+    }
+}
+
+
+// inner
+.demo_header {
+    width: 100%;
+    height: 100px;
+    @include box-shadow(0px 0px 15px RGBA(0, 0, 0, .4));
+    .container{
+        height:100px;
+    }
+}
+.main {
+    .container {
+        margin: 0px auto;
+        width: $container-max;
+        @include gutter();
+        padding:2em 0;
+    }
+    .left {
+        @include make-xs-column(12); //576px  width:100%
+        @include make-sm-column(3); //768px  width:50%
+        @include make-md-column(3); //992px  width:33.3%
+        @include make-lg-column(3); //1400px width:33.3%
+        @include gutter();
+        min-height: 400px;
+        display: block;
+        border: 1px solid #DEDEDE;
+        border-right: none;
+    }
+
+    .content {
+        @include make-xs-column(12); //576px  width:100%
+        @include make-sm-column(9); //768px  width:50%
+        @include make-md-column(9); //992px  width:33.3%
+        @include make-lg-column(9); //1400px width:33.3%
+        @include gutter();
+        display: block;
+        min-height: 400px;
+        border: 1px solid #DEDEDE;
     }
 }
