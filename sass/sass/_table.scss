@@ -3,7 +3,7 @@ table {
     width: 100%;
     border-collapse: collapse;
      @include screen('xs_mobile') {
-     	width:100%;
+     	width:auto;
      	position:relative;
      }
     th,
