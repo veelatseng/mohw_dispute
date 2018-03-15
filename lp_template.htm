@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="zh-Hant" class="no-js">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
 <![endif]-->
     <link rel="stylesheet" href="css/hyui.css">
 </head>
+
 <body>
     <!-- 直接跳主內容區 -->
     <a class="goCenter" href="#center" tabindex="1">按 Enter 到主內容區</a>
@@ -44,7 +46,7 @@
                 </h1>
                 <!-- Search Start -->
                 <section class="search">
-                     <noscript>
+                    <noscript>
                         您的瀏覽器不支援 JavaScript 或 JavaScript已停用
                     </noscript>
                     <form action="" class="form_inline">
@@ -131,88 +133,169 @@
         </header>
         <!-- header End -->
         <!-- main Start -->
-        <div id="center" class="main">
+        <div id="center" class="main innerpage">
+            <!-- 內頁新增一個classname-->
             <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
-            <!-- 格線設定請看 page/_template.scss -->
-            <!-- 任何一個section下一層都要包下一層都要包div container作對齊 -->
-            <!-- //// class 都可以隨意命名 !!! ///// -->
-            <section class="section col-12">
-                <div class="container">
-                    <div class="col">
-                        滿版
+            <div class="container">
+                <!-- breadcrumb路徑 -->
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="#">首頁</a></li>
+                        <li><a href="#">節點</a></li>
+                        <li>節點</li>
+                    </ul>
+                </div>
+                <!-- h2節點 -->
+                <h2>節點標題</h2>
+                <!-- function功能區塊 -->
+                <div class="function">
+                    <ul>
+                        <li class="back"><a href="#">回上一頁</a></li>
+                        <li class="print"><a href="#">友善列印</a></li>
+                        <li class="forward"><a href="#">轉寄友人</a></li>
+                    </ul>
+                </div>
+                <!-- LP Start -->
+                <section class="lp">
+                    <!-- category -->
+                    <div class="category">
+                        <ul>
+                            <li><a href="#">標籤1</a></li>
+                            <li><a href="#">標籤2</a></li>
+                            <li><a href="#">標籤3</a></li>
+                            <li><a href="#">標籤4</a></li>
+                            <li><a href="#">標籤5</a></li>
+                            <li><a href="#">標籤6</a></li>
+                            <li><a href="#">標籤7</a></li>
+                            <li><a href="#">標籤8</a></li>
+                            <li><a href="#">標籤9</a></li>
+                            <li><a href="#">標籤10</a></li>
+                        </ul>
                     </div>
-                </div>
-            </section>
-            <!--  四欄樣式 -->
-            <section class="section col-3">
-                <div class="container">
-                    <div class="col">四欄樣式</div>
-                    <div class="col">四欄樣式</div>
-                    <div class="col">四欄樣式</div>
-                    <div class="col">四欄樣式</div>
-                </div>
-            </section>
-            <!--  四欄樣式 有標題 -->
-            <section class="section col-3">
-                <div class="container">
-                    <h2>我是標題</h2>
-                    <!-- 都要放在container底下-->
-                    <div class="col">四欄樣式</div>
-                    <div class="col">四欄樣式</div>
-                    <div class="col">四欄樣式</div>
-                    <div class="col">四欄樣式</div>
-                </div>
-            </section>
-            <!-- 活動訊息 可用有意義名稱命名 -->
-            <section class="section event">
-                <div class="container">
-                    <div class="col news">News區塊</div>
-                    <div class="col video">Video區塊</div>
-                </div>
-            </section>
-            <!-- 活動訊息 可用有意義名稱命名 -->
-            <section class="section event">
-                <div class="container">
-                    <h2>左右有gutter</h2>
-                    <div class="col news">News區塊</div>
-                    <div class="col video">Video區塊</div>
-                </div>
-            </section>
-            <!--  三欄樣式 -->
-            <section class="section col-3-3-3">
-                <div class="container">
-                    <div class="col">三欄樣式</div>
-                    <div class="col">三欄樣式</div>
-                    <div class="col">三欄樣式</div>
-                </div>
-            </section>
-            <!--  三欄樣式 有底色 -->
-            <section class="section col-3-3-3">
-                <div class="container">
-                    <h2>有底色</h2>
-                    <div class="col">三欄樣式</div>
-                    <div class="col">三欄樣式</div>
-                    <div class="col">三欄樣式</div>
-                </div>
-            </section>
-            <!-- 進階設定，class名稱一樣可用nth-child 控制個別寬度 -->
-            <section class="section col-1-2-1">
-                <div class="container">
-                    <div class="col">小</div>
-                    <div class="col">大</div>
-                    <div class="col">小</div>
-                </div>
-            </section>
-            <!--  五欄樣式 -->
-            <section class="section col-5">
-                <div class="container">
-                    <div class="col">五欄樣式</div>
-                    <div class="col">五欄樣式</div>
-                    <div class="col">五欄樣式</div>
-                    <div class="col">五欄樣式</div>
-                    <div class="col">五欄樣式</div>
-                </div>
-            </section>
+                    <!-- 文字列表 -->
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#">
+                    <span class="num">1</span>
+                        颱風逼近軍民齊心加強防颱戒備
+                    <span class="dept">(服務照顧處)</span>
+                    <time>2018-03-09</time>
+                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                    <span class="num">2</span>
+                        東坑微電網示範將到期縣府盼由台電承接
+                    <span class="dept"> (就養養護處)</span>
+                    <time>2018-03-09</time>
+                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                    <span class="num">3</span>
+                        公務員高普考10日登場縣府謹慎試務
+                    <span class="dept"> (就學就業處)</span>
+                    <time>2018-03-09</time>
+                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                    <span class="num">4</span>
+                        縣長﹕導引正向能量提升教育競爭力
+                    <span class="dept">(就學就業處)</span>
+                    <time>2018-03-09</time>
+                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                    <span class="num">5</span>
+                        颱風逼近軍民齊心加強防颱戒備
+                    <span class="dept">(就學就業處)</span>
+                    <time>2018-03-09</time>
+                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                    <span class="num">6</span>
+                        立法院三讀通過「國軍退除役官兵輔導條例」第3條之1、第33條、第34條修正案
+                    <span class="dept">(就學就業處)</span>
+                    <time>2018-03-09</time>
+                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                    <span class="num">7</span>
+                        國軍退除役官兵年終慰問金發放說明 
+                    <span class="dept">(就學就業處)</span>
+                    <time>2018-03-09</time>
+                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                    <span class="num">8</span>
+                        因應募兵制推動輔導會就業處積極為榮民（眷）與退役官士兵就學、職訓、就業輔導服務升級
+                    <span class="dept">(就學就業處)</span>
+                    <time>2018-03-09</time>
+                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                    <span class="num">9</span>
+                        輔導會各榮院全力投入「二O六大地震」救災
+                    <span class="dept">(就學就業處)</span>
+                    <time>2018-03-09</time>
+                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                    <span class="num">10</span>
+                        退除役官兵申請就學獎助學金自二月一日起開始受理
+                    <span class="dept">(就學就業處)</span>
+                    <time>2018-03-09</time>
+                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <form action="" class="form_inline">
+                            <div class="total">
+                                共<span>308</span>筆資料，第<span>1/18</span>頁，每頁顯示
+                                <select name="" id="">
+                                    <option value="">10</option>
+                                    <option value="">20</option>
+                                    <option value="">30</option>
+                                    <option value="">40</option>
+                                </select>筆
+                            </div>
+                        </form>
+                        <ul class="page">
+                            <li class="first">
+                                <a href="#" title="第一頁" aria-label="Previous">第一頁 </a></li>
+                            <li class="prev">
+                                <a href="#" title="回上一頁" aria-label="Previous">回上一頁 </a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">6</a></li>
+                            <li><a href="#">7</a></li>
+                            <li><a href="#">8</a></li>
+                            <li><a href="#">9</a></li>
+                            <li><a href="#">10</a></li>
+                            <li class="next">
+                                <a href="#" title="下一頁" aria-label="Next">下一頁 </a>
+                            </li>
+                            <li class="last">
+                                <a href="#" title="最後一頁" aria-label="Next">最後一頁 </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- LP End -->
+            </div>
         </div>
         <!-- fatfooter Start -->
         <section class="fatfooter">
@@ -306,17 +389,18 @@
                 </div>
                 <div class="footer_icon">
                     <a target="_blank" href="javascript:;" title="另開視窗">
-                                <img src="images/basic/accessibility.jpg" alt="">
-                            </a>
+                        <img src="images/basic/accessibility.jpg" alt="">
+                    </a>
                     <a target="_blank" href="javascript:;" title="另開視窗">
-                                <img src="images/basic/egov.png" alt="">
-                            </a>
+                        <img src="images/basic/egov.png" alt="">
+                    </a>
                 </div>
             </div>
         </footer>
         </div>
 </body>
 <a href="javascript:;" class="scrollToTop" title="回頁首">回頁首</a>
+
 </html>
 <script src="js/jquery.1.12.4.min.js"></script>
 <script src="vendor/jquery.easing.min.js"></script>

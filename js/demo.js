@@ -17,7 +17,6 @@ $(function() {
             $('.overlay').hide(); // 遮罩
             $('.float_menu').hide();
             var resizeTimer;
-
             $(window).on('resize load', function(e) {
                 clearTimeout(resizeTimer);
                 var _WH = $(window).width();

@@ -14,15 +14,16 @@
         cursor: pointer;
     }
 }
+
 body {
     @include fontSetting(1em);
+    line-height: 1.45em;
+    -webkit-text-size-adjust: none;
     color: #333;
     @media print {
         font-size: 13px;
     }
 }
-
 a {
     @include aSetting();
 }
-

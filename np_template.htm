@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="zh-Hant" class="no-js">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
 <![endif]-->
     <link rel="stylesheet" href="css/hyui.css">
 </head>
+
 <body>
     <!-- 直接跳主內容區 -->
     <a class="goCenter" href="#center" tabindex="1">按 Enter 到主內容區</a>
@@ -44,7 +46,7 @@
                 </h1>
                 <!-- Search Start -->
                 <section class="search">
-                     <noscript>
+                    <noscript>
                         您的瀏覽器不支援 JavaScript 或 JavaScript已停用
                     </noscript>
                     <form action="" class="form_inline">
@@ -131,88 +133,45 @@
         </header>
         <!-- header End -->
         <!-- main Start -->
-        <div id="center" class="main">
+        <div id="center" class="main innerpage">
+            <!-- 內頁新增一個classname-->
             <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
-            <!-- 格線設定請看 page/_template.scss -->
-            <!-- 任何一個section下一層都要包下一層都要包div container作對齊 -->
-            <!-- //// class 都可以隨意命名 !!! ///// -->
-            <section class="section col-12">
-                <div class="container">
-                    <div class="col">
-                        滿版
-                    </div>
+            <div class="container">
+                <!-- breadcrumb路徑 -->
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="#">首頁</a></li>
+                        <li><a href="#">節點</a></li>
+                        <li>節點</li>
+                    </ul>
                 </div>
-            </section>
-            <!--  四欄樣式 -->
-            <section class="section col-3">
-                <div class="container">
-                    <div class="col">四欄樣式</div>
-                    <div class="col">四欄樣式</div>
-                    <div class="col">四欄樣式</div>
-                    <div class="col">四欄樣式</div>
+                <!-- h2節點 -->
+                <h2>節點標題</h2>
+                <!-- function功能區塊 -->
+                <div class="function">
+                    <ul>
+                        <li class="back"><a href="#">回上一頁</a></li>
+                        <li class="print"><a href="#">友善列印</a></li>
+                        <li class="forward"><a href="#">轉寄友人</a></li>
+                    </ul>
                 </div>
-            </section>
-            <!--  四欄樣式 有標題 -->
-            <section class="section col-3">
-                <div class="container">
-                    <h2>我是標題</h2>
-                    <!-- 都要放在container底下-->
-                    <div class="col">四欄樣式</div>
-                    <div class="col">四欄樣式</div>
-                    <div class="col">四欄樣式</div>
-                    <div class="col">四欄樣式</div>
-                </div>
-            </section>
-            <!-- 活動訊息 可用有意義名稱命名 -->
-            <section class="section event">
-                <div class="container">
-                    <div class="col news">News區塊</div>
-                    <div class="col video">Video區塊</div>
-                </div>
-            </section>
-            <!-- 活動訊息 可用有意義名稱命名 -->
-            <section class="section event">
-                <div class="container">
-                    <h2>左右有gutter</h2>
-                    <div class="col news">News區塊</div>
-                    <div class="col video">Video區塊</div>
-                </div>
-            </section>
-            <!--  三欄樣式 -->
-            <section class="section col-3-3-3">
-                <div class="container">
-                    <div class="col">三欄樣式</div>
-                    <div class="col">三欄樣式</div>
-                    <div class="col">三欄樣式</div>
-                </div>
-            </section>
-            <!--  三欄樣式 有底色 -->
-            <section class="section col-3-3-3">
-                <div class="container">
-                    <h2>有底色</h2>
-                    <div class="col">三欄樣式</div>
-                    <div class="col">三欄樣式</div>
-                    <div class="col">三欄樣式</div>
-                </div>
-            </section>
-            <!-- 進階設定，class名稱一樣可用nth-child 控制個別寬度 -->
-            <section class="section col-1-2-1">
-                <div class="container">
-                    <div class="col">小</div>
-                    <div class="col">大</div>
-                    <div class="col">小</div>
-                </div>
-            </section>
-            <!--  五欄樣式 -->
-            <section class="section col-5">
-                <div class="container">
-                    <div class="col">五欄樣式</div>
-                    <div class="col">五欄樣式</div>
-                    <div class="col">五欄樣式</div>
-                    <div class="col">五欄樣式</div>
-                    <div class="col">五欄樣式</div>
-                </div>
-            </section>
+                <!-- NP Start -->
+                <section class="np">
+                    <ul>
+                        <li><a href="#"><span class="num">1</span>節點1</a></li>
+                        <li><a href="#"><span class="num">2</span>節點2</a></li>
+                        <li><a href="#"><span class="num">3</span>節點3</a></li>
+                        <li><a href="#"><span class="num">4</span>節點4</a></li>
+                        <li><a href="#"><span class="num">5</span>節點5</a></li>
+                        <li><a href="#"><span class="num">6</span>節點6</a></li>
+                        <li><a href="#"><span class="num">7</span>節點7</a></li>
+                        <li><a href="#"><span class="num">8</span>節點8</a></li>
+                        <li><a href="#"><span class="num">9</span>節點9</a></li>
+                        <li><a href="#"><span class="num">10</span>節點10</a></li>
+                    </ul>
+                </section>
+                <!-- NP End -->
+            </div>
         </div>
         <!-- fatfooter Start -->
         <section class="fatfooter">
@@ -236,6 +195,7 @@
                             <ul>
                                 <li><a href="#">本局公告</a></li>
                                 <li><a href="#">環保署公告</a></li>
+                                `
                                 <li><a href="#">環境用藥公告</a></li>
                                 <li><a href="#">環保專案成果報告</a></li>
                             </ul>
@@ -306,17 +266,18 @@
                 </div>
                 <div class="footer_icon">
                     <a target="_blank" href="javascript:;" title="另開視窗">
-                                <img src="images/basic/accessibility.jpg" alt="">
-                            </a>
+                        <img src="images/basic/accessibility.jpg" alt="">
+                    </a>
                     <a target="_blank" href="javascript:;" title="另開視窗">
-                                <img src="images/basic/egov.png" alt="">
-                            </a>
+                        <img src="images/basic/egov.png" alt="">
+                    </a>
                 </div>
             </div>
         </footer>
         </div>
 </body>
 <a href="javascript:;" class="scrollToTop" title="回頁首">回頁首</a>
+
 </html>
 <script src="js/jquery.1.12.4.min.js"></script>
 <script src="vendor/jquery.easing.min.js"></script>

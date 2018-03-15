@@ -108,7 +108,6 @@ $(function() {
     // $(".left_nav>ul>li>a[onclick]:contains('htm')").css("color", "red");
     // $('.left_nav>ul>li>a').css('background', 'red');
     $('.left_nav>ul>li>a').each(function(index, el) {
-
         var ulLength = $(this).has('ul').length;
         if (ulLength < 1) {
             $(this).addClass('nochild');

@@ -1,124 +1,192 @@
 $(function() {
-
     /*-----------------------------------*/
-    //////////// menu ////////////
+    ///////////////// 變數 ////////////////
     /*-----------------------------------*/
-  //   //header 選單
-  //   var _menu = $('.header .menu');
-  //   _menu.find('li').has('ul').addClass('hasChild');
-  //   var liHasChild = _menu.find('li.hasChild'),
-  //           subMenuWidth = liHasChild.first().children('ul').outerWidth();
+    var _window = $(window),
+        ww = _window.width(),
+        wh = _window.height(),
+        _body = $('body'),
+        wwNormal = 1400,
+        wwMedium = 992,
+        wwSmall = 768,
+        wwxs = 576;
+    /*-----------------------------------*/
+    //////////// nojs 先移除////////////////
+    /*-----------------------------------*/
+    $('html').removeClass('no-js');
+    /*-----------------------------------*/
+    //////////// nav如果有兩個選單///////////
+    /*-----------------------------------*/
+    var _navLength = $('.navigation ul').length;
+    $(window).load(function() {
+        if (_navLength > 1) {
+            $('.navigation ul:nth-child(1)').addClass('left_nav');
+        }
+    });
+    /*-----------------------------------*/
+    /////// header選單 tab及 fix設定////////
+    /*-----------------------------------*/
+    var _menu = $('.header .menu');
+    _menu.find('li').has('ul').addClass('hasChild');
+    var liHasChild = _menu.find('li.hasChild');
+    var subMenuWidth = liHasChild.first().children('ul').outerWidth();
+    /*-----------------------------------*/
+    ////////////// 行動版選單切換////////////
+    /*-----------------------------------*/
+    $('body').prepend('<div class="menu_overlay"></div>');
+    $('body').prepend('<aside class="sidebar"><button type="button" class="sidebarClose">關閉</button></aside>');
+    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
+    var menu_status = false;
+    var _sidebar = $('.sidebar'),
+        _search = $('.search'),
+        _nav = $('.navigation'),
+        _sidebarClose = $('.sidebarClose'),
+        _sidebarCtrl = $('.sidebarCtrl'),
+        _overlay = $('.menu_overlay');
+    _sidebarCtrl.append('<span></span><span></span><span></span>')
+    // 打開選單 function
+    function showSidebar() {
+        _sidebar.animate({ 'margin-left': 0 }, 400, 'easeOutQuint');
+        $('body').addClass('noscroll');
+        _overlay.show();
+        // $(document).off().touchmove();
+    }
+    // 縮合選單 function
+    function hideSidebar() {
+        _sidebar.animate({ 'margin-left': _sidebar.width() * -1 + 'px' }, 400, 'easeOutQuint');
+        $('body').removeClass('noscroll');
+        _overlay.hide();
+    }
+    // 打開選單動作
+    _sidebarCtrl.click(function() {
+        showSidebar();
 
-  //   liHasChild.hover(
-  //       function(){
-  //           var _showing = $(this).children('ul');
-  //           _showing.stop().fadeIn(200);
-  //           showingMenu(_showing);
-  //       },
-  //       function(){$(this).children('ul').stop().fadeOut(200);}
-  //   );
-  //   liHasChild.keyup(
-  //       function(){
-  //           var _showing = $(this).children('ul');
-  //           _showing.show();
-  //           showingMenu(_showing);
-  //           $(this).siblings().focus(function(){$(this).hide();});
-  //   });
+    });
+    // 關閉動作
+    _overlay.add(_sidebarClose).click(function() {
+        hideSidebar();
+    });
+    // 無障礙tab設定
+    liHasChild.keyup(
+        function() {
+            $(this).children('ul').fadeIn();
+            $(this).siblings().focus(function() {
+                $(this).hide();
+            });
+        });
+    _menu.find('li').keyup(function() {
+        $(this).siblings().children('ul').hide();
+    });
+    _menu.find('li:last>a').focusout(function() {
+        _menu.find('li ul').hide();
+    });
 
-  //   function showingMenu(_showing){
-  //       var  showingOffset = _showing.offset().left;
-  //       if (showingOffset+subMenuWidth > ww) {
-  //           _showing.css({left: -1*subMenuWidth+5, top:5});
-  //       }
-  //   }
+    //設定resize 計時器
+    var resizeTimer;
+    _window.on("load resize", function(event) {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            // switch PC/MOBILE 
+            ww = _window.width();
+            if (ww < wwSmall) {
+                /*-----------------------------------*/
+                /////////////// 手機版設定 /////////////
+                /*-----------------------------------*/
+                menu_status = false;
+                _sidebar.show();
+                _overlay.hide();
+                _nav.prependTo(_sidebar);
+                _menu.prependTo(_sidebar);
+                _search.prependTo(_body);
+                _search.addClass('m_search');
+                _sidebar.css({ 'margin-left': _sidebar.width() * -1 + 'px' });
+                $('.header').addClass('fixed');
+                liHasChild.on({
+                    mouseenter: function() {
+                        $(this).children('ul').stop(true, true).slideDown();
+                    },
+                    mouseleave: function() {
+                        $(this).parent().siblings('ul').hide();
+                        $(this).children('ul').stop(true, true).slideUp();
+                    }
+                });
+                 // 副選單點出
+                liHasChild.off().on('mouseenter,mouseleave');
+                liHasChild.on('touchstart', function() {
+                    $(this).off('mouseenter,mouseleave');
+                });
 
-  //   _menu.find('li').keyup( 
-  //       function(){
-  //           $(this).siblings().children('ul').hide();
-  //       });
-  //   _menu.find('li:last>a').focusout(
-  //       function(){
-  //           _menu.find('li ul').hide();
-  //   });
-  //   //複製所需區塊到.sidebar
-  // var _sidebar = $('.sidebar'); 
-  //   $('.navigation').clone().prependTo( _sidebar );
-  //   _menu.clone().prependTo( _sidebar);
-  //   _megaMenu.parent().clone().prependTo( _sidebar);
-  //   _sidebar.find('.megaMenu').addClass('menu');
+                liHasChild.off().on('click', function(e) {
+                    e.preventDefault();
+                    $(this).siblings('li').find('ul').hide();
+                    $(this).children('ul').stop(true, true).fadeToggle();
+                    // $(this).prop('disabled', true);
+                });
+                // 行動版查詢
+                var _searchCtrl = $('.searchCtrl');
+                $('.m_search').hide();
+                _searchCtrl.off().click(function() {
+                    $('.m_search').stop(true, true).slideToggle();
+                });
+                // 如果點在外面
+                $(document).on('touchend', function(e) {
+                    var target = e.target;
+                    if (!$(target).is('.m_search',_searchCtrl)) {
+                        $('.m_search').stop(true, true).slideUp();
+                        console.log("search_check");
+                    }
+                });
+            } else {
+                /*-----------------------------------*/
+                /////////////// PC版設定 /////////////
+                /*-----------------------------------*/
+                hideSidebar();
+                $('body').removeClass('noscroll');
+                _nav.prependTo('.header .container');
+                _search.appendTo('.header .container');
+                _menu.appendTo('.header .container');
+                _search.removeClass('m_search');
+                _search.show();
+                // 副選單滑出
+                liHasChild.on({
+                    mouseenter: function() {
+                        $(this).children('ul').stop(true, false).fadeIn();
+                    },
+                    mouseleave: function() {
+                        $(this).parent().siblings('ul').hide();
+                        $(this).children('ul').stop(true, false).fadeOut();
+                    }
+                });
+                // 如果點在外面
+                $(document).on('touchend click', function(e) {
+                    var target = e.target;
+                    if (!$(target).is('.menu li a')) {
+                        $('.menu').find('li ul').hide();
+                        console.log("true");
+                    }
+                });
 
 
-  //   //行動版 menu
-  //   _sidebar.find('.menu, .megaMenu').find('li.hasChild>a').click(function(){
-  //       $(this).next().slideToggle();
-  //       $(this).parent().toggleClass('closeThis');
-  //   });
-  //   //產生遮罩
-  //   $( '.main' ).append( '<div class="overlay"></div>' );
-  //   var _overlay = $('.overlay');
-    
-  //   function showSidebar(){
-  //       _sidebar.css({'margin-left':0,'transition':'.5s'});
-  //       _overlay.show(0, function(){
-  //           _overlay.fadeTo('500', 0.5);
-  //       });   
-  //   }
-  //   function hideSidebar(){
-  //       _sidebar.css('margin-left', _sidebar.width() * -1 + 'px');
-  //       _overlay.fadeTo('500', 0, function(){
-  //           _overlay.hide();
-  //       });
-  //   }
+            }
+        }, 50);
+    });
+    // 固定版頭
+    var hh = $('.header').outerHeight(true),
+        menuH = _menu.outerHeight(),
+        navH = $('.navbar').height();
+    $(window).on("load scroll resize", function(e) {
+        ww = _window.width();
+        if (ww >= wwSmall && $(this).scrollTop() > hh - menuH) {
+            $('.header').addClass('fixed');
+            $('.header').css('margin-top', menuH - hh);
+            $('.main').css('margin-top', hh);
+        } else {
+            $('.header').removeClass('fixed');
+            $('.header').css('margin-top', 0);
+            $('.main').css('margin-top', 0);
+        }
+    });
 
-  //   var _sidebarClose = $('.sidebarClose'),
-  //       _sidebarCtrl = $('.sidebarCtrl');   
-  //       _overlay.parent().css('min-height', 'inherit');
-
-  //   _sidebar.css('margin-left', _sidebar.width() * -1 + 'px');
-
-  //   _sidebarCtrl.click(function() {             
-  //       if (_overlay.is(':visible')) {
-  //           hideSidebar();
-  //       } else {
-  //           showSidebar();
-  //       }
-  //   });
-
-  //   _overlay.add(_sidebarClose).click(function() {
-  //       hideSidebar();
-  //   });
-
-
-
-  //   //固定版頭
-  //   var hh = $('.header').outerHeight(true),
-  //           menuH = _menu.outerHeight(),
-  //           navH = $('.navbar').height();
-    
-  //   _window.scroll(function() {
-  //       if (ww>1000 && $(this).scrollTop() > hh-menuH ){
-  //           $('.header').addClass('fixed');
-  //           $('.center').css('margin-top', menuH );
-  //       } else if ( ww<=1000 && $(this).scrollTop() > 0 ){
-  //           $('.header').addClass('fixed');
-  //           $('.navi , .center').css('margin-top', hh);
-  //           $('.navi').next('.center').css('margin-top', 0);
-  //       } else {
-  //           $('.header').removeClass('fixed');
-  //           $('.navi , .center').css('margin-top', 0);
-  //       }
-  //   });
-
-  //   //行動版查詢
-  //   var _search = $('.search'),
-  //           _searchCtrl = $('.searchCtrl');
-
-  //   if(ww<1000){_search.css('top', hh);}
-
-  //   _searchCtrl.click(function(){
-  //       _search.slideToggle();
-  //       _searchCtrl.toggleClass('close');
-  //   });
     /*-----------------------------------*/
     //////////// notice訊息區塊 ////////////
     /*-----------------------------------*/
@@ -353,8 +421,7 @@ $(function() {
     /////Click event to scroll to top//////
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
-        $('html, body').animate({ scrollTop: 0 }, 400);
+        $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
         e.preventDefault();
     });
-
 });
