@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="left_nav"></div>
+        <!-- load menu.htm-->
+        <div class="content">
+            <div class="breadcrumb">
+                <ul>
+                    <li><a href="index.htm">首頁</a></li>
+                    <li>模組</li>
+                    <li>Modal</li>
+                </ul>
+            </div>
+            <h1>Modal</h1>
+            <div class="path">檔案名稱：<span>sass/_modal.scss</span></div>
+            <!-- demo Start -->
+            <div class="demo">
+                <div class="btn_grp">
+                    <button type="button" id="openModal" class="btn">開啟視窗</button>
+                </div>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                <code class="language-html">
+//按鈕
+&lt;button type="button" id="openModal" class="btn"&gt;開啟視窗&lt;/button&gt;
+//視窗
+&lt;div id="modal1" class="modal"&gt;
+    // div內的內容可以自行設定
+    &lt;h2&gt;標題&lt;/h2&gt;
+    &lt;p&gt;內文&lt;/p&gt;
+&lt;/div&gt;
+</code>
+</pre>
+            </div>
+            <h3>JQUERY設定</h3>
+            <div class="sourcecode">
+                <pre class="language-javascript">
+                <code class="language-javascript">
+/*-----------------------------------*/
+/////////////modal設定/////////////
+/*-----------------------------------*/
+$(function() {
+    $('#modal1').hide();                                                                //先隱藏視窗
+    $('.modal').after('&lt;div class="modal_overlay"&gt;&lt;/div&gt;');                             //新增透明底
+    $('.modal').prepend('&lt;button type="button" class="close"&gt;關閉&lt;/button&gt;');           //新增關閉按鈕
+    $('.modal_overlay').hide();                                                         //隱藏透明底
+    //按鈕動作
+    $('#openModal').click(function(e) {
+        $('#modal1').show();
+        $('.modal_overlay').show();
+        $('body').addClass('noscroll');
+        e.preventDefault();
+    });
+    //關閉function
+    function closeModal(){
+        $('#modal1').hide();
+       $('.modal_overlay').hide();
+    }
+    //點選關閉按鈕及透明底都可關閉
+    $('.modal_overlay').click(closeModal);
+    $('.modal .close').click(closeModal);
+
+});
+</code>
+</pre>
+            </div>
+            <!-- demo End -->
+        </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+<div id="modal1" class="modal">
+    <h2>標題</h2>
+    <p>內文</p>
+</div>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/demo.js"></script>
+<script>
+$(function() {
+    $('#modal1').hide();
+    $('.modal').after('<div class="modal_overlay"></div>');
+    $('.modal').prepend('<button type="button" class="close">關閉</button>')
+    $('.modal_overlay').hide();
+    $('#openModal').click(function(e) {
+        $('#modal1').show();
+        $('.modal_overlay').show();
+        $('body').addClass('noscroll');
+        e.preventDefault();
+    });
+    function closeModal(){
+        $('#modal1').hide();
+       $('.modal_overlay').hide();
+    }
+    $('.modal_overlay').click(closeModal);
+    $('.modal .close').click(closeModal);
+
+});
+</script>

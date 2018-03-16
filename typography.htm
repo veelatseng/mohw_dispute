@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="left_nav"></div>
+        <!-- load menu.htm-->
+        <div class="content">
+            <div class="breadcrumb">
+               <ul>
+                    <li><a href="index.htm">首頁</a></li>
+                    <li>網頁元素</li>
+                    <li>Typography</li>
+                </ul>
+            </div>
+            <h1>Typography</h1>
+            <div class="path">檔案名稱：<span>sass/_typography.scss</span></div>
+               <h2>字型基本設定</h2>
+            <div class="sourcecode">
+                <pre class="language-scss">
+                <code class="language-scss">
+// 字型設定
+$font-family:               'Lato,"PingFang TC","Helvetica Neue",Helvetica,微軟正黑體,新細明體,Arial,sans-serif';
+$font-size:                 16px;
+                    </code></pre></div>
+                    <h2>Verticla Rhythm設定</h2>
+                    <div class="sourcecode">
+                <pre class="language-scss">
+                <code class="language-scss">
+$base-font-size: 16px;              //字級16px
+$base-line-height: 16px;            //行高16px
+$rhythm-unit: 'em';                 //輸出單位：em
+$base-font-stack:$font-family;      //於變數設定font family
+
+//以下只有在CP區塊文章才會設定
+.cp {
+    h1 {
+        @include adjust-font-size-to($base-font-size*2, 3);
+        @include leader(.5);
+        @include trailer(.5);
+    }
+    h2 {
+        @include adjust-font-size-to($base-font-size*1.5, 3);
+        @include leader(.5);
+        @include trailer(.6666);
+    }
+    h3 {
+        @include adjust-font-size-to($base-font-size*1.5, 3);
+        @include leader(.5);
+        @include trailer(.6666);
+    }
+    h4 {
+        @include adjust-font-size-to($base-font-size*1.25, 2);
+        @include leader(.5);
+        @include trailer(1.6);
+    }
+    h5 {
+        @include adjust-font-size-to($base-font-size*1.125, 2.5);
+        @include leader(.5);
+        @include trailer(1.5);
+    }
+    h6 {
+        @include adjust-font-size-to($base-font-size, 2);
+        @include leader(0);
+        @include trailer(0);
+    }
+    blockquote {
+        background: #f2f2f2;
+        font-style: normal;
+        display: block;
+        @include adjust-font-size-to($base-font-size);
+        border-left: 5px solid $primaryColor;
+        padding: $base-font-size*2;
+        box-sizing: border-box;
+        margin-left:.5em;
+        margin-right: .5em;
+    }
+    ul,
+    ol {}
+    p,
+    ul,
+    ol,
+    dd,
+    figure {
+        @include adjust-font-size-to($base-font-size, 2); // @include trailer(1);
+        @include leader(0);
+        @include trailer(2);
+    }
+    img {
+        max-width: 100%;
+        @media (max-width: 767px) {
+            width: 100%;
+            clear: both;
+        }
+    }
+}
+                    </code></pre></div>
+                    <h2>CP頁專屬的文字排版</h2>
+                    <p>在cp的div內的文章，會以以下格式做文字排版</p>
+            <!-- demo Start -->
+
+                <div class="cp vertical_rhythm">
+                    <h1>標題一：價到山大師明展價到山大師明山</h1>
+                    <img src="https://assets.imgix.net/examples/balloons.jpg?w=400&auto=format%2Cenhance" alt="balloons">
+                    <p>大更沒於正時節直只們來壓算有先，求化化看雨的了元得前意要，性說用。以是一分，首字地旅紀親朋經有，在沒許、兒讓靈身不；候案司通資鄉下一支情西也哥際發你也是濟言通海後的健童頭各便。</p>
+                    <p>首動我行得流事個要使著獨操大到總們女，爸建國我統裡媽推列黃上道有畫走長市上續石：知光面，地大人臺畫感光發教經升、方代這門媽心交：這要們天海錯女市那舞德點你告制效滿何管歷地些顯轉，原念中公自很構馬也想生商臺在三政安電對一作樂在要，只不的眼，現朋物樓間出血安人市客好是有地斯的是要為升：事清料獎文臺下大體，會管斯在、以她老景林許計性是應真少福：要車子父葉司代常力不起品們效全成進跑樣養夜現有起他，息在加找腦切的聯站！以算是思轉室實年頭。處來在山工國生即工球一，易心個長什去實用當們公有也候。</p>
+                    <h2>標題二</h2>
+                    <p>師車親求開一：一基唱……工三空子月。行是認這、來和們病說人兒。寫好原這面蘭育見裡治，力護還來這。加系就青演我天見期？</p>
+                    <h3>標題三</h3>
+                    <p>首動我行得流事個要使著獨操大到總們女，爸建國我統裡媽推列黃上道有畫走長市上續石：知光面，地大人臺畫感光發教經升、方代這門媽心交：這要們天海錯女市那舞德點你告制效滿何管歷地些顯轉，原念中公自很構馬也想生商臺在三政安電對一作樂在要，只不的眼，現朋物樓間出血安人市客好是有地斯的是要為升：事清料獎文臺下大體，會管斯在、以她老景林許計性是應真少福：要車子父葉司代常力不起品們效全成進跑樣養夜現有起他，息在加找腦切的聯站！以算是思轉室實年頭。處來在山工國生即工球一，易心個長什去實用當們公有也候。</p>
+                    <h4>標題四標題四標題四標題四題四標題四標題四標題四標題四</h4>
+                    <p>老他選統。影開兒中不們西動會味理化由子常洲國有計的不作，少期作慢明國個先？之生證會不就人推陸跑公片重個基，才雄單功經觀。地量下新，至寶視臉力藝期解無資視東場具預經物弟滿只把？</p>
+                    <h5>標題五</h5>
+                    <p>市過洋上！百服術見故這府來，前信和；們民樣更人系開不樂價魚西財；就過立收立由用位例顯母人通高面用受以母區同輕山形子……期愛作現著飛。道用積得然看、經定是的張商停財、環時從算從心。易治汽：計眼一書年我遊，會該會時水朋可種長但案獨遊，回不縣器會環服，景草兩現機象地力影相人中林了，先國招兒們不球總小樂不世遠幾眼不；音景總連化在了得應腦習案的出路邊定真查心對，用見我易小的之笑平：外修來要經由以因，們斷應續童連國一希入用場行可無區車。</p>
+                    <h6>標題六</h6>
+                    <p>的育病生後種的著視動，司料或不新發是，聲的分不也平我求去行我也客照，石我要英明節後義活己隊有像，一海工改觀已德動果是。國我綠受過三集讀老形果覺世臉。商爭長過用養了。中爸角果……安中境談位轉防，下苦制年……氣金以寶係經是被此竟意們發用過步展重……不別我根太接與解紀有做建加們物環友黃賽力而黨議人研他自轉先，單嗎出南雖深大水，希來因越絕叫銷還！</p>
+                    <h1>Heading 1</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sequi voluptatibus distinctio, perspiciatis omnis maiores ratione sint a atque. Obcaecati ratione amet libero, fuga culpa alias numquam, molestias molestiae corrupti!t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). </p>
+                    <h2>Heading 2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+                    <h3>Heading 3</h3>
+                    <img src="http://placehold.it/300x240">
+                    <ul>
+                        <li>影開兒中不們西動會味理化由子常洲國有標題</li>
+                        <li>首動我行得流事個要使著獨操大</li>
+                        <li>推列黃上道有畫走長市上</li>
+                        <li>證會不就人推陸跑公片重</li>
+                        <li>處來在山工國生即工球一，易心個長什去實用當們公有也候</li>
+                    </ul>
+                    <!-- height is a multiple of the base-line-height in pixels -->
+                    <p>Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <h4>Heading 4</h4>
+                    <p>Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum.</p>
+                    <p>大更沒於正時節直只們來壓算有先，求化化看雨的了元得前意要，性說用。以是一分，首字地旅紀親朋經有，在沒許、兒讓靈身不；候案司通資鄉下一支情西也哥際發你也是濟言通海後的健童頭各便。</p>
+                    <ul>
+                        <li>影開兒中不們西動會味理化由子常洲國有標題</li>
+                        <li>首動我行得流事個要使著獨操大</li>
+                        <li>推列黃上道有畫走長市上</li>
+                        <li>證會不就人推陸跑公片重</li>
+                        <li>處來在山工國生即工球一，易心個長什去實用當們公有也候</li>
+                    </ul>
+                    <blockquote>大更沒於正時節直只們來壓算有先，求化化看雨的了元得前意要，性說用。以是一分，首字地旅紀親朋經有，在沒許、兒讓靈身不；候案司通資鄉下一支情西也哥際發你也是濟言通海後的健童頭各便。</blockquote>
+                </div>
+            <!-- demo End -->
+        </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/demo.js"></script>

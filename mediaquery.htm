@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="left_nav"></div>
+        <!-- load menu.htm-->
+        <div class="content">
+            <div class="breadcrumb">
+                <ul>
+                    <li><a href="index.htm">首頁</a></li>
+                    <li>模組</li>
+                    <li>Mediaquery</li>
+                </ul>
+            </div>
+            <h1>Mediaquery</h1>
+            <div class="path">檔案名稱：<span>sass/mixins/_mediaquery.scss</span></div>
+            <h2>優雅降級 (Graceful Degradation)</h2>
+            <!-- demo Start -->
+            <div class="breakpoint">
+                <div>
+                    <img src="images/icon_pc.png" alt="" class="img-responsive">
+                    <h3>大螢幕尺寸</h3>
+                    <span>&gt;= 1400px</span></div>
+                <div>
+                    <img src="images/icon_nb.png" alt="" class="img-responsive">
+                    <h3>筆記型電腦</h3>
+                    <span>&lt;= 1399px</span></div>
+                <div>
+                    <img src="images/icon_pad.png" alt="" class="img-responsive">
+                    <h3>平板電腦</h3>
+                    <span>&lt; 992px</span></div>
+                <div>
+                    <img src="images/icon_mobile.png" alt="" class="img-responsive">
+                    <h3>大尺寸手機</h3>
+                    <span>&lt; 768px</span></div>
+                <div>
+                    <img src="images/icon_xs_mobile.png" alt="" class="img-responsive">
+                    <h3>極小尺寸手機</h3>
+                    <span>&lt; 576px</span></div>
+            </div>
+            <h2>如何自訂自己的斷點</h2>
+            <p>可在_variable.scss自訂斷點，預設是以1400px、992px、768px、576px為分界</p>
+             <div class="sourcecode">
+                <pre class="language-scss">
+                    <code class="language-scss">
+//mediaquery breakpoint
+$screen-lg:        1400px !default;        //電腦
+$screen-md:        992px  !default;        //平板
+$screen-sm:        768px  !default;        //手機 
+$screen-xs:        576px  !default;        //極小尺寸
+
+</code></pre>
+            </div>
+            <h2>SCSS設定</h2>
+            <div class="sourcecode">
+                <pre class="language-scss">
+                    <code class="language-scss">
+.wrapper {
+  margin: 0 auto;
+  width: 100%; 
+  @include screen('desktop') {
+      width: 90%; }
+  @include screen('notebook') {
+      width: 85%; }
+  @include screen('tablet') {
+      width: 55%; }
+  @include screen('mobile') {
+      width: 85%; }
+  @include screen('xs_mobile') {
+      width: 85%; } 
+}</code></pre>
+            </div>
+             <h2>CSS輸出</h2>
+            <div class="sourcecode">
+                <pre class="language-scss">
+                    <code class="language-scss">
+.wrapper {
+    margin: 0 auto;
+    width: 100%; }
+@media screen and (min-width: 1400px) {
+    .wrapper {
+      width: 90%; } }
+@media screen and (max-width: 1399px) {
+    .wrapper {
+      width: 85%; } }
+@media screen and (max-width: 991px) {
+    .wrapper {
+      width: 55%; } }
+@media screen and (max-width: 767px) {
+    .wrapper {
+      width: 85%; } }
+@media screen and (max-width: 575px) {
+    .wrapper {
+      width: 85%; } }</code></pre>
+            </div>
+            <!-- demo End -->
+        </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/demo.js"></script>

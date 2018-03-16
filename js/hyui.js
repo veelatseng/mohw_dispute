@@ -36,7 +36,7 @@ $(function() {
     $('body').prepend('<div class="menu_overlay"></div>');
     $('body').prepend('<aside class="sidebar"><button type="button" class="sidebarClose">關閉</button></aside>');
     $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
-    var menu_status = false;
+    // var menu_status = false;
     var _sidebar = $('.sidebar'),
         _search = $('.search'),
         _nav = $('.navigation'),
@@ -131,7 +131,7 @@ $(function() {
                 // 如果點在外面
                 $(document).on('touchend', function(e) {
                     var target = e.target;
-                    if (!$(target).is('.m_search',_searchCtrl)) {
+                    if (!$(target).is('.m_search')) {
                         $('.m_search').stop(true, true).slideUp();
                         console.log("search_check");
                     }
@@ -421,7 +421,7 @@ $(function() {
     /////Click event to scroll to top//////
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
-        $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
+        $('html, body').animate({ scrollTop: 0 }, 800, 'easeOutQuint');
         e.preventDefault();
     });
 });
