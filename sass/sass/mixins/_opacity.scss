@@ -1,9 +1,0 @@
-@mixin opacity($opacity) {
-  opacity: $opacity;
-  $opacity-ie: $opacity * 100;
-  filter: alpha(opacity=$opacity-ie); //IE8
-}
-//範例：
-// button{
-// 	@include opacity(0.8);
-// }
