@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="left_nav"></div>
+        <!-- load menu.htm-->
+        <div class="content">
+            <div class="breadcrumb">
+               <ul>
+                    <li><a href="index.htm">首頁</a></li>
+                    <li>網頁元素</li>
+                    <li>fat-footer</li>
+                </ul>
+            </div>
+            <h1>Form</h1>
+            <div class="path">檔案名稱：<span>sass/_form.scss</span></div>
+            <h2>文字表單</h2>
+            <!-- demo Start -->
+            <div class="row">
+                <div class="hy-2">
+                    <h3>預設文字表單</h3>
+                    <div class="demo">
+                        <form action="">
+                            <label for="username">帳號:</label>
+                            <input type="text" id="username" placeholder="請輸入文字">
+                        </form>
+                    </div>
+                    <div class="sourcecode">
+                        <pre class="language-html">
+                    <code class="language-html">
+&lt;label for=&quot;username&quot;&gt;帳號:&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;username&quot; placeholder=&quot;請輸入文字&quot;&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="hy-2">
+                    <h3>預設密碼表單</h3>
+                    <div class="demo">
+                        <form action="">
+                            <label for="password">密碼:</label>
+                            <input type="password" name="password" placeholder="請輸入密碼">
+                        </form>
+                    </div>
+                    <div class="sourcecode">
+                        <pre class="language-html">
+                    <code class="language-html">
+&lt;label for=&quot;password&quot;&gt;密碼:&lt;/label&gt;
+&lt;input type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;請輸入密碼&quot;&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <h3>預設組合範例</h3>
+            <div class="demo">
+                <form action="">
+                    <div class="form_grp">
+                        <label for="username">帳號:</label>
+                        <input name="username" type="text" placeholder="請輸入文字">
+                    </div>
+                    <div class="form_grp">
+                        <label for="password">密碼:</label>
+                        <input name="password" type="password" placeholder="請輸入密碼">
+                    </div>
+                    <div class="check_grp">
+                        <label>
+                            <input type="checkbox">記住我
+                        </label>
+                    </div>
+                    <div class="btn_grp">
+                        <input name="" type="reset" value="清除" />
+                        <input name="" type="submit" value="送出" />
+                    </div>
+                </form>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                    <code class="language-html">
+&lt;div class=&quot;form_grp&quot;&gt;
+    &lt;label for=&quot;username&quot;&gt;帳號:&lt;/label&gt;
+    &lt;input name=&quot;username&quot; type=&quot;text&quot; placeholder=&quot;請輸入文字&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form_grp&quot;&gt;
+    &lt;label for=&quot;password&quot;&gt;密碼:&lt;/label&gt;
+    &lt;input name=&quot;password&quot; type=&quot;password&quot; placeholder=&quot;請輸入密碼&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;checkbox&quot;&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot;&gt;記住我&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;btn_grp&quot;&gt;
+    &lt;input name=&quot;&quot; type=&quot;reset&quot; value=&quot;清除&quot; /&gt;
+    &lt;input name=&quot;&quot; type=&quot;submit&quot; value=&quot;送出&quot; /&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+            <h3>預設組合範例 - 行內設定</h3>
+            <div class="demo">
+                <form action="" class="form_inline">
+                    <div class="form_grp">
+                        <label for="username">帳號:</label>
+                        <input name="username" type="text" placeholder="請輸入文字">
+                    </div>
+                    <div class="form_grp">
+                        <label for="password">密碼:</label>
+                        <input name="password" type="password" placeholder="請輸入密碼">
+                    </div>
+                    <div class="check_grp">
+                        <label>
+                            <input type="checkbox">記住我
+                        </label>
+                    </div>
+                    <div class="btn_grp">
+                        <input name="" type="submit" value="送出" />
+                        <input name="" type="reset" value="清除" />
+                    </div>
+                </form>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                    <code class="language-html">
+&lt;form action=&quot;&quot; class=&quot;form_inline&quot;&gt;
+    &lt;div class=&quot;form_grp&quot;&gt;
+        &lt;label for=&quot;username&quot;&gt;帳號:&lt;/label&gt;
+        &lt;input name=&quot;username&quot; type=&quot;text&quot; placeholder=&quot;請輸入文字&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form_grp&quot;&gt;
+        &lt;label for=&quot;password&quot;&gt;密碼:&lt;/label&gt;
+        &lt;input name=&quot;password&quot; type=&quot;password&quot; placeholder=&quot;請輸入密碼&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;checkbox&quot;&gt;
+        &lt;label&gt;&lt;input type=&quot;checkbox&quot;&gt;記住我&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;btn_grp&quot;&gt;
+        &lt;input name=&quot;&quot; type=&quot;reset&quot; value=&quot;清除&quot; /&gt;
+        &lt;input name=&quot;&quot; type=&quot;submit&quot; value=&quot;送出&quot; /&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+            <div class="row">
+                <div class="hy-2">
+                    <h3>多行文字表單</h3>
+                    <div class="demo">
+                        <form action="">
+                            <div class="form_grp">
+                                <label for="textareaSample1">標題</label>
+                                <textarea id="textareaSample1" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="sourcecode">
+                        <pre class="language-html">
+                    <code class="language-html">
+&lt;div class=&quot;form_grp&quot;&gt;
+    &lt;label for=&quot;textareaSample1&quot;&gt;標題&lt;/label&gt;
+    &lt;textarea id=&quot;textareaSample1&quot; rows=&quot;3&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="hy-2">
+                    <h3>多行文字表單 - 行內設定</h3>
+                    <div class="demo">
+                        <form action="">
+                            <div class="form_grp form_inline">
+                                <label for="textareaSample2">標題</label>
+                                <textarea id="textareaSample2" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="sourcecode">
+                        <pre class="language-html">
+                     <code class="language-html">
+&lt;div class=&quot;form_grp form_inline&quot;&gt;
+    &lt;label for=&quot;textareaSample2&quot;&gt;標題&lt;/label&gt;
+    &lt;textarea id=&quot;textareaSample2&quot; rows=&quot;3&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <h2>核取與單選</h2>
+            <div class="row">
+                <div class="hy-2">
+                    <h3>預設核取方塊</h3>
+                    <div class="demo">
+                        <form action="">
+                            <div class="check_grp">
+                                <label>
+                                    <input type="checkbox" value="">選項一
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="">選項二
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="">選項三
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="sourcecode">
+                        <pre class="language-html">
+                    <code class="language-html">
+&lt;div class=&quot;check_grp&quot;&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot; value=&quot;&quot;&gt;選項一&lt;/label&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot; value=&quot;&quot;&gt;選項二&lt;/label&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot; value=&quot;&quot;&gt;選項三&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+                <!-- ! -->
+                <div class="hy-2">
+                    <h3>預設單選方塊</h3>
+                    <div class="demo">
+                        <form action="">
+                            <div class="radio_grp">
+                                <label>
+                                    <input name="radioSample1" type="radio" value="">選項一
+                                </label>
+                                <label>
+                                    <input name="radioSample1" type="radio" value="">選項二
+                                </label>
+                                <label>
+                                    <input name="radioSample1" type="radio" value="">選項三
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="sourcecode">
+                        <pre class="language-html">
+                    <code class="language-html">
+&lt;div class=&quot;radio_grp&quot;&gt;
+    &lt;label&gt;&lt;input name=&quot;radioSample&quot; type=&quot;radio&quot; value=&quot;&quot;&gt;選項一&lt;/label&gt;
+    &lt;label&gt;&lt;input name=&quot;radioSample&quot; type=&quot;radio&quot; value=&quot;&quot;&gt;選項二&lt;/label&gt;
+    &lt;label&gt;&lt;input name=&quot;radioSample&quot; type=&quot;radio&quot; value=&quot;&quot;&gt;選項三&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <!-- ! -->
+            <div class="row">
+                <div class="hy-2">
+                    <h3>預設核取方塊 - 行內設定</h3>
+                    <div class="demo">
+                        <form action="">
+                            <div class="check_grp form_inline">
+                                <label>
+                                    <input type="checkbox" value="">選項一
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="">選項二
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="">選項三
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="sourcecode">
+                        <pre class="language-html">
+                    <code class="language-html">
+&lt;!--最外層的form 或 check_grp class加上form_inline--&gt;
+&lt;div class=&quot;check_grp form_inline&quot;&gt;
+    &lt;label&gt;&lt;input name=&quot;&quot; type=&quot;checkbox&quot; value=&quot;&quot;&gt;選項一&lt;/label&gt;
+    &lt;label&gt;&lt;input name=&quot;&quot; type=&quot;checkbox&quot; value=&quot;&quot;&gt;選項二&lt;/label&gt;
+    &lt;label&gt;&lt;input name=&quot;&quot; type=&quot;checkbox&quot; value=&quot;&quot;&gt;選項三&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+                <!-- ! -->
+                <div class="hy-2">
+                    <h3>預設單選方塊 - 行內設定</h3>
+                    <div class="demo">
+                        <form action="">
+                            <div class="radio_grp form_inline">
+                                <label>
+                                    <input name="radioSample2" type="radio" value="">選項一
+                                </label>
+                                <label>
+                                    <input name="radioSample2" type="radio" value="">選項二
+                                </label>
+                                <label>
+                                    <input name="radioSample2" type="radio" value="">選項三
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="sourcecode">
+                        <pre class="language-html">
+                    <code class="language-html">
+&lt;!--最外層的form 或 radio_grp class加上form_inline--&gt;
+&lt;div class=&quot;radio_grp form_inline&quot;&gt;
+    &lt;label&gt;&lt;input name=&quot;radioSample&quot; type=&quot;radio&quot; value=&quot;&quot;&gt;選項一&lt;/label&gt;
+    &lt;label&gt;&lt;input name=&quot;radioSample&quot; type=&quot;radio&quot; value=&quot;&quot;&gt;選項二&lt;/label&gt;
+    &lt;label&gt;&lt;input name=&quot;radioSample&quot; type=&quot;radio&quot; value=&quot;&quot;&gt;選項三&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <h2>下拉選單</h2>
+            <div class="row">
+                <div class="hy-2">
+                    <div class="demo">
+                        <div class="form_grp">
+                            <label for="selectSample">選單</label>
+                            <select name="" id="selectSample">
+                                <option value="">選項一</option>
+                                <option value="">選項二</option>
+                                <option value="">選項三</option>
+                                <option value="">選項四</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="sourcecode">
+                        <pre class="language-html">
+                    <code class="language-html">
+&lt;div class=&quot;form_grp&quot;&gt;
+    &lt;label for=&quot;selectSample&quot;&gt;選單&lt;/label&gt;
+        &lt;select name=&quot;&quot; id=&quot;selectSample&quot;&gt;
+            &lt;option value=&quot;&quot;&gt;選項一&lt;/option&gt;
+            &lt;option value=&quot;&quot;&gt;選項二&lt;/option&gt;
+            &lt;option value=&quot;&quot;&gt;選項三&lt;/option&gt;
+            &lt;option value=&quot;&quot;&gt;選項四&lt;/option&gt;
+        &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+                <!-- end -->
+                <div class="hy-2">
+                    <div class="demo">
+                        <form action="">
+                            <div class="form_grp form_inline">
+                                <label for="selectSample">選單</label>
+                                <select name="" id="selectSample">
+                                    <option value="">選項一</option>
+                                    <option value="">選項二</option>
+                                    <option value="">選項三</option>
+                                    <option value="">選項四</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="sourcecode">
+                        <pre class="language-html">
+                    <code class="language-html">
+&lt;div class=&quot;form_grp form_inline&quot;&gt;
+    &lt;label for=&quot;selectSample&quot;&gt;選單&lt;/label&gt;
+    &lt;select name=&quot;&quot; id=&quot;selectSample&quot;&gt;
+        &lt;option value=&quot;&quot;&gt;選項一&lt;/option&gt;
+        &lt;option value=&quot;&quot;&gt;選項二&lt;/option&gt;
+        &lt;option value=&quot;&quot;&gt;選項三&lt;/option&gt;
+        &lt;option value=&quot;&quot;&gt;選項四&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+                <!-- end -->
+            </div>
+            <h2>檔案瀏覽 or 上傳檔案</h2>
+            <div class="row">
+            <div class="hy-2">
+                <div class="demo">
+                    <h3>單個檔案上傳</h3>
+                    <div class="upload_grp">
+                        <input class="upload_file" type="text" readonly>
+                        <div class="upload_btn">
+                            <span>上傳檔案</span>
+                            <input type="file" class="check_file" />
+                        </div>
+                    </div>
+                </div>
+                <div class="sourcecode">
+                    <pre class="language-html">
+                    <code class="language-html">
+&lt;div class=&quot;upload_grp&quot;&gt;
+    &lt;input class=&quot;upload_file&quot; type=&quot;text&quot; readonly&gt;
+    &lt;div class=&quot;upload_btn&quot;&gt;
+        &lt;span&gt;上傳檔案&lt;/span&gt;
+        &lt;input type=&quot;file&quot; class=&quot;check_file&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+            <div class="hy-2">
+                <div class="demo">
+                    <h3>多個檔案上傳</h3>
+                    <div class="upload_grp">
+                        <input class="upload_file" type="text" readonly>
+                        <div class="upload_btn">
+                            <span>上傳多個檔案</span>
+                            <input type="file" class="check_file" multiple/>
+                        </div>
+                    </div>
+                </div>
+                <div class="sourcecode">
+                    <pre class="language-html">
+                    <code class="language-html">
+&lt;div class=&quot;upload_grp&quot;&gt;
+    &lt;input class=&quot;upload_file&quot; type=&quot;text&quot; readonly&gt;
+    &lt;div class=&quot;upload_btn&quot;&gt;
+        &lt;span&gt;上傳多個檔案&lt;/span&gt;
+        &lt;input type=&quot;file&quot; class=&quot;check_file&quot; multiple/&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+            <h3>JQUERY設定</h3>
+            <p>設定帶入檔名至input的設定</p>
+            <div class="sourcecode">
+                <pre class="language-javascript">
+                    <code class="language-javascript">
+$(document).on('change', '.check_file', function() {
+    var names = [];
+    var length = $(this).get(0).files.length;
+    for (var i = 0; i < $(this).get(0).files.length; ++i) {
+        names.push($(this).get(0).files[i].name);
+    }
+    // $('input[name=file]').val(names);
+    if (length > 2) {
+        var fileName = names.join(', ');
+        $(this).closest('.upload_grp').find('.upload_file').attr("value", length + " files selected");
+    } else {
+        $(this).closest('.upload_grp').find('.upload_file').attr("value", names);
+    }
+});</code></pre>
+            </div>
+            <hr>
+            <h2>表單排版範例</h2>
+            <!-- demo Start -->
+            <div class="row">
+                <div class="hy-2">
+                    <h3>表格式表單</h3>
+                    <div class="demo">
+                        <form name="" method="" action="">
+                            <table>
+                                <tr>
+                                    <td>帳號</td>
+                                    <td>
+                                        <input name="account" type="text" value="readonly or disable" readonly />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>密碼</td>
+                                    <td>
+                                        <input name="password" type="password">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>活動名稱</td>
+                                    <td>
+                                        <input name="stitle" type="text" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>活動地點</td>
+                                    <td>
+                                        <div class="radio_grp form_inline">
+                                            <label>
+                                                <input name="sampleRadio3" type="radio" value="" checked>新北市</label>
+                                            <label>
+                                                <input name="sampleRadio3" type="radio" value="">臺北市</label>
+                                            <label>
+                                                <input name="sampleRadio3" type="radio" value="">臺中市</label>
+                                            <label>
+                                                <input name="sampleRadio3" type="radio" value="">臺南市</label>
+                                            <label>
+                                                <input name="sampleRadio3" type="radio" value="">高雄市</label>
+                                            <label>
+                                                <input name="sampleRadio3" type="radio" value="">宜蘭縣</label>
+                                            <label>
+                                                <input name="sampleRadio3" type="radio" value="">新竹縣</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <tr>
+                                        <td>詳細地址</td>
+                                        <td>
+                                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                                        </td>
+                                    </tr>
+                                    <td>活動型態</td>
+                                    <td>
+                                        <div class="check_grp form_inline">
+                                            <label>
+                                                <input type="checkbox" name="" value="" checked>全部</label>
+                                            <label>
+                                                <input type="checkbox" name="" value="">展覽</label>
+                                            <label>
+                                                <input type="checkbox" name="" value="">表演與節慶</label>
+                                            <label>
+                                                <input type="checkbox" name="" value="">演講／講座／研討會</label>
+                                            <label>
+                                                <input type="checkbox" name="" value="">綜合</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>活動類別</td>
+                                    <td>
+                                        <select id="" name="">
+                                            <option value="">全部</option>
+                                            <option value="">視覺藝術（藝術品與美術）</option>
+                                            <option value="">工藝（不含古物、古董）</option>
+                                            <option value="">設計</option>
+                                            <option value="">古典與傳統音樂</option>
+                                            <option value="">流行音樂</option>
+                                            <option value="">戲劇</option>
+                                            <option value="">舞蹈</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>是否售票</td>
+                                    <td>
+                                        <div class="check_grp form_inline">
+                                            <label>
+                                                <input type="radio" name="sampleRadio4" value="t1" checked="">售票</label>
+                                            <label>
+                                                <input type="radio" name="sampleRadio4" value="t2">免費索票</label>
+                                            <label>
+                                                <input type="radio" name="sampleRadio4" value="t3">自由入場</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="btn_grp">
+                                <input name="Search" type="submit" value="查詢" />
+                                <input name="" type="reset" value="清除">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="hy-2">
+                    <h3>格線式表單</h3>
+                    <div class="demo">
+                        <form action="" class="form_grid">
+                            <div class="form_grp">
+                                <label for="username" class="form_title">帳號</label>
+                                <div class="form_content">
+                                    <input type="text" id="username" value="readonly or disable" readonly />
+                                </div>
+                            </div>
+                            <div class="form_grp">
+                                <label for="password" class="form_title">密碼</label>
+                                <div class="form_content">
+                                    <input name="password" type="password">
+                                </div>
+                            </div>
+                            <div class="form_grp">
+                                <label for="address" class="form_title">活動名稱</label>
+                                <div class="form_content">
+                                    <input name="password" type="password">
+                                </div>
+                            </div>
+                            <div class="form_grp">
+                                <fieldset>
+                                    <legend class="form_title">活動地點</legend>
+                                    <div class="form_content">
+                                        <div class="radio_grp form_inline">
+                                            <label>
+                                                <input type="radio" name="sampleRadio5" value="" checked>新北市</label>
+                                            <label>
+                                                <input type="radio" name="sampleRadio5" value="">臺北市</label>
+                                            <label>
+                                                <input type="radio" name="sampleRadio5" value="">臺中市</label>
+                                            <label>
+                                                <input type="radio" name="sampleRadio5" value="">臺南市</label>
+                                            <label>
+                                                <input type="radio" name="sampleRadio5" value="">高雄市</label>
+                                            <label>
+                                                <input type="radio" name="sampleRadio5" value="">宜蘭縣</label>
+                                            <label>
+                                                <input type="radio" name="sampleRadio5" value="">新竹縣</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="form_grp">
+                                <label for="address" class="form_title">詳細地址</label>
+                                <div class="form_content">
+                                    <textarea name="" id="address" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="form_grp">
+                                <fieldset>
+                                    <legend class="form_title">活動地點</legend>
+                                    <div class="form_content">
+                                        <div class="check_grp form_inline">
+                                            <label>
+                                                <input type="checkbox" name="" value="" checked>全部</label>
+                                            <label>
+                                                <input type="checkbox" name="" value="">展覽</label>
+                                            <label>
+                                                <input type="checkbox" name="" value="">表演與節慶</label>
+                                            <label>
+                                                <input type="checkbox" name="" value="">演講／講座／研討會</label>
+                                            <label>
+                                                <input type="checkbox" name="" value="">綜合</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="form_grp">
+                                <label for="selectSample" class="form_title">選單</label>
+                                <div class="form_content form_inline">
+                                <select id="selectSample" name="">
+                                            <option value="">全部</option>
+                                            <option value="">視覺藝術（藝術品與美術）</option>
+                                            <option value="">工藝（不含古物、古董）</option>
+                                            <option value="">設計</option>
+                                            <option value="">古典與傳統音樂</option>
+                                            <option value="">流行音樂</option>
+                                            <option value="">戲劇</option>
+                                            <option value="">舞蹈</option>
+                                        </select>
+                                        </div>
+                            </div>
+                            <div class="form_grp">
+                                <fieldset>
+                                    <legend class="form_title">是否售票</legend>
+                                    <div class="form_content">
+                                        <div class="radio_grp form_inline">
+                                            <label>
+                                                <input type="radio" name="sampleRadio6" value="" checked>售票</label>
+                                            <label>
+                                                <input type="radio" name="sampleRadio6" value="">免費索票</label>
+                                            <label>
+                                                <input type="radio" name="sampleRadio6" value="">自由入場</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="btn_grp">
+                                <input name="Search" type="submit" value="查詢" />
+                                <input name="" type="reset" value="清除">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="hy-2">
+                    <h3>註冊表單</h3>
+                    <div class="demo">
+                        <form action="">
+                            <div class="form_grp">
+                                <label for="username">帳號:</label>
+                                <input name="username" type="text" placeholder="請輸入文字">
+                            </div>
+                            <div class="form_grp">
+                                <label for="password">密碼:</label>
+                                <input name="password" type="password" placeholder="請輸入密碼">
+                            </div>
+                            <div class="check_grp">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox">記住我</label>
+                                </div>
+                                <div class="btn_grp">
+                                    <input name="" type="reset" value="清除" />
+                                    <input name="" type="submit" value="送出" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="hy-2">
+                    <h3>電子報表單</h3>
+                    <div class="demo">
+                        <form action="" class="form_inline">
+                            <div class="form_grp">
+                                <label for="username">請輸入Email:</label>
+                                <input name="username" type="text" placeholder="請輸入Email">
+                            </div>
+                            <div class="btn_grp">
+                                <input name="" type="submit" value="訂閱/取消" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/demo.js"></script>
+<script>
+$(function() {
+    $('input,textarea').focus(function() {
+        $(this).removeAttr('placeholder');
+    });
+});
+</script>
+<script>
+$(document).on('change', '.check_file', function() {
+    var names = [];
+    var length = $(this).get(0).files.length;
+    for (var i = 0; i < $(this).get(0).files.length; ++i) {
+        names.push($(this).get(0).files[i].name);
+    }
+    // $('input[name=file]').val(names);
+    if (length > 2) {
+        var fileName = names.join(', ');
+        $(this).closest('.upload_grp').find('.upload_file').attr("value", length + " 個檔案");
+    } else {
+        $(this).closest('.upload_grp').find('.upload_file').attr("value", names);
+    }
+});
+</script>

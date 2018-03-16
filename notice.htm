@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="left_nav"></div>
+        <!-- load menu.htm-->
+        <div class="content">
+            <div class="breadcrumb">
+               <ul>
+                    <li><a href="index.htm">首頁</a></li>
+                    <li>模組</li>
+                    <li>Notice</li>
+                </ul>
+            </div>
+            <h1>Notice</h1>
+            <div class="path">檔案名稱：<span>sass/_notice.scss</span></div>
+            <!-- demo Start -->
+            <div class="demo">
+                <div class="notice">這是一般提醒訊息區塊
+                    <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
+                </div>
+                <div class="notice_info">這是一般提醒訊息區塊
+                    <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
+                </div>
+                <div class="notice_success">您已經成功登入
+                    <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
+                </div>
+                <div class="notice_warning">這似乎不是一個正常的Email格式
+                    <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
+                </div>
+                <div class="notice_error">您輸入的帳號密碼有誤！
+                    <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                <code class="language-html">
+&lt;div class=&quot;notice&quot;&gt;這是一般提醒訊息區塊
+    &lt;a href=&quot;javascript:;&quot; class=&quot;close&quot;&gt;&lt;img src=&quot;images/basic/icon_close.svg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;notice_info&quot;&gt;這是一般提醒訊息區塊
+    &lt;a href=&quot;javascript:;&quot; class=&quot;close&quot;&gt;&lt;img src=&quot;images/basic/icon_close.svg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;notice_success&quot;&gt;您已經成功登入
+    &lt;a href=&quot;javascript:;&quot; class=&quot;close&quot;&gt;&lt;img src=&quot;images/basic/icon_close.svg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;notice_warning&quot;&gt;這似乎不是一個正常的Email格式
+    &lt;a href=&quot;javascript:;&quot; class=&quot;close&quot;&gt;&lt;img src=&quot;images/basic/icon_close.svg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;notice_error&quot;&gt;您輸入的帳號密碼有誤！
+    &lt;a href=&quot;javascript:;&quot; class=&quot;close&quot;&gt;&lt;img src=&quot;images/basic/icon_close.svg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+            <h3>關閉notice提示區塊的JQUERY設定</h3>
+            <div class="sourcecode">
+                <pre class="language-javascript">
+                <code class="language-javascript">
+/*-----------------------------------*/
+//////////// notice訊息區塊 ////////////
+/*-----------------------------------*/
+$(function() {
+    $('[class*="notice"] a.close').click(function(e) {
+        $(this).parent('[class*="notice"]').hide();
+    });
+});  
+                </code></pre>
+            </div>
+            <!-- demo End -->
+        </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/demo.js"></script>
+<script>
+$(function() {
+    $('[class*="notice"] a.close').click(function(e) {
+        $(this).parent('[class*="notice"]').hide();
+    });
+});
+</script>

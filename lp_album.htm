@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="left_nav"></div>
+        <!-- load menu.htm-->
+        <div class="content">
+            <div class="breadcrumb">
+                <ul>
+                    <li><a href="index.htm">首頁</a></li>
+                    <li>範例頁面</li>
+                    <li>List Page - Album / 相簿列表頁</li>
+                </ul>
+            </div>
+            <h1>List Page - Album / 相簿列表頁</h1>
+            <!-- <div class="path">檔案名稱：<span>sass/_element.scss</span></div> -->
+            <!-- demo Start -->
+            <div class="demo">
+                <!-- breadcrumb路徑 -->
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="#">首頁</a></li>
+                        <li><a href="#">節點</a></li>
+                        <li>節點</li>
+                    </ul>
+                </div>
+                <!-- h2節點 -->
+                <h2>節點標題</h2>
+                <!-- function功能區塊 -->
+                <div class="function">
+                    <ul>
+                        <li class="back"><a href="#">回上一頁</a></li>
+                        <li class="print"><a href="#">友善列印</a></li>
+                        <li class="forward"><a href="#">轉寄友人</a></li>
+                    </ul>
+                </div>
+                <!-- LP Start -->
+                <section class="lp">
+                    <!-- category -->
+                    <div class="category">
+                        <ul>
+                            <li><a href="#">標籤1</a></li>
+                            <li><a href="#">標籤2</a></li>
+                            <li><a href="#">標籤3</a></li>
+                            <li><a href="#">標籤4</a></li>
+                            <li><a href="#">標籤5</a></li>
+                            <li><a href="#">標籤6</a></li>
+                            <li><a href="#">標籤7</a></li>
+                            <li><a href="#">標籤8</a></li>
+                            <li><a href="#">標籤9</a></li>
+                            <li><a href="#">標籤10</a></li>
+                        </ul>
+                    </div>
+                    <!-- 相簿列表 -->
+                    <div class="album">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="imgOuter">
+                                        <img src="https://assets.imgix.net/examples/kingfisher.jpg?w=800&amp;h=480&amp;fit=crop&amp;auto=format%2Cenhance&amp;usm=20" alt="">
+                                    </div>
+                                    <div class="caption">
+                                        <h3>相簿標題</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="imgOuter">
+                                        <img src="https://assets.imgix.net/examples/lorie.png?w=800&amp;h=480&amp;fit=crop&amp;auto=format%2Cenhance&amp;usm=20" alt="">
+                                    </div>
+                                    <div class="caption">
+                                        <h3>相簿標題</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="imgOuter">
+                                        <img src="https://assets.imgix.net/unsplash/transport.jpg?w=800&amp;h=480&amp;fit=crop&amp;auto=format%2Cenhance&amp;usm=20" alt="">
+                                    </div>
+                                    <div class="caption">
+                                        <h3>相簿標題</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="imgOuter">
+                                        <img src="https://assets.imgix.net/unsplash/motorbike.jpg?w=800&amp;h=480&amp;fit=crop&amp;auto=format%2Cenhance&amp;usm=20" alt="">
+                                    </div>
+                                    <div class="caption">
+                                        <h3>相簿標題</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="imgOuter">
+                                        <img src="https://assets.imgix.net/unsplash/coyote.jpg?w=800&amp;h=480&amp;fit=crop&amp;auto=format%2Cenhance&amp;usm=20" alt="">
+                                    </div>
+                                    <div class="caption">
+                                        <h3>相簿標題</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="imgOuter">
+                                        <img src="https://assets.imgix.net/examples/blueberries.jpg?w=800&amp;h=480&amp;fit=crop&amp;auto=format%2Cenhance&amp;usm=20" alt="">
+                                    </div>
+                                    <div class="caption">
+                                        <h3>相簿標題</h3>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- LP End -->
+                <!-- Pagination -->
+                <section class="pagination">
+                    <form action="" class="form_inline">
+                        <div class="total">
+                            共<span>308</span>筆資料，第<span>1/18</span>頁，每頁顯示
+                            <select name="" id="">
+                                <option value="">10</option>
+                                <option value="">20</option>
+                                <option value="">30</option>
+                                <option value="">40</option>
+                            </select>筆
+                        </div>
+                    </form>
+                    <ul class="page">
+                        <li class="first">
+                            <a href="#" title="第一頁" aria-label="Previous">第一頁 </a></li>
+                        <li class="prev">
+                            <a href="#" title="回上一頁" aria-label="Previous">回上一頁 </a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">9</a></li>
+                        <li><a href="#">10</a></li>
+                        <li class="next">
+                            <a href="#" title="下一頁" aria-label="Next">下一頁 </a>
+                        </li>
+                        <li class="last">
+                            <a href="#" title="最後一頁" aria-label="Next">最後一頁 </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <!-- demo End -->
+            <h2>HTML範本</h2>
+            <div class="sourcecode">
+                <pre class="language-html">
+                <code class="language-html">
+&lt;!-- breadcrumb路徑 --&gt;
+&lt;div class="breadcrumb"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;首頁&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;節點&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;節點&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- h2節點 --&gt;
+&lt;h2&gt;節點標題&lt;/h2&gt;
+&lt;!-- function功能區塊 --&gt;
+&lt;div class="function"&gt;
+    &lt;ul&gt;
+        &lt;li class="back"&gt;&lt;a href="#"&gt;回上一頁&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="print"&gt;&lt;a href="#"&gt;友善列印&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="forward"&gt;&lt;a href="#"&gt;轉寄友人&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- LP Start --&gt;
+&lt;section class="lp"&gt;
+    &lt;!-- category --&gt;
+    &lt;div class="category"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;標籤1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;標籤2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;標籤3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;標籤4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;標籤5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;標籤6&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;標籤7&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;標籤8&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;標籤9&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;標籤10&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;!-- 相簿列表 --&gt;
+    &lt;div class="album"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;
+                &lt;a href="#"&gt;
+                    &lt;div class="imgOuter"&gt;
+                        &lt;img src="https://assets.imgix.net/examples/kingfisher.jpg?w=800&amp;amp;h=480&amp;amp;fit=crop&amp;amp;auto=format%2Cenhance&amp;amp;usm=20" alt=""&gt;
+                    &lt;/div&gt;
+                    &lt;div class="caption"&gt;
+                        &lt;h3&gt;相簿標題&lt;/h3&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href="#"&gt;
+                    &lt;div class="imgOuter"&gt;
+                         &lt;img src="https://assets.imgix.net/examples/lorie.png?w=800&amp;amp;h=480&amp;amp;fit=crop&amp;amp;auto=format%2Cenhance&amp;amp;usm=20" alt=""&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="caption"&gt;
+                                        &lt;h3&gt;相簿標題&lt;/h3&gt;
+                                    &lt;/div&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href="#"&gt;
+                    &lt;div class="imgOuter"&gt;
+                         &lt;img src="https://assets.imgix.net/unsplash/transport.jpg?w=800&amp;amp;h=480&amp;amp;fit=crop&amp;amp;auto=format%2Cenhance&amp;amp;usm=20" alt=""&gt;
+                    &lt;/div&gt;
+                    &lt;div class="caption"&gt;
+                        &lt;h3&gt;相簿標題&lt;/h3&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href="#"&gt;
+                    &lt;div class="imgOuter"&gt;
+                         &lt;img src="https://assets.imgix.net/unsplash/motorbike.jpg?w=800&amp;amp;h=480&amp;amp;fit=crop&amp;amp;auto=format%2Cenhance&amp;amp;usm=20" alt=""&gt;
+                    &lt;/div&gt;
+                    &lt;div class="caption"&gt;
+                        &lt;h3&gt;相簿標題&lt;/h3&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href="#"&gt;
+                    &lt;div class="imgOuter"&gt;
+                         &lt;img src="https://assets.imgix.net/unsplash/coyote.jpg?w=800&amp;amp;h=480&amp;amp;fit=crop&amp;amp;auto=format%2Cenhance&amp;amp;usm=20" alt=""&gt;
+                    &lt;/div&gt;
+                    &lt;div class="caption"&gt;
+                        &lt;h3&gt;相簿標題&lt;/h3&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href="#"&gt;
+                    &lt;div class="imgOuter"&gt;
+                                        &lt;img src="https://assets.imgix.net/examples/blueberries.jpg?w=800&amp;amp;h=480&amp;amp;fit=crop&amp;amp;auto=format%2Cenhance&amp;amp;usm=20" alt=""&gt;
+                    &lt;/div&gt;
+                    &lt;div class="caption"&gt;
+                        &lt;h3&gt;相簿標題&lt;/h3&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- LP End --&gt;
+&lt;!-- Pagination --&gt;
+&lt;section class="pagination"&gt;
+    &lt;form action="" class="form_inline"&gt;
+        &lt;div class="total"&gt;
+            共&lt;span&gt;308&lt;/span&gt;筆資料，第&lt;span&gt;1/18&lt;/span&gt;頁，每頁顯示
+            &lt;select name="" id=""&gt;
+                &lt;option value=""&gt;10&lt;/option&gt;
+                &lt;option value=""&gt;20&lt;/option&gt;
+                &lt;option value=""&gt;30&lt;/option&gt;
+                &lt;option value=""&gt;40&lt;/option&gt;
+            &lt;/select&gt;筆
+        &lt;/div&gt;
+    &lt;/form&gt;
+    &lt;ul class="page"&gt;
+        &lt;li class="first"&gt;
+            &lt;a href="#" title="第一頁" aria-label="Previous"&gt;第一頁 &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="prev"&gt;
+            &lt;a href="#" title="回上一頁" aria-label="Previous"&gt;回上一頁 &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="active"&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;7&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;8&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;9&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;10&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="next"&gt;
+            &lt;a href="#" title="下一頁" aria-label="Next"&gt;下一頁 &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="last"&gt;
+            &lt;a href="#" title="最後一頁" aria-label="Next"&gt;最後一頁 &lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt; </code></pre></div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/demo.js"></script>
+<script>
+jQuery(document).ready(function() {
+    $(window).on('resize load', function(e) {
+        $('.imgOuter').each(function(index, el) {
+            var _imgContainer = $(this),
+                cWidth = _imgContainer.width(),
+                cHeight = _imgContainer.height(),
+                ratioC = cWidth / cHeight,
+                _img = _imgContainer.find('img');
+
+            var iWidth = $(this).find('img').width(),
+                iHeight = $(this).find('img').height(),
+                ratioImg = iWidth / iHeight,
+                scaleRatio;
+            if (ratioC > ratioImg) {
+                scaleRatio = cWidth / iWidth;
+                _img.width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
+            } else {
+                scaleRatio = cHeight / iHeight;
+                _img.height(cHeight).width(iWidth * scaleRatio).css('left', -.5 * (iWidth * scaleRatio - cWidth));
+            }
+            $(this).find('img').removeClass('img-responsive');
+        });
+    });
+});
+
+</script>

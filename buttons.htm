@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="left_nav"></div>
+        <!-- load menu.htm-->
+        <div class="content">
+            <div class="breadcrumb">
+                <ul>
+                    <li><a href="index.htm">首頁</a></li>
+                    <li>網頁元素</li>
+                    <li>Buttons</li>
+                </ul>
+            </div>
+            <h1>Buttons</h1>
+            <div class="path">檔案名稱：<span>sass/_btn.scss</span></div>
+            <p>按鈕在父層<span class="hy">div</span>可選擇設定<span class="hy">.btn_grp</span>，也可以個別在<span class="hy">a</span>、<span class="hy">button</span>等tag獨立設定。</p>
+            <h2>以顏色定義按鈕</h2>
+            <div class="demo">
+                <div class="btn_grp">
+                    <a class="btn" role="button">按鈕</a>
+                    <a class="btn btn-blue" role="button">按鈕</a>
+                    <a class="btn btn-green" role="button">按鈕</a>
+                    <a class="btn btn-orange" role="button">按鈕</a>
+                    <a class="btn btn-yellow" role="button">按鈕</a>
+                    <a class="btn btn-purple" role="button">按鈕</a>
+                    <a class="btn btn-red" role="button">按鈕</a>
+                </div>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                <code class="language-html">
+&lt;div class="btn_grp"&gt;
+    &lt;a class="btn"&gt;...&lt;/a&gt;
+    &lt;a class="btn btn-blue"&gt;...&lt;/a&gt;
+    &lt;a class="btn btn-green"&gt;...&lt;/a&gt;
+    &lt;a class="btn btn-orange"&gt;...&lt;/a&gt;
+    &lt;a class="btn btn-yellow"&gt;...&lt;/a&gt;
+    &lt;a class="btn btn-purple"&gt;...&lt;/a&gt;
+    &lt;a class="btn btn-red"&gt;...&lt;/a&gt;
+&lt;/div&gt;
+</code>
+</pre>
+            </div>
+            <p><span class="hy">a</span>,<span class="hy">button</span>, 或是<span class="hy">input</span></p>
+            <div class="demo">
+                <div class="btn_grp">
+                    <a href="#" class="btn" role="button">按鈕</a>
+                    <button type="button" class="btn">按鈕</button>
+                    <input type="button" class="btn" value="Input 按鈕">
+                    <input type="submit" class="btn" value="Submit 按鈕">
+                </div>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                <code class="language-html">
+&lt;div class="btn_grp"&gt;
+    &lt;a href="#" class="btn" role="button"&gt;按鈕&lt;/a&gt;
+    &lt;button type="button" class="btn"&gt;按鈕&lt;/button&gt;
+    &lt;input type="button" class="btn" value="Input 按鈕"&gt;
+    &lt;input type="submit" class="btn" value="Submit 按鈕"&gt;
+&lt;/div&gt;
+</code>
+</pre>
+            </div>
+            <h2>按鈕大小</h2>
+            <div class="demo">
+                <div class="btn_grp">
+                    <a class="btn btn-xl">按鈕</a>
+                    <a class="btn btn-lg">按鈕</a>
+                    <a class="btn">按鈕</a>
+                    <a class="btn btn-sm">按鈕</a>
+                    <a class="btn btn-xs">按鈕</a>
+                </div>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                <code class="language-html">
+&lt;div class="btn_grp"&gt;
+    &lt;a class="btn btn-xl"&gt;...&lt;/a&gt;
+    &lt;a class="btn btn-lg"&gt;...&lt;/a&gt;
+    &lt;a class="btn"&gt;...&lt;/a&gt;
+    &lt;a class="btn btn-sm"&gt;...&lt;/a&gt;
+    &lt;a class="btn btn-xs"&gt;...&lt;/a&gt;
+&lt;/div&gt;
+</code>
+</pre>
+            </div>
+        </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/demo.js"></script>

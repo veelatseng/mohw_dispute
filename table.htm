@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HyUI kit</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/prism_dark.css">
+    <link rel="alternate" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+
+<body>
+    <header class="header"></header>
+    <!-- load header.htm-->
+    <div class="main">
+        <div class="left_nav"></div>
+        <!-- load menu.htm-->
+        <div class="content">
+            <div class="breadcrumb">
+                <ul>
+                    <li><a href="index.htm">首頁</a></li>
+                    <li>模組</li>
+                    <li>Table</li>
+                </ul>
+            </div>
+            <h1>Table</h1>
+            <div class="path">檔案名稱：<span>sass/_table.scss</span></div>
+            <div class="demo">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>編號</th>
+                            <th>姓名</th>
+                            <th>性別</th>
+                            <th>年齡</th>
+                            <th>居住地</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>王大明</td>
+                            <td>男</td>
+                            <td>39</td>
+                            <td>台北市</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>李小強</td>
+                            <td>男</td>
+                            <td>25</td>
+                            <td>宜蘭縣</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>林珍珍</td>
+                            <td>女</td>
+                            <td>33</td>
+                            <td>新竹市</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                <code class="language-html">
+&lt;table summary=&quot;&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;th&gt;...&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+            <div class="demo">
+                <table class="table_hover">
+                    <thead>
+                        <tr>
+                            <th>編號</th>
+                            <th>姓名</th>
+                            <th>性別</th>
+                            <th>年齡</th>
+                            <th>居住地</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>王大明</td>
+                            <td>男</td>
+                            <td>39</td>
+                            <td>台北市</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>李小強</td>
+                            <td>男</td>
+                            <td>25</td>
+                            <td>宜蘭縣</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>林珍珍</td>
+                            <td>女</td>
+                            <td>33</td>
+                            <td>新竹市</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="demo">
+                <table class="table_sprite">
+                    <thead>
+                        <tr>
+                            <th>編號</th>
+                            <th>姓名</th>
+                            <th>性別</th>
+                            <th>年齡</th>
+                            <th>居住地</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>王大明</td>
+                            <td>男</td>
+                            <td>39</td>
+                            <td>台北市</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>李小強</td>
+                            <td>男</td>
+                            <td>25</td>
+                            <td>宜蘭縣</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>林珍珍</td>
+                            <td>女</td>
+                            <td>33</td>
+                            <td>新竹市</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>黃志明</td>
+                            <td>男</td>
+                            <td>44</td>
+                            <td>台南市</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>郭春嬌</td>
+                            <td>女</td>
+                            <td>37</td>
+                            <td>台中市</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2>一般內容式表格</h2>
+            <div class="demo">
+                <table summary="臺中市政府資訊中心">
+                    <tr>
+                        <th>機關名稱</th>
+                        <td>臺中市政府資訊中心</td>
+                    </tr>
+                    <tr>
+                        <th>業務職掌</th>
+                        <td>一、規劃發展科：市政資訊整體規劃與推動及管考、設置及應用資訊計畫之審議、使用電腦作業績效之輔導查核、推動資訊教育訓練及資訊交流、免書證免謄本平台規劃、開發及維護、市政資料倉儲及相關資料整合、電腦設備採購及地理資訊相關業務等事項。
+                            <br /> 二、應用服務科：網站服務規劃開發及應用推廣、電子化政府便民網路應用服務規劃開發及推廣、市政業務資訊系統應用規劃、開發及維護、電子郵件維護管理、公文系統開發、規劃及維護、線上申辦系統規劃、開發及維護等事項。
+                            <br /> 三、設備網路科：市政網路、本市無線等網路基礎建設管理及應用發展策略規劃、電腦機房、設備及市政網路管理、市府整體資訊安全維護等事項。
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>機關簡稱</th>
+                        <td>資訊中心</td>
+                    </tr>
+                    <tr>
+                        <th>英文名稱</th>
+                        <td>Information Management Center of Taichung City Government</td>
+                    </tr>
+                    <tr>
+                        <th>服務電話</th>
+                        <td>(04)2228-9111#22100、22200、22300</td>
+                    </tr>
+                    <tr>
+                        <th>服務傳真</th>
+                        <td>(04)2259-8658</td>
+                    </tr>
+                    <tr>
+                        <th>機關地址</th>
+                        <td>40701臺中市西屯區臺灣大道三段99號文心樓6樓</td>
+                    </tr>
+                    <tr>
+                        <th>服務時間：</th>
+                        <td>辦公時間：8:00-17:00
+                            <br /> 中午休息時間：12:00-13:00
+                            <br /> 彈性上下班時間：8:00-8:30、13:00-13:30、17:00-17:30
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>機關網址</th>
+                        <td>http://www.im.taichung.gov.tw</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                <code class="language-html">
+&lt;table summary=&quot;&quot;&gt;
+  &lt;tr&gt;
+    &lt;th&gt;...&lt;/th&gt;
+    &lt;td&gt;...&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;...&lt;/th&gt;
+    &lt;td&gt;...&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;...&lt;/th&gt;
+    &lt;td&gt;...&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+            <h2>條列式表格</h2>
+            <p>使用before取代th，在table使用 class="table_list"</p>
+            <!-- demo Start -->
+            <div class="demo">
+                <table class="table_list">
+                    <thead>
+                        <tr>
+                            <th>編號</th>
+                            <th>據點</th>
+                            <th>地址</th>
+                            <th>電話</th>
+                            <th>傳真</th>
+                            <th>信箱</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-title="編號">01</td>
+                            <td data-title="據點">總公司</td>
+                            <td data-title="地址">新竹縣竹北市台元一街8號5樓之6</td>
+                            <td data-title="電話">02-12345678</td>
+                            <td data-title="傳真">02-12345678</td>
+                            <td data-title="信箱"><a href="#"><img src="images/icon_mail.png" alt=""></a></td>
+                        </tr>
+                        <tr>
+                            <td data-title="編號">02</td>
+                            <td data-title="據點">臺北分公司</td>
+                            <td data-title="地址">臺北市重慶南路二段51號5樓</td>
+                            <td data-title="電話">02-12345678</td>
+                            <td data-title="傳真">02-12345678</td>
+                            <td data-title="信箱"><a href="#"><img src="images/icon_mail.png" alt=""></a></td>
+                        </tr>
+                        <tr>
+                            <td data-title="編號">03</td>
+                            <td data-title="據點">臺中分公司</td>
+                            <td data-title="地址">臺中市西屯區臺灣大道三段658號6樓A1</td>
+                            <td data-title="電話">02-12345678</td>
+                            <td data-title="傳真">02-12345678</td>
+                            <td data-title="信箱"><a href="#"><img src="images/icon_mail.png" alt=""></a></td>
+                        </tr>
+                        <tr>
+                            <td data-title="編號">04</td>
+                            <td data-title="據點">高雄分公司</td>
+                            <td data-title="地址">高雄市新興區中正三路55號26樓之5</td>
+                            <td data-title="電話">02-12345678</td>
+                            <td data-title="傳真">02-12345678</td>
+                            <td data-title="信箱"><a href="#"><img src="images/icon_mail.png" alt=""></a></td>
+                        </tr>
+                        <tr>
+                            <td data-title="編號">05</td>
+                            <td data-title="據點">曼谷分公司</td>
+                            <td data-title="地址">Room No.2009, 20th F1., Le Concorde Tower, 202 Ratchadapisek Rd., Huaykwang, Bangkok 10310</td>
+                            <td data-title="電話">02-12345678</td>
+                            <td data-title="傳真">02-12345678</td>
+                            <td data-title="信箱"><a href="#"><img src="images/icon_mail.png" alt=""></a></td>
+                        </tr>
+                        <tr>
+                            <td data-title="編號">06</td>
+                            <td data-title="據點">北京</td>
+                            <td data-title="地址">北京市海淀区安宁庄西路9号院29号楼金泰富地大厦105室</td>
+                            <td data-title="電話">02-12345678</td>
+                            <td data-title="傳真">02-12345678</td>
+                            <td data-title="信箱"><a href="#"><img src="images/icon_mail.png" alt=""></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="sourcecode">
+                <pre class="language-html">
+                <code class="language-html">
+&lt;table  summary=&quot;&quot; class=&quot;table_list&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;編號&lt;/th&gt;
+      &lt;th&gt;據點&lt;/th&gt;
+      &lt;th&gt;地址&lt;/th&gt;
+      &lt;th&gt;電話&lt;/th&gt;
+      &lt;th&gt;傳真&lt;/th&gt;
+      &lt;th&gt;信箱&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td data-title=&quot;編號&quot;&gt;01&lt;/td&gt;
+      &lt;td data-title=&quot;據點&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;地址&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;電話&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;傳真&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;信箱&quot;&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td data-title=&quot;編號&quot;&gt;02&lt;/td&gt;
+      &lt;td data-title=&quot;據點&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;地址&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;電話&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;傳真&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;信箱&quot;&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td data-title=&quot;編號&quot;&gt;03&lt;/td&gt;
+      &lt;td data-title=&quot;據點&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;地址&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;電話&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;傳真&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;信箱&quot;&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td data-title=&quot;編號&quot;&gt;04&lt;/td&gt;
+      &lt;td data-title=&quot;據點&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;地址&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;電話&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;傳真&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;信箱&quot;&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td data-title=&quot;編號&quot;&gt;05&lt;/td&gt;
+      &lt;td data-title=&quot;據點&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;地址&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;電話&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;傳真&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;信箱&quot;&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td data-title=&quot;編號&quot;&gt;06&lt;/td&gt;
+      &lt;td data-title=&quot;據點&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;地址&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;電話&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;傳真&quot;&gt;...&lt;/td&gt;
+      &lt;td data-title=&quot;信箱&quot;&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+            <!-- demo End -->
+        </div>
+    </div>
+    </div>
+    <footer>
+        Hyweb Co.,Ltd.&copy; 2017 All Rights Reserved
+    </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="js/prism_dark.js"></script>
+<script src="js/demo.js"></script>
