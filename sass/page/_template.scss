@@ -1,18 +1,24 @@
-body {
-
+body,html {
     &.noscroll {
         // position: fixed!important;
         width: 100%;
         height: 100%;
-        position: absolute;
+        position: fixed;
         overflow: hidden !important;
     }
 }
-
 // 最外圍預設為100%
 .wrapper {
     width: 100%;
     margin: 0px auto; // max-width:$container-max;
+        &.noscroll {
+        // position: fixed!important;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        overflow: hidden !important;
+
+    }
 }
 
 // 整體共用container樣式

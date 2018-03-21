@@ -113,13 +113,16 @@
     top: 0;
     height: 100%;
     width: 280px;
-    overflow-y: auto;
+    overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     /* Lets it scroll lazy */
     -webkit-overflow-scrolling: auto;
+    -webkit-transform:translateZ(0);
     /* Stops scrolling immediately */
     z-index: 99999999;
     background: #000;
+    @include box-sizing;
+    padding-bottom: 2em;
     &:before {
         content: "";
         position: absolute;

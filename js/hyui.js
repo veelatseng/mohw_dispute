@@ -43,12 +43,15 @@ $(function() {
         _sidebarClose = $('.sidebarClose'),
         _sidebarCtrl = $('.sidebarCtrl'),
         _overlay = $('.menu_overlay');
-    _sidebarCtrl.append('<span></span><span></span><span></span>')
+    _sidebarCtrl.append('<span></span><span></span><span></span>');
+     var search_mode = false;
     // 打開選單 function
     function showSidebar() {
         _sidebar.animate({ 'margin-left': 0 }, 400, 'easeOutQuint');
         $('body').addClass('noscroll');
         _overlay.show();
+        $('.m_search').hide();
+        search_mode = false;
         // $(document).off().touchmove();
     }
     // 縮合選單 function
@@ -56,16 +59,20 @@ $(function() {
         _sidebar.animate({ 'margin-left': _sidebar.width() * -1 + 'px' }, 400, 'easeOutQuint');
         $('body').removeClass('noscroll');
         _overlay.hide();
+        liHasChild.children('ul').hide();
     }
     // 打開選單動作
-    _sidebarCtrl.click(function() {
+    _sidebarCtrl.click(function(e) {
         showSidebar();
+        e.preventDefault();
 
     });
     // 關閉動作
-    _overlay.add(_sidebarClose).click(function() {
+    _overlay.add(_sidebarClose).off().click(function() {
         hideSidebar();
+        
     });
+    _overlay.off("mouseenter");
     // 無障礙tab設定
     liHasChild.keyup(
         function() {
@@ -103,38 +110,43 @@ $(function() {
                 $('.header').addClass('fixed');
                 liHasChild.on({
                     mouseenter: function() {
-                        $(this).children('ul').stop(true, true).slideDown();
+                        $(this).children('ul').stop(true, true).slideDown('600','easeOutQuint');
                     },
                     mouseleave: function() {
                         $(this).parent().siblings('ul').hide();
-                        $(this).children('ul').stop(true, true).slideUp();
+                        $(this).children('ul').stop(true, true).slideUp('600','easeOutQuint');
                     }
                 });
-                 // 副選單點出
+                // 副選單點出
                 liHasChild.off().on('mouseenter,mouseleave');
                 liHasChild.on('touchstart', function() {
                     $(this).off('mouseenter,mouseleave');
                 });
-
                 liHasChild.off().on('click', function(e) {
-                    e.preventDefault();
                     $(this).siblings('li').find('ul').hide();
-                    $(this).children('ul').stop(true, true).fadeToggle();
+                    $(this).children('ul').stop(true, true).slideToggle('600','easeOutQuint');
                     // $(this).prop('disabled', true);
+                    e.preventDefault();
                 });
                 // 行動版查詢
                 var _searchCtrl = $('.searchCtrl');
                 $('.m_search').hide();
-                _searchCtrl.off().click(function() {
-                    $('.m_search').stop(true, true).slideToggle();
+               
+                _searchCtrl.off().on('click', function(e) {
+                    if (!search_mode) {
+                        $('.m_search').stop(true, false).slideDown('400','easeOutQuint');
+                        search_mode = true;
+                    } else {
+                        $('.m_search').hide();
+                        search_mode = false;
+                    }
+
                 });
                 // 如果點在外面
-                $(document).on('touchend', function(e) {
-                    var target = e.target;
-                    if (!$(target).is('.m_search',_searchCtrl)) {
-                        $('.m_search').stop(true, true).slideUp();
-                        console.log("search_check");
-                    }
+                $('.main').off().on('click touchend', function(e) {
+                    $('.m_search').hide();
+                    search_mode = false;
+                    console.log("search_check");
                 });
             } else {
                 /*-----------------------------------*/
