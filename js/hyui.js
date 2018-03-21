@@ -123,7 +123,7 @@ $(function() {
                     $(this).off('mouseenter,mouseleave');
                 });
                 liHasChild.off().on('click', function(e) {
-                    $(this).siblings('li').find('ul').hide();
+                    $(this).siblings('li').children('ul').stop(true, true).slideUp('600','easeOutQuint');
                     $(this).children('ul').stop(true, true).slideToggle('600','easeOutQuint');
                     // $(this).prop('disabled', true);
                     e.preventDefault();
@@ -381,41 +381,41 @@ $(function() {
     /*-----------------------------------*/
     $('.tabs').find('.active').next('.tabContent').show();
     var tw = $('.tabSet').width();
-    var tabItemHeight = $('.tabs>h2>a').innerHeight();
+    var tabItemHeight = $('.tabs>.tabItem>a').innerHeight();
     $('.tabs').find('.tabContent').css('top', tabItemHeight);
 
     function tabs() {
         var WindowW = $(window).width();
         $('.tabs').find('.active').next('.tabContent').show();
-        var tabItemHeight = $('.tabs>h2>a').innerHeight();
+        var tabItemHeight = $('.tabs>.tabItem>a').innerHeight();
         $('.tabs').find('.tabContent').css('top', tabItemHeight);
         $('.tabSet').each(function() {
             tw = $(this).width();
             var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
-            var tabItemLength = $(this).find('h2').length;
+            var tabItemLength = $(this).find('.tabItem').length;
             $(this).height(tabContentHeight + tabItemHeight);
             var tabWidth = Math.ceil(tw / tabItemLength);
-            $(this).find('h2>a').width(tabWidth);
+            $(this).find('.tabItem>a').width(tabWidth);
             if (WindowW >= 768) {
-                $(this).find('h2:last').css({
+                $(this).find('.tabItem:last').css({
                     position: 'absolute',
                     right: '0',
                 });
             } else {
-                $(this).find('h2:last').css({
+                $(this).find('.tabItem:last').css({
                     position: 'relative',
                     right: '0',
                 });
             }
         });
-        $(this).parent('h2').siblings().removeClass('active');
-        $(this).parent('h2').addClass('active');
-        tabContentHeight = $(this).parent('h2').next('.tabContent').innerHeight();
+        $(this).parent('.tabItem').siblings().removeClass('active');
+        $(this).parent('.tabItem').addClass('active');
+        tabContentHeight = $(this).parent('.tabItem').next('.tabContent').innerHeight();
         $(this).parents('.tabSet').height(tabContentHeight + tabItemHeight);
         return false;
     }
-    $('.tabs>h2>a').focus(tabs);
-    $('.tabs>h2>a').click(tabs);
+    $('.tabs>.tabItem>a').focus(tabs);
+    $('.tabs>.tabItem>a').click(tabs);
     $(window).on("load resize", function(e) {
         tabs();
     });

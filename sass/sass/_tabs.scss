@@ -16,8 +16,7 @@
     @include screen('(max-width:767px)') {
         position: relative;
     }
-    &>h2 {
-        @include box-sizing();
+    &>.tabItem {
         &.active>a {
             background-color: $primaryColor;
             color: #FFF;
@@ -55,10 +54,10 @@
 }
 //多組 可設定差異
 .example-2 {
-    h2>a:hover {
+    .tabItem>a:hover {
         background: $secondaryColor;
     }
-    h2.active>a {
+    .tabItem.active>a {
         background: $secondaryColor;
     }
 }
