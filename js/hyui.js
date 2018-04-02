@@ -33,8 +33,7 @@ $(function() {
     /*-----------------------------------*/
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
-    $('body').prepend('<div class="menu_overlay"></div>');
-    $('body').prepend('<aside class="sidebar"><button type="button" class="sidebarClose">關閉</button></aside>');
+    $('body').prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
     $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
     var menu_status = false;
     var _sidebar = $('.sidebar'),
@@ -43,22 +42,27 @@ $(function() {
     _sidebarClose = $('.sidebarClose'),
     _sidebarCtrl = $('.sidebarCtrl'),
     _overlay = $('.menu_overlay');
+    _mArea = $('.m_area');
     _sidebarCtrl.append('<span></span><span></span><span></span>');
     var search_mode = false;
     // 打開選單 function
     function showSidebar() {
-        _sidebar.animate({ 'margin-left': 0 }, 400, 'easeOutQuint');
+        _sidebar.show();
+        _mArea.show();
+        _mArea.animate({
+            'margin-left': 0
+        }, 500, 'easeOutQuint');
         $('body').addClass('noscroll');
-        _overlay.show();
+        _overlay.fadeIn();
         $('.m_search').hide();
         search_mode = false;
-        // $(document).off().touchmove();
+        _overlay.off("touchmove");
     }
     // 縮合選單 function
     function hideSidebar() {
-        _sidebar.animate({ 'margin-left': _sidebar.width() * -1 + 'px' }, 400, 'easeOutQuint');
+        _mArea.animate({'margin-left': _mArea.width() * -1 + 'px'}, 500, 'easeOutQuint',function(){ _sidebar.fadeOut(200);_mArea.hide();});
         $('body').removeClass('noscroll');
-        _overlay.hide();
+        _overlay.fadeOut();
         liHasChild.children('ul').hide();
     }
     // 打開選單動作
@@ -70,7 +74,6 @@ $(function() {
     // 關閉動作
     _overlay.add(_sidebarClose).off().click(function() {
         hideSidebar();
-        
     });
     _overlay.off("mouseenter");
     // 無障礙tab設定
@@ -100,21 +103,22 @@ $(function() {
                 /////////////// 手機版設定 /////////////
                 /*-----------------------------------*/
                 menu_status = false;
-                _sidebar.show();
+                _sidebar.hide();
                 _overlay.hide();
-                _nav.prependTo(_sidebar);
-                _menu.prependTo(_sidebar);
+                _nav.prependTo(_mArea);
+                _menu.prependTo(_mArea);
                 _search.prependTo(_body);
                 _search.addClass('m_search');
-                _sidebar.css({ 'margin-left': _sidebar.width() * -1 + 'px' });
-                $('.header').addClass('fixed');
+                _mArea.css({
+                    'margin-left': _mArea.width() * -1 + 'px'
+                });
                 liHasChild.on({
                     mouseenter: function() {
-                        $(this).children('ul').stop(true, true).slideDown('600','easeOutQuint');
+                        $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
                     },
                     mouseleave: function() {
                         $(this).parent().siblings('ul').hide();
-                        $(this).children('ul').stop(true, true).slideUp('600','easeOutQuint');
+                        $(this).children('ul').stop(true, true).slideUp('600', 'easeOutQuint');
                     }
                 });
                 // 副選單點出
@@ -123,17 +127,18 @@ $(function() {
                     $(this).off('mouseenter,mouseleave');
                 });
                 liHasChild.off().on('click', function(e) {
-                    $(this).siblings('li').children('ul').stop(true, true).slideUp('600','easeOutQuint');
-                    $(this).children('ul').stop(true, true).slideToggle('600','easeOutQuint');
+                    $(this).siblings('li').children('ul').stop(true, true).slideUp('600', 'easeOutQuint');
+                    $(this).children('ul').stop(true, true).slideToggle('600', 'easeOutQuint');
                     // $(this).prop('disabled', true);
                     e.preventDefault();
                 });
                 // 行動版查詢
                 var _searchCtrl = $('.searchCtrl');
                 $('.m_search').hide();
+
                 _searchCtrl.off().on('click', function(e) {
                     if (!search_mode) {
-                        $('.m_search').stop(true, false).slideDown('400','easeOutQuint');
+                        $('.m_search').stop(true, false).slideDown('400', 'easeOutQuint');
                         search_mode = true;
                     } else {
                         $('.m_search').hide();
@@ -145,7 +150,6 @@ $(function() {
                 $('.main').off().on('click touchend', function(e) {
                     $('.m_search').hide();
                     search_mode = false;
-                    console.log("search_check");
                 });
             } else {
                 /*-----------------------------------*/
@@ -173,11 +177,8 @@ $(function() {
                     var target = e.target;
                     if (!$(target).is('.menu li a')) {
                         $('.menu').find('li ul').hide();
-                        console.log("true");
                     }
                 });
-
-
             }
         }, 50);
     });
@@ -378,45 +379,47 @@ $(function() {
     /*-----------------------------------*/
     ////////////////多組Tab////////////////
     /*-----------------------------------*/
-    $('.tabs').find('.active').next('.tabContent').show();
-    var tw = $('.tabSet').width();
-    var tabItemHeight = $('.tabs>.tabItem>a').innerHeight();
-    $('.tabs').find('.tabContent').css('top', tabItemHeight);
-
-    function tabs() {
-        var WindowW = $(window).width();
+    $(function() {
         $('.tabs').find('.active').next('.tabContent').show();
+        var tw = $('.tabSet').width();
         var tabItemHeight = $('.tabs>.tabItem>a').innerHeight();
         $('.tabs').find('.tabContent').css('top', tabItemHeight);
-        $('.tabSet').each(function() {
-            tw = $(this).width();
-            var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
-            var tabItemLength = $(this).find('.tabItem').length;
-            $(this).height(tabContentHeight + tabItemHeight);
-            var tabWidth = Math.ceil(tw / tabItemLength);
-            $(this).find('.tabItem>a').width(tabWidth);
-            if (WindowW >= 768) {
-                $(this).find('.tabItem:last').css({
-                    position: 'absolute',
-                    right: '0',
-                });
-            } else {
-                $(this).find('.tabItem:last').css({
-                    position: 'relative',
-                    right: '0',
-                });
-            }
+
+        function tabs() {
+            var WindowW = $(window).width();
+            $('.tabs').find('.active').next('.tabContent').show();
+            var tabItemHeight = $('.tabs>.tabItem>a').innerHeight();
+            $('.tabs').find('.tabContent').css('top', tabItemHeight);
+            $('.tabSet').each(function() {
+                tw = $(this).width();
+                var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
+                var tabItemLength = $(this).find('.tabItem').length;
+                $(this).height(tabContentHeight + tabItemHeight);
+                var tabWidth = Math.ceil(tw / tabItemLength);
+                $(this).find('.tabItem>a').width(tabWidth);
+                if (WindowW >= 768) {
+                    $(this).find('.tabItem:last').css({
+                        position: 'absolute',
+                        right: '0',
+                    });
+                } else {
+                    $(this).find('.tabItem:last').css({
+                        position: 'relative',
+                        right: '0',
+                    });
+                }
+            });
+            $(this).parent('.tabItem').siblings().removeClass('active');
+            $(this).parent('.tabItem').addClass('active');
+            tabContentHeight = $(this).parent('.tabItem').next('.tabContent').innerHeight();
+            $(this).parents('.tabSet').height(tabContentHeight + tabItemHeight);
+            return false;
+        }
+        $('.tabs>.tabItem>a').focus(tabs);
+        $('.tabs>.tabItem>a').click(tabs);
+        $(window).on("load resize", function(e) {
+            tabs();
         });
-        $(this).parent('.tabItem').siblings().removeClass('active');
-        $(this).parent('.tabItem').addClass('active');
-        tabContentHeight = $(this).parent('.tabItem').next('.tabContent').innerHeight();
-        $(this).parents('.tabSet').height(tabContentHeight + tabItemHeight);
-        return false;
-    }
-    $('.tabs>.tabItem>a').focus(tabs);
-    $('.tabs>.tabItem>a').click(tabs);
-    $(window).on("load resize", function(e) {
-        tabs();
     });
     /*-----------------------------------*/
     ///////////////置頂go to top////////////
@@ -435,14 +438,4 @@ $(function() {
         $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
         e.preventDefault();
     });
-    /*-----------------------------------*/
-    /////無障礙 gocenter//////
-    /*-----------------------------------*/
-    $('a.goCenter').keydown(function(e) {
-        if (e.which == 13) {
-            $('#aC').focus(); /*#aC 是中間定位點的id*/
-        }
-    });
-
-
 });

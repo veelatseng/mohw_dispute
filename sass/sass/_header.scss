@@ -136,34 +136,53 @@
     max-width: 50%;
     float: right;
     vertical-align: middle;
-    padding: 0em .3em .2em;
+    padding: 0em .3em 0em;
     @include box-sizing;
     label {
         font-size: 0;
     }
     .form_grp {
         margin-bottom: 0;
-        margin-right: 0;
+        margin-right: 0 !important;
         input {
             margin: -0.2em 0 0;
-            padding: .5em .5em .4em;
+            padding: .2em 35px .2em .5em;
+            &[type="submit"]{
+                font-size:0;
+                width:30px !important;
+                height: 30px;
+                max-width:auto;
+                min-width:auto;
+                background:url(../images/basic/icon_search.png) no-repeat center center;
+                background-size:20px;
+                border:none;
+                display:inline-block;
+                margin-left: -40px !important;
+                margin-top:-2px !important;
+                opacity:.8;
+                &:hover,&:focus {
+                    opacity:1;
+                }
+            }
         }
     }
     .btn_grp {
         padding: .2em;
         margin-bottom: 0;
-        input {
+        input,input[type="submit"]{
             margin: 0;
+            padding: .4em 1em .4em !important;
+            font-size:.813em;
         }
     }
     .keywordHot {
         display: inline-block;
         vertical-align: middle;
         margin-left: .5em;
-        padding: .3em 0;
+        padding: .1em 0 .3em;
         ul {
             display: inline-block;
-            font-size: .938em;
+            font-size: .813em;
             line-height: 1.65em;
             margin: 0;
             padding: 0;
@@ -190,7 +209,7 @@
         width: 100% !important;
         max-width: 100% !important;
         min-width: auto;
-        padding: 1em .3em .2em;
+        padding: .2em .3em .5em;
         display: block;
         height: auto;
         position: fixed;
@@ -203,31 +222,62 @@
             line-height: 0;
         }
         .form_grp {
-            margin-bottom: 0;
-            margin-right: 0;
-            width: 70%;
-            padding: 0 0 0 5%;
+            width: 65%;
+            height:auto;
+            padding: 0 0 0 5% !important;
             margin-top: 0;
             text-align: right;
+            float:left;
+            height:50px;
+            position:relative;
             @include box-sizing();
             input {
                 width: 100%;
                 margin: -0.2em 0 0;
-                padding: .5em 1em .4em;
+                padding: .5em 45px .4em .5em;
+                &[type="submit"]{
+                    font-size:0;
+                    width:36px !important;
+                    height: 36px;
+                    padding: 0;
+                    max-width:auto;
+                    min-width:auto;
+                    background:url(../images/basic/icon_search.png) no-repeat center center;
+                    background-size:24px;
+                    border:none;
+                    display:inline-block;
+                    // margin-left: -50px !important;
+                    position:absolute;
+                    right:5px;
+                    top:22px;
+                    opacity:.8;
+                    // outline:1px solid red;
+
+                    &:hover,&:focus {
+                        opacity:1;
+                    }
+                }
             }
         }
         .btn_grp {
+            display:inline-block;
             padding: .2em;
             margin-bottom: 0;
-            width: 25%;
+            width: 20%;
+            margin-top:20px;
+            padding-left: 5%;
             @include box-sizing();
             input {
-            	width:80% !important;
+                width:80% !important;
+                padding: .6em 1em .7em !important;
                 margin: 0;
+
             }
         }
         .keywordHot {
-        	padding-left: 5%;
+            padding-left: 5%;
+            margin-top:10px;
+            @include clearfix;
             a {
                 color: #FFF;
                 &:hover,
@@ -238,7 +288,6 @@
         }
     }
 }
-
 // header fix
 .header.fixed {
     position: fixed;
@@ -246,4 +295,18 @@
     right: 0;
     top: 0;
     box-shadow: rgba(0, 0, 0, .5) 0 0 25px;
+    background:darken($primaryColor,5);
+    z-index: 999;
+    @include screen('mobile') {
+        background:#FFF;
+    }
+    .menu{
+        >ul{
+            >li{
+                >a{
+                    color:#FFF;
+                }
+            }
+        }
+    }
 }

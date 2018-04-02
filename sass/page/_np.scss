@@ -20,10 +20,10 @@
             float:none;
             width: 96%;
             margin:0px auto 10px;
-             &:nth-child(even){
+            &:nth-child(even){
                 width: 96%;
                 margin-right: auto;
-             }
+            }
         }
         a {
             @include border-radius(4px);

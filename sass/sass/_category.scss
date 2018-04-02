@@ -1,7 +1,7 @@
 .category {
     text-align: left;
     @include box-sizing;
-    margin: .5em auto;
+    margin: 2em auto;
     ul {
         padding: 0;
         margin: 0;
@@ -15,7 +15,7 @@
     a {
         background: $primaryColor;
         padding: .4em 1em;
-		display:block;
+        display:block;
         color: #FFF;
         @include box-sizing();
         @include border-radius(4px);

@@ -5,10 +5,16 @@
             &.date {
                 text-align: center;
                 color: #666;
+                @include screen('mobile') {
+                    text-align: left;
+                }
             }
             &.num {
                 text-align: center;
                 color: #666;
+                @include screen('mobile') {
+                    text-align: left;
+                }
             }
         }
     }
@@ -26,7 +32,7 @@
                     display: block;
                     padding-left: 2em;
                     position: relative;
-                    line-height:1.45em;
+                    line-height: 1.45em;
                     .num {
                         width: 1.5em;
                         text-align: right;
@@ -54,27 +60,26 @@
             }
         }
     }
-
     .album {
         margin: 1em auto;
         overflow: hidden;
         ul {
             padding: 0;
             margin: 0;
-            list-style:none;
+            list-style: none;
             li {
-                @include make-xs-column(12); //576px  width:100%
-                @include make-sm-column(4); //768px  width:50%
-                @include make-md-column(4); //992px  width:33.3%
-                @include make-lg-column(4); //1400px width:33.3%
+                @include make-xs-column(12);
+                @include make-sm-column(4);
+                @include make-md-column(4);
+                @include make-lg-column(4);
                 @include gutter();
-                a{
-                    display:block;
+                a {
+                    display: block;
                     text-align: center;
                 }
-                .imgOuter{
-                    width:100%;
-                    @include aspect-ratio(4,3);
+                .imgOuter {
+                    width: 100%;
+                    @include aspect-ratio(4, 3);
                 }
             }
         }

@@ -5,15 +5,16 @@
     overflow: hidden;
     @include clearfix();
     @include box-shadow(rgba(0, 0, 0, .3) 0 2px 12px);
-    @include screen('(max-width:767px)') {
+    @include screen('mobile') {
         max-width: 100%;
         width: auto;
         height: auto !important;
     }
 }
+
 .tabs {
     position: relative;
-    @include screen('(max-width:767px)') {
+    @include screen('mobile') {
         position: relative;
     }
     &>.tabItem {
@@ -52,6 +53,7 @@
         }
     }
 }
+
 //多組 可設定差異
 .example-2 {
     .tabItem>a:hover {
@@ -61,6 +63,7 @@
         background: $secondaryColor;
     }
 }
+
 // 顯示content
 .active+.tabContent {
     display: block;
@@ -74,7 +77,7 @@
     clear: both;
     padding: 30px 20px;
     display: none;
-    @include screen('(max-width:767px)') {
+    @include screen('mobile') {
         position: static;
     }
 
@@ -88,7 +91,7 @@
         margin: 0 0 1.3em 0;
         padding: 0;
         border-bottom: 1px #999 dashed;
-        @include screen('(max-width:767px)') {
+         @include screen('mobile') {
             @include text-overflow();
         }
 
@@ -101,7 +104,7 @@
     }
     .more {
         text-align: right;
-        @include screen('(max-width:767px)') {
+         @include screen('mobile') {
             text-align: center;
         }
         a {

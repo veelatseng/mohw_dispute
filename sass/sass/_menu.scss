@@ -44,7 +44,6 @@
             outline: none;
             text-decoration: none;
         } // 第二層選單樣式
-        
         li {
             float: none;
             a {
@@ -83,120 +82,138 @@
     }
 }
 
-// .header .megaMenu{position:relative;}
-// .header .megaMenu li{position:static;line-height:1.25;}
-// .header .megaMenu li a{display:block;outline:none;text-decoration:none;}
-// .header .megaMenu>ul{text-align: center;font-size: 16px;line-height:1.25;}
-// .header .megaMenu>ul>li{display: inline-block;min-width:5em;}
-// .header .megaMenu>ul>li>a{padding:0 .9em;height:2.4em;line-height:2.5em;}
-// .header .megaMenu>ul>li:hover>a,
-// .header .megaMenu>ul>li>a:hover,
-// .header .megaMenu>ul>li>a:focus{background-color:#444;color:#fff;}
-// .header .megaMenu>ul>li>ul{display: none;overflow:visible;position:absolute;top:auto;left:50%;text-align:left;margin-top:0;width:92%;padding:.6em 2%;margin-left:-48%;box-shadow:rgba(0,0,0,0.4) 0 2px 12px;background: #fff}
-// .header .megaMenu>ul>li>ul>li{display:inline-block; width:24%; margin:4px .1% .7em; vertical-align:top; border:1px solid #bbb;}
-// .header .megaMenu ul ul{width: 90%;margin: 0 auto;}
-// .header .megaMenu li li.hasChild>a{padding-right:32px;}
-// .header .megaMenu li li.hasChild>a:after{content:'';position:absolute;right:14px; top:.65em;width:12px;height:12px;border:3px solid #aaa;transform:rotate(135deg);border-bottom:none;border-left:none;}
-// .header .megaMenu li li li.hasChild>a:after{display: none;}
-// .header .megaMenu li li a{position: relative;padding:.6em .8em;}
-// .header .megaMenu li li a:hover,
-// .header .megaMenu li li a:focus{background: #444;color: #fff;}
-// .header .megaMenu li li li a{border-top: 1px dotted #ccc;padding:.6em 1em;}
-// .header .megaMenu li li li a:before{content:'';display: inline-block;width: .5em;height: .5em;background: #888;vertical-align: top;margin: .35em .5em 0 0;}
-// .header .megaMenu ul ul ul{ display:block; position:static;width: 100%;margin: 0;font-size: .9em;}
-// .header .megaMenu ul ul ul ul { display:none; }
+////////////////////////////////////////////////////// 行動版選單
 // 行動版選單
 .sidebar {
-    display: none;
     position: fixed;
-    padding-top: 3em;
     top: 0;
+    left: 0;
     height: 100%;
-    width: 280px;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    /* Lets it scroll lazy */
-    -webkit-overflow-scrolling: auto;
-    -webkit-transform:translateZ(0);
+    width:100%;
+    // overflow: hidden !important;
     /* Stops scrolling immediately */
     z-index: 99999999;
-    background: #000;
-    @include box-sizing;
-    padding-bottom: 2em;
-    &:before {
-        content: "";
-        position: absolute;
+    // background: rgba(0, 0, 0, 0);
+    display:none;
+    // @include box-sizing;
+    overflow-x:hidden !important;
+    overflow-y:auto;
+    >.menu_overlay {
+        background: RGBA(0, 0, 0, .5);
+        position: fixed;
         top: 0;
         left: 0;
-        color: #FFF;
         width: 100%;
-        height: 3em;
-        background: #000;
-        padding: 0 1em;
-        line-height: 3em;
-        @include box-sizing;
+        height: 100%;
+        overflow: hidden;
+        display:block;
+        z-index: 9;
+        display: none;
     }
-    .menu {
-        width: 100%;
-        @include box-shadow(0px 0px 4px RGBA(0, 0, 0, .4));
-        margin-bottom: 1em;
-        li {
-            display: block;
-            float: none;
+    .m_area {
+        &:before {
+            content: "";
+            width: 280px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #FFF;
             width: 100%;
-            >a {
-                padding: .5em 1em;
-                background: #333;
-                border-bottom: 1px solid #444;
-            }
-            &.hasChild {
-                >a {
-                    padding: .5em 1em !important;
-                    color: #EEE;
-                    background: #222;
-                    padding-right: 36px;
-                    position: relative;
-                    text-shadow: 1px 1px 2px RGBA(0, 0, 0, .7);
-                    &:after {
-                        content: '';
-                        position: absolute;
-                        right: 16px;
-                        top: 1.5em;
-                        width: 5px;
-                        line-height: 1.25em;
-                        height: 5px;
-                        border: 2px solid #EEE;
-                        transform: rotate(45deg);
-                        border-top: none;
-                        border-left: none;
-                        transition: .3s;
-                    }
-                }
-            }
+            height: 3em;
+            background: $primaryColor;
+            padding: 0 1em;
+            line-height: 3em;
+            @include box-sizing;
+        }
+        width:280px;
+        padding-top: 3em;
+        position:absolute;
+        top: 0;
+        left: 0;
+        padding-bottom: 3em;
+        height: 100%;
+        background: $primaryColor;
+        overflow:hidden;
+        overflow-y: scroll;
+        z-index: 9999;
+        -webkit-overflow-scrolling: touch;
+        /* Lets it scroll lazy */
+        -webkit-overflow-scrolling: auto;
+    }
+    .m_area {
+        .menu {
+            width: 100%;
+            @include box-shadow(0px 0px 4px RGBA(0, 0, 0, .4));
+            margin-bottom: 1em;
+            background: #CCC;
             li {
-                a {
-                    padding: 1em 1em;
-                    &:after {
-                        display: none;
-                    }
+                display: block;
+                float: none;
+                width: 100%;
+                ul {
+                    background: #FFF;
+                }
+                >a {
+                    padding: .5em 1em;
+                    background: #FFF;
+                    border-bottom: 1px solid #CCC;
                 }
                 &.hasChild {
+                    >a {
+                        padding: .5em 1em !important;
+                        color: #222;
+                        background: #FFF;
+                        padding-right: 36px;
+                        position: relative; // text-shadow: 1px 1px 2px RGBA(0, 0, 0, .7);
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            right: 16px;
+                            top: 1.5em;
+                            width: 5px;
+                            line-height: 1.25em;
+                            height: 5px;
+                            border: 2px solid #222;
+                            transform: rotate(45deg);
+                            border-top: none;
+                            border-left: none;
+                            transition: .3s;
+                        }
+                    }
+                }
+                li {
+                    background: #FFF;
                     a {
-                        background: #333;
                         padding: 1em 1em 1em 2em !important;
+                        background: rgba(0, 0, 0, .05);
+
                         &:hover,
                         &:focus {
-                            background: $primaryColor;
+                            color: #000;
+                            background: rgba(0, 0, 0, .15);
+                        }
+                        &:after {
+                            display: none;
+                        }
+                    }
+                    &.hasChild {
+                        a {
+                            background: rgba(0, 0, 0, .05);
+                            padding: 1em 1em 1em 2em !important;
+                            &:hover,
+                            &:focus {
+                                background: rgba(0, 0, 0, .15);
+                            }
                         }
                     }
                 }
             }
-        }
-        a {
-            display: block;
-            color: #FFF;
-            text-decoration: none;
-            transition: .4s;
+            a {
+                display: block;
+                color: #333;
+                text-decoration: none;
+                transition: .4s;
+            }
         }
     }
 }
@@ -204,10 +221,6 @@
 
 
 
-.sidebar .menu li.hasChild.closeThis>a:before {
-    transform: rotate(225deg);
-    top: 1.1em;
-}
 
 
 .sidebar .menu ul ul {
@@ -228,8 +241,11 @@
 
 // nav
 .sidebar .navigation {
-    position: static;
+    position: relative;
     text-align: left;
+    // margin-bottom: 70px;
+    // outline:1px solid red;
+
 }
 
 .sidebar .navigation ul {
@@ -239,7 +255,7 @@
     padding: 0;
     overflow: hidden;
     list-style: none;
-    border: 1px solid #444;
+    border: 1px solid rgba(255, 255, 255, .5);
     border-bottom: none;
     border-right: none;
 }
@@ -261,10 +277,11 @@
     height: 3em;
     line-height: 2em;
     padding: .5em 1em;
-    font-size: .813em;
+    font-size: .938em;
     color: #FFF;
+    font-weight: bold;
     text-decoration: none;
-    border: 1px solid #444;
+    border: 1px solid rgba(255, 255, 255, .5);
     @include box-sizing;
     &:nth-child(odd) {
         border-left: none;
@@ -272,7 +289,7 @@
     }
     &:hover,
     &:focus {
-        background: $primaryColor;
+        background: darken($primaryColor, 20);
     }
 }
 
@@ -304,13 +321,13 @@
     }
 }
 
-body>.menu_overlay {
-    background: RGBA(0, 0, 0, .5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow:hidden;
-    z-index: 999;
+
+//animation
+@keyframes showMenu {
+    0% {
+        left: 20px;
+    }
+    100% {
+        left: 0px;
+    }
 }
