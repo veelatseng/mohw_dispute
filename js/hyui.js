@@ -3,13 +3,13 @@ $(function() {
     ///////////////// 變數 ////////////////
     /*-----------------------------------*/
     var _window = $(window),
-        ww = _window.width(),
-        wh = _window.height(),
-        _body = $('body'),
-        wwNormal = 1400,
-        wwMedium = 992,
-        wwSmall = 768,
-        wwxs = 576;
+    ww = _window.width(),
+    wh = _window.height(),
+    _body = $('body'),
+    wwNormal = 1400,
+    wwMedium = 992,
+    wwSmall = 768,
+    wwxs = 576;
     /*-----------------------------------*/
     //////////// nojs 先移除////////////////
     /*-----------------------------------*/
@@ -38,13 +38,13 @@ $(function() {
     $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
     var menu_status = false;
     var _sidebar = $('.sidebar'),
-        _search = $('.search'),
-        _nav = $('.navigation'),
-        _sidebarClose = $('.sidebarClose'),
-        _sidebarCtrl = $('.sidebarCtrl'),
-        _overlay = $('.menu_overlay');
+    _search = $('.search'),
+    _nav = $('.navigation'),
+    _sidebarClose = $('.sidebarClose'),
+    _sidebarCtrl = $('.sidebarCtrl'),
+    _overlay = $('.menu_overlay');
     _sidebarCtrl.append('<span></span><span></span><span></span>');
-     var search_mode = false;
+    var search_mode = false;
     // 打開選單 function
     function showSidebar() {
         _sidebar.animate({ 'margin-left': 0 }, 400, 'easeOutQuint');
@@ -131,7 +131,6 @@ $(function() {
                 // 行動版查詢
                 var _searchCtrl = $('.searchCtrl');
                 $('.m_search').hide();
-               
                 _searchCtrl.off().on('click', function(e) {
                     if (!search_mode) {
                         $('.m_search').stop(true, false).slideDown('400','easeOutQuint');
@@ -184,8 +183,8 @@ $(function() {
     });
     // 固定版頭
     var hh = $('.header').outerHeight(true),
-        menuH = _menu.outerHeight(),
-        navH = $('.navbar').height();
+    menuH = _menu.outerHeight(),
+    navH = $('.navbar').height();
     $(window).on("load scroll resize", function(e) {
         ww = _window.width();
         if (ww >= wwSmall && $(this).scrollTop() > hh - menuH) {
@@ -241,15 +240,15 @@ $(function() {
     $(window).on('resize load', function(e) {
         $('.imgOuter').each(function(index, el) {
             var _imgContainer = $(this),
-                cWidth = _imgContainer.width(),
-                cHeight = _imgContainer.height(),
-                ratioC = cWidth / cHeight,
-                _img = _imgContainer.find('img');
+            cWidth = _imgContainer.width(),
+            cHeight = _imgContainer.height(),
+            ratioC = cWidth / cHeight,
+            _img = _imgContainer.find('img');
 
             var iWidth = $(this).find('img').width(),
-                iHeight = $(this).find('img').height(),
-                ratioImg = iWidth / iHeight,
-                scaleRatio;
+            iHeight = $(this).find('img').height(),
+            ratioImg = iWidth / iHeight,
+            scaleRatio;
             if (ratioC > ratioImg) {
                 scaleRatio = cWidth / iWidth;
                 _img.width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
@@ -268,15 +267,15 @@ $(function() {
     $(window).on('resize load', function(e) {
         $('.imgOuter').each(function(index, el) {
             var _imgContainer = $(this),
-                cWidth = _imgContainer.width(),
-                cHeight = _imgContainer.height(),
-                ratioC = cWidth / cHeight,
-                _img = _imgContainer.find('img');
+            cWidth = _imgContainer.width(),
+            cHeight = _imgContainer.height(),
+            ratioC = cWidth / cHeight,
+            _img = _imgContainer.find('img');
 
             var iWidth = $(this).find('img').width(),
-                iHeight = $(this).find('img').height(),
-                ratioImg = iWidth / iHeight,
-                scaleRatio;
+            iHeight = $(this).find('img').height(),
+            ratioImg = iWidth / iHeight,
+            scaleRatio;
             if (ratioC > ratioImg) {
                 scaleRatio = cWidth / iWidth;
                 _img.width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
@@ -436,4 +435,14 @@ $(function() {
         $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
         e.preventDefault();
     });
+    /*-----------------------------------*/
+    /////無障礙 gocenter//////
+    /*-----------------------------------*/
+    $('a.goCenter').keydown(function(e) {
+        if (e.which == 13) {
+            $('#aC').focus(); /*#aC 是中間定位點的id*/
+        }
+    });
+
+
 });
