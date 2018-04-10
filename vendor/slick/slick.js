@@ -1,20 +1,3 @@
-/*
-     _ _      _       _
- ___| (_) ___| | __  (_)___
-/ __| | |/ __| |/ /  | / __|
-\__ \ | | (__|   < _ | \__ \
-|___/_|_|\___|_|\_(_)/ |___/
-                   |__/
-
- Version: 1.8.0
-  Author: Ken Wheeler
- Website: http://kenwheeler.github.io
-    Docs: http://kenwheeler.github.io/slick
-    Repo: http://github.com/kenwheeler/slick
-  Issues: http://github.com/kenwheeler/slick/issues
-
- */
-/* global window, document, define, jQuery, setInterval, clearInterval */
 ;(function(factory) {
     'use strict';
     if (typeof define === 'function' && define.amd) {
@@ -44,8 +27,8 @@
                 appendDots: $(element),
                 arrows: true,
                 asNavFor: null,
-                prevArrow: '<button class="slick-prev" aria-label="Previous" type="button">Previous</button>',
-                nextArrow: '<button class="slick-next" aria-label="Next" type="button">Next</button>',
+                prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="previous">前一則</button>', //Allows you to select a node or customize the HTML for the "Previous" arrow.                
+                nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="next">下一則</button>', //Allows you to select a node or customize the HTML for the "Next" arrow.
                 autoplay: false,
                 autoplaySpeed: 3000,
                 centerMode: false,

@@ -1,15 +1,21 @@
 $(function() {
     /*-----------------------------------*/
+    ///////////// fix iOS bug /////////////
+    /*-----------------------------------*/
+    document.documentElement.addEventListener('gesturestart', function(event) {
+        event.preventDefault();
+    }, false);
+    /*-----------------------------------*/
     ///////////////// 變數 ////////////////
     /*-----------------------------------*/
     var _window = $(window),
-    ww = _window.width(),
-    wh = _window.height(),
-    _body = $('body'),
-    wwNormal = 1400,
-    wwMedium = 992,
-    wwSmall = 768,
-    wwxs = 576;
+        ww = _window.width(),
+        wh = _window.height(),
+        _body = $('body'),
+        wwNormal = 1400,
+        wwMedium = 992,
+        wwSmall = 768,
+        wwxs = 576;
     /*-----------------------------------*/
     //////////// nojs 先移除////////////////
     /*-----------------------------------*/
@@ -37,11 +43,11 @@ $(function() {
     $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
     var menu_status = false;
     var _sidebar = $('.sidebar'),
-    _search = $('.search'),
-    _nav = $('.navigation'),
-    _sidebarClose = $('.sidebarClose'),
-    _sidebarCtrl = $('.sidebarCtrl'),
-    _overlay = $('.menu_overlay');
+        _search = $('.search'),
+        _nav = $('.navigation'),
+        _sidebarClose = $('.sidebarClose'),
+        _sidebarCtrl = $('.sidebarCtrl'),
+        _overlay = $('.menu_overlay');
     _mArea = $('.m_area');
     _sidebarCtrl.append('<span></span><span></span><span></span>');
     var search_mode = false;
@@ -60,7 +66,8 @@ $(function() {
     }
     // 縮合選單 function
     function hideSidebar() {
-        _mArea.animate({'margin-left': _mArea.width() * -1 + 'px'}, 500, 'easeOutQuint',function(){ _sidebar.fadeOut(200);_mArea.hide();});
+        _mArea.animate({ 'margin-left': _mArea.width() * -1 + 'px' }, 500, 'easeOutQuint', function() { _sidebar.fadeOut(200);
+            _mArea.hide(); });
         $('body').removeClass('noscroll');
         _overlay.fadeOut();
         liHasChild.children('ul').hide();
@@ -184,8 +191,8 @@ $(function() {
     });
     // 固定版頭
     var hh = $('.header').outerHeight(true),
-    menuH = _menu.outerHeight(),
-    navH = $('.navbar').height();
+        menuH = _menu.outerHeight(),
+        navH = $('.navbar').height();
     $(window).on("load scroll resize", function(e) {
         ww = _window.width();
         if (ww >= wwSmall && $(this).scrollTop() > hh - menuH) {
@@ -241,15 +248,15 @@ $(function() {
     $(window).on('resize load', function(e) {
         $('.imgOuter').each(function(index, el) {
             var _imgContainer = $(this),
-            cWidth = _imgContainer.width(),
-            cHeight = _imgContainer.height(),
-            ratioC = cWidth / cHeight,
-            _img = _imgContainer.find('img');
+                cWidth = _imgContainer.width(),
+                cHeight = _imgContainer.height(),
+                ratioC = cWidth / cHeight,
+                _img = _imgContainer.find('img');
 
             var iWidth = $(this).find('img').width(),
-            iHeight = $(this).find('img').height(),
-            ratioImg = iWidth / iHeight,
-            scaleRatio;
+                iHeight = $(this).find('img').height(),
+                ratioImg = iWidth / iHeight,
+                scaleRatio;
             if (ratioC > ratioImg) {
                 scaleRatio = cWidth / iWidth;
                 _img.width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
@@ -268,15 +275,15 @@ $(function() {
     $(window).on('resize load', function(e) {
         $('.imgOuter').each(function(index, el) {
             var _imgContainer = $(this),
-            cWidth = _imgContainer.width(),
-            cHeight = _imgContainer.height(),
-            ratioC = cWidth / cHeight,
-            _img = _imgContainer.find('img');
+                cWidth = _imgContainer.width(),
+                cHeight = _imgContainer.height(),
+                ratioC = cWidth / cHeight,
+                _img = _imgContainer.find('img');
 
             var iWidth = $(this).find('img').width(),
-            iHeight = $(this).find('img').height(),
-            ratioImg = iWidth / iHeight,
-            scaleRatio;
+                iHeight = $(this).find('img').height(),
+                ratioImg = iWidth / iHeight,
+                scaleRatio;
             if (ratioC > ratioImg) {
                 scaleRatio = cWidth / iWidth;
                 _img.width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
@@ -432,10 +439,29 @@ $(function() {
         }
     });
     /*-----------------------------------*/
-    /////Click event to scroll to top//////
+    /////click event to scroll to top//////
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
         $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
         e.preventDefault();
     });
+    /*--------------------------------------------------------*/
+    /////設定img 在IE9+ SAFARI FIREFOX CHROME 可以object-fit/////
+    /*--------------------------------------------------------*/
+    var userAgent, ieReg, ie;
+    userAgent = window.navigator.userAgent;
+    ieReg = /msie|Trident.*rv[ :]*11\./gi;
+    ie = ieReg.test(userAgent);
+    if (ie) {
+        $(".img-container").each(function() {
+            var imgUrl = $(this).children('a').children('img').attr('src');
+            var $container = $(this);
+            $(this).has(".cover").find('a').addClass("ie-object-cover");
+            $(this).has(".cover").find('a').css("backgroundImage", "url(" + imgUrl + ")");
+            $(this).has(".fill").find('a').addClass("ie-object-fill");
+            $(this).has(".fill").find('a').css("backgroundImage", "url(" + imgUrl + ")");
+            $(this).has(".contain").find('a').addClass("ie-object-contain");
+            $(this).has(".contain").find('a').css("backgroundImage", "url(" + imgUrl + ")");
+        });
+    }
 });
