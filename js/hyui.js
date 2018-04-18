@@ -389,16 +389,18 @@ $(function() {
     $(function() {
         $('.tabs').find('.active').next('.tabContent').show();
         var tw = $('.tabSet').width();
-        var tabItemHeight = $('.tabs>.tabItem>a').innerHeight();
+        var tabItemHeight = $('.tabs>.tabItem').height();
         $('.tabs').find('.tabContent').css('top', tabItemHeight);
-
         function tabs() {
             var WindowW = $(window).width();
             $('.tabs').find('.active').next('.tabContent').show();
-            var tabItemHeight = $('.tabs>.tabItem>a').innerHeight();
+            var tabItemHeight = $('.tabs>.tabItem').height();
             $('.tabs').find('.tabContent').css('top', tabItemHeight);
             $('.tabSet').each(function() {
                 tw = $(this).width();
+                var tabItemHeight = $(this).find('.tabs>.tabItem').height();
+                $(this).children('.tabs').find('.tabContent').css('top', tabItemHeight);
+                console.log(tabItemHeight);
                 var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
                 var tabItemLength = $(this).find('.tabItem').length;
                 $(this).height(tabContentHeight + tabItemHeight);
