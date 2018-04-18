@@ -4,6 +4,10 @@ body {
 * {
     -webkit-overflow-scrolling: touch;
 }
+a:focus {
+    outline:none;
+    box-shadow: 0 0px 0px 1px $primaryColor inset;
+}
 // 導盲磚
 .accesskey {
     position: absolute;
