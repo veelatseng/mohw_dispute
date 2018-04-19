@@ -66,8 +66,10 @@ $(function() {
     }
     // 縮合選單 function
     function hideSidebar() {
-        _mArea.animate({ 'margin-left': _mArea.width() * -1 + 'px' }, 500, 'easeOutQuint', function() { _sidebar.fadeOut(200);
-            _mArea.hide(); });
+        _mArea.animate({ 'margin-left': _mArea.width() * -1 + 'px' }, 500, 'easeOutQuint', function() {
+            _sidebar.fadeOut(200);
+            _mArea.hide();
+        });
         $('body').removeClass('noscroll');
         _overlay.fadeOut();
         liHasChild.children('ul').hide();
@@ -386,49 +388,50 @@ $(function() {
     /*-----------------------------------*/
     ////////////////多組Tab////////////////
     /*-----------------------------------*/
-    $(function() {
+    $('.tabs').find('.active').next('.tabContent').show();
+    var tw = $('.tabSet').width();
+    var tabItemHeight = $('.tabs>.tabItem').height();
+    $('.tabs').find('.tabContent').css('top', tabItemHeight);
+
+    function tabs() {
+        var WindowW = $(window).width();
         $('.tabs').find('.active').next('.tabContent').show();
-        var tw = $('.tabSet').width();
         var tabItemHeight = $('.tabs>.tabItem').height();
         $('.tabs').find('.tabContent').css('top', tabItemHeight);
-        function tabs() {
-            var WindowW = $(window).width();
-            $('.tabs').find('.active').next('.tabContent').show();
-            var tabItemHeight = $('.tabs>.tabItem').height();
-            $('.tabs').find('.tabContent').css('top', tabItemHeight);
-            $('.tabSet').each(function() {
-                tw = $(this).width();
-                var tabItemHeight = $(this).find('.tabs>.tabItem').height();
-                $(this).children('.tabs').find('.tabContent').css('top', tabItemHeight);
-                console.log(tabItemHeight);
-                var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
-                var tabItemLength = $(this).find('.tabItem').length;
-                $(this).height(tabContentHeight + tabItemHeight);
-                var tabWidth = Math.ceil(tw / tabItemLength);
-                $(this).find('.tabItem>a').width(tabWidth);
-                if (WindowW >= 768) {
-                    $(this).find('.tabItem:last').css({
-                        position: 'absolute',
-                        right: '0',
-                    });
-                } else {
-                    $(this).find('.tabItem:last').css({
-                        position: 'relative',
-                        right: '0',
-                    });
-                }
-            });
-            $(this).parent('.tabItem').siblings().removeClass('active');
-            $(this).parent('.tabItem').addClass('active');
+        $('.tabSet').each(function() {
+            tw = $(this).width();
+            var tabItemHeight = $(this).find('.tabs>.tabItem').height();
+            $(this).children('.tabs').find('.tabContent').css('top', tabItemHeight);
+
+            var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
+            console.log(tabContentHeight);
+            var tabItemLength = $(this).find('.tabItem').length;
+            $(this).height(tabContentHeight + tabItemHeight);
+            var tabWidth = Math.ceil(tw / tabItemLength);
+            $(this).find('.tabItem>a').width(tabWidth);
+            if (WindowW >= 768) {
+                $(this).find('.tabItem:last').css({
+                    position: 'absolute',
+                    right: '0',
+                });
+            } else {
+                $(this).find('.tabItem:last').css({
+                    position: 'relative',
+                    right: '0',
+                });
+            }
             tabContentHeight = $(this).parent('.tabItem').next('.tabContent').innerHeight();
+            console.log(tabContentHeight);
             $(this).parents('.tabSet').height(tabContentHeight + tabItemHeight);
-            return false;
-        }
-        $('.tabs>.tabItem>a').focus(tabs);
-        $('.tabs>.tabItem>a').click(tabs);
-        $(window).on("load resize", function(e) {
-            tabs();
         });
+        $(this).parent('.tabItem').siblings().removeClass('active');
+        $(this).parent('.tabItem').addClass('active');
+        return false;
+    }
+    $('.tabs>.tabItem>a').focus(tabs);
+    $('.tabs>.tabItem>a').click(tabs);
+    $(window).on("load resize", function(e) {
+        tabs();
     });
     /*-----------------------------------*/
     ///////////////置頂go to top////////////
