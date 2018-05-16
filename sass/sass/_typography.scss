@@ -57,10 +57,9 @@ $grid-background-baseline-color: rgba(187, 187, 187, 0.4);
         margin-right: .5em;
     }
     ul,
-    ol {}
-    p,
-    ul,
     ol,
+    article,
+    p,
     dd,
     figure {
         @include adjust-font-size-to($base-font-size, 2); // @include trailer(1);

@@ -37,6 +37,88 @@
     }
 }
 
+//---------------------------------------------form setting--------//
+form {
+    .form_grp,
+    .check_grp,
+    .radio_grp,
+    .btn_grp,
+    .upload_grp {
+        margin-bottom: .2em;
+    }
+    .check_grp,
+    .radio_grp {
+        label {
+            display: block;
+        } // radio與check個別行內設定
+        &.form_inline {
+            label {
+                display: inline-block;
+                margin: .2em .5em 0 0;
+            }
+        }
+    }
+    .form_grp,
+    .upload_grp {
+        // 文字表單個別行內設定
+        &.form_inline {
+            label {
+                display: inline-block;
+                margin-right: .5em;
+            }
+            input,
+            textarea,
+            select {
+                width: auto;
+            }
+        }
+    } // form 全域行內設定
+    &.form_inline {
+        label {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: .5em;
+            &~input,
+            &~textarea {
+                display: inline-block;
+                width: auto;
+                vertical-align: middle;
+            }
+        }
+        input[type="text"],
+        input[type="password"],
+        select,
+        textarea {
+            width: auto;
+            display: inline-block;
+        }
+        .form_grp,
+        .check_grp,
+        .radio_grp,
+        .btn_grp,
+        .upload_grp {
+            display: inline-block;
+            margin-right: .5em;
+        }
+        .check_grp,
+        .radio_grp {}
+
+        .btn_grp {
+            .btn,
+            input[type="submit"],
+            input[type="reset"],
+            input[type="button"],
+            input[type="search"] {
+                margin-top: -3px;
+                padding: .45em 1em;
+            }
+        }
+        select,
+        textarea {
+            width: auto;
+        }
+    }
+    
 //---------------------------------------------下拉選單--------//
 label,
 legend {
@@ -250,87 +332,6 @@ input[type="file"] {
 }
 
 
-//---------------------------------------------form setting--------//
-form {
-    .form_grp,
-    .check_grp,
-    .radio_grp,
-    .btn_grp,
-    .upload_grp {
-        margin-bottom: .2em;
-    }
-    .check_grp,
-    .radio_grp {
-        label {
-            display: block;
-        } // radio與check個別行內設定
-        &.form_inline {
-            label {
-                display: inline-block;
-                margin: .2em .5em 0 0;
-            }
-        }
-    }
-    .form_grp,
-    .upload_grp {
-        // 文字表單個別行內設定
-        &.form_inline {
-            label {
-                display: inline-block;
-                margin-right: .5em;
-            }
-            input,
-            textarea,
-            select {
-                width: auto;
-            }
-        }
-    } // form 全域行內設定
-    &.form_inline {
-        label {
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: .5em;
-            &~input,
-            &~textarea {
-                display: inline-block;
-                width: auto;
-                vertical-align: middle;
-            }
-        }
-        input[type="text"],
-        input[type="password"],
-        select,
-        textarea {
-            width: auto;
-            display: inline-block;
-        }
-        .form_grp,
-        .check_grp,
-        .radio_grp,
-        .btn_grp,
-        .upload_grp {
-            display: inline-block;
-            margin-right: .5em;
-        }
-        .check_grp,
-        .radio_grp {}
-
-        .btn_grp {
-            .btn,
-            input[type="submit"],
-            input[type="reset"],
-            input[type="button"],
-            input[type="search"] {
-                margin-top: -3px;
-                padding: .45em 1em;
-            }
-        }
-        select,
-        textarea {
-            width: auto;
-        }
-    }
 }
 
 //---------------------------------------------captcha--------//
@@ -350,4 +351,8 @@ img.captcha {
         max-height: 2.4em;
         margin-bottom: .5em;
     }
+}
+//---------------------------------------------必填欄位說明--------//
+abbr[title] {
+   border-bottom: none;text-decoration: none;
 }

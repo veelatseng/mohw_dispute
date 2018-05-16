@@ -27,12 +27,12 @@ table {
     }
     &.table_hover{
         tr:hover{
-            background:#FCFCFC;
+            background:#F3F3F3;
         }
     }
     &.table_sprite{
         tr:nth-child(even){
-            background:#FCFCFC;
+            background:#F5F5F5;
         }
     }
     &.table_list {
