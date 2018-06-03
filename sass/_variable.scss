@@ -26,8 +26,8 @@ $form-focus:				#21baff;				//表單
 //-------------------------------------------------------------字型--------//
 
 // 字型設定
-$font-family:               '"Lato", "PingFang TC", "Helvetica Neue", Helvetica,Microsoft JhengHei,"微軟正黑體", Arial , sans-serif';
-$font-size:					16px;
+$font-family:               Lato, "PingFang TC", "Helvetica Neue", Helvetica, 微軟正黑體, 新細明體, Arial, sans-serif;;
+$font-size:					1em;
 
 //-------------------------------------------------------------格線系統-----//
 
@@ -39,7 +39,7 @@ $container-max:             1200px !default;		   //container最大寬
 //mediaquery
 $screen-lg:        			1400px !default;  	       //電腦
 $screen-md:        			992px  !default;      	   //平板
-$screen-sm:        			768px  !default;     	   //手機 
+$screen-sm:        			768px  !default;     	   //手機
 $screen-xs:        			576px  !default;      	   //極小尺寸
 
 //-------------------------------------------------------------客製化------//

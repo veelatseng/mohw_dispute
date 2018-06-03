@@ -20,14 +20,15 @@
         @include screen('mobile') {
             display: none;
         }
-    } // mobile btn
+    } 
+    // mobile btn for extend
     %mobileCtrlBtn {
         width: 60px !important;
         height: 60px !important;
         position: absolute;
         top: 0px;
         display: block;
-        font-size: 0;
+        font-size: 0em;
         padding: 15px;
         margin: 0;
         min-width: auto;
@@ -48,17 +49,26 @@
             left: 0px;
             @extend %mobileCtrlBtn;
             span {
+                position:absolute;
                 background: $primaryColor;
-                width: 100%;
-                height: 5px;
-                margin: 4px 0 5px;
+                width: 50%;
+                height: 4px;
+                top:35%;
+                left:50%;
+                margin-left: -25%;
                 display: block;
+                &:nth-child(2){
+                     top:50%;
+                } 
+                &:nth-child(3){
+                     top:65%;
+                }
             }
         } // search
         .searchCtrl {
             display: none;
             right: 0px;
-            font-size: 0;
+            font-size: 0em;
             @extend %mobileCtrlBtn;
             &:before {
                 width: 40px;
@@ -128,9 +138,9 @@
                 text-decoration: none;
             }
         }
-    } //search
+    } 
 }
-
+//search
 .search {
     min-width: 25%;
     max-width: 50%;
@@ -139,7 +149,7 @@
     padding: 0em .3em 0em;
     @include box-sizing;
     label {
-        font-size: 0;
+        font-size: 0em;
     }
     .form_grp {
         margin-bottom: 0;
@@ -148,7 +158,7 @@
             margin: -0.2em 0 0;
             padding: .2em 35px .2em .5em;
             &[type="submit"]{
-                font-size:0;
+                font-size:0em;
                 width:30px !important;
                 height: 30px;
                 max-width:auto;
@@ -218,7 +228,7 @@
         z-index: 98;
         background: #333;
         label {
-            font-size: 0;
+            font-size: 0em;
             line-height: 0;
         }
         .form_grp {
@@ -236,7 +246,7 @@
                 margin: -0.2em 0 0;
                 padding: .5em 45px .4em .5em;
                 &[type="submit"]{
-                    font-size:0;
+                    font-size:0em;
                     width:36px !important;
                     height: 36px;
                     padding: 0;

@@ -1,18 +1,18 @@
 body {
     -webkit-text-size-adjust: none;
 }
-* {
-    -webkit-overflow-scrolling: touch;
-}
+
+// tab的外框線
 a:focus {
-    outline:none;
+    outline: none;
     box-shadow: 0 0px 0px 1px $primaryColor inset;
 }
+
 // 導盲磚
 .accesskey {
     position: absolute;
     top: 5px;
-    left: 0px;
+    left: 5px;
     z-index: 9;
     color: $color-word;
     font-size: $font-size;
@@ -42,18 +42,18 @@ a.more {
     transition-property: color;
     -webkit-transition-duration: 0.2s;
     transition-duration: 0.2s;
-    &:after{
-        content:"";
-        width:12px;
-        height:12px;
-        border:2px solid #FFF;
-        transform:rotate(45deg);
-        position:absolute;
-        right:-10px;
-        top:14px;
+    &:after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border: 2px solid #FFF;
+        transform: rotate(45deg);
+        position: absolute;
+        right: -10px;
+        top: 14px;
         border-left: none;
         border-bottom: none;
-        transition:.3s ease-out;
+        transition: .3s ease-out;
     }
     &:before {
         content: "";
@@ -73,17 +73,20 @@ a.more {
         -webkit-transition-timing-function: ease-out;
         transition-timing-function: ease-out;
     }
-    &:hover,&:focus,&.active{
+    &:hover,
+    &:focus,
+    &.active {
         color: white;
         &:before {
             -webkit-transform: scale(1);
             transform: scale(1);
         }
         &:after {
-            right:15px;
+            right: 15px;
         }
     }
 }
+
 // scrollTop
 .scrollToTop {
     width: 50px;
@@ -144,6 +147,7 @@ img.img-responsive {
         ;
     }
 }
+
 
 
 

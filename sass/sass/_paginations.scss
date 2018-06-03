@@ -9,9 +9,9 @@
     font-size: .938em;
     @include clearfix(); // outline: 1px solid red;
     span{
-            color:$primaryColor;
-            margin:0px .5em;
-        }
+        color:$primaryColor;
+        margin:0px .5em;
+    }
     .page {
         margin: 10px 0;
         padding: 0;
@@ -29,7 +29,7 @@
                 font-weight: 800;
                 display: block;
                 white-space: nowrap;
-                font-size: 15px;
+                font-size: 1em;
                 color: $color-word;
                 background-color: rgb(247, 247, 247); // Old browsers
                 @include filter-gradient(#f7f7f7, #eaeaea, vertical); // IE6-9
@@ -69,6 +69,13 @@
 
 .pagination .total {
     padding: 5px;
+    select{
+        margin:0px .5em;
+                @include screen('mobile') {
+                    margin:0px;
+                }
+                
+    }
 }
 @media (max-width: 767px) {
     .pagination .total select.form-control {

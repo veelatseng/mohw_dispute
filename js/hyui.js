@@ -102,7 +102,7 @@ $(function() {
 
     //設定resize 計時器
     var resizeTimer;
-    _window.on("load resize", function(event) {
+    _window.bind("load resize", function(event) {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
             // switch PC/MOBILE 
