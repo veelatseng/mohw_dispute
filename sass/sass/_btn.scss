@@ -1,36 +1,36 @@
 // 按鈕設定
 $btn-font-color:$color-word;
-$btn-border:darken($color-default, 5);
+$btn-border:darken($color-word, 5);
 $btn-padding:.5em 2em;
-$btn-radius:6px;
+$btn-radius:4px;
 // 按鈕外框
 .btn_grp {
     text-align: center;
-    padding: 15px 0;
+    padding: 1em 0;
 }
 // 按鈕的共用設定
-@mixin btn_setting($btn-bg:$color-default, $btn-font-color:$btn-font-color) {
+@mixin btn_setting($btn-bg:#DDD, $btn-font-color:$btn-font-color) {
     background: $btn-bg;
-    border: 1px solid darken($btn-bg, 0);
+    border: 1px solid darken($btn-bg, 10);
     color: $btn-font-color;
+    @include box-shadow(0px 2px 2px RGBA(0,0,0,.08));
     @include border-radius($btn-radius);
     &:hover,
     &:focus {
-        background: darken($btn-bg, 10);
-        border: 1px solid darken($btn-bg,10 );
+        background: lighten($btn-bg, 5);
+         @include box-shadow(0px 2px 2px RGBA(0,0,0,.15));
         cursor: pointer;
         color: #FFF;
     }
     &.active {
-        background: darken($btn-bg, 10);
-        border: 1px solid darken($btn-bg, 10);
+        background: lighten($btn-bg, 5);
         cursor: pointer;
     }
 }
 
 // 按鈕預設陰影
 %btn {
-    // @include text-shadow(RGBA(0, 0, 0, .3) 1px 1px 1px);
+    font-size: $font-size;
     background-image: none; //修正firefox
     display: inline-block;
     text-align: center;
@@ -38,28 +38,27 @@ $btn-radius:6px;
     text-decoration: none;
     white-space: nowrap;
     line-height: normal;
-    min-width:80px;
-    width:auto !important;
-    margin: .25em 2px;
+    width:auto;
+    min-width:5em;
+    margin:.25em .1em;
 }
 
 .btn {
     @extend %btn;
     padding: $btn-padding !important;
-    font-size: $font-size;
     touch-action: manipulation;
     @include box-sizing(border-box);
     @include btn_setting();
     @include text-shadow(RGBA(0, 0, 0, .3) 0px 0px 0px);
     background-color: rgb(247, 247, 247); // Old browsers
     @include filter-gradient(#f7f7f7, #eaeaea, vertical); // IE6-9
-    @include background-image(linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(234, 234, 234, 1) 100%));
+    @include background-image(linear-gradient(top, rgba(252, 252, 252, 1) 0%, rgba(230, 230, 230, 1) 100%));
     &:hover,
     &:focus {
         color: $btn-font-color;
-        background-color: rgb(247, 247, 247); // Old browsers
+        background-color: rgb(230, 230, 230); // Old browsers
         @include filter-gradient(#f7f7f7, #eaeaea, vertical); // IE6-9
-        @include background-image(linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(234, 234, 234, 1) 100%));
+        @include background-image(linear-gradient(top, rgba(250, 250, 250, 1) 0%, rgba(220, 220, 220, 1) 100%));
     }
 }
 

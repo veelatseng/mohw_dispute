@@ -195,7 +195,7 @@ $(function() {
     var hh = $('.header').outerHeight(true),
         menuH = _menu.outerHeight(),
         navH = $('.navbar').height();
-    $(window).on("load scroll resize", function(e) {
+    $(window).bind("load scroll resize", function(e) {
         ww = _window.width();
         if (ww >= wwSmall && $(this).scrollTop() > hh - menuH) {
             $('.header').addClass('fixed');
@@ -247,7 +247,7 @@ $(function() {
     /*-----------------------------------*/
     ////////img objectfix cover////////////
     /*-----------------------------------*/
-    $(window).on('resize load', function(e) {
+    $(window).bind('resize load', function(e) {
         $('.imgOuter').each(function(index, el) {
             var _imgContainer = $(this),
                 cWidth = _imgContainer.width(),
@@ -274,7 +274,7 @@ $(function() {
     //////////////相簿縮圖+燈箱//////////////
     /*-----------------------------------*/
     //縮圖，same as thumbnail模組
-    $(window).on('resize load', function(e) {
+    $(window).bind('resize load', function(e) {
         $('.imgOuter').each(function(index, el) {
             var _imgContainer = $(this),
                 cWidth = _imgContainer.width(),
@@ -297,23 +297,27 @@ $(function() {
         });
     });
     //相簿JQ設定
+    var lightbox_Status = false;
     $('.gallery').append('<div class="lightbox"><a href="#" class="light_close">關閉</a><a href="#" class="light_prev">上一張</a><a href="#" class="light_next">下一張</a><img src="" alt=""><div class="galler_overlay"></div></div>')
     $('.gallery .lightbox').hide(); // lightbox先隱藏
     $('.light_close').click(function(event) {
         $('.gallery .lightbox').hide(); // 如果點到close，lightbox隱藏
         $('body').removeClass('noscroll');
         $('.gallery .lightbox .caption').html('');
+        lightbox_Status = false;
     });
     $('.gallery .lightbox .galler_overlay').click(function(event) {
         $('.gallery .lightbox').hide(); // 如果點到overlay，lightbox隱藏
         $('body').removeClass('noscroll');
         $('.gallery .lightbox .caption').html('');
+        lightbox_Status = false;
     });
     var PIC_SRC = $('.gallery .lightbox img').attr('src');
     // var THUMB_PIC = $(this).attr('src');
     var PIC_INDEX = 0;
     $('.gallery a').click(function(e) {
         e.preventDefault();
+        lightbox_Status = true;
     });
     $('.gallery .thumbnail img').each(function(index) {
         $(this).click(function(e) {
@@ -347,7 +351,6 @@ $(function() {
         $('.gallery .lightbox img').fadeIn();
         $('.gallery .lightbox img').attr('src', THUMB_PIC);
         //放入燈箱 img src
-        e.preventDefault();
     }
     $('.gallery .light_next').click(function(e) {
         NEXT_MOV();
@@ -375,16 +378,18 @@ $(function() {
         PREV_MOV();
         e.preventDefault();
     });
-    // 左右按鍵移動
-    $('body').keydown(function(e) {
-        if (e.keyCode == 37) {
-            PREV_MOV();
-        } else if (e.keyCode == 39) {
-            NEXT_MOV();
-        } else if (e.keyCode == 27) {
-            $('.gallery .lightbox').hide();
-        }
-    });
+    //左右按鍵移動
+    if (lightbox_Status = true) {
+        $('body').keydown(function(e) {
+            if (e.keyCode == 37) {
+                PREV_MOV();
+            } else if (e.keyCode == 39) {
+                NEXT_MOV();
+            } else if (e.keyCode == 27) {
+                $('.gallery .lightbox').hide();
+            }
+        });
+    }
     /*-----------------------------------*/
     ////////////////多組Tab////////////////
     /*-----------------------------------*/
@@ -469,4 +474,27 @@ $(function() {
             $(this).has(".contain").find('a').css("backgroundImage", "url(" + imgUrl + ")");
         });
     }
+    /*-----------------------------*/
+    /////form表單 placeholder隱藏/////
+    /*-----------------------------*/
+    $('input,textarea').focus(function() {
+        $(this).removeAttr('placeholder');
+    });
+    /*------------------------------------*/
+    /////form表單 單個檔案上傳+多個檔案上傳/////
+    /*------------------------------------*/
+    $(document).on('change', '.check_file', function() {
+        var names = [];
+        var length = $(this).get(0).files.length;
+        for (var i = 0; i < $(this).get(0).files.length; ++i) {
+            names.push($(this).get(0).files[i].name);
+        }
+        // $('input[name=file]').val(names);
+        if (length > 2) {
+            var fileName = names.join(', ');
+            $(this).closest('.upload_grp').find('.upload_file').attr("value", length + " files selected");
+        } else {
+            $(this).closest('.upload_grp').find('.upload_file').attr("value", names);
+        }
+    });
 });

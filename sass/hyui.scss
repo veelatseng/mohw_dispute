@@ -1,5 +1,4 @@
 @charset "utf-8";
-@import "compass";
 
 // 共通
 @import "_variable";					//變數
@@ -18,6 +17,7 @@
 @import "sass/_tabs";					//頁籤
 @import "sass/_table";					//表格
 @import "sass/_form";					//表單
+@import "sass/_icon";					//圖示
 @import "sass/_element";				//小元素
 
 // 模組
@@ -29,7 +29,7 @@
 @import "sass/_modal";					//pop視窗
 @import "sass/_paginations";			//分頁
 @import "sass/_thumbnail";				//縮圖
-@import "sass/_category";					//標籤
+@import "sass/_category";				//標籤
 @import "sass/_lightbox";				//燈箱
 @import "sass/_share";					//社群分享
 @import "sass/_notice";					//提示

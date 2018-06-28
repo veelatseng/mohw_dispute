@@ -1,5 +1,6 @@
 footer {
     @include box-sizing(border-box);
+    @include clearfix;
     text-align: left;
     font-size: 0.813em;
     .container{

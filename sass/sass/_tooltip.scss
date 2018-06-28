@@ -1,4 +1,5 @@
 //參考資料：https://codepen.io/tutsplus/pen/WROvdG?q=tooltip&limit=all&type=type-pens
+$tooltop-font-size:$font-size;
 [tooltip] {
     position: relative;
 }
@@ -26,7 +27,7 @@
     line-height:1.5em;
     max-width: 300px;
     font-size:.813em;
-    max-height: ($base-font-size*1)*3.6; // white-space: nowrap;
+    max-height: (($tooltop-font-size*.813)*1.5)*4.25; // white-space: nowrap;
     overflow: hidden; // text-overflow: ellipsis;
     padding: .5em;
     border-radius: 4px;

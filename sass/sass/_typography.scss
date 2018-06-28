@@ -66,11 +66,19 @@ $grid-background-baseline-color: rgba(187, 187, 187, 0.4);
         @include leader(0);
         @include trailer(2);
     }
+    ul{
+        padding-left: 2em;
+        list-style: disc;
+    }
+    ol{
+        padding-left: 2em;
+        list-style:decimal;
+    }
     img {
         max-width: 100%;
         @media (max-width: 767px) {
             width: 100%;
-            clear: both;
+            @include clearfix;
         }
     }
 }

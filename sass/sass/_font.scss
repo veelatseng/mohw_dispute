@@ -1,5 +1,4 @@
-@import "compass";
-@mixin fontSetting($FONT-SIZE:1em, $WEIGHT:normal) {
+@mixin fontSetting($FONT-SIZE:$font-size, $WEIGHT:normal) {
     font-size: $FONT-SIZE;
     font-weight: $WEIGHT;
     color: $color-word;
@@ -14,7 +13,6 @@
         cursor: pointer;
     }
 }
-
 body {
     @include fontSetting(1em);
     line-height: 1.45em;

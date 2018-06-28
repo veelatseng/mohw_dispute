@@ -1,10 +1,8 @@
 .tabSet {
     max-width: 90%;
     margin: 20px auto;
-    background: #f3f3f3;
     overflow: hidden;
-    @include clearfix();
-    @include box-shadow(rgba(0, 0, 0, .3) 0 2px 12px);
+    @include clearfix;
     @include screen('mobile') {
         max-width: 100%;
         width: auto;
@@ -90,7 +88,7 @@
     li {
         margin: 0 0 1.3em 0;
         padding: 0;
-        border-bottom: 1px #999 dashed;
+        border-bottom: 1px #CCC dashed;
          @include screen('mobile') {
             @include text-overflow();
         }

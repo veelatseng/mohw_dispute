@@ -1,9 +1,7 @@
-
 //  MIXIN
-@import "mixins/_bootstrap_grid";			//格線系統
+@import "mixins/_clearfix";					//清除浮動
 @import "mixins/_mediaquery";				//mediaquery
 @import "mixins/_img-responsive";			//圖片RWD設定
-@import "mixins/_clearfix";					//清除浮動
 @import "mixins/_transition";				//動畫
 @import "mixins/_opacity";					//透明度
 @import "mixins/_box-sizing";				//box-sizing
@@ -13,9 +11,8 @@
 @import "mixins/_text-overflow";			//ellipsis 字多點點
 @import "mixins/_box-shadow";				//陰影
 @import "mixins/_li-reset";					//清除li格式
-
+@import "mixins/_bootstrap_grid";			//格線系統
 // 客製化
 @import "mixins/_extend";					//客製化繼承
 @import "mixins/_fatfooter";				//fatfooter
 @import "mixins/_image";					//img設定
-@import "mixins/_vertical-rhythm-reset";    //針對CP內容頁做文字垂直韻律

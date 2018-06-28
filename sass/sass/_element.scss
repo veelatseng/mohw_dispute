@@ -6,6 +6,9 @@ body {
 a:focus {
     outline: none;
     box-shadow: 0 0px 0px 1px $primaryColor inset;
+    @include screen('mobile') {
+        box-shadow: none;
+    }
 }
 
 // 導盲磚
@@ -147,6 +150,7 @@ img.img-responsive {
         ;
     }
 }
+
 
 
 
