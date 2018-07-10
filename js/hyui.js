@@ -24,7 +24,7 @@ $(function() {
     //////////// nav如果有兩個選單///////////
     /*-----------------------------------*/
     var _navLength = $('.navigation ul').length;
-    $(window).load(function() {
+    $(window).bind('load', function(event) {
         if (_navLength > 1) {
             $('.navigation ul:nth-child(1)').addClass('left_nav');
         }
