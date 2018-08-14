@@ -1,4 +1,4 @@
-$fatBgColor: #FFF; //fatFooter 底色
+$fatBgColor: #F1F1F1; //fatFooter 底色
 $fatTextColor: $color-word; //fatFooter 連結顏色
 .fatfooter {
     @include make-fatfooter(6, 100%); // 如需要手機版顯示，把以下註解即可，或改為visible
@@ -11,6 +11,7 @@ $fatTextColor: $color-word; //fatFooter 連結顏色
     position: relative;
     padding-bottom: 2em;
     margin-left: auto;
+    background:$fatBgColor;
     margin-right: auto; // 右上方切換收合按鈕設定
     .container {
         position: relative;

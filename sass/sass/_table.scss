@@ -79,3 +79,20 @@ table {
         }
     }
 }
+
+.table_wrapper {
+    @include screen('mobile') {
+        width:100%;
+        display:block;
+        @include clearfix;
+        overflow:hidden;
+        overflow-x:auto;
+        -webkit-overflow-scrolling: touch;
+        -webkit-transform: translate3d(0, 0, 0);
+        table{
+            width:100%;
+            min-width:545px;
+        }
+
+    }
+}

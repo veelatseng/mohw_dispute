@@ -159,6 +159,7 @@ img.img-responsive {
 
 
 
+
 /*檔案下載*/
 
 .file_download {
@@ -224,7 +225,7 @@ img.img-responsive {
                 counter-increment: counter;
                 content: counters(counter, ".") " . ";
             }
-            @media screen and (max-width: 767px) {
+            @include screen('mobile') {
                 margin-right: 0px; // display: block;
                 width: 85%;
             }

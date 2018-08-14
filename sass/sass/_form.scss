@@ -12,7 +12,9 @@
     @include transition(border, .2s, ease-out);
     @include transition(box-shadow, .2s, ease-out);
 }
-
+select::-ms-expand {
+    display: none;
+}
 .form_grid {
     margin: .5em;
     .form_grp {

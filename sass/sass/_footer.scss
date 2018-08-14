@@ -3,6 +3,7 @@ footer {
     @include clearfix;
     text-align: left;
     font-size: 0.813em;
+    padding:1em 0;
     .container{
         @include gutter();
         >div{

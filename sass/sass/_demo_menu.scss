@@ -12,7 +12,8 @@
         display: block;
     }
 }
-    .left_nav {
+
+.left_nav {
     @media (max-width: 991px) {
         // display:none;
     }
@@ -26,9 +27,7 @@
         top: 0px; // float: left;
         // display:block;
         // width: 20%;
-        @media (max-width: 991px) {
-
-        }
+        @media (max-width: 991px) {}
     }
     @include box-sizing(border-box);
     @media print {
@@ -65,9 +64,9 @@
                     }
                 }
             }
-             li a[onclick*="htm"] {
-                    color: $lightColor;
-                }
+            li a[onclick*="htm"] {
+                color: $lightColor;
+            }
             a {
                 color: #333;
                 font-size: 0.913em;
@@ -96,8 +95,8 @@
                 &:focus {
                     color: $primaryColor;
                     cursor: pointer;
-                    outline:none;
-                    box-shadow:none;
+                    outline: none;
+                    box-shadow: none;
                 }
             }
             &.nochild {
@@ -127,12 +126,15 @@
 
 .float_menu {
     display: none;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translate3d(0, 0, 0);
     @media (max-width: 991px) {
-        overflow:scroll;
-        -webkit-overflow-scrolling: touch;
-        /* lets it scroll lazy */
+        overflow-y:scroll;
         -webkit-overflow-scrolling: auto;
-        /* stop scrolling immediately */
+        -webkit-overflow-scrolling: touch;
+        -webkit-transform: translate3d(0, 0, 0);
     }
     a.close {
         position: fixed;
@@ -186,8 +188,15 @@
         z-index: 999; // background: $primaryColor;
         .left_nav {
             float: none;
-            width:90%;
+            width: 90%;
             margin: 1em auto;
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+            /* lets it scroll lazy */
+            -webkit-overflow-scrolling: auto;
+            /* stop scrolling immediately */
+            -webkit-overflow-scrolling: touch;
+            -webkit-transform: translate3d(0, 0, 0);
             .open {
                 display: none;
             }
@@ -199,7 +208,7 @@
                 max-width: 480px;
                 min-width: 320px;
                 padding: 0;
-                float:none;
+                float: none;
                 overflow: scroll;
                 -webkit-overflow-scrolling: touch;
                 /* lets it scroll lazy */

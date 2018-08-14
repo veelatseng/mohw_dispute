@@ -10,6 +10,9 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.css" />
     <link rel="stylesheet" href="css/hyui.css">
 </head>
 
@@ -50,7 +53,7 @@
                     <form action="" class="form_inline">
                         <div class="form_grp">
                             <label for="mustSameAsId">帳號:</label>
-                            <input name="username" id="mustSameAsId" type="text" placeholder="請輸入文字" accesskey="S">
+                            <input type="text "name="" id="mustSameAsId" name="mustSameAsId" type="text" placeholder="請輸入文字" accesskey="S">
                         </div>
                         <div class="btn_grp">
                             <input name="" type="submit" value="查詢" />
@@ -224,6 +227,35 @@
                     </table>
                 </section>
                 <!-- CP End -->
+                <!-- cp_slider+slick_lightbox -->
+                <div class="lightbox_slider">
+                    <h3>燈箱照片</h3>
+                    <div class="cp_slider">
+                        <div class="imgOuter">
+                            <a href="https://assets.imgix.net/examples/kingfisher.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" data-caption="第一張圖說">
+                                        <img src="https://assets.imgix.net/examples/kingfisher.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" alt="">
+                                    </a>
+                            <p class="infotxt">第一張圖說</p>
+                        </div>
+                        <div class="imgOuter">
+                            <a href="https://assets.imgix.net/examples/puffins.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" data-caption="第二張圖說">
+                                        <img src="https://assets.imgix.net/examples/puffins.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" alt=""> </a>
+                            <p class="infotxt">第二張圖說</p>
+                        </div>
+                        <div class="imgOuter">
+                            <a href="https://assets.imgix.net/unsplash/transport.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" data-caption="第三張圖說">
+                                        <img src="https://assets.imgix.net/unsplash/transport.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" alt="">
+                                    </a>
+                            <p class="infotxt">第三張圖說</p>
+                        </div>
+                        <div class="imgOuter">
+                            <a href="https://assets.imgix.net/unsplash/bridge.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" data-caption="第四張圖說">
+                                        <img src="https://assets.imgix.net/unsplash/bridge.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" alt="">
+                                    </a>
+                            <p class="infotxt">第四張圖說</p>
+                        </div>
+                    </div>
+                </div>
                 <!-- weblink 外部連結 -->
                 <div class="web_link">
                     <h3>外部連結</h3>
@@ -281,6 +313,11 @@
                         </li>
                         <li>
                             <a href="xxxx.txt">txt檔名<span class="kb">(100.kb)</span></a>
+                            <span class="update">更新日期：2014/5/30</span>
+                            <span class="file_view">下載次數：5</span>
+                        </li>
+                        <li>
+                            <a href="xxxx.odf">odf檔名<span class="kb">(100.kb)</span></a>
                             <span class="update">更新日期：2014/5/30</span>
                             <span class="file_view">下載次數：5</span>
                         </li>
@@ -399,10 +436,14 @@
                 </div>
             </div>
         </footer>
-        </div>
+    </div>
     <a href="javascript:;" class="scrollToTop" title="回頁首">回頁首</a>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="vendor/jquery.easing.min.js"></script>
+    <!-- slick -->
+    <script src="vendor/slick/slick.min.js"></script>
+    <script src="vendor/slick/slick-lightbox.js"></script>
+    <!-- hyUI -->
     <script src="js/hyui.js"></script>
     <script src="js/customize.js"></script>
 </body>

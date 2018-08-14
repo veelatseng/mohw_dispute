@@ -5,8 +5,8 @@
 
 .slick-prev,
 .slick-next {
-    font-size: 0;
-    line-height: 0;
+    font-size: 0em;
+    line-height: 0em;
     position: absolute;
     top: 45%;
     display: block;
@@ -131,8 +131,8 @@
 }
 
 .slick-dots li button {
-    font-size: 0;
-    line-height: 0;
+    font-size: 0em;
+    line-height: 0em;
     display: block;
     width: 15px;
     height: 15px;
@@ -154,7 +154,7 @@
     background: #21baff;
 }
 .slick-dots li button:before {
-    font-size: 0px;
+    font-size: 0em;
     position: absolute;
     top: 0;
     left: 0;

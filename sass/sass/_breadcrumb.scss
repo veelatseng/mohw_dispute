@@ -14,7 +14,7 @@
                 @extend %slash;
             }
             &:first-child:before {
-                content: "現在位置：";
+                content: "";
                 display: inline-block;
                 color:#666;
                 margin-left: 0;

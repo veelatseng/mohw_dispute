@@ -41,16 +41,17 @@
 @import "page/_np";						//NP
 @import "page/_cp";						//CP
 @import "page/_fp";						//Forward
-@import "page/_sitemap";				//Sitemap
 @import "page/_qp";						//QP
+@import "page/_sitemap";				//Sitemap
+
+// 外掛
+@import "sass/_slick";					//slick
 
 // 無障礙
 @import "sass/_nojs";					//無障礙關閉js設定
 
 // 列印
 @import "sass/_print";					//列印樣式
-
-
 
 
 
