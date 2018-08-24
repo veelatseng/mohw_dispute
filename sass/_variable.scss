@@ -18,14 +18,14 @@ $color-yellow: 				#FCC211;
 $color-purple: 				#AA5AC5;
 $color-gray: 				#CCC;
 $color-dark: 				#333;
-$hrColor:					#666;		  			 //hr顏色
+$color-hr:					#666;		  			 //hr顏色
 $color-word:				#333;                    //一般字的顏色
 // 連結顏色
-$aColor:					$color-word;
-$aHover:					$linkColor;
+$aColor:					#333;
+$aHover:					#21BAFF;
 
 // 表單focus顏色
-$form-focus:				$primaryColor;				//表單
+$form-focus:				#21BAFF;				//表單
 //-------------------------------------------------------------字型--------//
 
 // 字型設定
