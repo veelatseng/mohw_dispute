@@ -159,7 +159,7 @@ $(function() {
                 search_mode = false;
             });
             //  body prevent scroll
-        _body.addEventListener('touchmove', function(e) {
+            _body.addEventListener('touchmove', function(e) {
                 e.preventDefault();
             }, { passive: false });
         } else {
