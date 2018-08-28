@@ -24,11 +24,9 @@ $(function() {
     //////////// nav如果有兩個選單///////////
     /*-----------------------------------*/
     var _navLength = $('.navigation ul').length;
-    $(window).bind('load', function(event) {
-        if (_navLength > 1) {
-            $('.navigation ul:nth-child(1)').addClass('left_nav');
-        }
-    });
+    if (_navLength > 1) {
+        $('.navigation ul:nth-child(1)').addClass('left_nav');
+    }
     /*-----------------------------------*/
     /////// header選單 tab及 fix設定////////
     /*-----------------------------------*/
