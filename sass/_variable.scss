@@ -19,17 +19,17 @@ $color-purple: 				#AA5AC5;
 $color-gray: 				#CCC;
 $color-dark: 				#333;
 $color-hr:					#666;		  			 //hr顏色
-$color-word:				#333;                    //一般字的顏色
+$color-word:				#222;                    //一般字的顏色
 // 連結顏色
-$aColor:					#333;
-$aHover:					#21BAFF;
+$aColor:					#21BAFF;
+$aHover:					lighten($aColor,10);
 
 // 表單focus顏色
 $form-focus:				#21BAFF;				//表單
 //-------------------------------------------------------------字型--------//
 
 // 字型設定
-$font-family:               Lato, "PingFang TC", "Helvetica Neue", Helvetica, 微軟正黑體, 新細明體, Arial, sans-serif;
+$font-family:               Lato, "PingFang TC", "Helvetica Neue", Helvetica, 微軟正黑體, Arial, sans-serif;
 $font-size:					1em;
 
 //-------------------------------------------------------------格線系統-----//

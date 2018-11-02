@@ -116,7 +116,7 @@ a.more {
 img.img-responsive {
     @include img-responsive();
 }
-
+// 表單必填
 .necessary {
     color: red;
     margin: 0px .2em;
@@ -215,6 +215,10 @@ img.img-responsive {
             line-height: 1.45em;
             display: inline-block;
             width: 45%;
+            color:$color-word;
+            &:hover{
+                color:$aHover;
+            }
             @include text-overflow;
             &:before {
                 position: absolute; // outline: 1px solid red;
@@ -278,10 +282,7 @@ img.img-responsive {
             &[href$="zip"]:after {
                 background: url(../images/basic/icon_zip.jpg);
             }
-            &:hover,
-            &:focus {
-                color: $aHover !important;
-            }
+
         }
     }
 } // 外部連結
@@ -315,6 +316,7 @@ img.img-responsive {
             height: auto;
             line-height: 1.45em;
             display: block;
+            @include aSetting_nocolor;
             &:before {
                 position: absolute; // outline: 1px solid red;
                 top: 5px;

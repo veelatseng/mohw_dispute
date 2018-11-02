@@ -1,17 +1,33 @@
+@charset "utf-8";
 .cp {
     img {
         &.float_left {
             float: left;
             margin: 0px 1em 1em 0;
+            width: auto;
+            max-width: 55%;
+
+            @include screen('mobile') {
+                max-width: 100%;
+            }
         }
+
         &.float_right {
             float: right;
             margin: 0px 0 1em 1em;
+            width: auto;
+            max-width: 55%;
+
+            @include screen('mobile') {
+                max-width: 100%;
+            }
         }
     }
+
     a {
-        color: $aColor;
+        @include aSetting;
     }
+
     .info {
         font-size: 0.938em;
         line-height: 1.5em;
@@ -21,19 +37,22 @@
         @include box-sizing;
         padding: 0.8em 1.5em 0.8em;
         background: #F2F2F2;
+
         li {
             width: 30%;
             margin-bottom: .5em;
             display: inline-block;
             vertical-align: top;
+
             @include screen('tablet') {
                 width: 48%;
                 margin-bottom: .2em;
                 font-size: 0.875em;
             }
+
             @include screen('mobile') {
                 width: 100%;
-            	display: block;
+                display: block;
             }
         }
     }

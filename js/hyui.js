@@ -30,10 +30,13 @@ $(function() {
     /*-----------------------------------*/
     /////// header選單 tab及 fix設定////////
     /*-----------------------------------*/
-    var _menu = $('.header .menu');
+    var _menu = $('.menu');
     _menu.find('li').has('ul').addClass('hasChild');
-    var liHasChild = _menu.find('li.hasChild');
-    var subMenuWidth = liHasChild.first().children('ul').outerWidth();
+    var liHasChild = _menu.find('li.hasChild'),
+        liHasChild_level1 = $('.menu ul').children('li.hasChild');
+        liHasChild_level2 = $('.menu ul ul').children('li.hasChild');
+        liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild');
+        subMenuWidth = liHasChild.first().children('ul').outerWidth();
     /*-----------------------------------*/
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
@@ -82,22 +85,20 @@ $(function() {
     });
     _overlay.off("mouseenter");
     // 無障礙tab設定
-    liHasChild.keyup(
-        function() {
-            $(this).children('ul').fadeIn();
-            $(this).siblings().focus(function() {
-                $(this).hide();
-            });
+    liHasChild.keyup(function() {
+        $(this).children('ul').fadeIn();
+        $(this).siblings().focus(function() {
+            $(this).hide();
         });
+    });
     _menu.find('li').keyup(function() {
         $(this).siblings().children('ul').hide();
     });
     _menu.find('li:last>a').focusout(function() {
         _menu.find('li ul').hide();
     });
-
+    // 切換PC/Mobile 選單
     function mobileMenu() {
-        // switch PC/MOBILE
         ww = _window.outerWidth();
         if (ww < wwSmall) {
             /*-----------------------------------*/
@@ -113,7 +114,7 @@ $(function() {
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'
             });
-            liHasChild.on({
+            liHasChild_level1.on({
                 mouseenter: function() {
                     $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
                 },
@@ -127,16 +128,25 @@ $(function() {
             liHasChild.on('touchstart', function() {
                 $(this).off('mouseenter,mouseleave');
             });
-            liHasChild.off().on('click', function(e) {
+            // 第一層選單
+            liHasChild_level1.off().on('click', function(e) {
+                $(this).siblings('li').find('ul').stop(true, true).slideUp('600', 'easeOutQuint');
+                $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
+            });
+            // 第二層選單
+            liHasChild_level2.off().on('click', function(e) {
                 $(this).siblings('li').children('ul').stop(true, true).slideUp('600', 'easeOutQuint');
                 $(this).children('ul').stop(true, true).slideToggle('600', 'easeOutQuint');
-                // $(this).prop('disabled', true);
-                // e.preventDefault();
+            });
+            // 第三層選單
+             liHasChild_level3.off().on('click', function(e) {
+                e.preventDefault();
+
             });
             //手機版第第一層點了不會進入內頁，拿掉第一層的連結無作用
-            $('.sidebar .menu .hasChild>a').off().on('click', function(e) {
+            liHasChild.children('a').off().on('click', function(e) {
                 e.preventDefault();
-            })
+            });
             _body.off('touchmove');
             // 行動版查詢
             var _searchCtrl = $('.searchCtrl');
@@ -149,7 +159,6 @@ $(function() {
                     $('.m_search').hide();
                     search_mode = false;
                 }
-
             });
             // 如果點在外面
             $('.main').off().on('click touchend', function(e) {
@@ -177,6 +186,7 @@ $(function() {
                     $(this).children('ul').stop(true, false).fadeOut();
                 }
             });
+            liHasChild.off('click');
             // 如果點在外面
             $(document).on('touchend click', function(e) {
                 var target = e.target;
@@ -211,7 +221,6 @@ $(function() {
             $('.main').css('margin-top', 0);
         }
     });
-
     /*-----------------------------------*/
     //////////// notice訊息區塊 ////////////
     /*-----------------------------------*/
@@ -236,7 +245,6 @@ $(function() {
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
     $('.btn-fatfooter').click(function(e) {
-
         $(this).parent('.container').find('nav>ul>li>ul').stop(true, true).slideToggle(function() {
             if ($(this).is(':visible')) {
                 $('.btn-fatfooter').html("收合");
@@ -258,7 +266,6 @@ $(function() {
                 cHeight = _imgContainer.height(),
                 ratioC = cWidth / cHeight,
                 _img = _imgContainer.find('img');
-
             var iWidth = $(this).find('img').width(),
                 iHeight = $(this).find('img').height(),
                 ratioImg = iWidth / iHeight,
@@ -273,19 +280,17 @@ $(function() {
             $(this).find('img').removeClass('img-responsive');
         });
     });
-
     /*-----------------------------------*/
     //////////////相簿縮圖+燈箱//////////////
     /*-----------------------------------*/
     //縮圖，same as thumbnail模組
-    $(window).bind('resize load', function(e) {
+    function imgResize() {
         $('.imgOuter').each(function(index, el) {
             var _imgContainer = $(this),
                 cWidth = _imgContainer.width(),
                 cHeight = _imgContainer.height(),
                 ratioC = cWidth / cHeight,
                 _img = _imgContainer.find('img');
-
             var iWidth = $(this).find('img').width(),
                 iHeight = $(this).find('img').height(),
                 ratioImg = iWidth / iHeight,
@@ -299,7 +304,11 @@ $(function() {
             }
             $(this).find('img').removeClass('img-responsive');
         });
+    }
+    $(window).bind('resize load', function(e) {
+        imgResize();
     });
+    imgResize();
     //相簿JQ設定
     var lightbox_Status = false;
     $('.gallery').append('<div class="lightbox"><a href="#" class="light_close">關閉</a><a href="#" class="light_prev">上一張</a><a href="#" class="light_next">下一張</a><img src="" alt=""><div class="galler_overlay"></div></div>')
@@ -406,7 +415,7 @@ $(function() {
         }, 50);
     });
 
-    function tabSet() { //頁籤
+    function tabSet() {
         $('.tabs').each(function() {
             var _tab = $(this),
                 _tabItem = _tab.find('.tabItem'),
@@ -418,9 +427,7 @@ $(function() {
                 tiGap = 0,
                 tabItemLength = _tabItem.length,
                 tabItemWidth;
-
             _tab.find('.active').next('.tabContent').show();
-
             if (ww > wwSmall) {
                 _tabContent.css('top', tabItemHeight);
                 _tab.height(tabContentHeight + tabItemHeight);
@@ -433,7 +440,6 @@ $(function() {
                 _tabItem.width(tabwidth);
                 _tabItem.css('margin-left', 0).last().css('position', 'relative');
             }
-
             _tabItemA.focus(tabs);
             _tabItemA.click(tabs);
 
@@ -442,10 +448,8 @@ $(function() {
                     tvp = _tab.offset().top,
                     tabIndex = _tabItemNow.index() / 2,
                     scollDistance = tvp + tabItemHeight * tabIndex - hh;
-
                 _tabItem.removeClass('active');
                 _tabItemNow.addClass('active');
-
                 if (ww <= wwSmall) {
                     _tabItem.not('.active').next().slideUp();
                     _tabItemNow.next().slideDown();
@@ -482,20 +486,20 @@ $(function() {
     /*--------------------------------------------------------*/
     /////設定img 在IE9+ SAFARI FIREFOX CHROME 可以object-fit/////
     /*--------------------------------------------------------*/
-    var userAgent, ieReg, ie;
-    userAgent = window.navigator.userAgent;
-    ieReg = /msie|Trident.*rv[ :]*11\./gi;
-    ie = ieReg.test(userAgewnt);
-    if (ie) {
+    // var userAgent, ieReg, ie;
+    // userAgent = window.navigator.userAgent;
+    // ieReg = /msie|Trident.*rv[ :]*11\./gi;
+    // ie = ieReg.test(userAgewnt);
+    if (/MSIE (\d+\.\d+);/.test(navigator.userAgent) || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
         $(".img-container").each(function() {
             var imgUrl = $(this).children('a').children('img').attr('src');
             var $container = $(this);
-            $(this).has(".cover").find('a').addClass("ie-object-cover");
-            $(this).has(".cover").find('a').css("backgroundImage", "url(" + imgUrl + ")");
-            $(this).has(".fill").find('a').addClass("ie-object-fill");
-            $(this).has(".fill").find('a').css("backgroundImage", "url(" + imgUrl + ")");
-            $(this).has(".contain").find('a').addClass("ie-object-contain");
-            $(this).has(".contain").find('a').css("backgroundImage", "url(" + imgUrl + ")");
+            $(this).has('.cover').find('a').addClass('ie-object-cover');
+            $(this).has('.cover').find('a').css('backgroundImage', 'url(' + imgUrl + ')');
+            $(this).has('.fill').find('a').addClass('ie-object-fill');
+            $(this).has('.fill').find('a').css('backgroundImage', 'url(' + imgUrl + ')');
+            $(this).has('.contain').find('a').addClass('ie-object-contain');
+            $(this).has('.contain').find('a').css('backgroundImage', 'url(' + imgUrl + ')');
         });
     }
     /*-----------------------------*/

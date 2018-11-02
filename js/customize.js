@@ -1,12 +1,12 @@
 // 自行加入的JS請寫在這裡
 $(function() {
-	//燈箱slick+lightBox組合
+	 //燈箱slick+lightBox組合
     $('.cp_slider').slick({
-        dots: false,
+        dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 4,
+        slidesToScroll: 1,
         autoplay: false,
         autoplaySpeed: 1500,
         pauseOnHover: true,
@@ -14,15 +14,15 @@ $(function() {
         focusOnSelect: true,
         accessibility: true,
         responsive: [{
-            breakpoint: 1024,
+            breakpoint: 768,
             settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
+                slidesToShow: 2,
+                slidesToScroll: 2,
                 infinite: true,
                 dots: true
             }
         }, {
-            breakpoint: 600,
+            breakpoint: 545,
             settings: {
                 arrows: true,
                 slidesToShow: 2,
@@ -33,7 +33,8 @@ $(function() {
             settings: {
                 arrows: true,
                 slidesToShow: 1,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+                arrows:false
             }
         }]
     });

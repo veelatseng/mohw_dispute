@@ -3,12 +3,13 @@
     position: relative;
     z-index: 99;
     background: #FFF;
-    @include box-shadow(0px 2px 5px RGBA(0, 0, 0, .3)); // 虛擬底色 - navigation
+    @include box-shadow(0px 2px 5px RGBA(0, 0, 0, .3)); 
     @include screen('mobile') {
         @include clearfix;
         position: fixed;
         width: 100%;
     }
+    // 虛擬底色 - navigation
     &:before {
         content: "";
         width: 100%;
@@ -136,6 +137,7 @@
                 display: inline-block;
                 padding: .5em;
                 text-decoration: none;
+                @include aSetting_nocolor;
             }
         }
     } 
@@ -198,7 +200,7 @@
             padding: 0;
             &:before {
                 display: inline-block;
-                content: "熱門關鍵字：";
+                content: "";
                 color: #999;
                 float: left;
             }
@@ -208,10 +210,7 @@
                 display: inline-block;
             }
             a {
-                &:hover,
-                &:focus {
-                    text-decoration: underline;
-                }
+               @include aSetting_nocolor;
             }
         }
     } // m_search

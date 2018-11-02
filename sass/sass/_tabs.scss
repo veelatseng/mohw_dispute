@@ -26,7 +26,7 @@
         padding: 0;
         line-height: 1;
         font-weight: normal;
-        @include screen('(max-width:767px)') {
+        @include screen('mobile') {
             float: none;
             &>a {
                 width: 100% !important;
@@ -92,7 +92,9 @@
          @include screen('mobile') {
             @include text-overflow();
         }
-
+        a{
+            @include aSetting_nocolor;
+        }
         span {
             display: inline-block;
             margin: 0 0 0 1em;
@@ -101,7 +103,7 @@
         }
     }
     .more {
-        text-align: right;
+        text-align: center;
          @include screen('mobile') {
             text-align: center;
         }
@@ -110,6 +112,7 @@
             background: $color-gray;
             color: #FFF;
             width: auto;
+            text-align: center;
             font-size: .813em;
             padding: .5em 2em;
             @include border-radius(4px);

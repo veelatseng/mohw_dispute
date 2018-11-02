@@ -1,18 +1,21 @@
 $fatBgColor: #F1F1F1; //fatFooter 底色
-$fatTextColor: $color-word; //fatFooter 連結顏色
+$fatTextColor: #FFF; //fatFooter 連結顏色
 .fatfooter {
+    @include clearfix;
     @include make-fatfooter(6, 100%); // 如需要手機版顯示，把以下註解即可，或改為visible
     @media (max-width: 767px) {
         display: none;
     }
 }
 .fatfooter {
+    @include clearfix;
     overflow: hidden;
     position: relative;
     padding-bottom: 2em;
     margin-left: auto;
     background:$fatBgColor;
     margin-right: auto; // 右上方切換收合按鈕設定
+    clear:both;
     .container {
         position: relative;
         overflow:hidden;
@@ -26,18 +29,21 @@ $fatTextColor: $color-word; //fatFooter 連結顏色
         width: 80px;
         color: #FFF;
         border: none;
-        background: $primaryColor;
+        background: $aHover;
         position: absolute;
         right: 1%;
         z-index: 990;
         @include border-radius(4px);
         &:hover,
         &:focus {
-            background: $primaryColor;
+            background: darken($aHover,10);
             color: #fff;
             text-decoration: none;
             cursor: pointer;
             border: none;
+            box-shadow: none;
+            outline:none;
+            border:none;
         }
     }
     nav {
@@ -63,24 +69,24 @@ $fatTextColor: $color-word; //fatFooter 連結顏色
                 display: inline-block; // outline: 1px solid red;
                 text-align: left;
                 vertical-align: top;
+                margin: 0px 0% 1% 0%;
                 line-height: 2.6em; // margin:$fatFooterliMargin;
-                @include box-sizing(border-box);
+                @include box-sizing;
                 @media (max-width: 767px) {
                     display:block;
                 }
                 a {
-                    color: $fatTextColor;
+                    @include aSetting;
                     text-align: left;
                     line-height: 1.65em;
                     display: block;
                     font-weight: 800;
-                    padding: 1% 5%;
+                    padding: 1% 0px 1% 0px;
                     &:hover,
                     &:focus {
-                        color: #fff;
-                        text-decoration: none;
-                        background: $primaryColor;
-                        @include border-radius(3px);
+                        box-shadow:none;
+                        // background: $aHover;
+                        // @include border-radius(3px);
                     }
                 }
                 ul {
@@ -100,14 +106,14 @@ $fatTextColor: $color-word; //fatFooter 連結顏色
                         width: 100%;
                         a {
                             display: block;
-                            color: lighten($fatTextColor, 10);
+                            @include aSetting_nocolor;  
                             font-weight: normal;
                             text-align: left;
                             text-decoration: none;
                             font-size: .938em;
                             font-weight: normal;
                             line-height: 1.4em;
-                            padding: 3px 8px;
+                            padding: 3px 8px 3px 0px;
                             background: none;
                             @include box-sizing(border-box);
                             border-bottom: none;

@@ -10,9 +10,7 @@
 		@include border-radius(5px);
 		border:1px solid #DDD;
 		padding:.5em;
-		&:hover,&:focus{
-			border:1px solid $primaryColor;
-		}
+		@include aSetting_nocolor;
 	}
 	.imgOuter{
 		@include aspect-ratio(4, 3);   //設定比例ex:4:3 or 16:9

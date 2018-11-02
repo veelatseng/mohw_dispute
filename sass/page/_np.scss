@@ -33,6 +33,7 @@
             vertical-align: top;
             @include text-overflow;
             position:relative;
+            @include aSetting_nocolor;
             .num{
                 position: absolute;
                 width:1em;

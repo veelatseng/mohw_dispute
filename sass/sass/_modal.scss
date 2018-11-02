@@ -13,7 +13,7 @@
     @include box-sizing;
     @include border-radius(8px);
     @include box-shadow(1px 1px 35px RGBA(0, 0, 0, .75));
-    animation: scaleUp .4s ease-out;
+    animation: scaleUp .5s ease-out;
     h2{
     	border-bottom: 1px solid $primaryColor;
     	padding-bottom: .5em;
@@ -38,13 +38,14 @@
 
 @keyframes scaleUp {
     0% {
-        transform: scale(1) translateY(-100px);
+        transform: scale(1) translateY(-50px);
         opacity: 0;
     }
-    10% {
-        transform: scale(1) translateY(-100px);
+    30% {
+        transform: scale(1) translateY(-50px);
         opacity: 0;
     }
+
     100% {
         transform: scale(1) translateY(0px);
         opacity: 1;
