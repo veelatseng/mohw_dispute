@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+@charset "utf-8";
 .slick-loading .slick-list {
     background: #fff url('./ajax-loader.gif') center center no-repeat;
 }
@@ -51,6 +51,10 @@
 .slick-prev.slick-disabled:before,
 .slick-next.slick-disabled:before {
     opacity: .25;
+}
+.slick-prev:focus,
+.slick-prev:focus {
+    box-shadow: 0px 0px 0px 1px #21baff;
 }
 .slick-prev:before,
 .slick-next:before {
@@ -130,6 +134,7 @@
 .slick-dots li button:focus:before {
     opacity: 1;
     background: #21baff;
+    box-shadow: 0px 0px 0px 1px #21baff;
 }
 .slick-dots li button:before {
     font-size: 0em;
