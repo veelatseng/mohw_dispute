@@ -1,4 +1,4 @@
-# HyUI kit - The First Wireframework for Government in Taiwan
+#The First Wireframework for Government in Taiwan
 Hyweb UI kit 說明官方文件：http://design.hyweb.com.tw/hyui/
 
 <h2>HyUI kit簡介</h2>
@@ -22,6 +22,7 @@ Hyweb UI kit 說明官方文件：http://design.hyweb.com.tw/hyui/
   <li><a href="https://www.handicap-free.nat.gov.tw/Accessible/Category/7/1">無障礙網頁開發規範</a></li>
 </ul>
 <h2>適用瀏覽器版本</h2>
+<p>預設支援Mac與Windows每種主要平台預設瀏覽器的最新版本，當然！也包括Android及iOS上的以下瀏覽器。因為使用CSS3技術，因此版本最低可支援到<strong>Internet Explorer 9</strong>，但仍有部分CSS3因IE9不完全支援或其全部功能需要前輟屬性而出現錯誤，開發人員如有疑慮可參考<a href="http://caniuse.com/">CAN I USE</a>網站查詢屬性。(N/A：代表該平台無此瀏覽器)</p>
 <div class="demo_table">
                 <table>
                     <thead>
@@ -73,3 +74,4 @@ Hyweb UI kit 說明官方文件：http://design.hyweb.com.tw/hyui/
                     </tbody>
                 </table>
             </div>
+
