@@ -74,15 +74,8 @@
                     </tbody>
                 </table>
             </div>
-
-
-
-
-
-                            <td><img src="http://design.hyweb.com.tw/hyui/images/icon_ok.png" alt=""></td，>
-                            <td><img src="http://design.hyweb.com.tw/hyui/images/icon_ok.png" alt=""></td>
                             
-                            <br/>
+<br/>
 <br/>
 <h2>特別感謝</h2>
-<p>感謝<a href="https://www.hyweb.com.tw/">凌網科技</a> hyweb technology co. ltd的設計部門</p>
+<p>感謝<a href="https://www.hyweb.com.tw/">凌網科技</a> hyweb technology co. ltd協助與支持本框架開發的夥伴</p>
