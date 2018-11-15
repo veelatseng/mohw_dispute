@@ -1,4 +1,4 @@
-# HyUI kit
+# HyUI kit - The First Wireframework for Government in Taiwan
 Hyweb UI kit 說明官方文件：http://design.hyweb.com.tw/hyui/
 
 <h2>HyUI kit簡介</h2>
