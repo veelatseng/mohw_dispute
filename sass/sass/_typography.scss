@@ -1,10 +1,10 @@
 @import "compass";
 $base-font-size: 16px;
 $base-line-height: 16px;
-$rhythm-unit: 'rem';
-$base-font-stack:$font-family;
-@include establish-baseline();
-$grid-background-baseline-height:2em;
+$rhythm-unit: 'em';
+$base-font-stack: $font-family;
+// @include establish-baseline();
+$grid-background-baseline-height: 2em;
 $show-baseline-grid-backgrounds: true;
 $grid-background-baseline-color: rgba(187, 187, 187, 0.4);
 .vertical_rhythm {
@@ -13,31 +13,29 @@ $grid-background-baseline-color: rgba(187, 187, 187, 0.4);
         float: left;
         margin: 0 $base-font-size 0 0;
     }
-    padding: 0;
 }
 .cp {
+
     @include adjust-font-size-to($base-font-size*1, 2);
-    @include leader(0);
-    @include trailer(1);
     h1 {
-        @include adjust-font-size-to($base-font-size*2, 2);
-        @include padding-leader(1);
-        @include trailer(2);
+        @include adjust-font-size-to($base-font-size*2, 3);
+        @include padding-leader(0);
+        @include trailer(1.5);
     }
     h2 {
-        @include adjust-font-size-to($base-font-size*1.75, 2);
-        @include padding-leader(1);
-        @include trailer(1);
+        @include adjust-font-size-to($base-font-size*1.5, 2);
+        @include padding-leader(0);
+        @include trailer(1.35);
     }
     h3 {
-        @include adjust-font-size-to($base-font-size*1.5, 2);
-        @include padding-leader(1);
-        @include trailer(1);
+        @include adjust-font-size-to($base-font-size*1.25, 2);
+        @include padding-leader(0);
+        @include trailer(0);
     }
     h4 {
         @include adjust-font-size-to($base-font-size*1.25, 2);
-        @include padding-leader(1);
-        @include trailer(1);
+        @include padding-leader(0);
+        @include trailer(0);
     }
     h5 {
         @include adjust-font-size-to($base-font-size*1.25, 2);
@@ -80,7 +78,7 @@ $grid-background-baseline-color: rgba(187, 187, 187, 0.4);
     }
     img {
         max-width: 100%;
-        @media (max-width: 767px) {
+       @include screen('mobile') {
             max-width: 100%;
             width: auto;
             clear: both;
