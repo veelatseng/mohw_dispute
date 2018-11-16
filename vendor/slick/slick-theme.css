@@ -53,7 +53,7 @@
     opacity: .25;
 }
 .slick-prev:focus,
-.slick-prev:focus {
+.slick-next:focus {
     box-shadow: 0px 0px 0px 1px #21baff;
 }
 .slick-prev:before,
