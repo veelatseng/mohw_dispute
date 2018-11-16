@@ -1,4 +1,4 @@
-<h1>The First HTML, SCSS, and JS Wireframework for Government in Taiwan</h1>
+<h1>The First HTML, SCSS, and JS Framework for Government in Taiwan</h1>
 #Hyweb UI kit 說明官方文件：http://design.hyweb.com.tw/hyui/
 
 <h2>HyUI kit簡介</h2>
