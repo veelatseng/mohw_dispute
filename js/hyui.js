@@ -533,4 +533,13 @@ $(function() {
             $('#aC').focus();
         }
     });
+    /*------------------------------------*/
+    /////cp table 加上響應式table wrapper/////
+    /*------------------------------------*/
+    $('.cp table').each(function(index, el) {
+        //判斷沒有table_list
+        if ($(this).parents('.table_list').length == 0) {
+            $(this).wrap('<div class="table_wrapper"></div>')
+        }
+    });
 });
