@@ -136,7 +136,7 @@ $(function() {
             // 第二層選單
             liHasChild_level2.off().on('click', function(e) {
                 $(this).siblings('li').children('ul').stop(true, true).slideUp('600', 'easeOutQuint');
-                $(this).children('ul').stop(true, true).slideToggle('600', 'easeOutQuint');
+                $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
             });
             // 第三層選單
              liHasChild_level3.off().on('click', function(e) {
@@ -234,11 +234,15 @@ $(function() {
         $(this).find('.accordion-content').hide();
         var _accordionItem = $(this).children('ul').children('li').children('a');
         _accordionItem.each(function() {
-            $(this).click(function(e) {
+            function accordion(e){
+                $(this).parent('li').siblings().children('a').removeClass('active');
+                $(this).toggleClass('active');
                 $(this).parent('li').siblings().children('.accordion-content').slideUp();
                 $(this).next('.accordion-content').slideToggle();
                 e.preventDefault();
-            });
+            }
+            $(this).click(accordion);
+            $(this).keyup(accordion);
         });
     });
     /*-----------------------------------*/
@@ -254,7 +258,7 @@ $(function() {
                 $('.btn-fatfooter').attr('name', '展開選單/OPEN');
             }
         });
-        $(this).stop(true, true).toggleClass('open');
+        $(this).stop(true, true).toggleClass('close');
     });
     /*-----------------------------------*/
     ////////img objectfix cover////////////
@@ -400,6 +404,7 @@ $(function() {
                 NEXT_MOV();
             } else if (e.keyCode == 27) {
                 $('.gallery .lightbox').hide();
+                $('body').removeClass('noscroll');
             }
         });
     }
