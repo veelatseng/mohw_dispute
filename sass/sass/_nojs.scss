@@ -13,7 +13,7 @@ a.goCenter {
 	z-index: 999999999999;
 	opacity: 0;
 	transition: .5s;
-	@include border-radius(0px 0px 4px 4px);
+	border-radius:0px 0px 4px 4px;
 	color: #FFF;
 	@include screen("mobile") {
 		display: none;
@@ -36,12 +36,31 @@ a.goCenter {
 		line-height:1.45em;
 		font-size:.813em;
 		margin:0 .5em .5em;
-		@include border-radius(4px);
+		border-radius:4px;
 		@include box-sizing;
 		a{
 			color:$primaryColor;
 			&:hover,&:focus {
 			color:$aHover;	
+			}
+		}
+	}
+	.navigation{
+		padding-right: 170px;
+		.language{
+			width:auto;
+			position:absolute;
+			right:160px;
+			>a{
+				display:none;
+			}
+			ul{
+				top: 0;
+				width:160px;
+				li{
+					display:block;
+					width:auto;
+				}
 			}
 		}
 	}

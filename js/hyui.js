@@ -27,6 +27,7 @@ $(function() {
     if (_navLength > 1) {
         $('.navigation ul:nth-child(1)').addClass('left_nav');
     }
+    $('.navigation').has('.language').addClass('have_language');
     /*-----------------------------------*/
     /////// header選單 tab及 fix設定////////
     /*-----------------------------------*/
@@ -34,9 +35,9 @@ $(function() {
     _menu.find('li').has('ul').addClass('hasChild');
     var liHasChild = _menu.find('li.hasChild'),
         liHasChild_level1 = $('.menu ul').children('li.hasChild');
-        liHasChild_level2 = $('.menu ul ul').children('li.hasChild');
-        liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild');
-        subMenuWidth = liHasChild.first().children('ul').outerWidth();
+    liHasChild_level2 = $('.menu ul ul').children('li.hasChild');
+    liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild');
+    subMenuWidth = liHasChild.first().children('ul').outerWidth();
     /*-----------------------------------*/
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
@@ -139,32 +140,16 @@ $(function() {
                 $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
             });
             // 第三層選單
-             liHasChild_level3.off().on('click', function(e) {
+            liHasChild_level3.off().on('click', function(e) {
                 e.preventDefault();
-
             });
             //手機版第第一層點了不會進入內頁，拿掉第一層的連結無作用
             liHasChild.children('a').off().on('click', function(e) {
                 e.preventDefault();
             });
             _body.off('touchmove');
-            // 行動版查詢
-            var _searchCtrl = $('.searchCtrl');
             $('.m_search').hide();
-            _searchCtrl.off().on('click', function(e) {
-                if (!search_mode) {
-                    $('.m_search').stop(true, false).slideDown('400', 'easeOutQuint');
-                    search_mode = true;
-                } else {
-                    $('.m_search').hide();
-                    search_mode = false;
-                }
-            });
-            // 如果點在外面
-            $('.main').off().on('click touchend', function(e) {
-                $('.m_search').hide();
-                search_mode = false;
-            });
+            $('.language').find('ul').hide();
         } else {
             /*-----------------------------------*/
             /////////////// PC版設定 /////////////
@@ -176,6 +161,7 @@ $(function() {
             _menu.appendTo('.header .container');
             _search.removeClass('m_search');
             _search.show();
+            $('.language').find('ul').hide();
             // 副選單滑出
             liHasChild.on({
                 mouseenter: function() {
@@ -199,19 +185,40 @@ $(function() {
     //設定resize 計時器
     var resizeTimer;
     _window.bind("load resize", function(event) {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-            mobileMenu();
-        }, 50);
+        if (!search_mode) {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                mobileMenu();
+            }, 50);
+        }
     });
     mobileMenu();
+    // 行動版查詢
+    var _searchCtrl = $('.searchCtrl');
+    $('.m_search').hide();
+    _searchCtrl.off().on('click', function(e) {
+        if (!search_mode) {
+            $('.m_search').stop(true, false).slideDown('400', 'easeOutQuint');
+            $('.m_search').find('input[type="text"]').focus();
+            search_mode = true;
+        } else {
+            $('.m_search').hide();
+            search_mode = false;
+        }
+    });
+    // 如果點在外面
+    $('.main').off().on('click touchend', function(e) {
+        $('.m_search').hide();
+        search_mode = false;
+    });
     // 固定版頭
     var hh = $('.header').outerHeight(true),
-        menuH = _menu.outerHeight(),
-        navH = $('.navbar').height();
+        menuH = _menu.outerHeight(true);
     $(window).bind("load scroll resize", function(e) {
         ww = _window.outerWidth();
         if (ww >= wwSmall && $(this).scrollTop() > hh - menuH) {
+            hh = $('.header').outerHeight(true);
+            menuH = _menu.outerHeight(true);
             $('.header').addClass('fixed');
             $('.header').css('margin-top', menuH - hh);
             $('.main').css('margin-top', hh);
@@ -226,6 +233,7 @@ $(function() {
     /*-----------------------------------*/
     $('[class*="notice"] a.close').click(function(e) {
         $(this).parent('[class*="notice"]').hide();
+        e.preventDefault();
     });
     /*-----------------------------------*/
     //////////// Accordion設定 ////////////
@@ -234,7 +242,7 @@ $(function() {
         $(this).find('.accordion-content').hide();
         var _accordionItem = $(this).children('ul').children('li').children('a');
         _accordionItem.each(function() {
-            function accordion(e){
+            function accordion(e) {
                 $(this).parent('li').siblings().children('a').removeClass('active');
                 $(this).toggleClass('active');
                 $(this).parent('li').siblings().children('.accordion-content').slideUp();
@@ -530,21 +538,120 @@ $(function() {
             $(this).closest('.upload_grp').find('.upload_file').attr("value", names);
         }
     });
+    // /*------------------------------------*/
+    // /////cp table 加上響應式table wrapper/////
+    // /*------------------------------------*/
+    // $('.cp table').each(function(index, el) {
+    //     //判斷沒有table_list
+    //     if ($(this).parents('.table_list').length == 0) {
+    //         $(this).wrap('<div class="table_wrapper"></div>')
+    //     }
+    // });
+    /*------------------------------------*/
+    //////////分享按鈕 share dropdwon////////
+    /*------------------------------------*/
+    $('.cp_panel .share').children('ul').hide();
+    $('.cp_panel .share').prepend('<a href="#" class="shareButton"><img src="images/basic/icon_share.png" alt="share分享按鈕"></a>');
+    var _shareButton = $('.shareButton');
+    _shareButton.off().click(function(e) {
+        $(this).siblings('ul').stop(true, true).slideToggle();
+        e.preventDefault();
+    });
+    _shareButton.keyup(function(event) {
+        $(this).siblings('ul').stop(true, true).slideDown();
+    });
+    $('.cp_panel .share').find('li:last>a').focusout(function(event) {
+        $(this).parent().parent('ul').hide();
+    });
+    // 點外面關閉share
+    $(document).on('touchend click', function(e) {
+        var container = $(".cp_panel .share");
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            $('.share ul').hide();
+        }
+    });
+    /*------------------------------------*/
+    /////////////字型大小 font-size//////////
+    /*------------------------------------*/
+    $('.font_size').find('.medium').addClass('active');
+    $('.font_size').find('.small').click(function(e) {
+        $(this).parent('li').siblings('li').find('a').removeClass('active');
+        $('.cp').removeClass('large_size').addClass('small_size');
+        $(this).addClass('active');
+        e.preventDefault();
+    });
+    $('.font_size').find('.medium').click(function(e) {
+        $(this).parent('li').siblings('li').find('a').removeClass('active');
+        $('.cp').removeClass('large_size small_size');
+        $(this).addClass('active');
+        e.preventDefault();
+    });
+    $('.font_size').find('.large').click(function(e) {
+        $(this).parent('li').siblings('li').find('a').removeClass('active');
+        $('.cp').removeClass('small_size').addClass('large_size');
+        $(this).addClass('active');
+        e.preventDefault();
+    });
+    /*-----------------------------------*/
+    /////////// category active  //////////
+    /*-----------------------------------*/
+    $('.category').find('a').off().click(function(event) {
+        $(this).parent('li').siblings().find('a').removeClass('active');
+        $(this).addClass('active');
+    });
+    /*-----------------------------------*/
+    /////////// 無障礙快捷鍵盤組合  //////////
+    /*-----------------------------------*/
+    $(document).on('keydown', function(e) {
+        // alt+S 查詢
+        if (e.altKey && e.keyCode == 83) {
+            $('html, body').animate({ scrollTop: 0 }, 200, 'easeOutExpo');
+            $('.search').find('input[type="text"]').focus();
+        }
+        // alt+U header
+        if (e.altKey && e.keyCode == 85) {
+            $('html, body').animate({ scrollTop: 0 }, 200, 'easeOutExpo');
+            $('header').find('.accesskey').focus();
+        }
+        // alt+C 主要內容區
+        if (e.altKey && e.keyCode == 67) {
+            $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
+            $('.main').find('.accesskey').focus();
+        }
+        // alt+C footer
+        if (e.altKey && e.keyCode == 66) {
+            $('html, body').stop(true, true).animate({ scrollTop: $('footer').find('.accesskey').offset().top }, 800, 'easeOutExpo');
+            $('footer').find('.accesskey').focus();
+        }
+    });
     /*------------------------------------*/
     /////gotoCenter on focus跳到 content/////
     /*------------------------------------*/
     $('a.goCenter').keydown(function(e) {
         if (e.which == 13) {
             $('#aC').focus();
+            $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
         }
     });
-    /*------------------------------------*/
-    /////cp table 加上響應式table wrapper/////
-    /*------------------------------------*/
-    $('.cp table').each(function(index, el) {
-        //判斷沒有table_list
-        if ($(this).parents('.table_list').length == 0) {
-            $(this).wrap('<div class="table_wrapper"></div>')
+    /*-----------------------------------*/
+    //////// 語言模組 無障礙遊走設定  ////////
+    /*-----------------------------------*/
+    $('.language').find('ul').hide();
+    var openLang = $('.language').children('a');
+    openLang.off().click(function(e) {
+        $(this).next('ul').stop(true, true).slideToggle();
+        e.preventDefault();
+    });
+    openLang.keyup(function() {
+        $(this).next('ul').stop(true, true).slideDown();
+    });
+    $('.language').find('ul li:last>a').focusout(function() {
+        $('.language').find('ul').hide();
+    });
+    $(document).on('touchend click', function(e) {
+        var target = e.target;
+        if (!$(target).is('.language a')) {
+            $('.language').find('ul').hide();
         }
     });
 });

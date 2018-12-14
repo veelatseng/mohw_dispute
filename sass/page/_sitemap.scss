@@ -1,31 +1,33 @@
  /* sitemap */
  .sitemap {
      margin: 0px auto 1em;
-     color: #666;
-     @include border-radius(8px);
-     @include clearfix;
+     @extend %clearfix;
      .accesskeyDefine {
          padding: 1em 2em;
-           background: #EEE;
+         background: #EEE;
          @include border-radius(6px);
      }
  }
+ $sitemapLength : 4;
+ $sitemapWidth:100%/ $sitemapLength;
  .cascading {
-     margin: 0;
-     padding: 0;
      border-top: 1px solid #CCC;
+     @include gutter;
      @include box-sizing;
+     ul {
+         @include li-reset;
+     }
      li {
-         margin: 0 1% 1em;
-         line-height: 1.5em;
-         font-size: 1em;
-         list-style: none;
-         width: 22%;
+         line-height: 1.5;
+         width: $sitemapWidth;
          display: inline-block;
          vertical-align: top;
+         margin: 0 -5px 1em 0; // margin-right:改為負5;
+         @include box-sizing;
+         padding: 0px .5em;
          a {
-             margin: 10px 0px;
-             color: #333;
+             margin: .5em 0;
+             color: #222;
              padding: .5em;
              display: block;
              font-size: 1.25em;
@@ -38,21 +40,18 @@
              }
          }
          ul {
-             margin-left: 0px;
-             padding-left: 0%;
+            padding-left: 1em;
              li {
                  width: 100%;
-                 display: block !important;
+                 display: block;
                  margin-bottom: 0;
+                 padding: 0;
                  a {
-                     margin-top: 0px;
-                     margin-bottom: 0px;
                      display: block;
                      font-size: 1em;
+                     padding: .3em 0;
                      border-bottom: 1px dotted #ccc;
                      background-color: transparent;
-                     font-weight: normal;
-                     color: #666;
                      font-weight: normal;
                  }
              }

@@ -3,7 +3,7 @@ $base-font-size: 16px;
 $base-line-height: 16px;
 $rhythm-unit: 'em';
 $base-font-stack: $font-family;
-// @include establish-baseline();
+@include establish-baseline();
 $grid-background-baseline-height: 2em;
 $show-baseline-grid-backgrounds: true;
 $grid-background-baseline-color: rgba(187, 187, 187, 0.4);
@@ -14,18 +14,21 @@ $grid-background-baseline-color: rgba(187, 187, 187, 0.4);
         margin: 0 $base-font-size 0 0;
     }
 }
+// +leader() = 設定margin-top
+// +padding-leader() = 設定padding-top
+// +trailer() = 設定margin-bottom
+// +padding-trailer() = 設定padding-bottom
 .cp {
-
-    @include adjust-font-size-to($base-font-size*1, 2);
+    @include adjust-font-size-to($base-font-size*1, 2); //預設cp的文字設定(有可能上搞資料未包標籤)
     h1 {
         @include adjust-font-size-to($base-font-size*2, 3);
         @include padding-leader(0);
-        @include trailer(1.5);
+        @include trailer(.5);
     }
     h2 {
         @include adjust-font-size-to($base-font-size*1.5, 2);
         @include padding-leader(0);
-        @include trailer(1.35);
+        @include trailer(0);
     }
     h3 {
         @include adjust-font-size-to($base-font-size*1.25, 2);
@@ -78,7 +81,7 @@ $grid-background-baseline-color: rgba(187, 187, 187, 0.4);
     }
     img {
         max-width: 100%;
-       @include screen('mobile') {
+        @include screen('mobile') {
             max-width: 100%;
             width: auto;
             clear: both;

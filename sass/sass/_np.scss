@@ -11,7 +11,7 @@
         width: 49%;
         margin: 0 1% 10px 0;
         float: left;
-        @include box-sizing(border-box);
+        @include box-sizing;
         &:nth-child(even) {
         	width: 50%;
             margin-right: 0px;

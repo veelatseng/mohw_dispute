@@ -1,11 +1,9 @@
 .category {
+    @extend %clearfix;
     text-align: left;
-    @include box-sizing;
-    margin: 2em auto;
+    margin: 1em auto;
     ul {
-        padding: 0;
-        margin: 0;
-        overflow:hidden;
+        @include li-reset;
         li {
             margin: 0px 3px 3px 0px;
             display: block;
@@ -13,15 +11,34 @@
         }
     }
     a {
-        background: $primaryColor;
+        @include gradient(#FFF, #DDD, vertical);
+        border: 1px solid #CCC;
         padding: .4em 1em;
-        display:block;
-        color: #FFF;
+        display: block;
+        color: #333;
         @include box-sizing();
-        @include border-radius(4px);
+        border-radius:4px;
         &:hover,
         &:focus {
-            background: darken($primaryColor, 10);
+            color: #FFF;
+            @include gradient(darken($primaryColor, 0), darken($primaryColor, 15), vertical);
+            border: 1px solid darken($primaryColor, 15);
+            box-shadow: none;
+        }
+        &.active {
+            color: #FFF;
+            @include gradient(darken($primaryColor, 0), darken($primaryColor, 15), vertical);
+        }
+        span {
+            font-size: .813em;
+            &:before {
+                content: "(";
+                display: inline-block;
+            }
+            &:after {
+                content: ")";
+                display: inline-block;
+            }
         }
     }
 }

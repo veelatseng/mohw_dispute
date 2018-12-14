@@ -1,10 +1,9 @@
 //https://codepen.io/iMarkup/pen/LEjMZN
-@mixin text-overflow($overflow: ellipsis){
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: $overflow; // values are: clip, ellipsis, or a string
+@mixin text-overflow($overflow: ellipsis) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: $overflow; // values are: clip, ellipsis, or a string
 }
-
 //範例：
 // p {
 //   background-color: $gray;

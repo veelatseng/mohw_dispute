@@ -125,6 +125,7 @@
     border: 0;
     outline: none;
     background: transparent;
+    box-shadow: none !important;
 }
 .slick-dots li button:hover,
 .slick-dots li button:focus {

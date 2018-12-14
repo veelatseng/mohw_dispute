@@ -22,16 +22,18 @@
         }
     }
     .list {
-        ul,
-        ol {
+        &>ul,ol {
             list-style-type: none;
             padding: 0;
             border-top: 2px solid $primaryColor;
-            li {
+            &>li {
                 padding: 1em 0;
                 border-bottom: 1px solid #DDD;
                 position: relative; // outline: 1px solid blue;
-                a {
+                .tag{
+                    margin-left: 2em;
+                }
+                &>a {
                     display: block;
                     padding-left: 2em;
                     position: relative;

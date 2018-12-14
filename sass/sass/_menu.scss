@@ -23,6 +23,33 @@
                 line-height: 2.5em;
                 color: $color-word;
             }
+            &.hasChild {
+                >a {
+                    &:after {
+                        content: '';
+                        width: 4px;
+                        height: 4px;
+                        display: inline-block;
+                        margin-left: .5em;
+                        vertical-align: middle;
+                        border: 2px solid lighten($color-word, 40);
+                        transform: rotate(135deg);
+                        border-bottom: none;
+                        border-left: none;
+                        margin-bottom: .2em;
+                    }
+                }
+            }
+            &:hover {
+                >a {
+                    color: $aHover;
+                    &:after {
+                        border: 2px solid $aHover;
+                        border-bottom: none;
+                        border-left: none;
+                    }
+                }
+            }
         }
         ul {
             display: none;
@@ -90,8 +117,7 @@
         }
     }
 }
-////////////////////////////////////////////////////// 行動版選單
-// 行動版選單
+// 行動版選單sidebar
 .sidebar {
     position: fixed;
     top: 0;
@@ -136,11 +162,10 @@
             @include box-sizing;
         }
         width:280px;
-        padding-top: 3em;
+        padding: 3em 0;
         position:absolute;
         top: 0;
         left: 0;
-        padding-bottom: 3em;
         height: 100%;
         background: $primaryColor;
         overflow:hidden;
@@ -149,8 +174,6 @@
         -webkit-overflow-scrolling: touch;
         -webkit-transform: translate3d(0, 0, 0);
         @include box-sizing;
-    }
-    .m_area {
         .menu {
             width: 100%;
             @include box-shadow(0px 0px 4px RGBA(0, 0, 0, .4));
@@ -160,7 +183,27 @@
                 display: block;
                 color: #222;
                 text-decoration: none;
-                transition: .4s;
+                transition: .4s ease-out;
+            }
+            ul {
+                ul {
+                    display: none;
+                    width: 100%;
+                    margin: 0;
+                    background: rgba(0, 0, 0, .09);
+                    font-size: .938em;
+                    position: relative;
+                    a {
+                        padding-left: 2em;
+                    }
+                    ul {
+                        left: 0;
+                        display: none;
+                        ul {
+                            display: none;
+                        }
+                    }
+                }
             }
             li {
                 display: block;
@@ -180,7 +223,7 @@
                         color: #222;
                         background: #FFF;
                         padding-right: 36px;
-                        position: relative; // text-shadow: 1px 1px 2px RGBA(0, 0, 0, .7);
+                        position: relative;
                         &:after {
                             content: '';
                             position: absolute;
@@ -236,31 +279,6 @@
             }
         }
     }
-}
-.sidebar {
-    .menu {
-        ul {
-            ul {
-                display: none;
-                width: 100%;
-                margin: 0;
-                background: rgba(0, 0, 0, .09);
-                font-size: .938em;
-                position: relative;
-                a {
-                    padding-left: 2em;
-                }
-                ul {
-                    left: 0;
-                    display: none;
-                    ul {
-                        left: 0;
-                        display: none;
-                    }
-                }
-            }
-        }
-    }
     .navigation {
         position: relative;
         text-align: left;
@@ -301,6 +319,37 @@
                     &:hover,
                     &:focus {
                         background: darken($primaryColor, 20);
+                    }
+                }
+            }
+        }
+        .language {
+            position: relative;
+            width: 100%;
+            @include gutter;
+            a {
+                padding: .6em 1em;
+                background: rgba(0, 0, 0, .4);
+                &:after {
+                    top: 1.3em;
+                }
+                &:before {
+                    top: .8em;
+                }
+            }
+            ul {
+                width: 100%;
+                margin: 0;
+                position: relative;
+                top: 0;
+                padding: 0;
+                border: none;
+                background:none;
+                li {
+                    width: 100% !important;
+                    a {
+                        border: none;
+                        background: rgba(0, 0, 0, .4);
                     }
                 }
             }

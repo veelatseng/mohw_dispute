@@ -9,28 +9,8 @@ img {
     }
 }
 
-
-
-.single_setting {
-    .thumbnail {
-        @include make_img_col(3, 1);
-        text-align: center;
-    }
-    .thumbnail:nth-child(1) .imgOuter {
-        @include aspect-ratio(1, 1);
-    }
-    .thumbnail:nth-child(2) .imgOuter {
-        @include aspect-ratio(4, 3);
-    }
-    .thumbnail:nth-child(3) .imgOuter {
-        @include aspect-ratio(16, 9);
-    }
-}
-
 // 設定img 在IE9+ SAFARI FIREFOX CHROME 可以object-fit
-
 /*for IE */
-
 .img-container {
     height: 400px;
     width: 100%;
@@ -78,7 +58,6 @@ img {
         bottom: 0;
     }
 }
-
 %ie_setting {
     position: relative;
     background-position: center center;
@@ -93,33 +72,26 @@ img {
     @extend %ie_setting;
     background-size: cover;
 }
-
 .ie-object-fill {
     @extend %ie_setting;
     background-size: auto;
 }
-
 .ie-object-contain {
     @extend %ie_setting;
     background-size: contain;
 }
-
 .fill {
     object-fit: fill;
 }
-
 .contain {
     object-fit: contain;
 }
-
 .cover {
     object-fit: cover;
 }
-
 .none {
     object-fit: none;
 }
-
 .scale-down {
     object-fit: scale-down;
 }

@@ -1,29 +1,21 @@
-$fatBgColor: #F1F1F1; //fatFooter 底色
-$fatTextColor: #FFF; //fatFooter 連結顏色
 .fatfooter {
-    @include clearfix;
     @include make-fatfooter($fatfooter-length, 100%);
-    @include screen('mobile') {
-        display: none;
-    }
-}
-.fatfooter {
-    @include clearfix;
+    @extend %clearfix;
     overflow: hidden;
-    position: relative;
     padding-bottom: 1em;
     margin: 0 auto;
-    background: $fatBgColor;
+    background: $fatfooterBgColor;
+    //   @include screen('mobile') {
+    //     display: none;
+    // }
     .container {
-        position: relative;
         overflow: hidden;
-        @include box-sizing();
-        @include gutter();
+        @include box-sizing;
+        @include gutter;
     }
     // 按鈕
     .btn-fatfooter {
         font-size: .813em;
-        cursor: pointer;
         display: block;
         min-width: 6em;
         color: #FFF;
@@ -31,7 +23,7 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
         background: $aHover;
         position: absolute;
         right: 1%;
-        z-index: 990;
+        z-index: 90;
         text-indent: -9999px;
         @include border-radius(4px);
         &:before {
@@ -58,72 +50,60 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
             box-shadow: none;
             outline: none;
             border: none;
-            &:before {
-                transform: rotate(135deg);
-                top: 5px;
-            }
+            cursor: pointer;
         }
-        &.open {
+        &.close {
             &:before {
-                transform: rotate(135deg);
+                transform: rotate(135deg) !important;
                 top: 5px;
-            }
-            &:hover, &:focus {
-                &:before {
-                    transform: rotate(-45deg);
-                    top: 12px;
-                }
             }
         }
     }
     nav {
-        color: #fff;
         overflow: hidden;
         display: block;
         position: relative;
-        padding: 40px 0 0 1%;
-        @include box-sizing(border-box);
+        padding: 3em 0 0 2em;
+        @include box-sizing;
+        @include screen('mobile') {
+            padding: 1em 0;
+        }
         ul {
             @include li-reset;
-            width: 100%;
             @include screen('mobile') {
                 width: 100%;
                 display: block;
                 margin: 0px auto;
             }
             li {
-                display: inline-block; // outline: 1px solid red;
+                display: inline-block;
                 text-align: left;
                 vertical-align: top;
-                margin: 0 0 1% 0;
-                line-height: 2.6em; // margin:$fatFooterliMargin;
+                margin: 0 -5px 1em 0;
                 @include box-sizing;
                 @include screen('mobile') {
                     display: block;
+                    margin:0 0 .4em
                 }
                 a {
-                    text-align: left;
-                    line-height: 1.65em;
+                    line-height: 1.5;
                     display: block;
                     font-weight: bold;
-                    padding: 1% 0px 1% 0px;
+                    padding: .5em 0px;
                     @include box-sizing;
-                    &:hover, &:focus {
+                    &:hover{
                         box-shadow: none;
                     }
                 }
                 ul {
-                    padding: 0;
                     margin-top: 5px;
-                    overflow: hidden;
-                    @media (max-width: 767px) {
+                    @include screen('mobile') {
                         width: auto;
-                        padding-left: 5%;
+                        padding-left: 2em;
                     }
                     li {
                         display: block;
                         margin: 0;
-                        padding: 5px 0;
                         border: none;
                         background: none;
                         width: 100%;
@@ -132,14 +112,13 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                             @include aSetting_nocolor;
                             font-weight: normal;
                             text-align: left;
-                            text-decoration: none;
                             font-size: .938em;
-                            font-weight: normal;
-                            line-height: 1.4em;
-                            padding: 3px 4px;
+                            line-height: 1.5em;
+                            padding: .5em .2em;
                             background: none;
-                            @include box-sizing(border-box);
-                            border-bottom: none;
+                            @include screen('mobile') {
+                                padding:.3em .2em;
+                            }
                         }
                     }
                     //第三層關閉

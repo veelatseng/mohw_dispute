@@ -3,10 +3,10 @@ footer {
     @include clearfix;
     text-align: left;
     font-size: 0.813em;
-    padding:1em 0;
-    .container{
-        @include gutter();
-        >div{
+    padding: 1em 0;
+    .container {
+        @include gutter;
+        >div {
             padding-bottom: 1em;
         }
     }
@@ -38,7 +38,8 @@ footer {
         @include make-md-column(3);
         @include make-lg-column(3);
         @include gutter();
-    } // 版權連結
+    }
+    // 版權連結
     .footer_link {
         @include li-reset();
         @include clearfix();
@@ -51,7 +52,7 @@ footer {
                 padding: .5em 1em;
                 background: $primaryColor;
                 color: #FFF;
-                @include border-radius(3px);
+                border-radius:4px;
                 @include transition(all, .3s, ease-out);
                 &:hover,
                 &:focus {

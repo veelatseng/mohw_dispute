@@ -38,7 +38,6 @@ select::-ms-expand {
         @include gutter();
     }
 }
-
 //---------------------------------------------form setting--------//
 form {
     .form_grp,
@@ -52,7 +51,8 @@ form {
     .radio_grp {
         label {
             display: block;
-        } // radio與check個別行內設定
+        }
+        // radio與check個別行內設定
         &.form_inline {
             label {
                 display: inline-block;
@@ -74,7 +74,8 @@ form {
                 width: auto;
             }
         }
-    } // form 全域行內設定
+    }
+    // form 全域行內設定
     &.form_inline {
         label {
             display: inline-block;
@@ -104,7 +105,6 @@ form {
         }
         .check_grp,
         .radio_grp {}
-
         .btn_grp {
             .btn,
             input[type="submit"],
@@ -120,7 +120,7 @@ form {
             width: auto;
         }
     }
-    
+}
 //---------------------------------------------下拉選單--------//
 label,
 legend {
@@ -130,7 +130,6 @@ legend {
     @include screen('xs_mobile') {
         display: block;
     }
-
     &.inline {
         input,
         select,
@@ -139,13 +138,11 @@ legend {
         }
     }
 }
-
 fieldset {
     border: none;
     padding: 0;
     margin: 0;
 }
-
 //---------------------------------------------預設設定--------//
 input,
 textarea,
@@ -153,7 +150,6 @@ select,
 button {
     @include formStyle(); // 預設載入formStyle設定
 }
-
 input,
 select,
 textarea {
@@ -162,7 +158,6 @@ textarea {
     -moz-appearance: none;
     appearance: none;
 }
-
 //---------------------------------------------文字輸入表單--------//
 input[type="text"],
 input[type="password"],
@@ -184,19 +179,16 @@ input[type="file"] {
         color: $color-gray;
     }
 }
-
 button,
 input[type="button"],
-{
+    {
     @extend %btn;
     @include btn_setting($form-focus, #FFF);
 }
-
 input[type="submit"] {
     @extend %btn;
     @include btn_setting($form-focus, #FFF);
 }
-
 textarea {
     @include formStyle();
     height: 5em;
@@ -205,7 +197,6 @@ textarea {
         width: 100%;
     }
 }
-
 input[type="text"]:focus,
 input[type="reset"]:focus,
 input[type="file"]:focus,
@@ -216,10 +207,8 @@ select:focus {
     @include box-shadow(0px 0px 0px 2px lighten($form-focus, 20));
     outline: none;
 }
-
 //
 input[type="file"] {}
-
 //---------------------------------------------下拉選單--------//
 select {
     line-height: 2.4em;
@@ -237,14 +226,12 @@ select {
         text-shadow: 0 0 0 #000;
     }
 }
-
 //---------------------------------------------reset--------//
 input[type="reset"] {
     @extend %btn;
     @include btn_setting(darken($color-gray, 20), #FFF);
     text-shadow: none;
 }
-
 //---------------------------------------------checkbox & radio--------//
 input[type="checkbox"],
 input[type="radio"] {
@@ -255,18 +242,15 @@ input[type="radio"] {
     background-color: #f7f6ee;
     border: 2px solid $color-gray;
 }
-
 input[type="radio"] {
     border-radius: 50%;
 }
-
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
     border-color: $form-focus;
     background-color: $form-focus;
     outline: none;
 }
-
 input[type="checkbox"]:checked {
     background-image: url(../images/basic/icon_checked.svg);
     background-repeat: no-repeat;
@@ -275,11 +259,9 @@ input[type="checkbox"]:checked {
     box-shadow: $form-focus 0 0 0 1px;
     @include border-radius(2px);
 }
-
 input[type="radio"]:checked {
     box-shadow: #fff 0 0 0 3px inset, $form-focus 0 0 0 1px;
 }
-
 //---------------------------------------------readonly disable -------//
 input[readonly],
 input[disable] {
@@ -295,7 +277,6 @@ input[disable] {
         box-shadow: none; // cursor: not-allowed;
     }
 }
-
 // 檔案上傳
 // https://codepen.io/shubhamc_007/pen/oZyodd
 .upload_grp {
@@ -320,7 +301,6 @@ input[disable] {
         }
     }
 }
-
 input[type="file"] {
     position: absolute;
     top: 0;
@@ -332,10 +312,6 @@ input[type="file"] {
     opacity: 0;
     filter: alpha(opacity=0);
 }
-
-
-}
-
 //---------------------------------------------captcha--------//
 img.captcha {
     display: inline-block;
@@ -356,5 +332,6 @@ img.captcha {
 }
 //---------------------------------------------必填欄位說明--------//
 abbr[title] {
-   border-bottom: none;text-decoration: none;
+    border-bottom: none;
+    text-decoration: none;
 }

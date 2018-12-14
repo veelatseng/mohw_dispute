@@ -3,13 +3,13 @@
     position: relative;
     z-index: 99;
     background: #FFF;
-    @include box-shadow(0px 2px 5px RGBA(0, 0, 0, .3)); 
+    box-shadow: 0px 2px 5px RGBA(0, 0, 0, .3);
+    @extend %clearfix;
     @include screen('mobile') {
-        @include clearfix;
         position: fixed;
         width: 100%;
     }
-    // 虛擬底色 - navigation
+    // 虛擬底色 - navigation bg
     &:before {
         content: "";
         width: 100%;
@@ -21,7 +21,7 @@
         @include screen('mobile') {
             display: none;
         }
-    } 
+    }
     // mobile btn for extend
     %mobileCtrlBtn {
         width: 60px !important;
@@ -36,6 +36,7 @@
         min-height: auto;
         background: transparent;
         border: none;
+        box-shadow: none;
         @include box-sizing;
         @include screen('mobile') {
             display: block !important;
@@ -50,22 +51,23 @@
             left: 0px;
             @extend %mobileCtrlBtn;
             span {
-                position:absolute;
+                position: absolute;
                 background: $primaryColor;
                 width: 50%;
                 height: 4px;
-                top:35%;
-                left:50%;
+                top: 35%;
+                left: 50%;
                 margin-left: -25%;
                 display: block;
-                &:nth-child(2){
-                     top:50%;
-                } 
-                &:nth-child(3){
-                     top:65%;
+                &:nth-child(2) {
+                    top: 50%;
+                }
+                &:nth-child(3) {
+                    top: 65%;
                 }
             }
-        } // search
+        }
+        // search
         .searchCtrl {
             display: none;
             right: 0px;
@@ -75,7 +77,7 @@
                 width: 40px;
                 height: 40px;
                 background: url(../images/basic/icon_search.png) no-repeat center center;
-                background-size: 32px;
+                background-size: 28px;
                 opacity: .6;
                 content: "";
                 position: absolute;
@@ -113,12 +115,17 @@
                 transform: scale(.8);
             }
         }
-    } // 導覽列
+    }
+    // 導覽列
     .navigation {
-        @include clearfix;
+        &.have_language {
+            padding-right: 160px;
+        }
+        @extend %clearfix;
         overflow: hidden;
         width: 100%;
         margin-bottom: .5em;
+        box-sizing:border-box;
         ul {
             float: right;
             padding: 0;
@@ -140,8 +147,16 @@
                 @include aSetting_nocolor;
             }
         }
-    } 
+        .language {
+            position: absolute;
+            right: 15px;
+            top: .35em;
+            font-size:.75em;
+
+        }
+    }
 }
+
 //search
 .search {
     min-width: 25%;
@@ -159,23 +174,23 @@
         input {
             margin: -0.2em 0 0;
             padding: .2em 35px .2em .5em;
-            box-shadow:none;
-            &[type="submit"]{
-                font-size:0em;
-                width:30px !important;
+            box-shadow: none;
+            &[type="submit"] {
+                font-size: 0em;
+                width: 30px !important;
                 height: 30px;
                 // max-width:none;
                 // min-width:none;
-                background:url(../images/basic/icon_search.png) no-repeat center center;
-                background-size:20px;
-                border:none;
-                display:inline-block;
+                background: url(../images/basic/icon_search.png) no-repeat center center;
+                background-size: 20px;
+                border: none;
+                display: inline-block;
                 margin-left: -40px !important;
-                margin-top:-2px !important;
-                opacity:.8;
-                &:hover,&:focus {
-                    opacity:1;
-                    box-shadow:none !important;
+                margin-top: -2px !important;
+                opacity: .8;
+                &:hover, &:focus {
+                    opacity: 1;
+                    box-shadow: none !important;
                 }
             }
         }
@@ -183,10 +198,10 @@
     .btn_grp {
         padding: .2em;
         margin-bottom: 0;
-        input,input[type="submit"]{
+        input, input[type="submit"] {
             margin: 0;
             padding: .4em 1em .4em !important;
-            font-size:.813em;
+            font-size: .813em;
         }
     }
     .keywordHot {
@@ -212,10 +227,11 @@
                 display: inline-block;
             }
             a {
-               @include aSetting_nocolor;
+                @include aSetting_nocolor;
             }
         }
-    } // m_search
+    }
+    // m_search
     &.m_search {
         width: 100% !important;
         max-width: 100% !important;
@@ -234,61 +250,59 @@
         }
         .form_grp {
             width: 65%;
-            height:auto;
+            height: auto;
             padding: 0 0 0 5% !important;
             margin-top: 0;
             text-align: right;
-            float:left;
-            height:50px;
-            position:relative;
+            float: left;
+            height: 50px;
+            position: relative;
             @include box-sizing();
             input {
                 width: 100%;
                 margin: -0.2em 0 0;
                 padding: .5em 45px .4em .5em;
-                &[type="submit"]{
-                    font-size:0em;
-                    width:36px !important;
+                &[type="submit"] {
+                    font-size: 0em;
+                    width: 36px !important;
                     height: 36px;
                     padding: 0;
                     // max-width:none;
                     // min-width:none;
-                    background:url(../images/basic/icon_search.png) no-repeat center center;
-                    background-size:24px;
-                    border:none;
-                    display:inline-block;
+                    background: url(../images/basic/icon_search.png) no-repeat center center;
+                    background-size: 24px;
+                    border: none;
+                    display: inline-block;
                     // margin-left: -50px !important;
-                    position:absolute;
-                    right:5px;
-                    top:22px;
-                    opacity:.8;
+                    position: absolute;
+                    right: 5px;
+                    top: 22px;
+                    opacity: .8;
                     // outline:1px solid red;
-
-                    &:hover,&:focus {
-                        opacity:1;
+                    &:hover, &:focus {
+                        opacity: 1;
                     }
                 }
             }
         }
         .btn_grp {
-            display:inline-block;
+            display: inline-block;
             padding: .2em;
             margin-bottom: 0;
-            width: 20%;
-            margin-top:20px;
+            width: 30%;
+            margin-top: 20px;
             padding-left: 5%;
             @include box-sizing();
             input {
-                width:80% !important;
-                padding: .6em 1em .7em !important;
+                width: 100% !important;
+                padding: .6em .5em !important;
                 margin: 0;
-
             }
         }
         .keywordHot {
             padding-left: 5%;
-            margin-top:10px;
-            @include clearfix;
+            margin-top: 10px;
+            @extend %clearfix;
             a {
                 color: #FFF;
                 &:hover,
@@ -306,16 +320,16 @@
     right: 0;
     top: 0;
     box-shadow: rgba(0, 0, 0, .5) 0 0 25px;
-    background:darken($primaryColor,5);
+    background: rgba(0, 0, 0, .75);
     z-index: 999;
     @include screen('mobile') {
-        background:#FFF;
+        background: #FFF;
     }
-    .menu{
-        >ul{
-            >li{
-                >a{
-                    color:#FFF;
+    .menu {
+        >ul {
+            >li {
+                >a {
+                    color: #FFF;
                 }
             }
         }
