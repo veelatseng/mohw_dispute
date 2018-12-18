@@ -161,6 +161,7 @@ $(function() {
             _menu.appendTo('.header .container');
             _search.removeClass('m_search');
             _search.show();
+            search_mode = false;
             $('.language').find('ul').hide();
             // 副選單滑出
             liHasChild.on({
@@ -185,9 +186,11 @@ $(function() {
     //設定resize 計時器
     var resizeTimer;
     _window.bind("load resize", function(event) {
+        search_mode=false;
         if (!search_mode) {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(function() {
+                search_mode=false;
                 mobileMenu();
             }, 50);
         }
@@ -271,7 +274,7 @@ $(function() {
     /*-----------------------------------*/
     ////////img objectfix cover////////////
     /*-----------------------------------*/
-    $(window).bind('resize load', function(e) {
+    function imgResize(){
         $('.imgOuter').each(function(index, el) {
             var _imgContainer = $(this),
                 cWidth = _imgContainer.width(),
@@ -291,7 +294,11 @@ $(function() {
             }
             $(this).find('img').removeClass('img-responsive');
         });
+    }
+    $(window).bind('resize load', function(e) {
+        imgResize();
     });
+    imgResize();
     /*-----------------------------------*/
     //////////////相簿縮圖+燈箱//////////////
     /*-----------------------------------*/
@@ -496,23 +503,25 @@ $(function() {
         $('html, body').animate({ scrollTop: 0 }, 800, 'easeOutExpo');
         e.preventDefault();
     });
-    /*--------------------------------------------------------*/
+     /*--------------------------------------------------------*/
     /////設定img 在IE9+ SAFARI FIREFOX CHROME 可以object-fit/////
     /*--------------------------------------------------------*/
-    // var userAgent, ieReg, ie;
-    // userAgent = window.navigator.userAgent;
-    // ieReg = /msie|Trident.*rv[ :]*11\./gi;
-    // ie = ieReg.test(userAgewnt);
-    if (/MSIE (\d+\.\d+);/.test(navigator.userAgent) || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+    var userAgent, ieReg, ie;
+    userAgent = window.navigator.userAgent;
+    ieReg = /msie|Trident.*rv[ :]*11\./gi;
+    ie = ieReg.test(userAgent);
+    if (ie) {
         $(".img-container").each(function() {
-            var imgUrl = $(this).children('a').children('img').attr('src');
+            var imgUrl = $(this).children('img').attr('src');
             var $container = $(this);
-            $(this).has('.cover').find('a').addClass('ie-object-cover');
-            $(this).has('.cover').find('a').css('backgroundImage', 'url(' + imgUrl + ')');
-            $(this).has('.fill').find('a').addClass('ie-object-fill');
-            $(this).has('.fill').find('a').css('backgroundImage', 'url(' + imgUrl + ')');
-            $(this).has('.contain').find('a').addClass('ie-object-contain');
-            $(this).has('.contain').find('a').css('backgroundImage', 'url(' + imgUrl + ')');
+            $container.has('.none').addClass('ie-object-none');
+            $container.has('.none').css('backgroundImage', 'url(' + imgUrl + ')');
+            $container.has('.cover').addClass('ie-object-cover');
+            $container.has('.cover').css('backgroundImage', 'url(' + imgUrl + ')');
+            $container.has('.fill').addClass('ie-object-fill');
+            $container.has('.fill').css('backgroundImage', 'url(' + imgUrl + ')');
+            $container.has('.contain').addClass('ie-object-contain');
+            $container.has('.contain').css('backgroundImage', 'url(' + imgUrl + ')');
         });
     }
     /*-----------------------------*/

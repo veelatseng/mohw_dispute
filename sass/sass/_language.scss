@@ -1,5 +1,5 @@
 .language {
-    width: 10em;
+    width: 140px;
     font-weight: bold;
     font-size: .75em;
     text-shadow: 1px 1px 2px RGBA(0, 0, 0, .8);
@@ -43,7 +43,7 @@
         position: absolute;
         top: 2.35em;
         left: 0;
-        width: 10em;
+        width: 140px;
         height: auto;
         z-index: 9999;
         @include li-reset;

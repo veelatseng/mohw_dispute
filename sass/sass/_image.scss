@@ -8,17 +8,15 @@ img {
         @include border-radius(50%);
     }
 }
-
 // 設定img 在IE9+ SAFARI FIREFOX CHROME 可以object-fit
 /*for IE */
+.imgOuter{
+    position:relative;
+}
 .img-container {
-    height: 400px;
     width: 100%;
     position: relative; // @include aspect-ratio(10, 3);
-    @include screen('mobile') {
-        height: 280px;
-        width: 100%;
-    }
+    background: #F2F2F2;
     a {
         display: block;
         height: 100%;
@@ -52,6 +50,8 @@ img {
     }
     iframe {
         position: absolute;
+        width: 100% !important;
+        height: 100% !important;
         top: 0;
         left: 0;
         right: 0;
@@ -68,13 +68,17 @@ img {
         height: 0px;
     }
 }
+.ie-object-none {
+    @extend %ie_setting;
+    background-size: auto;
+}
 .ie-object-cover {
     @extend %ie_setting;
     background-size: cover;
 }
 .ie-object-fill {
     @extend %ie_setting;
-    background-size: auto;
+    background-size: 100% 100%;
 }
 .ie-object-contain {
     @extend %ie_setting;
