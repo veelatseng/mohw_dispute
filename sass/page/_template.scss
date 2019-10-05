@@ -1,52 +1,81 @@
 body {
-    &.noscroll {
-        position: static !important;
-        width: 100%;
-        height: 100%;
-        overflow: hidden !important;
-        overflow-y: hidden !important;
-        margin: 0;
-        padding: 0;
-    }
+  &.noscroll {
+    position: static !important;
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+    margin: 0;
+    padding: 0;
+  }
+  background: linear-gradient(270deg, #f2b35c, #f2785c);
+  background-size: 400% 400%;
+  -webkit-animation: bodybg 31s ease infinite;
+  -moz-animation: bodybg 31s ease infinite;
+  animation: bodybg 31s ease infinite;
 }
-
+@-webkit-keyframes bodybg {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes bodybg {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes bodybg { 
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
 // 最外圍預設為100%
 .wrapper {
-    width: 100%;
+    // width: 100%;
+    max-width: $container-max; //請看_variable.scss
     margin: 0px auto;
+    background:#f99616 url(../images/top_bg.jpg) no-repeat;
+    overflow: hidden;
     @include screen('mobile') {
-        background: #FFF;
+        // background: #FFF;
+        overflow-x: hidden;
+      }
     }
-}
 
 // 整體共用container樣式，請注意首頁切版頁面的整齊
 .container {
-    padding: 0;
-    margin: 0 auto;
+  padding: 0;
+  margin: 0 auto;
     max-width: $container-max; //請看_variable.scss
-}
+  }
 
-.main {
+  .main {
     position: relative;
     margin: 0 auto;
     padding: 0; // max-width: $container-max;
     // 可先設定一個中央區塊最大寬，限制accesskey對齊
     @include screen('mobile') {
-        padding-top: 55px;
+      padding-top: 55px;
     } // 內頁標題設定
     h2 {
-        line-height: 1.25em;
+      line-height: 1.25em;
+      margin:.4em 0;
+      font-size: 1.5em;
+      color: #392520;
     }
-}
+  }
 
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
-    padding-top: 2em;
-    @include screen('mobile') {
-        padding-top: 5em;
-    }
-    >.container {
+  background: #fff url(../images/innerbg.jpg) no-repeat;
+  padding: 252px 3em 3em 3em;
+  @include screen('mobile') {
+    padding-top: 5em;
+    background: #fff;
+    padding: 0 1em;
+  }
+  >.container {
         @include gutter(); //gutter 代表左右要留白
+      }
     }
-}

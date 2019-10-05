@@ -11,18 +11,18 @@
         }
     }
     a {
-        @include gradient(#FFF, #DDD, vertical);
-        border: 1px solid #CCC;
-        padding: .4em 1em;
+        @include gradient(#f38046, #f99517, horizontal);
+        // border: 1px solid #CCC;
+        padding: .6em 1.2em;
         display: block;
-        color: #333;
+        color: #fff;
         @include box-sizing();
-        border-radius:4px;
+        border-radius:3px;
         &:hover,
         &:focus {
             color: #FFF;
             @include gradient(darken($primaryColor, 0), darken($primaryColor, 15), vertical);
-            border: 1px solid darken($primaryColor, 15);
+            // border: 1px solid darken($primaryColor, 15);
             box-shadow: none;
         }
         &.active {

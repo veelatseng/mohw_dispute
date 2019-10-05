@@ -17,6 +17,22 @@ table {
         a {
             word-break: break-all;
         }
+        &.date {
+            text-align: center;
+            color: #666;
+            white-space: nowrap;
+            @include screen('mobile') {
+                text-align: left;
+            }
+        }
+        &.num {
+            text-align: center;
+            color: #666;
+            white-space: nowrap;
+            @include screen('mobile') {
+                text-align: left;
+            }
+        }
     }
     th {
         background-color: #F3F3F3;

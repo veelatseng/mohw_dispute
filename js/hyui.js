@@ -9,13 +9,13 @@ $(function() {
     ///////////////// 變數 ////////////////
     /*-----------------------------------*/
     var _window = $(window),
-        ww = _window.outerWidth(),
-        wh = _window.height(),
-        _body = $('body'),
-        wwNormal = 1400,
-        wwMedium = 992,
-        wwSmall = 768,
-        wwxs = 576;
+    ww = _window.outerWidth(),
+    wh = _window.height(),
+    _body = $('body'),
+    wwNormal = 1400,
+    wwMedium = 992,
+    wwSmall = 896,
+    wwxs = 576;
     /*-----------------------------------*/
     //////////// nojs 先移除////////////////
     /*-----------------------------------*/
@@ -34,7 +34,7 @@ $(function() {
     var _menu = $('.menu');
     _menu.find('li').has('ul').addClass('hasChild');
     var liHasChild = _menu.find('li.hasChild'),
-        liHasChild_level1 = $('.menu ul').children('li.hasChild');
+    liHasChild_level1 = $('.menu ul').children('li.hasChild');
     liHasChild_level2 = $('.menu ul ul').children('li.hasChild');
     liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild');
     subMenuWidth = liHasChild.first().children('ul').outerWidth();
@@ -45,11 +45,11 @@ $(function() {
     $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
     var menu_status = false;
     var _sidebar = $('.sidebar'),
-        _search = $('.search'),
-        _nav = $('.navigation'),
-        _sidebarClose = $('.sidebarClose'),
-        _sidebarCtrl = $('.sidebarCtrl'),
-        _overlay = $('.menu_overlay');
+    _search = $('.search'),
+    _nav = $('.navigation'),
+    _sidebarClose = $('.sidebarClose'),
+    _sidebarCtrl = $('.sidebarCtrl'),
+    _overlay = $('.menu_overlay');
     _mArea = $('.m_area');
     _sidebarCtrl.append('<span></span><span></span><span></span>');
     var search_mode = false;
@@ -160,9 +160,24 @@ $(function() {
             _search.appendTo('.header .container');
             _menu.appendTo('.header .container');
             _search.removeClass('m_search');
-            _search.show();
+            // _search.show();
             search_mode = false;
-            $('.language').find('ul').hide();
+            // $('.searchCtrl').appendTo(_menu); 
+            $('.searchCtrl').off().click(function(event) {
+                $('.search').stop(true,true).fadeToggle();
+            });
+           //  $('.searchCtrl').focus(function(event) {
+           //     $('.search').fadeIn();
+           //     $('.search input').focusin();
+           // });
+           $('.search .keywordHot li:last-child a').focusout(function(event) {
+            $('.search').hide();
+        });
+                 // 如果點在外面
+                 $('.main').on('click', function(e) {
+                    $('.search').hide();
+                });
+            // $('.language').find('ul').hide();
             // 副選單滑出
             liHasChild.on({
                 mouseenter: function() {
@@ -216,7 +231,7 @@ $(function() {
     });
     // 固定版頭
     var hh = $('.header').outerHeight(true),
-        menuH = _menu.outerHeight(true);
+    menuH = _menu.outerHeight(true);
     $(window).bind("load scroll resize", function(e) {
         ww = _window.outerWidth();
         if (ww >= wwSmall && $(this).scrollTop() > hh - menuH) {
@@ -277,14 +292,14 @@ $(function() {
     function imgResize(){
         $('.imgOuter').each(function(index, el) {
             var _imgContainer = $(this),
-                cWidth = _imgContainer.width(),
-                cHeight = _imgContainer.height(),
-                ratioC = cWidth / cHeight,
-                _img = _imgContainer.find('img');
+            cWidth = _imgContainer.width(),
+            cHeight = _imgContainer.height(),
+            ratioC = cWidth / cHeight,
+            _img = _imgContainer.find('img');
             var iWidth = $(this).find('img').width(),
-                iHeight = $(this).find('img').height(),
-                ratioImg = iWidth / iHeight,
-                scaleRatio;
+            iHeight = $(this).find('img').height(),
+            ratioImg = iWidth / iHeight,
+            scaleRatio;
             if (ratioC > ratioImg) {
                 scaleRatio = cWidth / iWidth;
                 _img.width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
@@ -306,14 +321,14 @@ $(function() {
     function imgResize() {
         $('.imgOuter').each(function(index, el) {
             var _imgContainer = $(this),
-                cWidth = _imgContainer.width(),
-                cHeight = _imgContainer.height(),
-                ratioC = cWidth / cHeight,
-                _img = _imgContainer.find('img');
+            cWidth = _imgContainer.width(),
+            cHeight = _imgContainer.height(),
+            ratioC = cWidth / cHeight,
+            _img = _imgContainer.find('img');
             var iWidth = $(this).find('img').width(),
-                iHeight = $(this).find('img').height(),
-                ratioImg = iWidth / iHeight,
-                scaleRatio;
+            iHeight = $(this).find('img').height(),
+            ratioImg = iWidth / iHeight,
+            scaleRatio;
             if (ratioC > ratioImg) {
                 scaleRatio = cWidth / iWidth;
                 _img.width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
@@ -438,15 +453,15 @@ $(function() {
     function tabSet() {
         $('.tabs').each(function() {
             var _tab = $(this),
-                _tabItem = _tab.find('.tabItem'),
-                _tabItemA = _tabItem.children('a'),
-                _tabContent = _tab.find('.tabContent'),
-                tabwidth = _tab.width(),
-                tabItemHeight = _tabItem.outerHeight(),
-                tabContentHeight = _tab.find('.active').next().innerHeight(),
-                tiGap = 0,
-                tabItemLength = _tabItem.length,
-                tabItemWidth;
+            _tabItem = _tab.find('.tabItem'),
+            _tabItemA = _tabItem.children('a'),
+            _tabContent = _tab.find('.tabContent'),
+            tabwidth = _tab.width(),
+            tabItemHeight = _tabItem.outerHeight(),
+            tabContentHeight = _tab.find('.active').next().innerHeight(),
+            tiGap = 0,
+            tabItemLength = _tabItem.length,
+            tabItemWidth;
             _tab.find('.active').next('.tabContent').show();
             if (ww >= wwSmall) {
                 _tabContent.css('top', tabItemHeight);
@@ -465,9 +480,9 @@ $(function() {
 
             function tabs(e) {
                 var _tabItemNow = $(this).parent(),
-                    tvp = _tab.offset().top,
-                    tabIndex = _tabItemNow.index() / 2,
-                    scollDistance = tvp + tabItemHeight * tabIndex - hh;
+                tvp = _tab.offset().top,
+                tabIndex = _tabItemNow.index() / 2,
+                scollDistance = tvp + tabItemHeight * tabIndex - hh;
                 _tabItem.removeClass('active');
                 _tabItemNow.addClass('active');
                 if (ww <= wwSmall) {
@@ -503,7 +518,7 @@ $(function() {
         $('html, body').animate({ scrollTop: 0 }, 800, 'easeOutExpo');
         e.preventDefault();
     });
-     /*--------------------------------------------------------*/
+    /*--------------------------------------------------------*/
     /////設定img 在IE9+ SAFARI FIREFOX CHROME 可以object-fit/////
     /*--------------------------------------------------------*/
     var userAgent, ieReg, ie;
@@ -511,17 +526,27 @@ $(function() {
     ieReg = /msie|Trident.*rv[ :]*11\./gi;
     ie = ieReg.test(userAgent);
     if (ie) {
+        // $(".img-container").each(function() {
+        //     var imgUrl = $(this).children('img').attr('src');
+        //     var $container = $(this);
+        //     $container.has('.none').addClass('ie-object-none');
+        //     $container.has('.none').css('backgroundImage', 'url(' + imgUrl + ')');
+        //     $container.has('.cover').addClass('ie-object-cover');
+        //     $container.has('.cover').css('backgroundImage', 'url(' + imgUrl + ')');
+        //     $container.has('.fill').addClass('ie-object-fill');
+        //     $container.has('.fill').css('backgroundImage', 'url(' + imgUrl + ')');
+        //     $container.has('.contain').addClass('ie-object-contain');
+        //     $container.has('.contain').css('backgroundImage', 'url(' + imgUrl + ')');
+        // });
         $(".img-container").each(function() {
-            var imgUrl = $(this).children('img').attr('src');
+            var imgUrl = $(this).children('a').children('img').attr('src');
             var $container = $(this);
-            $container.has('.none').addClass('ie-object-none');
-            $container.has('.none').css('backgroundImage', 'url(' + imgUrl + ')');
-            $container.has('.cover').addClass('ie-object-cover');
-            $container.has('.cover').css('backgroundImage', 'url(' + imgUrl + ')');
-            $container.has('.fill').addClass('ie-object-fill');
-            $container.has('.fill').css('backgroundImage', 'url(' + imgUrl + ')');
-            $container.has('.contain').addClass('ie-object-contain');
-            $container.has('.contain').css('backgroundImage', 'url(' + imgUrl + ')');
+            $(this).has(".cover").find('a').addClass("ie-object-cover");
+            $(this).has(".cover").find('a').css("backgroundImage", "url(" + imgUrl + ")");
+            $(this).has(".fill").find('a').addClass("ie-object-fill");
+            $(this).has(".fill").find('a').css("backgroundImage", "url(" + imgUrl + ")");
+            $(this).has(".contain").find('a').addClass("ie-object-contain");
+            $(this).has(".contain").find('a').css("backgroundImage", "url(" + imgUrl + ")");
         });
     }
     /*-----------------------------*/
@@ -559,26 +584,26 @@ $(function() {
     /*------------------------------------*/
     //////////分享按鈕 share dropdwon////////
     /*------------------------------------*/
-    $('.cp_panel .share').children('ul').hide();
-    $('.cp_panel .share').prepend('<a href="#" class="shareButton"><img src="images/basic/icon_share.png" alt="share分享按鈕"></a>');
-    var _shareButton = $('.shareButton');
-    _shareButton.off().click(function(e) {
-        $(this).siblings('ul').stop(true, true).slideToggle();
-        e.preventDefault();
-    });
-    _shareButton.keyup(function(event) {
-        $(this).siblings('ul').stop(true, true).slideDown();
-    });
-    $('.cp_panel .share').find('li:last>a').focusout(function(event) {
-        $(this).parent().parent('ul').hide();
-    });
-    // 點外面關閉share
-    $(document).on('touchend click', function(e) {
-        var container = $(".cp_panel .share");
-        if (!container.is(e.target) && container.has(e.target).length === 0) {
-            $('.share ul').hide();
-        }
-    });
+    // $('.cp_panel .share').children('ul').hide();
+    // $('.cp_panel .share').prepend('<a href="#" class="shareButton"><img src="images/basic/icon_share.png" alt="share分享按鈕"></a>');
+    // var _shareButton = $('.shareButton');
+    // _shareButton.off().click(function(e) {
+    //     $(this).siblings('ul').stop(true, true).slideToggle();
+    //     e.preventDefault();
+    // });
+    // _shareButton.keyup(function(event) {
+    //     $(this).siblings('ul').stop(true, true).slideDown();
+    // });
+    // $('.cp_panel .share').find('li:last>a').focusout(function(event) {
+    //     $(this).parent().parent('ul').hide();
+    // });
+    // // 點外面關閉share
+    // $(document).on('touchend click', function(e) {
+    //     var container = $(".cp_panel .share");
+    //     if (!container.is(e.target) && container.has(e.target).length === 0) {
+    //         $('.share ul').hide();
+    //     }
+    // });
     /*------------------------------------*/
     /////////////字型大小 font-size//////////
     /*------------------------------------*/

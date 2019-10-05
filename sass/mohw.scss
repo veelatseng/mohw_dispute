@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+/**/
 // 共通
 @import "_variable";					//變數
 @import "sass/_normalize";				//reset
@@ -46,6 +46,7 @@
 @import "page/_cp";						//CP
 @import "page/_fp";						//Forward
 @import "page/_qp";						//QP
+@import "page/_sp";						//QP
 @import "page/_sitemap";				//Sitemap
 
 // 外掛

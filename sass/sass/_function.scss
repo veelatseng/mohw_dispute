@@ -81,14 +81,14 @@ div.function {
                     text-align: center;
                     line-height: 40px;
                     border-radius: 50%;
-                    background: #F1F1F1;
+                    background: #888;
                     text-indent: -9999px;
                     position: relative;
                     &:hover, &:focus {
                         background: $aHover;
                         color: #FFF;
                         &:before {
-                            filter: invert(100%);
+                            // filter: invert(100%);
                         }
                     }
                     &:before {
@@ -98,6 +98,7 @@ div.function {
                         height: 60%;
                         top: 20%;
                         left: 20%;
+                        filter: invert(100%);
                     }
                 }
                 &.back {

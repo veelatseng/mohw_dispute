@@ -2,7 +2,7 @@
 $btn-font-color:$color-word;
 $btn-border:darken($color-word, 5);
 $btn-padding:.5em 2em;
-$btn-radius:.4em;
+$btn-radius:3px;
 // 按鈕外框
 .btn_grp {
     text-align: center;
@@ -18,7 +18,7 @@ $btn-radius:.4em;
     background: $btn-bg;
     border: 1px solid darken($btn-bg, 10);
     color: $btn-font-color;
-    box-shadow:0px 2px 2px RGBA(0, 0, 0, .08);
+    box-shadow:0px 2px 2px RGBA(0, 0, 0, 0);
     border-radius:$btn-radius;
     &:hover,&:focus {
         background: darken($btn-bg, 10);
@@ -48,7 +48,7 @@ $btn-radius:.4em;
     min-width: 4em;
     padding-left: 1em;
     padding-right: 1em;
-    margin: .25em .1em;
+    margin: 0em .2em .3em .2em;
 }
 .btn {
     @extend %btn;
@@ -57,12 +57,13 @@ $btn-radius:.4em;
     @include box-sizing;
     @include btn_setting();
     text-shadow:RGBA(0, 0, 0, .3) 0px 0px 0px;
-    @include gradient(#f7f7f7, #DADADA, vertical);
-    transition: .3s ease-out;
+    @include gradient(#f7f7f7, #f7f7f7, vertical);
+    // transition: .3s ease-out;
+    vertical-align: middle;
     &:hover,
     &:focus {
-        color: $btn-font-color;
-        @include gradient(#fAfAfA, #CDCDCD, vertical);
+        // color: $btn-font-color;
+        @include gradient(#afafaf, #afafaf, vertical);
     }
 }
 //按鈕顏色

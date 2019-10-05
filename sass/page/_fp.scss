@@ -1,5 +1,18 @@
 .fp{
-	margin: 1em auto;
+	margin: 0em auto 1em auto;
+	border-top: 3px solid #f99615;
 	@include box-sizing;
-	padding:1em;
+	// padding:1em;
+	input[type="reset"] {
+		color: #fff;
+		padding: .8em 4em;
+		border: 1px solid #afafaf;
+		background: #afafaf ;
+	}
+	input[type="submit"] {
+		color: #fff;
+		padding: .8em 4em;
+		border: 1px solid #e86e53;
+		background: #e86e53;
+	}
 }

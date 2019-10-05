@@ -3,7 +3,7 @@
 
 //-------------------------------------------------------------顏色---------//
 // 定義顏色 此顏色可自由變換
-$primaryColor:				#21BAFF;				//主色 
+$primaryColor:				#f99615;				//主色 
 $secondaryColor:			#781F79; 				//輔色
 $lightColor:				#FCC211;				//點綴
 $linkColor:					#21BAFF;				//連結
@@ -19,13 +19,13 @@ $color-purple: 				#AA5AC5;
 $color-gray: 				#CCC;
 $color-dark: 				#333;
 $color-hr:					#666;		  			 //hr顏色
-$color-word:				#222;                    //一般字的顏色
+$color-word:				#555;                    //一般字的顏色
 // 連結顏色
-$aColor:					#21BAFF;
-$aHover:					lighten($aColor,10);
+$aColor:					#f99615;
+$aHover:					#f1775b;
 
 // 表單focus顏色
-$form-focus:				#21BAFF;				//表單
+$form-focus:				#f99615;				//表單
 //-------------------------------------------------------------字型--------//
 
 // 字型設定
@@ -37,17 +37,17 @@ $font-size:					1em;
 // 格線系統
 $grid-columns:              12 !default;			   //格線欄位數
 $grid-gutter-width:         30px !default;			   //左右padding
-$container-max:             1200px !default;		   //container最大寬
+$container-max:             1000px !default;		   //container最大寬
 
 //mediaquery
 $screen-lg:        			1400px !default;  	       //電腦
 $screen-md:        			992px  !default;      	   //平板
-$screen-sm:        			768px  !default;     	   //手機
+$screen-sm:        			896px  !default;     	   //手機
 $screen-xs:        			576px  !default;      	   //極小尺寸
 
 //-------------------------------------------------------------客製化------//
 $fatfooter-length:			6;						   //fatfooter選單一行個數
-$fatfooterBgColor: 			#F1F1F1; 				//fatFooter 底色
+$fatfooterBgColor: 			#2d2f34; 				//fatFooter 底色
 
 //-------------------------------------------------------------客製化------//
 

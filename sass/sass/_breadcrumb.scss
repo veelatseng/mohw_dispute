@@ -1,26 +1,33 @@
 .breadcrumb {
-    border-bottom: 1px solid #EEE;
-    padding: .1em 0em .1em;
-    font-size: .813em;
-    margin: 0px auto 5px;
+    // border-bottom: 1px solid #EEE;
+    // padding: .1em 0em .1em;
+    font-size: 0.938em;
+    letter-spacing: 0.1em;
+    margin: 30px 0px 20px 0;
     ul {
         @include li-reset;
         li {
             display: inline-block;
-            margin: 0px .1em .1em 0px;
+            color: #555;
+            // margin: 0px .1em .1em 0px;
             &:before {
                 @extend %slash;
             }
             &:first-child:before {
-                content: "";
+                content: "現在位置 :";
                 display: inline-block;
-                color: #666;
+                color: #555;
                 margin-left: 0;
+                margin-right: 10px;
                 padding: 0;
             }
         }
     }
     a {
-        @include aSetting_nocolor;
+        // @include aSetting_nocolor;
+        color: #555;
+        &:hover{
+            color: #eb783f;
+        }
     }
 }
