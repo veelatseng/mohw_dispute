@@ -446,7 +446,10 @@
 			background: #e86e53;
 		}
 		input.date{
-			width: 26%;
+			width: 25%;
+			@include screen('tablet') {
+				width: 22%;
+			}
 			@include screen('mobile') {
 				width: 40%;
 			}

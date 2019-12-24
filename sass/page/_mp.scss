@@ -1,202 +1,202 @@
 /////////////////////////////////////////////////////////以下為demo範例///
 // 首頁區塊設定
 .top_notification{
-    .notification{
-        width: 497px;
-        letter-spacing: .05em;
-        position: relative;
-        margin-left: 8%;
-        @include screen('tablet') {
-            width: 100%;
-            margin-left: 0;
-            padding: 0 6%;
-            box-sizing: border-box;
-        }
+  .notification{
+    width: 497px;
+    letter-spacing: .05em;
+    position: relative;
+    margin-left: 8%;
+    @include screen('tablet') {
+      width: 100%;
+      margin-left: 0;
+      padding: 0 6%;
+      box-sizing: border-box;
+    }
+    @include screen('mobile') {
+      padding: 0 15px;
+    }
+    a{
+      cursor: pointer;
+    }
+  }
+  .alertmessage{
+    background: url(../images/notification.png ) no-repeat;
+    background-position: left bottom;
+    width: 284px;
+    height: 95px;
+    display: block;
+    animation: notification .5s linear 0s infinite alternate;
+    text-indent: -99999px;
+    cursor: pointer;
+    a{
+      display: block;
+      height: 100%;
+    }
+  }
+  h2{
+    margin-bottom: 0;
+    margin-top: 8px;
+    a{
+      display: block;
+      cursor: pointer;
+      img{
+        max-width: 100%;
         @include screen('mobile') {
-            padding: 0 15px;
+          height: auto;
         }
-        a{
-            cursor: pointer;
-        }
+      }
     }
-    .alertmessage{
-        background: url(../images/notification.png ) no-repeat;
-        background-position: left bottom;
-        width: 284px;
-        height: 95px;
-        display: block;
-        animation: notification .5s linear 0s infinite alternate;
-        text-indent: -99999px;
-        cursor: pointer;
-        a{
-            display: block;
-            height: 100%;
-        }
-    }
-    h2{
-        margin-bottom: 0;
-        margin-top: 8px;
-        a{
-            display: block;
-            cursor: pointer;
-            img{
-                max-width: 100%;
-                @include screen('mobile') {
-                    height: auto;
-                }
-            }
-        }
-    }
-    h3{
-        font-size: 0.938em;
-        color: #392520;
-        margin-top: 6px;
-    }
-    ul.condition{
-        width: 100%;
-        list-style: none;
-        padding-left: 0;
-        margin-bottom: 2px;
-        font-size: 0.813em;
+  }
+  h3{
+    font-size: 0.938em;
+    color: #392520;
+    margin-top: 6px;
+  }
+  ul.condition{
+    width: 100%;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2px;
+    font-size: 0.813em;
+    color: #fff;
+    li{
+      margin-bottom: 1px;
+      a{
         color: #fff;
-        li{
-            margin-bottom: 1px;
-            a{
-                color: #fff;
-                background: rgba(57,37,32,.4);
-                display: block;
-                padding: 5px 14px;
-                &:before{
-                    content: "";
-                    width: 15px;
-                    height: 15px;
-                    display: inline-block;
-                    background: url(../images/arrow1.png ) no-repeat;
-                    vertical-align: middle;
-                    margin-right: 10px;
-                }
-                &:hover{
-                    background: #e7694c;
-                }
-            }
-        }
-    }
-    .fill{
+        background: rgba(57,37,32,.4);
         display: block;
-        background: #392520;
-        width: 100%;
-        padding: 10px 0;
-        text-align: center;
-        font-size: 0.938em;
-        color: #f99615;
-        cursor: pointer;
-        em{
-            color: #fff;
-            font-size: 1.2em;
-            font-style: normal;
-            &:before{
-                content: "/";
-                margin-left: 4px;
-                margin-right: 4px;
-            }
-            &:after{
-                content: "";
-                width: 38px;
-                height: 32px;
-                background: url(../images/arrow2.png ) no-repeat;
-                display: inline-block;
-                vertical-align: middle;
-                margin-left: 14px;
-                padding-right: 10px;
-            }
+        padding: 5px 14px;
+        &:before{
+          content: "";
+          width: 15px;
+          height: 15px;
+          display: inline-block;
+          background: url(../images/arrow1.png ) no-repeat;
+          vertical-align: middle;
+          margin-right: 10px;
         }
         &:hover{
-            em:after{
-                animation: fill .5s linear 0s infinite alternate;
-            }
+          background: #e7694c;
         }
+      }
     }
-    .nurse{
-        width: 328px;
-        height: 547px;
-        display: block;
-        background: url(../images/nurse.png ) no-repeat;
-        position: absolute;
-        right: 56px;
-        bottom: 0;
-        @include screen('tablet') {
-            display: none;
-        }
+  }
+  .fill{
+    display: block;
+    background: #392520;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.938em;
+    color: #f99615;
+    cursor: pointer;
+    em{
+      color: #fff;
+      font-size: 1.2em;
+      font-style: normal;
+      &:before{
+        content: "/";
+        margin-left: 4px;
+        margin-right: 4px;
+      }
+      &:after{
+        content: "";
+        width: 38px;
+        height: 32px;
+        background: url(../images/arrow2.png ) no-repeat;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 14px;
+        padding-right: 10px;
+      }
     }
-    .case_number{
-        width: 100%;
-        height: 159px;
-        display: block;
-        background: url(../images/number_bg.jpg ) no-repeat;
-        margin-top: 12px;
+    &:hover{
+      em:after{
+        animation: fill .5s linear 0s infinite alternate;
+      }
+    }
+  }
+  .nurse{
+    width: 328px;
+    height: 547px;
+    display: block;
+    background: url(../images/nurse.png ) no-repeat;
+    position: absolute;
+    right: 56px;
+    bottom: 0;
+    @include screen('tablet') {
+      display: none;
+    }
+  }
+  .case_number{
+    width: 100%;
+    height: 159px;
+    display: block;
+    background: url(../images/number_bg.jpg ) no-repeat;
+    margin-top: 12px;
         // padding-left: 40px;
         overflow: hidden;
         color: #fff;
         @include screen('tablet') {
-            height: auto;
-            padding: 20px 10px;
-            box-sizing: border-box;
-            background-size: cover;
+          height: auto;
+          padding: 20px 10px;
+          box-sizing: border-box;
+          background-size: cover;
         }
         .period{
-            margin: 14px 0 20px 22%;
-            font-family: "Myriad Pro";
-            display: inline-block;
-            letter-spacing: 2px;
-            @include screen('tablet') {
-                margin: 0 0 14px 0;
-                text-align: center;
-                display: block;
-            }
+          margin: 14px 0 20px 22%;
+          font-family: "Myriad Pro";
+          display: inline-block;
+          letter-spacing: 2px;
+          @include screen('tablet') {
+            margin: 0 0 14px 0;
+            text-align: center;
+            display: block;
+          }
         }
         ul{
-            list-style: none;
-            margin-top: 0;
+          list-style: none;
+          margin-top: 0;
+          @include screen('mobile') {
+            padding: 0;
+          }
+          li{
+            float: left;
+            width: 13%;
+            border-right: 1px solid rgba(255,255,255,.75);
+            @include screen('tablet') {
+              width: 33%;
+              border-right: 0;
+              margin-bottom: 10px;
+            }
             @include screen('mobile') {
-                padding: 0;
+              width: 50%;
+              border-right: 0;
             }
-            li{
-                float: left;
-                width: 13%;
-                border-right: 1px solid rgba(255,255,255,.75);
-                @include screen('tablet') {
-                    width: 33%;
-                    border-right: 0;
-                    margin-bottom: 10px;
-                }
-                @include screen('mobile') {
-                    width: 50%;
-                    border-right: 0;
-                }
-                &:last-child{
-                    border-right: 0;
-                    @include screen('mobile') {
-                        width: 100%;
-                    }
-                }
-                .number,.title{
-                    display: block;
-                    text-align: center;
-                }
-                .number{
-                    font-size: 3em;
-                    font-family: "Century Gothic";
-                    margin-bottom: 15px;
-                    margin-top: 10px;
-                }
-                .title{
-                    font-size: 0.75em;
-                    letter-spacing: 1px;
-                }
+            &:last-child{
+              border-right: 0;
+              @include screen('mobile') {
+                width: 100%;
+              }
             }
+            .number,.title{
+              display: block;
+              text-align: center;
+            }
+            .number{
+              font-size: 3em;
+              font-family: "Century Gothic";
+              margin-bottom: 15px;
+              margin-top: 10px;
+            }
+            .title{
+              font-size: 0.75em;
+              letter-spacing: 1px;
+            }
+          }
         }
-    }
-    .contact{
+      }
+      .contact{
         position: absolute;
         right: 10%;
         bottom: 40px;
@@ -209,60 +209,60 @@
         line-height: 140%;
         color: #392520;
         @include screen('tablet') {
-            position: relative;
-            right: auto;
-            bottom: auto;
-            text-align: center;
-            display: block;
-            margin: 20px auto;
-            background: url(../images/phone.png ) no-repeat center top;
-            padding-left: 0;
-            padding-top: 50px;
-            z-index: 98;
+          position: relative;
+          right: auto;
+          bottom: auto;
+          text-align: center;
+          display: block;
+          margin: 20px auto;
+          background: url(../images/phone.png ) no-repeat center top;
+          padding-left: 0;
+          padding-top: 50px;
+          z-index: 98;
         }
         .phone{
-            font-family: "Century Gothic";
-            font-size: 1.85em;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-top: 3px;
-            a{
-                color: #392520;
-            }
+          font-family: "Century Gothic";
+          font-size: 1.85em;
+          font-weight: bold;
+          letter-spacing: 1px;
+          margin-top: 3px;
+          a{
+            color: #392520;
+          }
         }
+      }
     }
-}
-@keyframes notification {
-    0% {background-position: left top;}
-    100% { background-position: left bottom;}
-}
-@keyframes fill {
-    0% { margin-left: 14px; padding-right: 10px;}
-    100% { margin-left: 24px;padding-right: 0; }
-}
+    @keyframes notification {
+      0% {background-position: left top;}
+      100% { background-position: left bottom;}
+    }
+    @keyframes fill {
+      0% { margin-left: 14px; padding-right: 10px;}
+      100% { margin-left: 24px;padding-right: 0; }
+    }
 // 首頁輪播
 .mpSlider {
-    width: 100%;
+  width: 100%;
     // padding-bottom: 3em;
     @include gutter(0);
     .img-container {
-        height: 270px;
+      height: 270px;
+      width: 100%;
+      position: relative;
+      img {
+        width: 100% !important;
+        height: 100%;
+      }
+      @include screen('mobile') {
+        height: auto;
         width: 100%;
-        position: relative;
-        img {
-            width: 100% !important;
-            height: 100%;
-        }
-        @include screen('mobile') {
-            height: auto;
-            width: 100%;
-        }
+      }
     }
     a {
-        display: block;
-        height: 100%;
-        width: 100%;
-        position: relative;
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: relative;
         // .caption {
         //     position: absolute;
         //     width: 100%;
@@ -284,133 +284,133 @@
         //     }
         // }
         &:focus {
-            &:before {
-            	content:"";
-                position: absolute;
-                z-index: 9;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                bottom:0;
-                right: 0;
-                box-shadow: 0 0px 0px 3px $primaryColor inset;
-            }
-        }
-    }
-    .slick-next {
-        @include screen('mobile') {
-            right: -30px;
-        }
+          &:before {
+           content:"";
+           position: absolute;
+           z-index: 9;
+           width: 100%;
+           height: 100%;
+           top: 0;
+           left: 0;
+           bottom:0;
+           right: 0;
+           box-shadow: 0 0px 0px 3px $primaryColor inset;
+         }
+       }
+     }
+     .slick-next {
+      @include screen('mobile') {
+        right: -30px;
+      }
     }
     .slick-prev{
-        @include screen('mobile') {
-            left: -30px;
-        }
+      @include screen('mobile') {
+        left: -30px;
+      }
     }
     .slick-dots{
-        bottom: 20px;
-        @include screen('mobile') {
-            bottom: 10px;
+      bottom: 20px;
+      @include screen('mobile') {
+        bottom: 10px;
+      }
+      li{
+        margin: 0 6px;
+        width: 10px;
+        height: 10px;
+        button,button:before{
+          width: 10px;
+          height: 10px;
         }
-        li{
-            margin: 0 6px;
-            width: 10px;
-            height: 10px;
-            button,button:before{
-                width: 10px;
-                height: 10px;
-            }
-            &.slick-active button:before {
-                opacity: .7;
-                background: #000;
-            }
-            button:hover:before,
-            button:focus:before {
-                opacity: 1;
-                background: #000;
-                box-shadow: 0px 0px 0px 1px #000;
-            }
+        &.slick-active button:before {
+          opacity: .7;
+          background: #000;
         }
+        button:hover:before,
+        button:focus:before {
+          opacity: 1;
+          background: #000;
+          box-shadow: 0px 0px 0px 1px #000;
+        }
+      }
     }
-}
+  }
 
-.center_block{
+  .center_block{
     width: 100%;
     background:#fff url(../images/center_bg.jpg ) right 0 no-repeat;
     padding: 30px;
     box-sizing: border-box;
     @include screen('mobile') {
-        padding:20px 0 30px 0;
+      padding:20px 0 30px 0;
     }
     h2{
-        text-align: center;
-        font-size: 1.5em;
-        font-weight: normal;
-        color: #392520;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: normal;
+      color: #392520;
     }
     .news{
-        @include make-xs-column(12);
-        @include make-sm-column(7);
-        @include make-md-column(7);
-        @include make-lg-column(7);
-        @include box-sizing();
-        @include gutter(80px);
+      @include make-xs-column(12);
+      @include make-sm-column(7);
+      @include make-md-column(7);
+      @include make-lg-column(7);
+      @include box-sizing();
+      @include gutter(80px);
+      @include screen('tablet') {
+        padding-right: 15px;
+        padding-left: 0;
+      }
+      @include screen('mobile') {
+        @include gutter(60px);
+      }
+      ul{
         @include screen('tablet') {
-            padding-right: 15px;
-            padding-left: 0;
+          padding: 0;
         }
-        @include screen('mobile') {
-            @include gutter(60px);
+      }
+      li{
+        padding: 11px 0 10px 0;
+        border-bottom: 1px dotted #8d8d8d;
+        color: #555;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &:before{
+          content: "";
+          display: inline-block;
+          vertical-align: middle;
+          width: 6px;
+          height: 6px;
+          background: #555;
+          border-radius: 50%;
+          margin-right: 15px;
         }
-        ul{
-            @include screen('tablet') {
-                padding: 0;
-            }
+        a{
+          color: #555;
+          &:hover{
+            color: #f27958;
+          }
         }
-        li{
-            padding: 11px 0 10px 0;
-            border-bottom: 1px dotted #8d8d8d;
-            color: #555;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            &:before{
-                content: "";
-                display: inline-block;
-                vertical-align: middle;
-                width: 6px;
-                height: 6px;
-                background: #555;
-                border-radius: 50%;
-                margin-right: 15px;
-            }
-            a{
-                color: #555;
-                &:hover{
-                    color: #f27958;
-                }
-            }
-            .date{
-                color: #888;
-                margin-right: 18px;
-            }
+        .date{
+          color: #888;
+          margin-right: 18px;
         }
+      }
     }
     .status{
-        @include make-xs-column(12);
-        @include make-sm-column(5);
-        @include make-md-column(5);
-        @include make-lg-column(5);
-        @include box-sizing();
-        @include gutter(80px);
-        @include screen('tablet') {
-            padding-right: 0;
-            padding-left: 15px;
-        }
-        @include screen('mobile') {
-            @include gutter(60px);
-        }
+      @include make-xs-column(12);
+      @include make-sm-column(5);
+      @include make-md-column(5);
+      @include make-lg-column(5);
+      @include box-sizing();
+      @include gutter(80px);
+      @include screen('tablet') {
+        padding-right: 0;
+        padding-left: 15px;
+      }
+      @include screen('mobile') {
+        @include gutter(60px);
+      }
         // .form_inline .form_grp:first-of-type,.form_inline .form_grp:last-of-type{
         //     width: 100%;
         //     display: block;
@@ -419,120 +419,130 @@
         //     }
         // }
         .btn_grp{
-            margin-bottom: 0;
-            padding-bottom: 0;
+          margin-bottom: 0;
+          padding-bottom: 0;
         }
         .form_grp{
-            @include screen('mobile') {
-                text-align: center;
-            }
-        }
-        label{
+          @include screen('mobile') {
+            text-align: center;
+          }
+          label{
             text-align: center;
             font-size: 1em;
             color: #f1775b;
             display: block;
             margin: 12px 0;
-        }
-        input{
+          }
+          input{
             margin-top: 0;
             margin-left: 0;
             margin-right: 0;
-        }
-        input[type="text"]{
+          }
+          input[type="text"]{
             @include screen('mobile') {
-                width: 310px;
+              width: 310px;
             }
+          }
+          &:nth-of-type(2){
+            input[type="text"]{
+              width: auto;
+              vertical-align: middle;
+              width: 200px;
+            }
+          }
+          &:nth-of-type(3){
+            input[type="text"]{
+              width: auto;
+              vertical-align: middle;
+              width: 200px;
+            }
+          }
         }
-        input[type="date"]{
-            width: auto;
-            vertical-align: middle;
-            width: 200px;
-        }
-        input[type="submit"], input[type="reset"]{
-            background: linear-gradient(90deg, #f17859, #f89122);
-            border: 0px;
+
+        input[type="submit"], input[type="reset"],input[type="button"]{
+          background: linear-gradient(90deg, #f17859, #f89122);
+          border: 0px;
         }
         input[type="submit"]{
-            width: 100%;
-            margin-bottom: 0;
-            padding: 8px;
-            @include screen('mobile') {
-                width: 310px;
-            }
+          width: 100%;
+          margin-bottom: 0;
+          padding: 8px;
+          @include screen('mobile') {
+            width: 310px;
+          }
         }
         a.calendar{
-            width: 27px;
-            height: 27px;
-            background:url(../images/calendar.png ) 0 0 no-repeat;
-            display: inline-block;
-            vertical-align: middle;
-            margin: 0 5px;
+          width: 27px;
+          height: 27px;
+          background:url(../images/calendar.png ) 0 0 no-repeat;
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0 5px;
         }
         .reCAPTCHA{
-            margin-top: 10px; 
-            >div{
-                margin: 0 auto;
-            }   
+          margin-top: 10px; 
+          >div{
+            margin: 0 auto;
+          }   
         }
+      }
     }
-}
-.dashboard{
-    background:url(../images/dashboard_bottom.jpg ) no-repeat 0 bottom,url(../images/dashboard_top.jpg ) no-repeat 0 0;
-    background-color: #f4f4f3 ;
-    padding:48px;
-    position: relative;
-    @include screen('mobile') {
+    .dashboard{
+      background:url(../images/dashboard_bottom.jpg ) no-repeat 0 bottom,url(../images/dashboard_top.jpg ) no-repeat 0 0;
+      background-color: #f4f4f3 ;
+      padding:48px;
+      position: relative;
+      @include screen('mobile') {
         padding:20px 0;
-    }
-    h2{
+      }
+      h2{
         text-align: center;
         margin-bottom: 72px;
         @include screen('mobile') {
-            margin-bottom: 10px;
+          margin-bottom: 10px;
         }
-    }
-    .share{
+      }
+      .share{
         position: absolute;
         top: 15px;
         right: 74px;
         @include screen('mobile') {
-            position: relative;
-            top: auto;
-            right: auto;
-            text-align: center;
-            margin-bottom: 10px;
+          position: relative;
+          top: auto;
+          right: auto;
+          text-align: center;
+          margin-bottom: 10px;
         }
-    }
-    .chart1,.chart2,.chart3,.chart4,.chart5,.chart6,.chart7{
+      }
+      .chart1,.chart2,.chart3,.chart4,.chart5,.chart6,.chart7{
         margin-bottom: 25px;
         @include screen('mobile') {
-            margin-bottom: 10px;
+          margin-bottom: 10px;
         }
-    }
-    .chart1,.chart2,.chart5{
+      }
+      .chart1,.chart2,.chart5{
         @include make-xs-column(12);
         @include make-sm-column(12);
         @include make-md-column(12);
         @include make-lg-column(12);
         @include box-sizing();
-    }
-    .chart3,.chart4,.chart6,.chart7{
+      }
+      .chart3,.chart4,.chart6,.chart7{
         @include make-xs-column(12);
         @include make-sm-column(6);
         @include make-md-column(6);
         @include make-lg-column(6);
         @include box-sizing();
-    }
-    .chart{
+      }
+      .chart{
         padding: 25px;
         box-shadow: 0 0 5px rgba(0,0,0,.5);
         background: #fff;
         @include screen('mobile') {
-            padding:10px;
+          padding:10px;
         }
+      }
     }
-}
 // 廣告輪播
 // .adSlider {
 //     @include gutter(70px);
