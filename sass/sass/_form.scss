@@ -19,8 +19,13 @@ select::-ms-expand {
     // margin: .5em;
     .form_grp {
         border-bottom: 1px solid #DDD;
-        overflow: hidden;
+        // overflow: hidden;
         padding: .5em 0;
+        &:after{
+            content: "";
+            clear: both;
+            display: block;
+        }
     }
     .form_title {
         @include make-xs-column(12);
