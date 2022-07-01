@@ -374,6 +374,10 @@
         overflow-x: hidden;
         display: flex;
         justify-content: space-between;
+        @include screen('mobile') {
+          flex-wrap: wrap;
+          justify-content: flex-start;
+        }
         .pic {
           position: relative;
           width: 100px;
@@ -381,17 +385,21 @@
           margin: 0 .5em;
           font-style: .875em;
           float: left;
-          &:before {
-            content: "";
-            position: absolute;
-            width: 98px;
-            height: 98px;
-            border: 1px dotted #8fa5b6;
-            display: block;
-            left: 0;
-            top: 0;
-            z-index: 9;
+          border: 1px dotted #8fa5b6;
+          @include screen('mobile') {
+            margin-bottom: 0.5rem;
           }
+          // &:before {
+          //   content: "";
+          //   position: absolute;
+          //   width: 98px;
+          //   height: 98px;
+          //   border: 1px dotted #8fa5b6;
+          //   display: block;
+          //   left: 0;
+          //   top: 0;
+          //   z-index: 9;
+          // }
           // .figure {
           //   position: absolute;
           //   left: 0;
@@ -431,6 +439,26 @@
             &:hover,
             &:focus {
               background: #ff5500 url(../images/delete.png) no-repeat center center;
+              background-size: 18px;
+            }
+          }
+          .add {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            display: block;
+            padding: 5px;
+            background: $primaryColor url(../images/add.png) no-repeat center center;
+            background-size: 18px;
+            color: #fff;
+            text-indent: -9999px;
+            height: 30px;
+            width: 30px;
+            transition: all .5s;
+            z-index: 11;
+            &:hover,
+            &:focus {
+              background: #ff5500 url(../images/add.png) no-repeat center center;
               background-size: 18px;
             }
           }
